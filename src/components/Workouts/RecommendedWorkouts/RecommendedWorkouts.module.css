@@ -1,0 +1,43 @@
+.card {
+height: 7vh;
+padding: 0;
+width: 19vw;
+border-radius: 2vh;
+margin: 1.4vh auto;
+cursor: pointer;
+display: flex;
+align-items: center;
+}
+
+.buttonIcon {
+    height: 5vh;
+    margin: 0 1vw;
+    }
+    
+    
+.iconAndText {
+    display: flex;
+    width: 18vw;
+    cursor: pointer;
+    align-items: center;
+    }
+    
+    .openIcon {
+        height: 1.8vh;
+    }
+    
+.workoutInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    }
+    
+
+    .workoutInfo p {
+        margin: 0.6vh 0;
+    }
+
+    .textInfo {
+        width: 12vw;
+    }

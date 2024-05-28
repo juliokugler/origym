@@ -1,0 +1,114 @@
+.background {
+    display: flex;
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
+    justify-content: center;
+    min-height: 91vh;
+  }
+  
+  .registerContainer {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+    width: 60vw;
+    padding: 30px;
+    margin: 18vh auto;
+    border-radius: 2vh;
+    min-height: 50vh;
+    
+  }
+
+  .registerContainer h2 {
+    color: var(--primary-color);
+    margin-bottom: 5vh;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  
+  .infoContainer {
+    border-radius: 0.8vh;
+    padding-left: 12px;
+    margin-bottom: 4vh; /* Add margin to the info container */
+   width: 50vw;
+    display: flex;
+  }
+  
+  .column{
+    display: flex;
+    flex-direction: column;
+    width: 16vw;
+    justify-content: center;
+  }
+
+  .infoContainer p {
+    margin-top:1.5vh;
+    margin-bottom: 1.5vh;
+  }
+
+  .infoContainer p span {
+    margin-left: 0.2vw;
+  }
+
+  .mainContainer {
+    display: flex;
+  }
+
+  .imageContainer img{
+    width: 140px;
+    border-radius: 50%;
+    display: flex;
+    border:2px solid #aeaeae4a;
+  }
+
+  .imageContainer{
+    width: 13vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .intakes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intakes p {
+    margin: 0 20px
+  }
+
+  .message{
+    color: rgb(137, 137, 137);
+    margin-bottom: 2vh;
+  }
+
+  .card{
+    width: 9vw;
+    background-color: rgb(44, 44, 44);
+  align-items: center;
+  justify-content: center;
+    text-align:center;
+    border-radius:12px;
+  } 
+  
+    .mainCard span {
+      color: var(--primary-color);
+    }
+  
+    .card span {
+      color: var(--primary-color);
+      ;
+    }
+  
+    .card p {
+      color:rgb(126, 126, 126);
+      margin-bottom:20px
+    }
+    
+    .cardsContainer{
+      display: flex;
+      flex-direction: row;
+      width: 50.5vw;
+      justify-content: space-between;
+    }

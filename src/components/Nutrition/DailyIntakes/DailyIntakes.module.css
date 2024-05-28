@@ -1,0 +1,76 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: default;
+}
+
+.caloriesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    position: absolute;
+    text-align: center;
+    width: 6vw;
+  left:11.7%;
+  top: 37%
+}
+
+.caloriesContainer h1, .caloriesContainer p {
+  margin: 0.2vh
+}
+
+
+  .smallCardContainer {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    height: 18vh;
+    margin-top: 1.6vh;
+  justify-content: space-between;
+  ;
+  }
+
+  .macroPercentage{
+    display: flex;
+    width: 15vw;
+    justify-content: space-between;
+   
+  }
+
+  .macroPercentage p {
+    margin-bottom: 0.8vh;
+  }
+
+  .percentageContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .progressBar {
+    appearance: none; /* Remove default styles */
+    width: 15vw;
+    height: 1.2vh;
+    display: flex;
+   margin: 0 auto;
+   border-radius: 10px;
+   z-index: 99;
+   margin-bottom: 1vh;
+   transition: width 0.8s ease-in-out;
+  }
+  
+  .progressBar::-webkit-progress-bar {
+    background-color: #FFFFFF; /* Background color of the progress bar */
+    border-radius: 10px
+  }
+  
+  .progressBar::-webkit-progress-value {
+    background-color: #343B47; /* Change the color of the progress bar */
+     border-radius: 10px;
+     transition: width 0.5s ease-in-out;
+  }
+
+  .progressBar::-moz-progress-bar {
+    background-color: #343B47;
+    transition: width 0.8s ease-in-out; /* Add transition for smooth animation */
+  }

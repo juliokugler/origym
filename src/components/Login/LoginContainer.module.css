@@ -1,0 +1,151 @@
+/*Container*/ 
+ 
+ .loginContainer {
+  color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #35373D; /* Base color */
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #2b2c31); 
+    width: 34vw;
+    margin-top: 5vh;
+    margin-right: 9vw;
+    border-radius: 2vh;
+    height: 78vh;
+    text-align: center;
+    cursor: default;
+  }
+  
+.formAddInfo{
+  display: flex;
+  width: 25.6vw;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: -0.5vh;
+  margin-bottom: 1vh;
+  align-items: center;
+  
+  color: rgb(150, 150, 150);
+}
+
+.formAddInfo u {
+    cursor: pointer;
+  
+}
+
+.formAddInfo svg {
+  cursor: pointer;
+}
+
+.formAddInfo u:hover {
+  transition: color 0.15s ease;
+  color: #FFFFFF;
+}
+
+
+.nameAndIcon {
+  display: flex;
+  align-items: center;
+}
+
+
+  .loginContainer h2 {
+    margin-top:6vh;
+    text-align: center;
+  }
+
+   .loginContainer form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 26vw;
+  }
+
+  .loginContainer label {
+    display: flex;
+    justify-content: flex-end;
+    text-align: left;
+    flex-direction: column;
+  }
+  .inputField {
+    margin-bottom: 2.5vh;
+    padding: 0.5vw;
+    border-radius: 0.8vh;
+    border: 1px solid #4D4F56;
+    background-color: #35373D;
+    }
+ 
+
+ .title {
+  margin-bottom: 3vh;
+ }
+
+  .login span {
+    text-align: left;
+  }
+
+  .infoContainer {
+    border-radius: 0.8vh;
+    padding-left: 12px;
+    background-color: #f0f0f0;
+    height: 2vh;
+    
+  }
+
+  /*Submit Button*/ 
+
+    .loginButton {
+    margin: 0 auto;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    width: 9vw;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #35373D;
+    transition: background-color 0.3s ease;
+  }
+
+  /*Login Option Buttons */
+
+  .loginOptions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 3em;
+    width: 26vw;
+    }
+
+    .loginOptions p {
+      margin: 0;
+      }
+    
+    .googleButton,
+    .appleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.8vh;
+    background-color: #35373D;
+    border: 1px solid #4D4F56;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 12.5vw;
+    padding: 0.5vw;
+    }
+    
+    .googleButton:hover,
+    .appleButton:hover {
+    background-color: #e0e0e0;
+    }
+    
+    /* Styling for icons */
+    .loginContainer svg {
+    margin-right: 1vw;
+    fill: var(--primary-color);
+    }
+    
+    .login a {
+      color: var(--primary-color);
+    }
+    

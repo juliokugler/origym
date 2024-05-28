@@ -1,0 +1,54 @@
+.sleepTracker {
+    padding: 1em;
+    border-top: 1px solid #ddd;
+  }
+  
+  .sleepTracker p {
+    margin: 0.5em 0;
+  }
+  
+  .progressContainer {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .progressBarWrapper {
+    width: 100%;
+    height: 1.2vh;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2vh auto 3vh auto;
+  }
+  
+  .progressSegment {
+    height: 100%;
+    transition: width 0.8s ease-in-out;
+   
+  }
+  
+  .progressBar::-webkit-progress-bar {
+    background-color: var(--text-color);
+    border-radius: 10px;
+  }
+  
+  .progressBar::-webkit-progress-value {
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .progressBar::-moz-progress-bar {
+    transition: width 0.8s ease-in-out;
+  }
+
+  .lightSleep svg {
+    fill: #8899AA;
+  }
+
+  .deepSleep svg {
+    fill: #556677;
+  }
+
+  .awakeTime svg {
+    fill: #FFFFFF;
+  }

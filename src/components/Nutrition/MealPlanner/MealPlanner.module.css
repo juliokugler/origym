@@ -1,0 +1,37 @@
+.popup {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: rgb(30, 30, 30);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 999;
+  max-width: 80vw; /* Set a maximum width */
+  max-height: 80vh;
+  overflow: auto; /* Add overflow to enable scrolling if content exceeds viewport */
+  padding:30px 20px;
+}
+
+.background {
+  position: fixed;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust opacity as needed */
+  z-index: 998; /* Ensure the background is behind the popup */
+}
+.popup .closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  border-bottom: 30px;
+}
+

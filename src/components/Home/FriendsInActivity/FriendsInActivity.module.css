@@ -1,0 +1,77 @@
+
+
+.friendCard {
+  width: 24vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+}
+
+  .avatar {
+    position: relative;
+  }
+
+  .avatar img {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 3vh;
+  }
+
+  .activity {
+    width: 11vw;
+    justify-content: left;
+  }
+
+  .friendWorkout {
+    color: white;
+    margin: 0;
+    margin-bottom:0.5vh
+    }
+  
+  .friendName {
+    color: var(--primary-color);
+    margin: 0;
+    margin: 0.5vh 0 ;
+  }
+
+  .onlineIndicator {
+    width: 1.3vh;
+    height: 1.3vh;
+    background-color: #12B76A;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  margin-left: 1.8vw;
+  margin-top: -1.6vh;
+  z-index: 99;
+  position: absolute
+  }
+
+  .active {
+    background-color: #242529;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.3vh 0;
+    width: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inactive {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 4px 0;
+    width: 8vw;
+  }
+
+  .active img, .inactive img {
+    margin: 0;
+    height: 1.6vh;
+  }
+
+  .active p {
+    margin: 0.5vh 0;
+  }

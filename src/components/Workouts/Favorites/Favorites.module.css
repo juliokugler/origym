@@ -1,0 +1,180 @@
+.mainContainer {
+    min-height: 30vh;
+  }
+  .mainContainer h2 {
+    margin-top: 3vh;
+    text-align: center;
+    margin-bottom: 3vh;
+    color: white;
+  }
+  
+  .container{
+    border-radius:16px;
+    padding:3vh 2vw;
+    min-height: 22.2vh;
+    width: 23.5vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+   }
+  .favoriteMessage {
+    text-align: center;
+  }
+  
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3vh;
+  }
+  
+  .tableHeader th {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .tableHeader th:first-child {
+    padding-left: 20px;
+  }
+  
+  .tableHeader th:last-child {
+    padding-right: 20px;
+  }
+  
+  .tableHeader th:first-child,
+  .tableBody td:first-child {
+    text-align: left;
+  }
+  
+  .tableBody td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .tableBody td:last-child {
+    padding-right: 20px;
+  }
+  
+  .tableBody tr {
+    border-top: 1px solid #dddddd67;
+  }
+  
+  .tableBody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Adjust exercise header */
+  .tableHeader th:first-child {
+  
+    text-align: center;
+    width: 8vw;
+  }
+  
+  .active {
+    background-color: var(--primary-color);
+    color: #35373D;
+    border: none;
+  }
+  
+  .groupButtons {
+    display: flex;
+    justify-content: center;
+    margin:0 auto;
+        margin-bottom: 3vh;
+        width: 20vw;
+        flex-wrap: wrap;
+  }
+  
+  .buttonContainer {
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .buttonContainer button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    
+  }
+  
+  .tableHeaderHidden {
+    display: none;
+  }
+
+  
+  .nameAndIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nameAndIcon img {
+    margin: 0 10px;
+    height: 23px;
+    padding-bottom: 6px;
+      }
+
+
+  /* Add Favorites */
+
+  .addContainer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 2vh;
+    background-color: transparent;
+    border: 2px solid rgb(49, 49, 49);;
+    padding:0 20px 20px 20px;
+    margin: 2vh 0;
+    align-items: baseline
+    
+  }
+  
+  
+  .input {
+    height: 27px;
+    border-radius: 4px;
+    border: none;
+    width: 7vw;
+  }
+
+  .option{
+    height: 27px;
+    border-radius: 4px;
+    border: none;
+    min-width: 8vw;
+  }
+
+  .exerciseOptions{
+    display: flex;
+  }
+
+  .exerciseOption{
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+  }
+
+  
+  .optionsContainer{
+    display: flex;
+    flex-direction: row;;
+  }
+
+  .closeButton{
+    cursor: pointer;
+  }
+
+  .buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttonsContainer{
+    display: flex;
+    justify-content: center;
+  }

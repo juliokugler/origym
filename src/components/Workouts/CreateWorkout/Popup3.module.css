@@ -1,0 +1,78 @@
+
+  .exerciseItem {
+    margin-bottom: 20px;
+  }
+  
+  .setsReps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+ 
+  .groupContainer{
+    margin-bottom: 3vh;
+  }
+  
+  .inputContainer {
+    background-color: #35373D;
+    border-radius: 8px;
+    height: 2vh;
+    color: var(--text-color);
+    border: 1px solid #4D4F56;
+    text-align: center;
+  }
+
+  .groupContainer h3{
+   margin:0
+  }
+
+  .exerciseItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0;
+   margin-bottom: -1vh;
+  }
+
+  .exerciseItem input {
+    margin:0 8px;
+    width:4vw;
+  }
+
+  .exerciseItem h3{
+    flex: 1;
+  }
+
+  .setsRepsWeight{
+    margin-left: 20px;
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5vh;
+    margin-top: 0.5vh;
+   
+  }
+.exerciseItem h4{
+    width: 15vw;
+}
+
+  .setsRepsWeightHeader{
+    display: flex;
+    align-items: center;
+    width: 20vw;
+  }
+
+
+  .setsRepsWeight{
+    display: flex;
+    align-items: center;
+    width: 19vw;
+  }
+  .setsRepsWeightHeader h3{
+    margin-left: 2.2vw
+  }
+
+

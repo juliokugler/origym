@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 2vh;
+    background-color: transparent;
+    border: 2px solid rgb(49, 49, 49);;
+    padding:0 20px 20px 20px;
+    margin: 2vh 0;
+    align-items: center;
+    
+  }
+  
+ 
+  .input {
+    height: 27px;
+    border-radius: 4px;
+    border: none;
+    width: 7vw;
+  }
+
+  .option{
+    height: 27px;
+    border-radius: 4px;
+    border: none;
+    min-width: 8vw;
+  }
+
+  .exerciseOptions{
+    display: flex;
+  }
+
+  .exerciseOption{
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+  }
+
+  
+  .optionsContainer{
+    display: flex;
+    flex-direction: row;;
+  }
+
+  .closeButton{
+    cursor: pointer;
+  }
+
+  .buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttonsContainer{
+    display: flex;
+    justify-content: center;
+  }

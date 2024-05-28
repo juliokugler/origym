@@ -1,0 +1,79 @@
+
+  .inputField {
+    display: flex;
+    flex-direction: column;
+    width: 6.5vw;
+    padding: 8px;
+    margin: 5px auto 20px auto;
+    box-sizing: border-box;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid #4D4F56;
+  background-color: #35373D;
+  color: var(--text-color);
+  }
+  
+  .button {
+    border: none;
+    background-color: var(--primary-color);
+    color: #494949;
+    width: 10vw;
+    justify-content: center;
+    cursor:pointer;
+  }
+
+
+
+.inputs{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+    height: 10vh;
+    align-items: center;
+    margin-bottom: 2vh;
+}  
+.input{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5vw;
+}
+
+.nameAndIcon h2 {
+  margin-top: 3vh;
+  text-align: center;
+  margin-bottom: 3vh;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  color: var(--text-color);
+}
+
+.container p{
+  text-align: left;
+}
+
+.oneRMResult{
+  margin-right: 10px;
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.container button {
+  display: flex;
+  margin: 0 auto;
+}
+
+.nameAndIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameAndIcon img {
+  margin: 0 10px;
+  height: 20px;
+    }
+

@@ -1,0 +1,112 @@
+.container{
+        width: 30vw;
+      }
+      
+    .container h2, .container h4 {
+      color: var(--primary-color);
+}
+
+.container h2 {
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+}
+
+.option p{
+    color: white;
+}
+
+
+.ingredientOption p{
+    color: white;
+}
+.ingredientList li{
+    margin-right: 40px;
+    color: white;
+}
+
+.ingredientOption li{
+        margin-top:-10px
+}
+
+.ingredientList p {
+    color: white;
+}
+.ingredientOption{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.dayOfWeekContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-bottom: 20px;
+  }
+  
+  .dayCircle {
+    width: 4vh;
+    height: 4vh;
+    min-width: 36px;
+    min-height: 36px;
+    border: 1px solid #e6b252;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e6b252;
+    cursor: pointer;
+    margin:0 0.5vw;
+  }
+  
+.dayCircle:hover {
+  transition: 300ms;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: white;
+}
+
+  .selected {
+    background-color: var(--primary-color);
+  border: 1px solid  var(--primary-color);
+    color: white;
+  }
+
+  .selectedMeal{
+        background-color: var(--primary-color);
+      border: 1px solid  var(--primary-color);
+        color: white;
+      }
+
+      .mealsContainer{
+display: flex;
+      }
+
+      .selectedMeal {
+        background-color: var(--primary-color);
+        border: 1px solid  var(--primary-color);
+        color: white;
+        padding: 8px 16px;
+      }
+      .mealInput {
+        width: 20vw;
+        height: 2.4vh;
+      }
+
+      .caloriesInput {
+        width: 20vw;
+        height: 1.3vh;
+      }
+
+      
+
+      .quantityTypeInput {
+        height: 29px;
+      }

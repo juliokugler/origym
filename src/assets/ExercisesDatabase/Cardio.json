@@ -1,0 +1,62 @@
+{
+  "Running": [
+    {
+      "id": "CR1",
+      "name": "Treadmill Running",
+      "description": "Description of treadmill running.",
+      "exampleUrl": "https://example.com/treadmill-running"
+    },
+    {
+      "id": "CR2",
+      "name": "Outdoor Running",
+      "description": "Description of outdoor running.",
+      "exampleUrl": "https://example.com/outdoor-running"
+    },
+    {
+      "id": "CR3",
+      "name": "Interval Training",
+      "description": "Description of interval training.",
+      "exampleUrl": "https://example.com/interval-training"
+    }
+  ],
+  "Cycling": [
+    {
+      "id": "CC1",
+      "name": "Stationary Cycling",
+      "description": "Description of stationary cycling.",
+      "exampleUrl": "https://example.com/stationary-cycling"
+    },
+    {
+      "id": "CC2",
+      "name": "Outdoor Cycling",
+      "description": "Description of outdoor cycling.",
+      "exampleUrl": "https://example.com/outdoor-cycling"
+    },
+    {
+      "id": "CC3",
+      "name": "Spinning",
+      "description": "Description of spinning.",
+      "exampleUrl": "https://example.com/spinning"
+    }
+  ],
+  "Swimming": [
+    {
+      "id": "CS1",
+      "name": "Freestyle Swimming",
+      "description": "Description of freestyle swimming.",
+      "exampleUrl": "https://example.com/freestyle-swimming"
+    },
+    {
+      "id": "CS2",
+      "name": "Breaststroke",
+      "description": "Description of breaststroke swimming.",
+      "exampleUrl": "https://example.com/breaststroke-swimming"
+    },
+    {
+      "id": "CS3",
+      "name": "Backstroke",
+      "description": "Description of backstroke swimming.",
+      "exampleUrl": "https://example.com/backstroke-swimming"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+.tableHeader {
+    display: flex;
+    padding: 10px 0;
+    margin-bottom: 6px;
+    width: 100%;
+  }
+  
+  .headerItem {
+    text-align: center;
+    padding:0 8px;
+  }
+
+  .title {
+    text-align: center;
+    margin: 0
+  }
+
+ .tableHeader img{
+  cursor: pointer;
+ }
+ 
+ .container{
+  display: flex;
+  flex-direction: column;
+  border-radius:16px;
+  padding:0;
+ min-height: 20vh;
+ align-items: center;
+ justify-content: center;
+ }
+
+ .noWorkoutsMessage {
+display: flex;
+flex-direction: column;
+    text-align: center;
+    margin-top: 2vh;
+    color: rgb(137, 137, 137);
+ }
+
+ .noWorkoutsMessage button {
+  width: 20vw;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 2vh;
+ }
+
+ .noWorkoutsMessage p {
+  margin-bottom: 3vh;
+ }
+
+ .button {
+  width: 30vw;
+padding: 2vh 1vw;
+border: none;
+display: flex;
+align-items: center;
+justify-content: space-between;
+ }
+
+ .button img {
+  height: 4vh;
+  margin-right: 1vw;
+ }
+
+ .button p {
+  margin:0;
+  margin-bottom: 1vh
+ }
+
+ .workoutInfo {
+  display: flex;
+  align-items: center;
+  text-align: left;
+ }
+
+.textInfo{
+  width: 16vw;
+}
+
+.details {
+  width: 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button svg {
+
+font-size: 2vh;
+}
+
+.exerciseTable {
+  margin-bottom: 2vh;
+}
+
+.exerciseTable tr {
+  width: 100%;
+  display: flex;
+}
+
+.exerciseTable th svg {
+  font-size: 2vh;
+}
+
+.exerciseTable th {
+  margin: 2vh 0;
+}
+
+.exerciseTable th:first-child {
+width: 30vw;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+}
+
+.headerName {
+  display: flex;
+  justify-content: left;
+  margin-left: 0;
+  text-align: center;
+}
+
+.headerAttributes {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.headerAttributes th {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.container h2 {
+  color: var(--primary-color);
+}
+
+.buttonContainer {
+  display: flex;
+  margin: 2vh 0 4vh 0;
+}

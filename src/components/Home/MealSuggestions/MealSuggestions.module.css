@@ -1,0 +1,130 @@
+.container {
+  max-height: 35vh;
+  width: 28vw;
+  overflow-y: hidden; /* Hide scrollbar by default */
+}
+
+/* Container styles on hover */
+.container:hover {
+  overflow-y: auto; /* Show scrollbar when hovered */
+}
+
+/* Card */
+.mealCard {
+  width: 24vw;
+  display: flex;
+  height: 6vh;
+  margin: 0 0 3vh 2vw;
+  position: relative; /* To position quantity control absolutely */
+}
+
+.mealTitle {
+  text-align: left;
+}
+
+.mealInfo {
+  display: flex;
+  flex-direction: column;
+  width: 13.5vw;
+  align-items: flex-start;
+}
+
+.mealImageAndInfo {
+  display: flex;
+  align-items: center;
+}
+
+.mealImage {
+  display: flex;
+  align-items: center;
+  width: 5vh;
+  height: 5vh;
+  object-fit: cover;
+  border-radius: 1.5vh;
+  margin-right: 1vw;
+}
+
+.cardContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.container p {
+  margin: 0;
+  margin-top: 0.5vh;
+}
+
+.mealInfo svg {
+  fill: var(--text-color);
+  margin: 0;
+  margin-right: 0.2vw;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4D4F56;
+  border-radius: 1vh;
+  height: 3vh;
+  width: 3.6vw;
+  margin-right: 2.5vw;
+  position: absolute;
+  right: 0; /* Align to the right */
+  bottom: 1vh; /* Align near the bottom */
+  opacity: 0; /* Make invisible by default */
+  transition: opacity 0.3s; /* Smooth transition */
+}
+
+.mealCard:hover .quantityControl {
+  opacity: 1; /* Make visible on hover */
+}
+
+.quantityButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  margin-bottom: 0.3vh;
+  padding: 0;
+}
+
+.quantityButton img {
+  height: 0.6vh;
+  width: 1vh;
+}
+
+.quantityControl span {
+  margin: 0 0.5vw;
+}
+
+.addButton p {
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 0.5s ease-in-out;
+  text-align: center;
+}
+
+.caloriesAndQuantity {
+  display: flex;
+}

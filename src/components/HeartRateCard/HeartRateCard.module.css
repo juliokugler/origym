@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  padding-right: 2.2vw;
+  height: 30vh;
+}
+
+
+  .addButton {
+  list-style: none;
+  padding:0 2vh 1vw 0;
+  cursor: pointer;
+  text-align: right;
+  }
+  
+
+  .nameAndIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nameAndIcon img {
+    height: 20px;
+    margin-right: 0.6vw;
+    margin-left: 2.2vw;
+    padding-bottom: 1.7vh;
+  }
+
+  .container h4{
+    color: #242529;
+    margin: 0;
+  }
+  
+  .heartInfo {
+    display: flex;
+    align-items: center;
+    width: 6vw;
+    justify-content: space-between;
+    margin: 1.8vh 0;
+    margin-left: 2vw;    
+  }
+
+  .container p {
+    font-size: 0.8vw;
+    margin: 0;
+  }
+

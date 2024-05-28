@@ -1,0 +1,60 @@
+/*General Structure*/
+
+.title2 {
+  margin-top: 2vh;
+  margin-left: 1.5vw;
+  margin-bottom: 2vh;
+}  
+
+.firstColumn {
+  width: 20vw;
+}
+
+.secondColumn {
+  width: 27.5vw;
+}
+
+.thirdColumn {
+  width: 37vw;
+}
+
+.firstColumn, .secondColumn {
+  margin-right: 1vw;
+}
+
+
+/*First Column*/
+
+  .calculator{
+    height: 35vh;
+  }
+  .recommendedWorkouts {
+    height: 43.5vh;
+  }
+   
+
+/*Second Column*/
+
+  .heartRate {
+    height: 28vh;
+    }
+
+  .exerciseBenchmarks {
+    height: 50.5vh;
+    }
+
+  .exerciseBenchmarksBackground {
+    height: 49vh;
+    width: 26vw;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 50%;
+    background-image: url("../../assets/Images/graph.png");
+    }
+   
+
+/*Third Column*/
+
+  .workoutPlan {
+    height: 80.5vh;
+    }

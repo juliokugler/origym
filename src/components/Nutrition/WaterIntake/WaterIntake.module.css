@@ -1,0 +1,33 @@
+
+.progressBar {
+    appearance: none;
+    width: 85%; 
+    height: 1.4vh;
+    display: flex;
+   margin: 0 auto;
+   border-radius: 10px;
+   z-index: 999;
+   margin-bottom: 2.5vh;
+
+  }
+  
+  .progressBar::-webkit-progress-bar {
+    background-color: #FFFFFF; 
+    border-radius: 10px
+  }
+  
+  .progressBar::-webkit-progress-value {
+    background-color: var(--primary-color);
+     border-radius: 10px
+  }
+
+  .card p {
+    margin-top: 0;
+      margin-left: 2vw;
+      margin-bottom: 1.5vh;
+      color: white;
+  }
+
+  .card {
+    margin-top: 3vh;
+  }

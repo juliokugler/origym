@@ -1,0 +1,54 @@
+
+
+
+.card h2 {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-bottom: 3vh;
+    color: white;
+  }
+
+
+.listContainer{
+    margin-bottom: 3vh;
+    margin-left: 2vw;
+}
+
+.title {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+    color: white;
+  }
+  .card h4 {
+    color: var(--primary-color);
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 1vh;
+  }
+
+  .completed{
+    color: var(--primary-color);}
+
+.workoutInfo{
+    display: flex;
+    width: 18vw;
+    flex-direction: column;
+}
+
+    .workoutAndIcon {
+        display: flex;
+        align-items: last baseline;
+    }
+
+    .workoutAndIcon svg {
+        font-size: 2vh;
+    }
+
+    .incomplete {
+        
+        color: var(--text-color); }
+     
+    .incomplete svg {
+        fill:  var(--text-color);
+    }

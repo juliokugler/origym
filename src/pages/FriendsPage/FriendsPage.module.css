@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 88vw;
+    cursor: default;
+  }
+  
+  .mainSection {
+    display: flex;
+    margin: 0 auto;
+    width: 92vw;
+    justify-content: center;
+    margin-left: 1vw;
+    margin-bottom: 3vh;
+  }
+  
+  .firstCardColumn,
+  .secondCardColumn {
+    margin-right: 1vw;
+  }
+  
+  .friendsCard,
+  .activityCard,
+  .recommendationsCard {
+    background-color: var(--gray-medium);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c);
+    border-radius: 2vh;
+    width: 30vw;
+    height: 50vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  .cardTitle {
+    color: var(--text-color);
+    margin-top: 0;
+    padding: 2vh 0 0 2vh;
+  }
+  
+  .titleAndButton {
+    width: 26vw;
+    display: flex;
+    align-items: center;
+    margin: 2vh auto;
+    justify-content: space-between;
+  }
+  
+  .addButton {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 1vh;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5em;
+  }
+  
+  .addButton:hover {
+    background-color: #5a6268;
+  }
+  
+  .friendsList,
+  .activityList,
+  .recommendationsList {
+    padding: 2vh;
+    color: #ccc;
+  }
+  
+  .friendItem,
+  .activityItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1vh;
+  }
+  
+  .friendItem svg,
+  .activityItem svg {
+    margin-right: 1vh;
+    color: #fff;
+  }
+  
+  .recommendationsList p {
+    color: #ccc;
+  }

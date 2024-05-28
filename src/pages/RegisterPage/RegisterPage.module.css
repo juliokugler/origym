@@ -1,0 +1,15 @@
+.background {
+  display: flex;
+  background-size: cover; 
+  background-position: center;
+  justify-content: flex-end;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90vw;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3vw;
+  margin-top: 0vh;
+}

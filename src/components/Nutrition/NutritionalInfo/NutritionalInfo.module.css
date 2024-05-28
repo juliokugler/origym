@@ -1,0 +1,59 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popupContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 0.8vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #181818;
+  }
+  
+  .title {
+    color: var(--primary-color);
+    margin-bottom: 32px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .closeButton {
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0.8vh;
+    cursor: pointer;
+  }
+  
+
+  .image {
+    height: 120px;
+    border-radius: 0.8vh;
+    border: 3px solid var(--primary-color);
+  }

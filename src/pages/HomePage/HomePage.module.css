@@ -1,0 +1,120 @@
+/*General Structure*/
+
+.title2 {
+  margin: 0;
+  margin-top: 2vh;
+}  
+
+.innerSection {
+  display: flex;
+}
+
+.firstColumn {
+  width: 27vw;
+}
+
+.secondColumn {
+  width: 27vw;
+}
+
+.thirdColumn {
+  width: 30vw;
+}
+
+.firstColumn, .innerSection {
+  margin-right: 1vw;
+}
+
+
+/*First Column*/
+
+  .AICoach{
+    width: flex 1;
+    height: 61vh;
+  }
+
+  .titleAndIcon {
+    display: flex;
+    align-items: center;
+  }
+
+  .titleAndIcon img {
+    width: 1.8vw;
+    height: 1.8vw;
+    margin-left: 1vw;
+    margin-right: -1vw;
+  }   
+
+
+/*Second Column*/
+
+ .todaysWorkouts {
+    width: flex 1;
+    height: 29vh;
+  }
+
+  .innerContainer {
+    width: 25vw;
+    max-height: 22vh;
+    overflow-y: hidden
+  }
+
+  .innerContainer:hover{
+    overflow-y: auto;
+  }
+
+
+  .friendsInActivity{
+    width: flex 1;
+    height: 30vh;
+  }
+
+
+/*Third Column*/
+
+  .mealSuggestions{
+    width: flex 1;
+    height: 49vh;
+  }
+
+  .titleAndDropdown {
+    width: 26vw;
+    display: flex;
+    align-items: center;
+    margin: 2vh auto;
+    justify-content: space-between;
+  }
+
+  .selection {
+    color: var(--text-color);
+    color: var(--gray-light);
+    border: 1px solid #4D4F56;
+    border-radius:1vh;
+    padding: 0.2vh 0.2vw;
+    cursor:pointer;
+  }
+
+  .dropdown {
+    background-color: var(--gray-light);
+    border:none;
+    border-radius: 1vh;
+    cursor:pointer;
+  }
+
+
+  .dailyIntakes {
+    width: flex 1;
+    height: 30vh;
+  }
+
+  .titleAndMenu {
+    width: 26vw;
+    display: flex;
+    align-items: baseline;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .titleAndMenu u {
+    cursor: pointer;
+  }

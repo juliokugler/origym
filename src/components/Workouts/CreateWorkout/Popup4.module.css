@@ -1,0 +1,17 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    margin: 0 auto;
+    margin-top: 6vh;
+}
+
+.active {
+    background-color: var(--primary-color);
+    border: none;
+    color: #242529;
+}
+
+.buttonContainer button {
+    margin-bottom: 1vh;
+}

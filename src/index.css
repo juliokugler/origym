@@ -1,0 +1,152 @@
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+/*  user-select: none;*/
+code {
+  font-family: 'Poppins', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+ 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 89vw;
+}
+
+.mainSection{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  margin-left: 4.5vw;
+  margin-bottom: 3vh;
+  }
+
+
+.title {
+  margin-top: 2vh;
+  margin-left: 1.5vw;
+  margin-bottom: 2vh;
+  }
+
+/*Cards*/
+
+.card {
+  background-color: var(--gray-medium);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c); 
+
+}
+
+.mainCard {
+  color: #35373D;
+  background-color: var(--primary-color);
+ 
+}
+
+.card, .mainCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--card-border);
+  padding: 0;
+  margin-bottom: 2vh;
+  width: flex 1;
+}
+
+.button, .button-small {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--gray-medium);
+  border-radius: var(--button-border);
+  height: 3.6vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.button {
+  width: 14vw;
+}
+
+.button-small {
+  min-width: 6vw;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+ 
+}
+
+
+.inactiveButton, .inactiveButton-small{
+   background-color: transparent;
+  border: 1px solid #727272;
+  color: #727272;
+  border-radius: var(--button-border);
+ height: 3.6vh;
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin: 0 0.5vw;
+ }
+
+.inactiveButton {
+  width: 14vw;
+}
+
+.inactiveButton-small {
+  min-width: 6vw;
+}
+.inactiveButton p, .button p, .inactiveButton-small p, .button-small p {
+  margin:0
+}
+
+h1 {
+  font-size: 3vh;
+  
+}
+
+h2 {
+  font-size: 2.4vh;
+}
+
+h3 {
+  font-size: 2vh;
+font-weight: 500;
+}
+
+h4 {
+  font-size: 1.8vh;
+  font-weight: 500;
+}
+
+p {
+  font-size:  1.7vh;
+  font-weight: 400;
+  
+}
+
+:root {
+  --bg-color: #242529;
+  --text-color: #ffffff;
+  --gray-lightest: #4D4F56;
+  --gray-light: #35373D;
+  --gray-medium: #2e3035;
+  --gray-dark:#242529;
+  --primary-color: #FFF27A;
+  --card-border: 1.8vh;
+  --button-border: 1vh;
+}

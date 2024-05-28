@@ -1,0 +1,42 @@
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 24vw;
+    margin: 0.8vh auto;
+    color: #FFFFFF;
+  }
+  
+  .you {
+    align-items: flex-end;
+  }
+  
+  .speechBubble {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 78%;
+  }
+  
+  .coach .speechBubble {
+    color: #FFFFFF;
+    background-color: #242529;
+  }
+  
+  .you .speechBubble {
+    background-color: #35373D;;
+    color: #FFFFFF;
+  }
+  
+  .speechBubble p {
+    margin: 0.5vh;
+    font-size: 1.6vh;
+    line-height: normal;
+  }
+  
+
+
+  .container h4 {
+    margin: 0.5vh;
+    margin-bottom: 1vh;
+  }

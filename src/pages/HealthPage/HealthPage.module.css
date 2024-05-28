@@ -1,0 +1,51 @@
+/*General Structure*/
+
+.title2 {
+  margin: 2vh 0 2vh 1.5vw;
+}  
+
+.firstColumn {
+  width: 24.5vw;
+}
+
+.secondColumn {
+  width: 30vw;
+}
+
+.thirdColumn {
+  width: 30.5vw;;
+}
+
+.firstColumn, .secondColumn  {
+  margin-right: 1vw;
+}
+
+
+/* First Column */
+
+  .weightTracker {
+    width: flex 1;
+    height: 39vh;
+  }
+
+  .calculator{
+    width: flex 1;
+    height: 39.5vh;
+  }
+
+
+/* Second Column */
+
+  .dailySummary {
+    width: flex 1;
+    height: 80.5vh;
+  }
+
+
+/* Third Column */
+
+  .healthTips {
+    width: flex 1;
+    height: 80.5vh
+  }
+

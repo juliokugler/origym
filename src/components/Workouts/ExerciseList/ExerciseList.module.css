@@ -1,0 +1,132 @@
+.tableHeader {
+  display: flex;
+  padding: 10px 0;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.headerItem {
+  text-align: center;
+  padding:0 8px;
+}
+
+.title {
+  text-align: center;
+  margin: 0
+}
+
+.tableHeader img{
+cursor: pointer;
+}
+
+.container{
+display: flex;
+flex-direction: column;
+border-radius:16px;
+padding:0;
+min-height: 20vh;
+align-items: center;
+justify-content: center;
+}
+
+.noWorkoutsMessage {
+display: flex;
+flex-direction: column;
+  text-align: center;
+  margin-top: 2vh;
+  color: rgb(137, 137, 137);
+}
+
+.noWorkoutsMessage button {
+width: 20vw;
+justify-content: center;
+margin: 0 auto;
+margin-bottom: 2vh;
+}
+
+.noWorkoutsMessage p {
+margin-bottom: 3vh;
+}
+
+.button {
+padding: 1vw;
+border: none;
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 1vh;
+}
+
+.buttonIcon {
+height: 5vh;
+margin-right: 1.2vw;
+}
+
+.button p {
+margin: 0.5vh 0;
+}
+
+.workoutInfo {
+display: flex;
+align-items: center;
+justify-content: space-between;
+text-align: left;
+width: 34vw;
+}
+
+.arrowIcon {
+height: 2.8vh;
+cursor: pointer;
+}
+
+.textInfo{
+width: 60%;
+}
+
+.textInfo svg {
+  color: var(--text-color);
+  margin: 0;
+  margin-right: 0.3vw;
+  font-size: 1.8vh;
+  
+}
+
+
+
+
+.buttonContainer {
+width: 100%;
+}
+
+.exerciseCardClosed {
+background-color: #35373D;
+height: 9vh;
+padding: 0;
+width: 34vw;
+border-radius: 2vh;
+margin: 1.4vh auto;
+cursor: pointer;
+
+}
+
+.exerciseCardOpened {
+background-color: #35373D;
+min-height: 16vh;
+padding: 0;
+width: 34vw;
+border-radius: 2vh;
+margin: 1.4vh auto;
+position: relative;
+
+}
+
+.container ul {
+margin: 0 auto;
+padding: 0;
+}
+
+.iconAndText {
+display: flex;
+width: 25vw;
+cursor: pointer;
+}

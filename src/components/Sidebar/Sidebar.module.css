@@ -1,0 +1,95 @@
+.sidebar {
+    width: 6vw;
+    height: 100vh;
+    background-color: #35373D;
+    padding-top: 2vh;
+    position:fixed;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #4D4F56;
+  }
+
+.icon{
+  height: 2.6vh;
+}
+
+  
+  .sidebarMenu {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 28vh;
+    height: 35vh;
+  }
+  .secondSidebarMenu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .secondSidebarMenu li {
+    display: flex;
+    align-items: center;
+  padding: 0;
+    margin-bottom: 2vh;
+    cursor: pointer;
+  }
+
+  .secondSidebarMenu svg {
+    fill: rgb(145, 145, 145);
+    margin: 0;
+    font-size: 2vh;
+  }
+  
+  .sidebarMenu li {
+    display: flex;
+    align-items: center;
+  padding: 0;
+    margin-bottom: 4vh;
+    cursor: pointer;
+  }
+  
+
+
+  .activeLink {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    width: 3vw;
+    height: 3vw;
+    border-radius: 1.7vh;
+  }
+
+  
+  .link {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #575757;
+  }
+
+ .userAvatar{
+    display: flex;
+    align-items: center;
+
+ }
+
+ .logo {
+  margin-bottom: 8vh;
+  margin-top: 1.5vh;
+  height: 4vh;
+ }
+
+ .logo img {
+  height: 4.5vh;
+ }
