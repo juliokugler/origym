@@ -28,8 +28,10 @@ width: 26vw;
 }
 
 .registerContainer form button {
-  margin-top: 3vh;
-}
+  margin: 0 auto;
+  margin-top: 4vh;
+  }
+
 
 .registerContainer label {
 display: flex;

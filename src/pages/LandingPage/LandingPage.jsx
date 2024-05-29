@@ -21,7 +21,7 @@ const LandingPage = () => {
             <br />
             WITH <span>ORIGYM</span>.
           </h1>
-          <p>Track your workouts, nutrition, sleep and much <br/> more!.</p>
+          <p>Track your workouts, nutrition, sleep and much <br/> more!</p>
           <button className="button">
           <h3>Join Now</h3>
         </button></div>

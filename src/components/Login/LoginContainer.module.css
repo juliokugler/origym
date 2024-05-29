@@ -94,16 +94,9 @@
 
   /*Submit Button*/ 
 
-    .loginButton {
+    .loginContainer form button {
     margin: 0 auto;
-    margin-top: 3vh;
-    margin-bottom: 2vh;
-    width: 9vw;
-    text-align: center;
-    background-color: var(--primary-color);
-    color: #35373D;
-    transition: background-color 0.3s ease;
-  }
+    }
 
   /*Login Option Buttons */
 
