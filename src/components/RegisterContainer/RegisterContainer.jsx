@@ -1,4 +1,4 @@
-import styles from "./Register.module.css";
+import styles from "./RegisterContainer.module.css";
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useTranslation } from "react-i18next";
@@ -115,7 +115,7 @@ const RegisterContainer = () => {
         </label>
 
         {!loading && (
-          <button className="button">{t("getStarted")}!</button>
+          <button className="button"><p>{t("getStarted")}!</p></button>
         )}
       </form>
       {loading && (
@@ -125,12 +125,12 @@ const RegisterContainer = () => {
       )}
       {error && <p className="error">{error}</p>}
       <p className={styles.or}>{t("or")}</p>
-      <div className={styles.loginOptions}>
-        <button className={styles.googleButton}>
+      <div className="loginOptions">
+        <button className="socialMediaButton">
           <FaGoogle size={22} />
           <p>{t("continueWithGoogle")}</p>
         </button>
-        <button className={styles.appleButton}>
+        <button className="socialMediaButton">
           <FaApple size={24} />
           <p>{t("continueWithApple")}</p>
         </button>

@@ -72,7 +72,7 @@ const Popup1 = ({ onNext, selectedDay }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>New Workout</h2>
       <div className={styles.row}>
         <label>
@@ -125,14 +125,14 @@ const Popup1 = ({ onNext, selectedDay }) => {
           ))}
         </div>
       </label>
-      <div>
+      <div className={styles.buttonContainer}>
         <button
-          className={styles.nextButtonContainer}
+          className="inactiveButton-medium"
           onClick={handleNextClick}
         >
           Next
         </button>
-      </div>
+     </div>
     </div>
   );
 };

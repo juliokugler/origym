@@ -35,6 +35,8 @@
 
 .formAddInfo svg {
   cursor: pointer;
+  margin-right: 0.5vw;
+  fill: var(--primary-color);
 }
 
 .formAddInfo u:hover {
@@ -97,51 +99,11 @@
     .loginContainer form button {
     margin: 0 auto;
     }
-
-  /*Login Option Buttons */
-
-  .loginOptions {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    margin-bottom: 3em;
-    width: 26vw;
-    }
-
-    .loginOptions p {
-      margin: 0;
-      }
-    
-    .googleButton,
-    .appleButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 0.8vh;
-    background-color: #35373D;
-    border: 1px solid #4D4F56;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 12.5vw;
-    padding: 0.5vw;
-    }
-    
-    .googleButton:hover,
-    .appleButton:hover {
-    background-color: #e0e0e0;
-    }
-    
-    /* Styling for icons */
-    .loginContainer svg {
-    margin-right: 1vw;
-    fill: var(--primary-color);
-    }
     
     .login a {
       color: var(--primary-color);
     }
     
-    .or {
-      margin: 3vh 0
+    .text {
+      margin: 4vh 0
     }

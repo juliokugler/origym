@@ -37,7 +37,7 @@ const GroupSelection = ({ selectedType, onChange }) => {
     <div className={styles.groupSection}>
       <p className={styles.title}>{getTitleByType(selectedType)}</p>
       {selectedType === "Strength" && (
-        <div>
+        <div className={styles.groupRow}>
           {[
             "Chest",
             "Biceps",
@@ -57,8 +57,8 @@ const GroupSelection = ({ selectedType, onChange }) => {
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}
@@ -68,15 +68,15 @@ const GroupSelection = ({ selectedType, onChange }) => {
       )}
 
       {selectedType === "Cardio" && (
-        <div>
+      <div className={styles.groupRow}>
           {["Running", "HIIT", "Walking", "Swimming"].map((option, index) => (
             <button
               key={index}
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}
@@ -86,7 +86,7 @@ const GroupSelection = ({ selectedType, onChange }) => {
       )}
 
       {selectedType === "Crossfit" && (
-        <div>
+       <div className={styles.groupRow}>
           {[
             "Push Press",
             "Deadlift",
@@ -105,8 +105,8 @@ const GroupSelection = ({ selectedType, onChange }) => {
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}
@@ -116,7 +116,7 @@ const GroupSelection = ({ selectedType, onChange }) => {
       )}
 
       {selectedType === "Yoga" && (
-        <div>
+        <div className={styles.groupRow}>
           {[
             "Hatha",
             "Vinyasa",
@@ -133,8 +133,8 @@ const GroupSelection = ({ selectedType, onChange }) => {
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}
@@ -144,7 +144,7 @@ const GroupSelection = ({ selectedType, onChange }) => {
       )}
 
       {selectedType === "Pilates" && (
-        <div>
+        <div className={styles.groupRow}>
           {[
             "Classical",
             "Contemporary",
@@ -160,8 +160,8 @@ const GroupSelection = ({ selectedType, onChange }) => {
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}
@@ -171,7 +171,7 @@ const GroupSelection = ({ selectedType, onChange }) => {
       )}
 
       {selectedType === "Martial Arts" && (
-        <div>
+       <div className={styles.groupRow}>
           {[
             "Judo",
             "Karate",
@@ -191,8 +191,8 @@ const GroupSelection = ({ selectedType, onChange }) => {
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}
@@ -202,7 +202,7 @@ const GroupSelection = ({ selectedType, onChange }) => {
       )}
 
       {selectedType === "Group Fitness Classes" && (
-        <div>
+        <div className={styles.groupRow}>
           {[
             "Zumba",
             "Spinning",
@@ -221,8 +221,8 @@ const GroupSelection = ({ selectedType, onChange }) => {
               onClick={() => handleOptionClick(option)}
               className={
                 selectedOptions.includes(option)
-                  ? styles.active
-                  : styles.inactive
+                  ? "activeGroupButton"
+                  : "inactiveGroupButton"
               }
             >
               {option}

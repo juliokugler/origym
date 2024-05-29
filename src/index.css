@@ -59,9 +59,9 @@ code {
   width: flex 1;
 }
 
-.button, .button-small {
+.button, .button-small, .activeGroupButton {
   background-color: var(--primary-color);
-  border: none;
+  border: 1px solid var(--primary-color);;
   color: var(--gray-medium);
   border-radius: var(--button-border);
   height: 3.6vh;
@@ -70,6 +70,7 @@ code {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin: 0 0.5vw;
 }
 
 .button {
@@ -88,8 +89,52 @@ button {
  
 }
 
+.loginOptions {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 26vw;
+  }
+  
+  .loginOptions p {
+  margin: 0;
+  }
+  
+  input, select {
+    border-radius: var(--input-border);
+    background-color: var(--gray-light);
+    color: var(--color-text);
+border: 1px solid var(--gray-lightest);
 
-.inactiveButton, .inactiveButton-small{
+  }
+  
+  .socialMediaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.8vh;
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-lightest);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 12.5vw;
+  padding: 0.5vw;
+  margin: 0;
+   }
+    .socialMediaButton svg {
+      margin-right: 0.5vw;
+      padding-bottom:0.3vh;
+      font-size: 1.8vh;
+      fill: var(--primary-color);
+      }
+  
+  .socialMediaButton:hover
+   {
+  background-color: #e0e0e0;
+  }
+
+.inactiveButton-medium, .inactiveButton-small, .inactiveGroupButton{
    background-color: transparent;
   border: 1px solid #727272;
   color: #727272;
@@ -102,7 +147,7 @@ button {
  margin: 0 0.5vw;
  }
 
-.inactiveButton {
+.inactiveButton-medium {
   width: 14vw;
 }
 
@@ -111,6 +156,34 @@ button {
 }
 .inactiveButton p, .button p, .inactiveButton-small p, .button-small p {
   margin:0
+}
+
+.progressBar {
+  appearance: none; /* Remove default styles */
+  width: 15vw;
+  height: 1.2vh;
+  display: flex;
+ margin: 0 auto;
+ border-radius: 10px;
+ z-index: 99;
+ margin-bottom: 1vh;
+ transition: width 0.8s ease-in-out;
+}
+
+.progressBar::-webkit-progress-bar {
+  background-color: #FFFFFF; /* Background color of the progress bar */
+  border-radius: 10px
+}
+
+.progressBar::-webkit-progress-value {
+  background-color: #343B47; /* Change the color of the progress bar */
+   border-radius: 10px;
+   transition: width 0.5s ease-in-out;
+}
+
+.progressBar::-moz-progress-bar {
+  background-color: #343B47;
+  transition: width 0.8s ease-in-out; /* Add transition for smooth animation */
 }
 
 h1 {
@@ -148,4 +221,5 @@ p {
   --primary-color: #FFF27A;
   --card-border: 1.8vh;
   --button-border: 1vh;
+  --input-border: 0.5vh;
 }

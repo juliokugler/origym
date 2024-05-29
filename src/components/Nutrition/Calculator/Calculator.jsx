@@ -73,82 +73,78 @@ const Calculator = ({ t }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.labels}>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.labels}>
+          <div className={styles.input}>
+            <label className={styles.label} htmlFor="alimento">
+              {t("ingredient")}:
+            </label>
+            <input
+              type="text"
+              id="alimento"
+              name="alimento"
+              value={alimento}
+              onChange={handleChange}
+              className={styles.ingredientInput}
+            />
+          </div>
+          <div className={styles.quantityContainer}>
             <div className={styles.input}>
-              <label className={styles.label} htmlFor="alimento">
-                {t("ingredient")}:
+              <label className={styles.label} htmlFor="quantity">
+                {t("quantity")}:
               </label>
               <input
+                className={styles.quantityInput}
                 type="text"
-                id="alimento"
-                name="alimento"
-                value={alimento}
+                id="quantity"
+                name="quantity"
+                value={quantity}
                 onChange={handleChange}
-                className={styles.ingredientInput}
               />
             </div>
-            <div className={styles.quantityContainer}>
-              <div className={styles.input}>
-                <label className={styles.label} htmlFor="quantity">
-                  {t("quantity")}:
-                </label>
-                <input
-                  className={styles.quantityInput}
-                  type="text"
-                  id="quantity"
-                  name="quantity"
-                  value={quantity}
-                  onChange={handleChange}
-                />
-              </div>
-              <select
-                className={styles.quantityTypeInput}
-                value={unidade}
-                onChange={handleUnidadeChange}
-              >
-                <option value="grams">grams</option>
-                <option value="unities">portions</option>
-                <option value="ml">mililiters</option>
-                <option value="ounces">ounces</option>
-              </select>
-            </div>
+            <select
+              className={styles.quantityTypeInput}
+              value={unidade}
+              onChange={handleUnidadeChange}
+            >
+              <option value="grams">grams</option>
+              <option value="unities">portions</option>
+              <option value="ml">mililiters</option>
+              <option value="ounces">ounces</option>
+            </select>
           </div>
-          <div className={styles.buttonContainer}>
-            <button className="inactiveButton" type="submit">
-              <p> {t("calculate")} </p>
-            </button>
-          </div>
-          <div className={styles.labels}>
-            <div className={styles.input}>
-              <label className={styles.label} htmlFor="calorias">
-                {t("calories")}:
-              </label>
-              <input
-                className={styles.caloriesInput}
-                type="text"
-                id="calorias"
-                value={calorias}
-                readOnly
-              />
-            </div>
-          </div>
-        </form>
+        </div>
         <div className={styles.buttonContainer}>
-          <button className="inactiveButton">
-            <p> {t("addToDailyAndMacros")}</p>
+          <button className="inactiveButton" type="submit">
+            <p>{t("calculate")}</p>
           </button>
         </div>
+        <div className={styles.labels}>
+          <div className={styles.input}>
+            <label className={styles.label} htmlFor="calorias">
+              {t("calories")}:
+            </label>
+            <input
+              className={styles.caloriesInput}
+              type="text"
+              id="calorias"
+              value={calorias}
+              readOnly
+            />
+          </div>
+        </div>
+      </form>
+      <div className={styles.buttonContainer}>
+        <button className="inactiveButton">
+          <p>{t("addToDailyAndMacros")}</p>
+        </button>
       </div>
 
-      {calorias !== "" &&
-        calorias !== "Valor indefinido" &&
-        parseFloat(quantity) > 0 && (
-          <h4 onClick={handleShowNutritionalInfo}>
-            <u>{t("nutritionalInfo")}</u>
-          </h4>
-        )}
+      {calorias && calorias !== "Valor indefinido" && parseFloat(quantity) > 0 && (
+        <h4 onClick={handleShowNutritionalInfo}>
+          <u>{t("nutritionalInfo")}</u>
+        </h4>
+      )}
       {showNutritionalInfo && (
         <NutritionalInfo
           data={nutritionalData}

@@ -86,38 +86,7 @@ margin-bottom: 1vh;
 
 /*Register Option Buttons */
 
-.loginOptions {
-display: flex;
-justify-content: space-between;
-margin: 0;
-width: 26vw;
-}
 
-.loginOptions p {
-margin: 0;
-}
-
-
-.googleButton,
-.appleButton {
-display: flex;
-align-items: center;
-justify-content: center;
-border: none;
-border-radius: 0.8vh;
-background-color: var(--gray-light);
-border: 1px solid var(--gray-lightest);
-cursor: pointer;
-transition: background-color 0.3s ease;
-width: 12.5vw;
-padding: 0.5vw;
-margin: 0
-}
-
-.googleButton:hover,
-.appleButton:hover {
-background-color: #e0e0e0;
-}
 
 /* Styling for icons */
 .registerContainer svg {

@@ -32,12 +32,11 @@ const DailyIntakes = ({ userData, dailyData, t }) => {
             </p>
           </div>
           <progress
-            className={styles.progressBar}
+            className="progressBar"
             value={proteinConsumed}
             max={proteinIntake}
           ></progress>
-        </div>
-        <div className={styles.percentageContainer}>
+        
           <div className={styles.macroPercentage}>
             <p>{t("carbs")}</p>
             <p>
@@ -45,12 +44,11 @@ const DailyIntakes = ({ userData, dailyData, t }) => {
             </p>
           </div>
           <progress
-            className={styles.progressBar}
+           className="progressBar"
             value={carbsConsumed}
             max={carbsIntake}
           ></progress>
-        </div>
-        <div className={styles.percentageContainer}>
+        
           <div className={styles.macroPercentage}>
             <p>{t("fat")}</p>
             <p>
@@ -58,7 +56,7 @@ const DailyIntakes = ({ userData, dailyData, t }) => {
             </p>
           </div>
           <progress
-            className={styles.progressBar}
+            className="progressBar"
             value={fatConsumed}
             max={fatIntake}
           ></progress>

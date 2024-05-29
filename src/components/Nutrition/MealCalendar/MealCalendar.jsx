@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 import styles from "./MealCalendar.module.css";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useTranslation } from "react-i18next";
@@ -81,7 +82,7 @@ const MealCalendar = ({ onOpen, rerender, meal, mealNumber }) => {
 
   return (
     <div className={styles.card}>
-      <DaySelector selectedDay={selectedDay} handleDaySelect={handleDaySelect} /> {/* Use the DaySelector component */}
+      <DaySelector selectedDay={selectedDay} handleDaySelect={handleDaySelect} />
       {selectedDay && (
         <div className={styles.mealsContainer}>
           <div className={styles.meals}>
@@ -94,64 +95,55 @@ const MealCalendar = ({ onOpen, rerender, meal, mealNumber }) => {
                 return (
                   <li key={mealIndex}>
                     <div
-                      className={
-                        isOpen ? styles.mealCardOpened : styles.mealCardClosed
-                      }
-                      onClick={() =>
-                        !isOpen ? toggleMealContainer(mealIndex) : ""
-                      }
+                      className={classNames(styles.mealCard, {
+                        [styles.opened]: isOpen,
+                      })}
                     >
-                      <div className={styles.titleAndIcon}>
+                      <div
+                        className={styles.titleAndIcon}
+                        onClick={() => toggleMealContainer(mealIndex)}
+                      >
                         <h4>{mealType}</h4>
-                        {!isOpen ? (
-                          <img
-                            className={styles.arrowIcon}
-                            src={arrowDown}
-                            alt="Arrow Down"
-                          />
-                        ) : (
-                          <img
-                            className={styles.arrowIcon}
-                            onClick={() => toggleMealContainer(mealIndex)}
-                            src={arrowUp}
-                            alt="Arrow Up"
-                          />
-                        )}
-                        {isOpen ? (
+                        <img
+                          className={styles.arrowIcon}
+                          src={isOpen ? arrowUp : arrowDown}
+                          alt={isOpen ? "Arrow Up" : "Arrow Down"}
+                        />
+                      </div>
+                      {isOpen && (
+                        <div>
                           <div
                             className={styles.openButton}
-                            onClick={() =>
-                              handleOpenMealPlanner(mealType, selectedDay)
-                            }
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleOpenMealPlanner(mealType, selectedDay);
+                            }}
                           >
                             <p>
                               <u>{t("addMeal")}</u>
                             </p>
                           </div>
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                      {mealData ? (
-                        <ul>
-                          {mealData.ingredients.map((ingredient, index) => (
-                            <li key={index}>
-                              <p>
-                                {ingredient.quantity} {ingredient.quantityType}{" "}
-                                of {ingredient.ingredient}
-                              </p>
-                            </li>
-                          ))}
-                          <li className={styles.addButton}>
-                            <div
-                              onClick={() =>
-                                handleOpenMealPlanner(mealType, selectedDay)
-                              }
-                            ></div>
-                          </li>
-                        </ul>
-                      ) : (
-                        ""
+                          {mealData && (
+                            <ul>
+                              {mealData.ingredients.map((ingredient, index) => (
+                                <li key={index}>
+                                  <p>
+                                    {ingredient.quantity} {ingredient.quantityType}{" "}
+                                    of {ingredient.ingredient}
+                                  </p>
+                                </li>
+                              ))}
+                              <li className={styles.addButton}>
+                                <div
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleOpenMealPlanner(mealType, selectedDay);
+                                  }}
+                                ></div>
+                              </li>
+                            </ul>
+                          )}
+                        </div>
                       )}
                     </div>
                   </li>

@@ -60,7 +60,7 @@ const LoginContainer = () => {
             </p>
           </div>
           {!loading && (
-            <button className="button">{t("login")}</button>
+            <button className="button"><p>{t("login")}</p></button>
           )}
         </form>
         {loading && (
@@ -69,18 +69,18 @@ const LoginContainer = () => {
           </button>
         )}
         {error && <p className="error">{error}</p>}
-        <p className={styles.or}>{t("or")}</p>
-        <div className={styles.loginOptions}>
-          <button className={styles.googleButton}>
-            <FaGoogle size={22} />
-            <p>{t("continueWithGoogle")}</p>
-          </button>
-          <button className={styles.appleButton}>
-            <FaApple size={24} />
-            <p>{t("continueWithApple")}</p>
-          </button>
+        <p className={styles.text}>{t("or")}</p>
+      <div className="loginOptions">
+        <button className="socialMediaButton">
+          <FaGoogle size={22} />
+          <p>{t("continueWithGoogle")}</p>
+        </button>
+        <button className="socialMediaButton">
+          <FaApple size={24} />
+          <p>{t("continueWithApple")}</p>
+        </button>
         </div>
-        <div>
+        <div className={styles.text}>
           <p>
             {t("noAccount")}? <a href="/register">{t("signUp")}</a>
           </p>
