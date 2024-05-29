@@ -115,13 +115,14 @@ const RegisterContainer = () => {
         </label>
 
         {!loading && (
-          <button className="button"><p>{t("getStarted")}!</p></button>
+          <div className={styles.buttonContainer}>
+          <button className="button"><p>{t("getStarted")}!</p></button></div>
         )}
       </form>
-      {loading && (
+      {loading && (<div className={styles.buttonContainer}>
         <button className="button" disabled>
           {t("loading")}...
-        </button>
+        </button></div>
       )}
       {error && <p className="error">{error}</p>}
       <p className={styles.or}>{t("or")}</p>

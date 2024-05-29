@@ -107,6 +107,10 @@ button {
 border: 1px solid var(--gray-lightest);
 
   }
+
+  input text {
+    color: var(--color-text);
+  }
   
   .socialMediaButton {
   display: flex;
@@ -214,6 +218,7 @@ p {
 :root {
   --bg-color: #242529;
   --text-color: #ffffff;
+  --text-color-secondary: #9b9b9b;
   --gray-lightest: #4D4F56;
   --gray-light: #35373D;
   --gray-medium: #2e3035;

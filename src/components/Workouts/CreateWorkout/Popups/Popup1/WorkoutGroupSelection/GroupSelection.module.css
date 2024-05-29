@@ -1,0 +1,19 @@
+
+.groupRow {
+    display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  
+  .groupRow button {
+    margin-bottom: 2vh;
+  }
+
+  .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 4vh 0 3vh 0 
+  }

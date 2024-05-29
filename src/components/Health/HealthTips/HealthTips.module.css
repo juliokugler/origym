@@ -42,7 +42,7 @@
   .blogContent p {
     margin: 0;
     font-size: 1rem;
-    color: #878787;
+    color: var(--text-color-secondary)
   }
 
   .healthTips a {

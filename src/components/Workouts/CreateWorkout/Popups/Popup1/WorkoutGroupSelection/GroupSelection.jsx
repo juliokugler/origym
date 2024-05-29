@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../CreateWorkout/Popup1.module.css";
+import styles from "./GroupSelection.module.css"
 const GroupSelection = ({ selectedType, onChange }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 

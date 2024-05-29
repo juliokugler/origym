@@ -96,8 +96,9 @@
 
   /*Submit Button*/ 
 
-    .loginContainer form button {
+    .buttonContainer button {
     margin: 0 auto;
+    width: 15vw;
     }
     
     .login a {

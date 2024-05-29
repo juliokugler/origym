@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SleepTracker.module.css";
 import { FaSquare } from "react-icons/fa";
 
-const SleepTracker = () => {
+const SleepTracker = ({t}) => {
   // Example segmented sleep data (in minutes)
   const sleepSegments = [
     { type: "Light Sleep", duration: 70 },
@@ -26,13 +26,13 @@ const SleepTracker = () => {
   return (
     <div className={styles.sleepTracker}>
       <p className={styles.awakeTime}>
-        <FaSquare /> Awake: 0h 5m
+        <FaSquare /> {t("awake")}: 0h 5m
       </p>
       <p className={styles.lightSleep}>
-        <FaSquare /> Light Sleep: 4h 30m
+        <FaSquare /> {t("lightSleep")}: 4h 30m
       </p>
       <p className={styles.deepSleep}>
-        <FaSquare /> Deep Sleep: 2h 0m
+        <FaSquare /> {t("deepSleep")}: 2h 0m
       </p>
 
       <div className={styles.progressContainer}>
@@ -57,8 +57,8 @@ const SleepTracker = () => {
             );
           })}
         </div>
-        <p className={styles.totalSleep}>Total Sleep: 5h 35m</p>
-        <p>Wake Up Time: 6:45 AM</p>
+        <p className={styles.totalSleep}>{t("totalSleep")}: 5h 35m</p>
+        <p>{t("wakeUpTime")}: 6:45 AM</p>
       </div>
     </div>
   );

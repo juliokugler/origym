@@ -5,7 +5,7 @@ import React from "react";
 import styles from "./LoginPage.module.css";
 
 //Components
-import LoginContainer from "../../components/Login/LoginContainer";
+import LoginContainer from "../../components/LoginContainer/LoginContainer";
 
 //Hooks
 import useBackgroundImage from "../../hooks/useBackgroundImage";

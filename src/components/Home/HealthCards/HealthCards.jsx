@@ -29,6 +29,8 @@ const HealthCards = ({ userData, t }) => {
     setHoveredCards(updatedHoveredCards);
   };
 
+  const currentWeight = userData.userProfile.weightGoal
+
   return (
     <div className={styles.card}>
       <div className={styles.healthCardContainer}>
@@ -50,7 +52,7 @@ const HealthCards = ({ userData, t }) => {
               icon: weight,
               label: "Weight",
               value: `${userData.userProfile.currentWeight}`,
-              goal: `/${userData.userProfile.weightGoal} Kgs`,
+              goal: `${currentWeight > 0 ? (`/${currentWeight}`) : ""} Kgs`,
             },
             { icon: bpm, label: "BPM", value: "78", goal: "bpm" },
             {

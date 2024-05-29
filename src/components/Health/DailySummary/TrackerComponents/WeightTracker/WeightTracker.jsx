@@ -15,7 +15,7 @@ import {
   orderBy,
   getDocs,
 } from "firebase/firestore";
-import { useAuthValue } from "../../../contexts/AuthContext";
+import { useAuthValue } from "../../../../../contexts/AuthContext";
 
 const WeightTracker = ({ rerender }) => {
   const [weightData, setWeightData] = useState([]);

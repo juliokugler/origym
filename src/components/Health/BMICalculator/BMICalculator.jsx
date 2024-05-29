@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import classNames from "classnames";
 import styles from "./BMICalculator.module.css";
 import { useTranslation } from "react-i18next";
 
-const BMICalculator = () => {
+const BMICalculator = ({ t }) => {
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [bmi, setBMI] = useState(null);
-  const { t } = useTranslation();
 
   const calculateBMI = () => {
     if (!weight || !height) return;
@@ -29,12 +29,14 @@ const BMICalculator = () => {
     setBMI(null);
   };
 
+  const isCalculateEnabled = weight > 0 && height > 0;
+
   return (
     <div className={styles.content}>
       <div className={styles.inputs}>
         <div className={styles.input}>
           <label className={styles.label} htmlFor="weight">
-            Weight (kg):
+            {t("weightLabel")}:
           </label>
           <input
             type="number"
@@ -46,7 +48,7 @@ const BMICalculator = () => {
         </div>
         <div className={styles.input}>
           <label className={styles.label} htmlFor="height">
-            Height (cm):
+            {t("heightLabel")}:
           </label>
           <input
             type="number"
@@ -58,26 +60,24 @@ const BMICalculator = () => {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.calcButton} onClick={calculateBMI}>
-          Calculate
+        <button
+          className={classNames({
+            "inactiveButton-medium": !isCalculateEnabled,
+            "button": isCalculateEnabled,
+          })}
+          onClick={calculateBMI}
+          disabled={!isCalculateEnabled}
+        >
+          {t("calculate")}
         </button>
-        <button className={styles.calcButton} onClick={resetCalculator}>
-          Reset
+        <button className="inactiveButton-medium" onClick={resetCalculator}>
+          {t("reset")}
         </button>
       </div>
       {bmi !== null && (
-        <div className={styles.input}>
-          <label className={styles.label} htmlFor="bmi">
-            BMI:
-          </label>
-          <input
-            type="text"
-            id="bmi"
-            value={bmi}
-            readOnly
-            className={styles.caloriesInput}
-          />
-        </div>
+        <div className={styles.bmiResult}>
+        <h2>~ {bmi} {t("bmi")}</h2>
+      </div>
       )}
     </div>
   );

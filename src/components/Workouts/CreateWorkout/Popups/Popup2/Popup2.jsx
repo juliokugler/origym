@@ -5,10 +5,10 @@ import {
   FaCheckSquare,
   FaRegSquare,
 } from "react-icons/fa";
-import StrengthList from "../../../../assets/ExercisesDatabase/Strength.json";
-import CardioList from "../../../../assets/ExercisesDatabase/Cardio.json";
-import YogaList from "../../../../assets/ExercisesDatabase/Yoga.json";
-import styles from "../CreateWorkout.module.css";
+import StrengthList from "../../../../../assets/ExercisesDatabase/Strength.json";
+import CardioList from "../../../../../assets/ExercisesDatabase/Cardio.json";
+import YogaList from "../../../../../assets/ExercisesDatabase/Yoga.json";
+import styles from "./Popup2.module.css";
 
 const Popup2 = ({
   selectedGroups,
@@ -144,8 +144,8 @@ const Popup2 = ({
         ))}
       </div>
       <div className={styles.buttons}>
-        <button onClick={onPrevious}>Previous</button>
-        <button onClick={handleNext}>Next</button>
+        <button className="inactiveButton-medium" onClick={onPrevious}>Previous</button>
+        <button className="button" onClick={handleNext}>Next</button>
       </div>
     </div>
   );

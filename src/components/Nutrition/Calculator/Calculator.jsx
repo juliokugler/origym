@@ -107,15 +107,15 @@ const Calculator = ({ t }) => {
               value={unidade}
               onChange={handleUnidadeChange}
             >
-              <option value="grams">grams</option>
-              <option value="unities">portions</option>
-              <option value="ml">mililiters</option>
-              <option value="ounces">ounces</option>
+              <option value="grams">{t("grams")}</option>
+              <option value="unities">{t("portions")}</option>
+              <option value="ml">{t("mililiters")}</option>
+              <option value="ounces">{t("ounces")}</option>
             </select>
           </div>
         </div>
         <div className={styles.buttonContainer}>
-          <button className="inactiveButton" type="submit">
+          <button className="inactiveButton-medium" type="submit">
             <p>{t("calculate")}</p>
           </button>
         </div>
@@ -135,7 +135,7 @@ const Calculator = ({ t }) => {
         </div>
       </form>
       <div className={styles.buttonContainer}>
-        <button className="inactiveButton">
+        <button className="inactiveButton-medium">
           <p>{t("addToDailyAndMacros")}</p>
         </button>
       </div>

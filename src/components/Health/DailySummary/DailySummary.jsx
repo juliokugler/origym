@@ -3,15 +3,14 @@ import styles from "./DailySummary.module.css";
 import { useTranslation } from "react-i18next";
 import arrowDown from "../../../assets/Icons/CircleArrowDown.png";
 import arrowUp from "../../../assets/Icons/CircleArrowUp.png";
-import SleepTracker from "../SleepTracker/SleepTracker";
-import HydrationTracker from "../HydrationTracker/HydrationTracker";
-import StepsTracker from "../StepsTracker/StepsTracker";
-import WeightTracker from "../WeightTracker/WeightTracker";
-import HeartRateTracker from "../HeartRateTracker/HeartRateTracker";
+import SleepTracker from "./TrackerComponents/SleepTracker/SleepTracker";
+import HydrationTracker from "./TrackerComponents/HydrationTracker/HydrationTracker";
+import StepsTracker from "./TrackerComponents/StepsTracker/StepsTracker";
+import WeightTracker from "./TrackerComponents/WeightTracker/WeightTracker";
+import HeartRateTracker from "./TrackerComponents/HeartRateTracker/HeartRateTracker";
 
-const DailySummary = ({ onOpen, rerender }) => {
+const DailySummary = ({t}) => {
   const [selectedDay, setSelectedDay] = useState(null);
-  const { t } = useTranslation();
   const [openCardIndex, setOpenCardIndex] = useState(0);
 
   useEffect(() => {
@@ -31,21 +30,21 @@ const DailySummary = ({ onOpen, rerender }) => {
   const toggleCardContainer = (index) => {
     setOpenCardIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-
+  
   const cardTitles = [
-    "Sleep Tracker",
-    "Hydration Tracker",
-    "Steps Tracker",
-    "Weight Tracker",
-    "Heart Rate Tracker",
+    t("sleepTracker"),
+    t("hydrationTracker"),
+    t("stepsTracker"),
+    t("weightTracker"),
+    t("heartRateTracker"),
   ];
 
   const trackerComponents = [
-    <SleepTracker />,
-    <HydrationTracker />,
-    <StepsTracker />,
-    <WeightTracker />,
-    <HeartRateTracker />,
+    <SleepTracker t={t}/>,
+    <HydrationTracker t={t} />,
+    <StepsTracker t={t} />,
+    <WeightTracker t={t} />,
+    <HeartRateTracker t={t} />,
   ];
 
   return (

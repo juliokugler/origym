@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import styles from "../Popup3.module.css";
+import styles from "./Popup3.module.css";
 import { getFirestore, doc, addDoc, collection } from "firebase/firestore";
-import { useAuthValue } from "../../../../contexts/AuthContext";
+import { useAuthValue } from "../../../../../contexts/AuthContext";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
 const Popup3 = ({
@@ -273,7 +273,7 @@ const Popup3 = ({
           </div>
         </div>
       ))}
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="button" onClick={handleSubmit}>Submit</button>
       {formError && <p className={styles.error}>{formError}</p>}
     </div>
   );

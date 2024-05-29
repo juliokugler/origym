@@ -35,12 +35,6 @@
     cursor: pointer;
   }
 
-  .secondSidebarMenu svg {
-    fill: rgb(145, 145, 145);
-    margin: 0;
-    font-size: 2vh;
-  }
-  
   .sidebarMenu li {
     display: flex;
     align-items: center;

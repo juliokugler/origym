@@ -59,14 +59,16 @@ const LoginContainer = () => {
               <u>{t("forgotYourPassword")}?</u>
             </p>
           </div>
-          {!loading && (
-            <button className="button"><p>{t("login")}</p></button>
+          
+          {!loading && (<div className={styles.buttonContainer}>
+            <button className="button"><p>{t("login")}</p></button></div>
           )}
         </form>
         {loading && (
+          <div className={styles.buttonContainer}>
           <button className="button" disabled>
-            {t("loading")}...
-          </button>
+           <p> {t("loading")}</p>...
+          </button></div>
         )}
         {error && <p className="error">{error}</p>}
         <p className={styles.text}>{t("or")}</p>

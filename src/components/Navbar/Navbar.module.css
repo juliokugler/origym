@@ -40,9 +40,6 @@
       text-decoration: none;
        }
   
-    .logout {
-      color: #6f6f6f;
-    }
     
     .login {
       background-color: var(--primary-color);

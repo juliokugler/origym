@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Popup1 from "./Popups/Popup1";
-import Popup2 from "./Popups/Popup2";
-import Popup3 from "./Popups/Popup3";
-import Popup4 from "./Popups/Popup4";
+import Popup1 from "./Popups/Popup1/Popup1";
+import Popup2 from "./Popups/Popup2/Popup2";
+import Popup3 from "./Popups/Popup3/Popup3";
+import Popup4 from "./Popups/Popup4/Popup4";
 import styles from "./CreateWorkout.module.css";
 
 const CreateWorkout = ({

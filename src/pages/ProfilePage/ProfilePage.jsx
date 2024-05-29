@@ -30,7 +30,7 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <Header />
+      <Header t={t} />
       <div className={styles.container}>
         <div className={styles.profileCard}>
           <div className={styles.profileHeader}>

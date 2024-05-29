@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "../Popup1.module.css";
-import GroupSelection from "../../WorkoutGroupSelection/GroupSelection";
+import styles from "./Popup1.module.css";
+import GroupSelection from "./WorkoutGroupSelection/GroupSelection";
 
 const Popup1 = ({ onNext, selectedDay }) => {
   const [name, setName] = useState("");
@@ -109,7 +109,7 @@ const Popup1 = ({ onNext, selectedDay }) => {
         selectedType={selectedType}
         onChange={handleSelectedOptionsChange}
       />
-      <label className={styles.weekLabel}>
+      <label className={styles.label}>
         <p>Assign Day(s) of the Week</p>
         <div className={styles.daysContainer}>
           {days.map((day) => (

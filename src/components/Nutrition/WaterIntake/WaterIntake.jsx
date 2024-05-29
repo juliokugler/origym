@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./WaterIntake.module.css";
 
 const WaterIntake = ({ userData, t }) => {
-  const [waterIntake, setWaterIntake] = useState(3.1);
+  const [waterIntake, setWaterIntake] = useState(1.2);
 
   return (
     <div className={styles.card}>

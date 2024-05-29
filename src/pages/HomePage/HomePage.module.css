@@ -87,7 +87,7 @@
 
   .selection {
     color: var(--text-color);
-    color: var(--gray-light);
+    background-color: var(--gray-light);
     border: 1px solid #4D4F56;
     border-radius:1vh;
     padding: 0.2vh 0.2vw;
