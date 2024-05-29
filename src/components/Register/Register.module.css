@@ -5,7 +5,7 @@
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: #35373D; /* Base color */
+background-color: var(--gray-medium);
 background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #2b2c31); 
 width: 34vw;
 margin-top: 16vh;
@@ -27,6 +27,10 @@ text-align: left;
 width: 26vw;
 }
 
+.registerContainer form button {
+  margin-top: 3vh;
+}
+
 .registerContainer label {
 display: flex;
 justify-content: flex-end;
@@ -43,16 +47,16 @@ flex-direction: column;
 margin-bottom: 2.5vh;
 padding: 0.5vw;
 border-radius: 0.8vh;
-border: 1px solid #4D4F56;
-background-color: #35373D;
+background-color: var(--gray-light);
+border: 1px solid var(--gray-lightest);
 }
 
 .nameInputField {
   margin-bottom: 2.5vh;
   padding: 0.5vw;
   border-radius: 0.8vh;
-  border: 1px solid #4D4F56;
-  background-color: #35373D;
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-lightest);
   width: 11vw;
   }
 
@@ -73,26 +77,17 @@ padding-left: 8px;
 margin-bottom: 1vh;
 }  
 
-
-/*Submit Button*/ 
-
-.submitButton {
-margin: 0 auto;
-margin-top: 2.5vh;
-margin-bottom: 1vh;
-width: 12vw;
-text-align: center;
-background-color: var(--primary-color);
-color: #35373D;
+.or {
+  margin: 3vh 0
 }
+
 
 /*Register Option Buttons */
 
 .loginOptions {
 display: flex;
 justify-content: space-between;
-margin: 0 auto;
-margin-bottom: 3em;
+margin: 0;
 width: 26vw;
 }
 
@@ -108,12 +103,13 @@ align-items: center;
 justify-content: center;
 border: none;
 border-radius: 0.8vh;
-background-color: #35373D;
-border: 1px solid #4D4F56;
+background-color: var(--gray-light);
+border: 1px solid var(--gray-lightest);
 cursor: pointer;
 transition: background-color 0.3s ease;
 width: 12.5vw;
 padding: 0.5vw;
+margin: 0
 }
 
 .googleButton:hover,

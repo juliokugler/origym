@@ -22,7 +22,7 @@
   justify-content: space-between;
   margin: 0 auto;
   margin-top: -0.5vh;
-  margin-bottom: 1vh;
+  margin-bottom: 3vh;
   align-items: center;
   
   color: rgb(150, 150, 150);
@@ -149,3 +149,6 @@
       color: var(--primary-color);
     }
     
+    .or {
+      margin: 3vh 0
+    }

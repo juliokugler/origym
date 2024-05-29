@@ -124,7 +124,7 @@ const RegisterContainer = () => {
         </button>
       )}
       {error && <p className="error">{error}</p>}
-      <p>{t("or")}</p>
+      <p className={styles.or}>{t("or")}</p>
       <div className={styles.loginOptions}>
         <button className={styles.googleButton}>
           <FaGoogle size={22} />

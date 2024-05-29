@@ -2,21 +2,29 @@ import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.css";
 import main from "./newHero.png";
 import main2 from "./hero2.png";
-import partners from "./partners.png";
-import halteres from "./halteres.png";
-import nutrition from "./dieta.png";
-import health from "./health.png";
-import smartwatch from "./smartwatch.png";
+import partners from "../../assets/Icons/partners.png";
+import halteres from "../../assets/Icons/halteres.png";
+import nutrition from "../../assets/Icons/dieta.png";
+import health from "../../assets/Icons/health.png"
+import smartwatch from "../../assets/Icons/smartwatch.png";
 import sleep from "./sleep.png";
 
 const LandingPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
-        <img src={main}></img>
-        <button className={styles.button}>
+        <div className={styles.heroText}>
+      <h1>
+            START YOUR <span>FITNESS</span> 
+            <br />
+            <span>JOURNEY</span> NOW
+            <br />
+            WITH <span>ORIGYM</span>.
+          </h1>
+          <p>Track your workouts, nutrition, sleep and much <br/> more!.</p>
+          <button className="button">
           <h3>Join Now</h3>
-        </button>
+        </button></div>
       </div>
 
       {/*Partners*/}
@@ -28,13 +36,11 @@ const LandingPage = () => {
       </div>
 
       {/*Banner*/}
-      <div className={styles.container2}>
-        <div className={styles.hero2}>
-          <img src={main2} alt="Fitness Image" />
-        </div>
-        <div className={styles.heroAndInfo2}>
-          {" "}
-          <h1>
+      <div className={styles.banner}>
+        <div className={styles.bannerImage}/>
+        
+        <div className={styles.bannerText}>
+                <h1>
             <span>STAY ON BEAT</span>.
             <br />
             CONNECT YOUR <span>SMARTWATCH</span>
@@ -42,7 +48,7 @@ const LandingPage = () => {
             EFFORTLESSLY.
           </h1>
           <p>Seamless smartwatch integration to keep you on the move.</p>
-          <button className={styles.cta2}>
+          <button className="button">
             <h3>Try it Now</h3>
           </button>
         </div>{" "}
@@ -53,12 +59,12 @@ const LandingPage = () => {
       <div className={styles.cardContainer}>
         <div className={styles.card}>
           <h2>Exercises</h2>
-          <img className={styles.icon2} src={halteres}></img>
+          <img className={styles.icon} src={halteres}></img>
         </div>
         <div className={styles.card}>
           {" "}
           <h2>Nutrition</h2>
-          <img className={styles.icon2} src={nutrition}></img>
+          <img className={styles.icon} src={nutrition}></img>
         </div>
         <div className={styles.card}>
           <h2>Health</h2>
