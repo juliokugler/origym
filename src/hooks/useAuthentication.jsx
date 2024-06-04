@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
+import { setDoc, doc, collection } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 export const useAuthentication = () => {
@@ -80,7 +80,7 @@ export const useAuthentication = () => {
       firstName: data.firstName,
       lastName: data.lastName,
       photoURL: data.photoURL,
-      friendsList: [
+      following: [
         "IWbtLCXLwfNeHP20aEVBVGpzeTH3",
         "u1rEZesuRlU3h9XoL7bfnLEhm4E2",
         "lFy2vob4kTU6gC9EpMOrG9wu0C83",
@@ -93,8 +93,10 @@ export const useAuthentication = () => {
       carbsIntake: 250,
       fatIntake: 50,
       height: 170,
+      age: null,
       activityLevel: "Moderately Active",
       mainGoal: "Improve Health",
+      bio: "",
     });
   };
 
@@ -108,17 +110,6 @@ export const useAuthentication = () => {
         data.email,
         data.password
       );
-
-      const currentDate = new Date().toISOString().slice(0, 10);
-      const dailyInfo = {
-        TDEE: 2000,
-        caloriesConsumed: 0,
-        waterConsumed: 0,
-        proteinConsumed: 0,
-        carbsConsumed: 0,
-        fatConsumed: 0,
-        stepsTaken: 0,
-      };
 
       const sampleSleepData = [
         { date: "2023-05-14", hours: 7, minutes: 30 },
@@ -136,28 +127,6 @@ export const useAuthentication = () => {
         { date: "2023-05-18", weight: 70 },
       ];
 
-      const sampleWorkouts = [
-        { date: "2023-05-14", workoutsDone: ["Running", "Cycling"] },
-        { date: "2023-05-15", workoutsDone: ["Swimming"] },
-        { date: "2023-05-16", workoutsDone: ["Yoga", "Running"] },
-        { date: "2023-05-17", workoutsDone: ["Cycling"] },
-        { date: "2023-05-18", workoutsDone: ["Gym"] },
-      ];
-
-      const sampleMeals = [
-        { date: "2023-05-14", mealsConsumed: ["Breakfast", "Lunch", "Dinner"] },
-        {
-          date: "2023-05-15",
-          mealsConsumed: ["Breakfast", "Lunch", "Snack", "Dinner"],
-        },
-        { date: "2023-05-16", mealsConsumed: ["Breakfast", "Lunch", "Dinner"] },
-        {
-          date: "2023-05-17",
-          mealsConsumed: ["Breakfast", "Lunch", "Snack", "Dinner"],
-        },
-        { date: "2023-05-18", mealsConsumed: ["Breakfast", "Lunch", "Dinner"] },
-      ];
-
       for (const sleepData of sampleSleepData) {
         await setSleep(
           user.uid,
@@ -171,16 +140,18 @@ export const useAuthentication = () => {
         await setWeight(user.uid, weightData.date, weightData.weight);
       }
 
-      for (const workout of sampleWorkouts) {
-        await setWorkouts(user.uid, workout.date, workout.workoutsDone);
-      }
-
-      for (const meal of sampleMeals) {
-        await setMeals(user.uid, meal.date, meal.mealsConsumed);
-      }
-
-      await setDailyInfo(user.uid, currentDate, dailyInfo);
       await setUserInfo(user.uid, data);
+
+      // Initialize follows subcollection
+      const initialFollows = [
+        { followingId: "IWbtLCXLwfNeHP20aEVBVGpzeTH3" },
+        { followingId: "u1rEZesuRlU3h9XoL7bfnLEhm4E2" },
+        { followingId: "lFy2vob4kTU6gC9EpMOrG9wu0C83" },
+      ];
+
+      for (const follow of initialFollows) {
+        await setDoc(doc(collection(db, `users/${user.uid}/follows`)), follow);
+      }
 
       await updateProfile(user, {
         displayName: data.firstName,

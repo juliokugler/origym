@@ -12,7 +12,11 @@ import HealthTips from "../../components/Health/HealthTips/HealthTips";
 import WeightTracker from "../../components/Health/DailySummary/TrackerComponents/WeightTracker/WeightTracker";
 import DailySummary from "../../components/Health/DailySummary/DailySummary";
 
-const HealthPage = ({ t }) => {
+const HealthPage = ({ t, userData, user, dailyInfo }) => {
+  if (user && !userData || user && !dailyInfo) {
+    return <p>{t("loading")}...</p>;
+  }
+
   return (
     <div className="container">
       <Header t={t} pageType="health" />

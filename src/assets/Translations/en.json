@@ -152,5 +152,17 @@
   "blog_weightManagement_text": "Tips on how to make the most out of your step tracking.",
   "blog_heartRate_text": "What heart rate variability tells you about your health.",
   "reset": "Reset",
-  "bmi": "BMI"
+  "bmi": "BMI",
+  "caloriesPerServing": "Calories per serving",
+  "share": "Share",
+  "save": "Save",
+  "close": "Close",
+  "ingredients": "Ingredients",
+  "preparation": "Preparation",
+  "profile": "Profile",
+  "following": "Following",
+  "followers": "Followers",
+  "achievements": "Achievements",
+  "personalFeed": "Personal Feed",
+  "media": "Media"
 }

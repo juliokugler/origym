@@ -20,9 +20,11 @@ import { useTranslation } from "react-i18next";
 
 import ChangePhotoURL from "../../components/Profile/ChangePhotoURL";
 
-const EditSettings = ({ userData }) => {
+const EditSettings = ({ userData, user, dailyInfo }) => {
   const { t } = useTranslation();
-  const { user } = useAuthValue();
+  if (user && !userData || user && !dailyInfo) {
+    return <p>{t("loading")}...</p>;
+  }
   const navigate = useNavigate();
 
   const [age, setAge] = useState(userData.age || "");

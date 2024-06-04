@@ -4,6 +4,10 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import enTranslation from "../assets/Translations/en.json";
 import ptTranslation from "../assets/Translations/pt.json";
+import esTranslation from "../assets/Translations/es.json";
+import deTranslation from "../assets/Translations/de.json";
+import itTranslation from "../assets/Translations/it.json";
+import frTranslation from "../assets/Translations/fr.json";
 
 export const useTranslations = () => {
   useEffect(() => {
@@ -14,6 +18,10 @@ export const useTranslations = () => {
         resources: {
           en: { translation: enTranslation },
           pt: { translation: ptTranslation },
+          es: { translation: esTranslation },
+          it: { translation: itTranslation },
+          de: { translation: deTranslation },
+          fr: { translation: frTranslation },
         },
         fallbackLng: "en",
         interpolation: {

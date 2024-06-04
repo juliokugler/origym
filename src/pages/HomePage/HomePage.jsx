@@ -6,9 +6,9 @@ import styles from "./HomePage.module.css";
 
 //Components
 import Header from "../../components/Header/Header";
-import HealthCards from "../../components/Home/HealthCards/HealthCards";
+import HealthCards from "../../components/Home/HealthCards/CardsContainer";
 import WorkoutList from "./WorkoutList";
-import MealSuggestions from "../../components/Home/MealSuggestions/MealSuggestions";
+import MealSuggestions from "../../components/Nutrition/MealSuggestions/MealSuggestions";
 import FriendsInActivity from "../../components/Home/FriendsInActivity/FriendsInActivity";
 import DailyIntakes from "../../components/Nutrition/DailyIntakes/DailyIntakes";
 
@@ -16,27 +16,31 @@ import DailyIntakes from "../../components/Nutrition/DailyIntakes/DailyIntakes";
 import AICoach from "../../assets/Icons/AICoach.png";
 
 //Hooks
-import useFetchUserData from "../../hooks/useFetchUserData";
 import useFetchExercises from "../../hooks/useFetchExercises";
 
 //Contexts
 import { useAuthValue } from "../../contexts/AuthContext";
 import AiCoach from "../../components/Home/AICoach/AiCoach";
 
-const Home = ({ greeting, meal, currentDate, t }) => {
+const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUserInfoChange}) => {
   const [workouts, setWorkouts] = useState([]);
   const [workoutChange, setWorkoutChange] = useState(false);
   const [workoutCheck, setWorkoutCheck] = useState(false);
-  const { user } = useAuthValue();
   const [intakeChange, setIntakeChange] = useState(false);
-  const userData = useFetchUserData(intakeChange);
   const [selectedOption, setSelectedOption] = useState(meal);
 
   const fetchedWorkouts = useFetchExercises(workoutChange, workoutCheck);
-  console.log("Meal Name:", selectedOption);
+
   useEffect(() => {
-    setWorkouts(fetchedWorkouts);
-  }, [fetchedWorkouts]);
+    // Set workouts only if fetchedWorkouts is available and userData is not null
+    if (fetchedWorkouts.length > 0 && userData !== null) {
+      setWorkouts(fetchedWorkouts);
+    }
+  }, [fetchedWorkouts, userData]);
+ if (user && !userData || user && !dailyInfo) {
+    return <p>{t("loading")}...</p>;
+  }
+
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -46,9 +50,7 @@ const Home = ({ greeting, meal, currentDate, t }) => {
     setWorkoutChange((prev) => !prev);
   };
 
-  const handleIntakeChange = (intakeChange) => {
-    setIntakeChange((prev) => !prev);
-  };
+ 
 
   return (
     <div className="container">
@@ -60,7 +62,7 @@ const Home = ({ greeting, meal, currentDate, t }) => {
       />
       <div className="mainSection">
         <div className={styles.leftSection}>
-          <HealthCards t={t} userData={userData} />
+          <HealthCards t={t} onUserInfoChange={onUserInfoChange} user={user} userData={userData} dailyInfo={dailyInfo} />
           <div className={styles.innerSection}>
             <div className={styles.firstColumn}>
               <div className={`card ${styles.AICoach}`}>
@@ -80,6 +82,8 @@ const Home = ({ greeting, meal, currentDate, t }) => {
                     workouts={workouts}
                     user={user}
                     onCheck={handleWorkoutCheck}
+                    dailyInfo={dailyInfo}
+          onUserInfoChange={onUserInfoChange}
                   />
                 </div>
               </div>
@@ -98,8 +102,9 @@ const Home = ({ greeting, meal, currentDate, t }) => {
             </div>
             <DailyIntakes
               t={t}
-              userData={userData.userProfile}
-              dailyData={userData.dailyInfo}
+              userData={userData}
+              dailyInfo={dailyInfo}
+            
             />
           </div>
           <div className={`card ${styles.mealSuggestions}`}>
@@ -125,9 +130,9 @@ const Home = ({ greeting, meal, currentDate, t }) => {
               </div>
             </div>
             <MealSuggestions
-              dailyInfo={userData.dailyInfo}
+              onUserInfoChange={onUserInfoChange}
+              dailyInfo={dailyInfo}
               meal={selectedOption}
-              onChange={handleIntakeChange}
               t={t}
             />
           </div>

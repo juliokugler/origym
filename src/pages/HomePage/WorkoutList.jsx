@@ -4,9 +4,8 @@ import ExerciseList from "./HomeExerciseList";
 import { useTranslation } from "react-i18next";
 import { FaPlus } from "react-icons/fa";
 
-const WorkoutList = ({ workouts, onOpen, user, onCheck }) => {
+const WorkoutList = ({ workouts, onOpen, user, onCheck, dailyInfo, setDailyInfo, onUserInfoChange }) => {
   const [selectedDay, setSelectedDay] = useState(null);
-
   const { t } = useTranslation();
 
   const getCurrentDay = () => {
@@ -31,12 +30,16 @@ const WorkoutList = ({ workouts, onOpen, user, onCheck }) => {
   const filteredWorkouts = workouts.filter((workout) =>
     workout.days.includes(selectedDay)
   );
+
   return (
     <div className={styles.card}>
       <ExerciseList
         exercises={filteredWorkouts}
         user={user}
         onCheck={onCheck}
+        dailyInfo={dailyInfo}
+        setDailyInfo={setDailyInfo}
+        onUserInfoChange={onUserInfoChange}
       />
     </div>
   );

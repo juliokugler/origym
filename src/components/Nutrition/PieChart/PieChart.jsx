@@ -1,12 +1,13 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-export const App = ({ userData, dailyData }) => {
-  console.log("dailyData:", dailyData);
+export const App = ({ userData, dailyInfo }) => {
+
+  
   const data = [
     ["Type", "Calories"],
-    ["Remaining Calories", dailyData.TDEE - dailyData.caloriesConsumed],
-    ["Consumed Calories", dailyData.caloriesConsumed],
+    ["Remaining Calories", dailyInfo.TDEE - dailyInfo.caloriesConsumed],
+    ["Consumed Calories", dailyInfo.caloriesConsumed],
   ];
 
   const options = {

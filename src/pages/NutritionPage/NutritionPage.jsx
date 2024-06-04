@@ -12,41 +12,33 @@ import DailyIntakes from "../../components/Nutrition/DailyIntakes/DailyIntakes";
 import Calculator from "../../components/Nutrition/Calculator/Calculator";
 import MealPlanner from "../../components/Nutrition/MealPlanner/MealPlanner";
 import WaterIntake from "../../components/Nutrition/WaterIntake/WaterIntake";
-import MealSuggestions from "../../components/Home/MealSuggestions/MealSuggestions";
+import MealSuggestions from "../../components/Nutrition/MealSuggestions/MealSuggestions";
 
 //Contexts
 import { useAuthValue } from "../../contexts/AuthContext";
 
-//Hooks
-import useFetchUserData from "../../hooks/useFetchUserData";
 
-const NutritionPage = ({ meal, mealNumber, t }) => {
-  const [currentDayIndex, setCurrentDayIndex] = useState(new Date().getDay());
-  const [currentExerciseListName, setCurrentExerciseListName] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Standard");
+const NutritionPage = ({ meal, mealNumber, t, userData, dailyInfo, onUserInfoChange, user }) => {
   const [showMealPlannerPopup, setShowMealPlannerPopup] = useState(false);
   const [mealType, setMealType] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
   const [rerenderCalendar, setRerenderCalendar] = useState(false);
-  const { user } = useAuthValue();
   const [selectedOption, setSelectedOption] = useState(meal);
-  const [intakeChange, setIntakeChange] = useState(false);
 
+  if (user && !userData || user && !dailyInfo) {
+    return <p>{t("loading")}...</p>;
+  }
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
-  const handleIntakeChange = (intakeChange) => {
-    setIntakeChange((prev) => !prev);
-  };
-
-  const handleMealPlannerToggle = (mealType, selectedDay) => {
+    const handleMealPlannerToggle = (mealType, selectedDay) => {
     setShowMealPlannerPopup((prev) => !prev);
     setMealType(mealType);
     setSelectedDay(selectedDay);
   };
 
-  const userData = useFetchUserData(intakeChange);
+
 
   const handleCorrectSubmit = () => {
     setRerenderCalendar((prev) => !prev);
@@ -65,8 +57,9 @@ const NutritionPage = ({ meal, mealNumber, t }) => {
             </div>
             <DailyIntakes
               t={t}
-              userData={userData.userProfile}
-              dailyData={userData.dailyInfo}
+              userData={userData}
+              dailyInfo={dailyInfo}
+              
             />
           </div>
 
@@ -94,9 +87,9 @@ const NutritionPage = ({ meal, mealNumber, t }) => {
             </div>
             <MealSuggestions
               t={t}
-              dailyInfo={userData.dailyInfo}
-              onChange={handleIntakeChange}
+              dailyInfo={dailyInfo}
               meal={selectedOption}
+              onUserInfoChange={onUserInfoChange}
             />
           </div>
         </div>
@@ -115,7 +108,7 @@ const NutritionPage = ({ meal, mealNumber, t }) => {
         <div className={styles.thirdColumn}>
         <div className={classNames("card", styles.waterIntake)}>
             <h3 className="title">{t("waterIntake")}</h3>
-            <WaterIntake t={t} userData={userData.userProfile} />
+            <WaterIntake t={t} userData={userData} dailyInfo={dailyInfo} />
           </div>
           <div className={styles.bottomSection}>
           <div className={classNames("card", styles.calculator)}>

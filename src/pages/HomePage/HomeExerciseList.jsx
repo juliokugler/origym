@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./HomeExerciseList.module.css";
-import Exercise from "../../components/Workouts/Exercise/Exercise";
 import { useTranslation } from "react-i18next";
 import { FaCheckSquare, FaRegSquare, FaFire } from "react-icons/fa";
 import strengthIcon from "../../assets/Icons/strength.png";
@@ -9,65 +8,100 @@ import yogaIcon from "../../assets/Icons/yoga.png";
 import martialArtsIcon from "../../assets/Icons/martialArts.png";
 import groupIcon from "../../assets/Icons/group.png";
 import WorkoutDetails from "../../components/Workouts/WorkoutDetails/WorkoutDetails";
-import { updateDoc, doc, getFirestore } from "firebase/firestore"; // Import Firestore functions for updating documents
-import { useAuthValue } from "../../contexts/AuthContext";
-import { db } from "../../firebase/config";
+import { updateDoc, doc, getFirestore, setDoc } from "firebase/firestore";
 
 const ExerciseList = ({
   exercises,
   favoriteList,
-  firestore,
   user,
   onCheck,
+  dailyInfo,
+  setDailyInfo,
+  onUserInfoChange
 }) => {
-  // Include firestore and user as props
-  const [allCompleted, setAllCompleted] = useState(false);
   const { t } = useTranslation();
   const [showWorkout, setShowWorkout] = useState(false);
   const [selectedWorkout, setSelectedWorkout] = useState(null);
-  const [isChecked, setIsChecked] = useState(false);
   const [animateWorkout, setAnimateWorkout] = useState(null);
 
   const handleCheckClick = async (e, workout) => {
-    e.stopPropagation(); // Prevent event bubbling
-
-    const handleAnimation = () => {
-      setAnimateWorkout(workout.id);
-      setTimeout(() => setAnimateWorkout(null), 500); // Remove animation class after 0.5s
-    };
+    e.stopPropagation();
 
     try {
       if (!workout || !workout.id) {
         console.error("Invalid workout object:", workout);
-        return; // Exit early if the workout object is invalid
+        return;
       }
 
-      // Update workout details in the database
-      await updateWorkoutDetails(workout);
+      const workoutCalories = workout.totalCalories;
+
+      // Determine the new TDEE based on the workout's current completion status
+      const newTDEE = workout.isWorkoutDone
+        ? dailyInfo.TDEE - workoutCalories
+        : dailyInfo.TDEE + workoutCalories;
+
+      // Update workout status in the database and update TDEE
+      await updateWorkoutStatus(workout, newTDEE);
       onCheck();
-      setIsChecked((prev) => !prev);
-      handleAnimation(); // Trigger animation
-      // Optionally, update state or perform any other action upon successful update
+      setAnimateWorkout(workout.id);
+      setTimeout(() => setAnimateWorkout(null), 500);
     } catch (error) {
       console.error("Error updating workout details:", error);
     }
   };
 
-  const handleShowWorkout = (workout) => {
-    setSelectedWorkout(workout); // Set selected workout
-    setShowWorkout(true); // Open the workout details
+  const updateWorkoutStatus = async (workout, newTDEE) => {
+    const db = getFirestore();
+    const currentDate = new Date().toISOString().slice(0, 10);
+    const dailyInfoRef = doc(db, `users/${user.uid}/dailyInfo/${currentDate}`);
+    const workoutRef = doc(db, `users/${user.uid}/workouts/${workout.id}`);
+
+    try {
+      // Update the TDEE in dailyInfo
+      await setDoc(
+        dailyInfoRef,
+        { TDEE: newTDEE },
+        { merge: true }
+      );
+
+      // Toggle the workout's completion status
+      const newWorkoutStatus = !workout.isWorkoutDone;
+
+      // Update the workout status in the workouts collection
+      await updateDoc(workoutRef, {
+        isWorkoutDone: newWorkoutStatus,
+      });
+
+      console.log("Workout status and calorie value updated successfully.");
+      onUserInfoChange();
+
+      // Update local state to reflect the changes
+      setDailyInfo((prev) => ({
+        ...prev,
+        TDEE: newTDEE,
+      }));
+
+      // Update the workout object to reflect the new status
+      workout.isWorkoutDone = newWorkoutStatus;
+    } catch (error) {
+      console.error("Error updating workout status and calorie values:", error);
+    }
   };
 
-  const handleCloseWorkout = (workout) => {
-    setShowWorkout(false); // Open the workout details
+  const handleShowWorkout = (workout) => {
+    setSelectedWorkout(workout);
+    setShowWorkout(true);
+  };
+
+  const handleCloseWorkout = () => {
+    setShowWorkout(false);
   };
 
   useEffect(() => {
-    // Update showHeader state when showWorkout state changes
     setShowHeader(showWorkout);
   }, [showWorkout]);
 
-  const [showHeader, setShowHeader] = useState(false); // Track if the header should be shown
+  const [showHeader, setShowHeader] = useState(false);
 
   const getIconByType = (type) => {
     switch (type) {
@@ -86,20 +120,6 @@ const ExerciseList = ({
     }
   };
 
-  const updateWorkoutDetails = async (workout) => {
-    try {
-      const firestore = getFirestore();
-      await updateDoc(
-        doc(firestore, "users", user.uid, "workouts", workout.id),
-        {
-          isWorkoutDone: !workout.isWorkoutDone, // Toggle the isWorkoutDone value
-        }
-      );
-    } catch (error) {
-      throw error; // Throw the error to handle it in the calling function
-    }
-  };
-
   return (
     <div className={styles.container}>
       {!exercises || exercises.length <= 0 ? (
@@ -114,10 +134,7 @@ const ExerciseList = ({
         exercises.length > 0 &&
         exercises.map((workout, index) => (
           <div key={index} className={styles.buttonContainer}>
-            <button
-              // Pass the workout to open
-              className={styles.button}
-            >
+            <button className={styles.button}>
               <div className={styles.workoutInfo}>
                 <img
                   src={getIconByType(workout.type)}
@@ -134,7 +151,6 @@ const ExerciseList = ({
                             animateWorkout === workout.id ? styles.pulse : ""
                           }
                         >
-                          {" "}
                           <FaFire />
                           {workout.totalCalories} calories burned
                         </p>
@@ -178,7 +194,7 @@ const ExerciseList = ({
               onClose={handleCloseWorkout}
               name={selectedWorkout.name}
               type={selectedWorkout.type}
-              exercises={selectedWorkout.exercises} // Pass exercises of selected workout
+              exercises={selectedWorkout.exercises}
               favoriteList={favoriteList}
             />
           </div>

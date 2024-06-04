@@ -19,29 +19,31 @@ const useFetchFavorites = (favoriteChange) => {
 
   useEffect(() => {
     const fetchFavorites = async () => {
+      console.log("Fetching favorites for user:", user);
+      if (!user) return;
+  
       try {
         const userUid = user.uid;
         const favoritesRef = collection(db, `users/${userUid}/isFavorite`);
         const snapshot = await getDocs(favoritesRef);
-
+  
         const groupsData = {};
         snapshot.forEach((doc) => {
           const exerciseData = doc.data();
           const exerciseId = doc.id;
-          const group = exerciseData.group || "Ungrouped"; // Default to "Ungrouped" if no group specified
-
+          const group = exerciseData.group || "Ungrouped"; // Line 31
           if (!groupsData[group]) {
             groupsData[group] = [];
           }
           groupsData[group].push({ id: exerciseId, ...exerciseData });
         });
-
+  
         setGroups(groupsData);
       } catch (error) {
         console.error("Error fetching exercise groups:", error);
       }
     };
-
+  
     fetchFavorites();
   }, [user, favoriteChange]);
 

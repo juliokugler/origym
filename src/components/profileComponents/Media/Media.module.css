@@ -1,0 +1,19 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+margin: 0.8vw 0.8vw;
+      height: 20vh;
+    width: 20vh;
+    border-radius:var(--card-border);
+    background-color: var(--gray-light);
+}
+
+.card img {
+    height: 20vh;
+    width: 20vh;
+    border-radius:var(--card-border);
+}

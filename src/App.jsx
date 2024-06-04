@@ -1,26 +1,16 @@
-// src/App.js
-import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
-// Styles
+import React, { useState } from "react";
+import { useParams, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import "./index.css"; // Make sure to include your index.css
-
-// Components
+import "./index.css";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
-
-// Hooks
 import { useAuth } from "./hooks/useAuth";
 import { useTranslations } from "./hooks/useTranslations";
 import { useTranslation } from "react-i18next";
 import { useGreetingAndMeal } from "./hooks/useGreetingAndMeal";
-
-// Contexts
-import { AuthProvider } from "./contexts/AuthContext";
-
-// Pages
+import { AuthProvider, useAuthValue } from "./contexts/AuthContext";
+import { UserDataProvider, useUserData } from "./contexts/UserDataContext";
 import Health from "./pages/HealthPage/HealthPage";
 import NutritionPage from "./pages/NutritionPage/NutritionPage";
 import Home from "./pages/HomePage/HomePage";
@@ -30,90 +20,122 @@ import SettingsPage from "./pages/SettingsPage/SettingsPage";
 import Workouts from "./pages/WorkoutsPage/WorkoutsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import UserProfile from "./pages/FriendProfilePage/FriendProfilePage";
 import AdditionalInfo from "./pages/AdditionalInfoPage/AdditionalInfoPage";
 import Friends from "./pages/FriendsPage/FriendsPage";
 
-function App() {
-  const { user, loading } = useAuth();
+function AppContent() {
+  const { userData, dailyInfo, loading, setUserInfoChange } = useUserData();
   const { switchLanguage } = useTranslations();
   const { greeting, meal, mealNumber, currentDate } = useGreetingAndMeal();
   const { t } = useTranslation();
+  const {user} = useAuthValue()
 
   if (loading) {
     return <p>{t("loading")}...</p>;
   }
+  
+  
+  const handleUserInfoChange = () => {
+    setUserInfoChange((prev) => !prev);
+  };
+
+  return (
+    <div className="App">
+      {!userData ? <Navbar t={t} /> : <Sidebar />}
+      <div className="main-container">
+        <Routes>
+          <Route
+            path="/"
+            element={!user ? <Landing t={t} /> : <Navigate to="/home" />}
+          />
+          <Route
+            path="/login"
+            element={!userData ? <Login t={t} /> : <Navigate to="/home" />}
+          />
+          <Route
+            path="/home"
+            element={
+              userData ? (
+                <Home
+                  t={t}
+                  user={user}
+                  greeting={greeting}
+                  meal={meal}
+                  currentDate={currentDate}
+                  userData={userData}
+                  dailyInfo={dailyInfo}
+                  onUserInfoChange={handleUserInfoChange}
+                />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route path="/workouts" element={<Workouts userData={userData} dailyInfo={dailyInfo} t={t} />} />
+          <Route path="/health" element={<Health userData={userData} t={t} />} />
+          <Route
+            path="/nutrition"
+            element={
+              <NutritionPage
+                onUserInfoChange={handleUserInfoChange}
+                t={t}
+                userData={userData}
+                dailyInfo={dailyInfo}
+                meal={meal}
+                mealNumber={mealNumber}
+              />
+            }
+          />
+          <Route
+            path="/profile"
+            element={userData ? <ProfilePage user={user} onUserInfoChange={handleUserInfoChange} userData={userData.userProfile} dailyInfo={userData.dailyInfo} t={t} /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/register"
+            element={!userData ? <RegisterPage t={t} /> : <Navigate to="/home" />}
+          />
+          <Route
+            path="/friends"
+            element={userData ? <Friends user={userData} userData={userData} t={t} /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/settings"
+            element={
+              userData ? (
+                <SettingsPage userData={userData} t={t} switchLanguage={switchLanguage} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/additionalinfo"
+            element={
+              user ? <AdditionalInfo user={user} userData={userData} t={t} /> : <Navigate to="/login" />
+            }
+          />
+          <Route path="/profile/:userId" element={<ProfilePage user={user} userData={userData} t={t} />} />
+        </Routes>
+        <Footer t={t} />
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <AuthProvider value={{ user }}>
-      <div className="App">
-        {!user ? <Navbar t={t} /> : <Sidebar />}
-        <div className="main-container">
-          <Routes>
-            <Route
-              path="/"
-              element={!user ? <Landing t={t} /> : <Navigate to="/home" />}
-            />
-            <Route
-              path="/login"
-              element={!user ? <Login t={t} /> : <Navigate to="/home" />}
-            />
-            <Route
-              path="/home"
-              element={
-                user ? (
-                  <Home
-                    t={t}
-                    greeting={greeting}
-                    meal={meal}
-                    currentDate={currentDate}
-                  />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route path="/workouts" element={<Workouts t={t} user={user} />} />
-            <Route path="/health" element={<Health t={t} />} />
-            <Route
-              path="/nutrition"
-              element={
-                <NutritionPage t={t} meal={meal} mealNumber={mealNumber} />
-              }
-            />
-            <Route
-              path="/profile"
-              element={user ? <ProfilePage t={t} /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/register"
-              element={!user ? <RegisterPage t={t} /> : <Navigate to="/home" />}
-            />
-            <Route
-              path="/friends"
-              element={user ? <Friends t={t} /> : <Navigate to="/login" />}
-            />
-            <Route
-              path="/settings"
-              element={
-                user ? (
-                  <SettingsPage t={t} switchLanguage={switchLanguage} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/additionalinfo"
-              element={
-                user ? <AdditionalInfo t={t} /> : <Navigate to="/login" />
-              }
-            />
-            <Route path="/profile/:userId" element={<UserProfile t={t} />} />
-          </Routes>
-          <Footer t={t} />
-        </div>
-      </div>
+      <UserDataProvider user={user}>
+
+          <AppContent />
+      
+      </UserDataProvider>
     </AuthProvider>
   );
 }

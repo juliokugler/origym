@@ -33,8 +33,8 @@ const AiCoach = ({ userData, timedGreeting, t }) => {
   useEffect(() => {
     if (
       userData &&
-      userData.userProfileData &&
-      userData.userProfileData.firstName
+      userData.userProfile &&
+      userData.userProfile.firstName
     ) {
       setInitialMessagesRendered(true);
     }
@@ -46,7 +46,7 @@ const AiCoach = ({ userData, timedGreeting, t }) => {
         <SpeechContainer
           speaker="Coach"
           message={`${timedGreeting}, ${
-            userData.userProfileData?.firstName || ""
+            userData.userProfile.firstName || ""
           }! ${t("firstMessage")}`}
         />
         <SpeechContainer speaker="You" message={`${t("secondMessage")}`} />

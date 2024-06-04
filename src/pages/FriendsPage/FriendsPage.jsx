@@ -6,6 +6,7 @@ import styles from "./FriendsPage.module.css";
 //Components
 import Header from "../../components/Header/Header";
 import { FaUserFriends, FaUserPlus, FaRunning } from "react-icons/fa";
+import Feed from "./feed";
 
 // Dummy data for illustration
 const friendsData = [
@@ -15,14 +16,9 @@ const friendsData = [
   // Add more friends as needed
 ];
 
-const FriendsPage = ({ t }) => {
+const FriendsPage = ({ t, user, userData, dailyInfo }) => {
   const [friends, setFriends] = useState(friendsData);
-
-  // Fetch friends data from an API or context in a real application
-  useEffect(() => {
-    // Fetch friends data
-  }, []);
-
+console.log(user)
   const activeFriends = friends.filter((friend) => friend.status === "active");
 
   return (
@@ -49,19 +45,9 @@ const FriendsPage = ({ t }) => {
           </div>
         </div>
         <div className={styles.secondCardColumn}>
-          <div className={styles.activityCard}>
-            <h3 className={styles.cardTitle}>Friends in Activity</h3>
-            <div className={styles.activityList}>
-              {activeFriends.map((friend, index) => (
-                <div key={index} className={styles.activityItem}>
-                  <FaRunning />
-                  <span>
-                    {friend.name} - {friend.activity}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className={styles.activityCard}>
+         <Feed userId={user.uid} userName={user.displayName} t={t} />
+         </div>
         </div>
         <div className={styles.thirdCardColumn}>
           <div className={styles.recommendationsCard}>

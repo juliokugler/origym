@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useLogin from "../../hooks/useLogin";
 import styles from "./LoginContainer.module.css";
-import { FaGoogle, FaApple, FaCheckSquare } from "react-icons/fa";
+import { FaGoogle, FaApple, FaCheckSquare, FaRegEye, FaEyeSlash } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 const LoginContainer = () => {
@@ -13,7 +13,18 @@ const LoginContainer = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const { t } = useTranslation();
   const handleEyeClick = () => {
-    setIsPasswordVisible(!isPasswordVisible);
+    // Check if the password field is autofilled
+    const passwordField = document.getElementById('password');
+    const isPasswordFieldAutofilled = passwordField.matches(':autofill') || 
+      (passwordField.value !== '' && passwordField.value !== password);
+  
+    // If the password field is autofilled, clear its value
+    if (isPasswordFieldAutofilled) {
+      setPassword(''); // Clear the password value
+    } else {
+      // Toggle password visibility only if the password field is not autofilled
+      setIsPasswordVisible(!isPasswordVisible);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -28,59 +39,75 @@ const LoginContainer = () => {
           <h2>{t("welcomeBack")}!</h2>
         </div>
         <form onSubmit={handleSubmit}>
-          <label>
-            <p>{t("email")}:</p>
+          <div className={styles.inputGroup}>
+            <label htmlFor="email">{t("email")}:</label>
             <input
+              id="email"
               className={styles.inputField}
               type="email"
               name="email"
               required
               onChange={(e) => setEmail(e.target.value)}
               value={email}
+              aria-label={t("email")}
             />
-          </label>
-          <label>
-            <p>{t("password")}:</p>
+          </div>
+          <div className={styles.passwordInputGroup}>
+            <label htmlFor="password">{t("password")}:</label>
             <input
+              id="password"
               className={styles.inputField}
               type={isPasswordVisible ? "text" : "password"}
               name="password"
               required
               onChange={(e) => setPassword(e.target.value)}
               value={password}
+              aria-label={t("password")}
             />
-          </label>
+          <button className={styles.eyeButton} onClick={handleEyeClick}>
+  {isPasswordVisible ? (
+    <FaEyeSlash aria-label={t("hidePassword")} />
+  ) : (
+    <FaRegEye aria-label={t("showPassword")} />
+  )}
+</button>
+          </div>
           <div className={styles.formAddInfo}>
             <div className={styles.nameAndIcon}>
-              <FaCheckSquare />
-              <p>{t("rememberMe")}</p>{" "}
+              <FaCheckSquare aria-hidden="true" />
+              <span>{t("rememberMe")}</span>{" "}
             </div>
-            <p>
+            <span>
               <u>{t("forgotYourPassword")}?</u>
-            </p>
+            </span>
           </div>
           
-          {!loading && (<div className={styles.buttonContainer}>
-            <button className="button"><p>{t("login")}</p></button></div>
+          {!loading && (
+            <div className={styles.buttonContainer}>
+              <button className="button" type="submit">
+                <span>{t("login")}</span>
+              </button>
+            </div>
           )}
         </form>
         {loading && (
           <div className={styles.buttonContainer}>
-          <button className="button" disabled>
-           <p> {t("loading")}</p>...
-          </button></div>
+            <button className="button" disabled>
+              <span>{t("loading")}...</span>
+            </button>
+          </div>
         )}
         {error && <p className="error">{error}</p>}
         <p className={styles.text}>{t("or")}</p>
-      <div className="loginOptions">
-        <button className="socialMediaButton">
-          <FaGoogle size={22} />
-          <p>{t("continueWithGoogle")}</p>
-        </button>
-        <button className="socialMediaButton">
-          <FaApple size={24} />
-          <p>{t("continueWithApple")}</p>
-        </button>
+        <div className="loginOptions">
+          <button className="socialMediaButton">
+            <FaGoogle size={22} />
+            <span>{t("continueWithGoogle")}</span>
+          </button>
+          <button className="socialMediaButton">
+            <FaApple size={24} />
+            <span>{t("continueWithApple")}</span>
+          </button>
         </div>
         <div className={styles.text}>
           <p>

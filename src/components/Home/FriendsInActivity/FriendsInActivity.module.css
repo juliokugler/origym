@@ -52,6 +52,7 @@
     background-color: #242529;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
+    border-radius: var(--button-border);
     padding: 0.3vh 0;
     width: 8vw;
     display: flex;

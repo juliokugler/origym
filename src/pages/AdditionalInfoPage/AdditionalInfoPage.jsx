@@ -2,18 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getFirestore, setDoc, doc, collection } from "firebase/firestore";
 import styles from "./AdditionalInfoPage.module.css";
-import { FaEdit } from "react-icons/fa";
+
 import Header from "../../components/Header/Header";
-import { useAuthValue } from "../../contexts/AuthContext";
-import useFetchUserData from "../../hooks/useFetchUserData";
-import ChangePhotoURL from "../../components/Profile/ChangePhotoURL";
 
-const AdditionalInfo = ({ t }) => {
-  const { user } = useAuthValue();
+
+const AdditionalInfo = ({ t, userData, user}) => {
+
   const navigate = useNavigate();
-  const userData = useFetchUserData(user);
 
-  const [age, setAge] = useState(userData.age || "");
+
+  const [age, setAge] = useState(user.userProfile.age || "");
   const [height, setHeight] = useState(userData.height || "");
   const [weight, setWeight] = useState(userData.weight || "");
   const [currentWeight, setCurrentWeight] = useState(userData.weight || "");

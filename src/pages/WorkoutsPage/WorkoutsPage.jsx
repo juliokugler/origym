@@ -13,9 +13,8 @@ import RecommendedWorkouts from "../../components/Workouts/RecommendedWorkouts/R
 
 // Hooks
 import useFetchExercises from "../../hooks/useFetchExercises";
-import useFetchUserData from "../../hooks/useFetchUserData";
 
-const Workouts = ({ user, t }) => {
+const Workouts = ({ user, t, userData, dailyInfo }) => {
   const [isCreateWorkoutOpen, setIsCreateWorkoutOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState(null);
   const [workouts, setWorkouts] = useState([]);
@@ -24,8 +23,7 @@ const Workouts = ({ user, t }) => {
   const [favoriteChange, setFavoriteChange] = useState(false);
 
   const fetchedWorkouts = useFetchExercises(workoutChange);
-  const userData = useFetchUserData();
-
+ console.log(userData)
   useEffect(() => {
     setWorkouts(fetchedWorkouts);
   }, [fetchedWorkouts]);
@@ -47,9 +45,6 @@ const Workouts = ({ user, t }) => {
     setSelectedDay(day);
   };
 
-  if (!userData) {
-    return <p>{t("loading")}...</p>;
-  }
 
   return (
     <div className="container">

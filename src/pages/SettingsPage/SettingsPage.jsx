@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-//Firebase
-import { getFirestore, setDoc, doc, collection } from "firebase/firestore";
 
 //Styles
 import styles from "./SettingsPage.module.css";
 import { FaEdit } from "react-icons/fa";
-import useFetchUserData from "../../hooks/useFetchUserData";
 
 //Components
 import Header from "../../components/Header/Header";
+import ChangePhotoURL from "../../components/Profile/ChangePhotoURL";
 
 //Hooks
 
-const SettingsPage = ({ switchLanguage, t }) => {
+const SettingsPage = ({ switchLanguage, t, userData }) => {
   const [loading, setLoading] = useState(true); // Initialize loading state
-  const userData = useFetchUserData();
+
 
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
@@ -39,18 +35,18 @@ const SettingsPage = ({ switchLanguage, t }) => {
   return (
     <div className={styles.container}>
       <Header t={t} pageType="settings" />
-      {userData.userProfileData && userData.userProfileData.firstName && (
+      {userData.userProfile && userData.userProfile.firstName && (
         <div className={styles.mainSection}>
           {" "}
           <div className={styles.card}>
             <img
               className={styles.avatar}
-              src={userData.userProfileData.photoURL}
+              src={userData.userProfile.photoURL}
               alt="User avatar"
             ></img>
             <div className={styles.mainUserData}>
-              <h3>{userData.userProfileData.displayName}</h3>
-              <h3>@{userData.userProfileData.displayName}</h3>
+              <h3>{userData.userProfile.displayName}</h3>
+              <h3>@{userData.userProfile.displayName}</h3>
 
               <p>
                 {t("age")}: {userData.userProfile.age}
@@ -61,6 +57,7 @@ const SettingsPage = ({ switchLanguage, t }) => {
               <p>
                 {t("weight")}: {userData.userProfile.currentWeight}Kgs
               </p>
+              <ChangePhotoURL/>
             </div>
             <div className={styles.mainUserData}>
               <p>
@@ -78,6 +75,11 @@ const SettingsPage = ({ switchLanguage, t }) => {
             <select id="language" onChange={handleLanguageChange}>
               <option value="en">English</option>
               <option value="pt">Portuguese</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+              <option value="it">Italian</option>
+
             </select>
           </div>
         </div>

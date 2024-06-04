@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import { useAuthValue } from "../contexts/AuthContext";
 
-const useFetchUserData = (intakeChange) => {
-  const { user } = useAuthValue();
-  const [userData, setUserData] = useState({
-    userProfile: {},
-    dailyInfo: {},
-    friendsList: [],
-  });
+const useFetchUserData = (user, userInfoChange) => {
+  const [userData, setUserData] = useState(null);
+  const [dailyInfo, setDailyInfo] = useState(null);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -34,15 +29,17 @@ const useFetchUserData = (intakeChange) => {
             ...prevUserData,
             userProfile: userProfileData,
           }));
+
+          fetchDailyInfo(userProfileData.TDEE);
         } else {
           console.log("User profile document does not exist!");
         }
       } catch (error) {
-        console.error("Error fetching user metrics:", error);
+        console.error("Error fetching user profile:", error);
       }
     };
 
-    const fetchDailyInfo = async () => {
+    const fetchDailyInfo = async (TDEE) => {
       try {
         if (!user || !user.uid) {
           console.error("User or user ID is null or undefined.");
@@ -60,6 +57,7 @@ const useFetchUserData = (intakeChange) => {
 
         if (dailyInfoSnapshot.exists()) {
           const dailyInfoData = dailyInfoSnapshot.data();
+          setDailyInfo(dailyInfoData);
           setUserData((prevUserData) => ({
             ...prevUserData,
             dailyInfo: dailyInfoData,
@@ -67,8 +65,8 @@ const useFetchUserData = (intakeChange) => {
         } else {
           console.log("Daily info document for current date does not exist!");
 
-          // Create a new daily info document with default values
           const initialDailyInfo = {
+            TDEE: TDEE || 2000,
             caloriesConsumed: 0,
             proteinConsumed: 0,
             fatConsumed: 0,
@@ -80,9 +78,7 @@ const useFetchUserData = (intakeChange) => {
           };
 
           await setDoc(dailyInfoRef, initialDailyInfo);
-          console.log("New daily info document created.");
-
-          // Set the userData state with the initial daily info
+          setDailyInfo(initialDailyInfo);
           setUserData((prevUserData) => ({
             ...prevUserData,
             dailyInfo: initialDailyInfo,
@@ -101,38 +97,32 @@ const useFetchUserData = (intakeChange) => {
         }
 
         const firestore = getFirestore();
-        const userProfileRef = doc(
-          firestore,
-          "users",
-          user.uid,
-          "userInfo",
-          "userProfile"
-        );
-        const userProfileSnapshot = await getDoc(userProfileRef);
+        const friendsListRef = doc(firestore, `users/${user.uid}/friendsList`);
+        const friendsListSnapshot = await getDoc(friendsListRef);
 
-        if (userProfileSnapshot.exists()) {
-          const userProfileData = userProfileSnapshot.data();
-
+        if (friendsListSnapshot.exists()) {
+          const friendsListData = friendsListSnapshot.data();
           setUserData((prevUserData) => ({
             ...prevUserData,
-            userProfileData: userProfileData,
+            friendsList: friendsListData,
           }));
         } else {
-          console.log("User profile document does not exist!");
+          console.log("Friends list document does not exist!");
         }
       } catch (error) {
-        console.error("Error fetching user profile:", error);
+        console.error("Error fetching friends list:", error);
       }
     };
 
     if (user) {
       fetchUserProfile();
-      fetchDailyInfo();
-      fetchFriendsList(); // Call the function to fetch the friends list
+      fetchFriendsList();
+    } else {
+      setUserData(null);
     }
-  }, [user, intakeChange]); // Include the propValue as a dependency
+  }, [user, userInfoChange]);
 
-  return userData;
+  return { userData, dailyInfo, setDailyInfo };
 };
 
 export default useFetchUserData;

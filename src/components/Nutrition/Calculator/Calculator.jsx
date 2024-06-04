@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Calculator.module.css";
 import NutritionalInfo from "../NutritionalInfo/NutritionalInfo";
+import UploadRecipes from "../UploadRecipes/UploadRecipes";
 
 const Calculator = ({ t }) => {
   const [alimento, setAlimento] = useState("");

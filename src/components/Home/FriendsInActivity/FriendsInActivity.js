@@ -17,8 +17,8 @@ const FriendsInActivity = ({ userData }) => {
     console.log("Data Received:", userData);
     const fetchFriendsData = async () => {
       try {
-        const friendsList = userData.userProfileData.friendsList;
-        const friendsDataPromises = friendsList.map(async (friendUid) => {
+        const following = userData.userProfile.following;
+        const friendsDataPromises = following.map(async (friendUid) => {
           const friendProfile = await getFriendProfile(friendUid);
           return friendProfile;
         });
@@ -29,7 +29,7 @@ const FriendsInActivity = ({ userData }) => {
       }
     };
 
-    if (userData.userProfileData && userData.userProfileData.friendsList) {
+    if (userData.userProfile && userData.userProfile.following) {
       fetchFriendsData();
     }
   }, [userData]);

@@ -94,7 +94,7 @@
   "secondMessage": "Na verdade não, estou me sentindo um pouco cansado. Você pode modificar o treino de hoje?",
   "thirdMessage": "Sim, eu poderia remover os exercícios compostos agendados, que exigem mais esforço mental e físico. Isso soa bem para você?",
   "noMatches": "Nenhuma correspondência",
-  "add": "Adicionar",
+  "add": "Adic.",
   "search": "Pesquisar",
   "waterIntake": "Ingestão de Água",
   "mealPlan": "Plano de Refeição",
@@ -152,5 +152,17 @@
   "blog_weightManagement_text": "Dicas sobre como aproveitar ao máximo o monitoramento de passos.",
   "blog_heartRate_text": "O que a variabilidade da frequência cardíaca diz sobre sua saúde.",
   "reset": "Resetar",
-  "bmi": "IMC"
+  "bmi": "IMC",
+  "caloriesPerServing": "Calorias por porção",
+  "share": "Compartilhar",
+  "save": "Salvar",
+  "close": "Fechar",
+  "ingredients": "Ingredientes",
+  "preparation": "Preparação",
+  "profile": "Perfil",
+  "following": "Seguindo",
+  "followers": "Seguidores",
+  "achievements": "Conquistas",
+  "personalFeed": "Feed Pessoal",
+  "media": "Media"
 }

@@ -85,13 +85,11 @@ justify-content: space-between;
 }
 
 .button svg {
-
+fill: #FFFFFF;
 font-size: 2vh;
 }
 
-.exerciseTable {
-  margin-bottom: 2vh;
-}
+
 
 .exerciseTable tr {
   width: 100%;
@@ -138,10 +136,5 @@ width: 30vw;
 
 
 .container h2 {
-  color: var(--primary-color);
-}
-
-.buttonContainer {
-  display: flex;
-  margin: 2vh 0 4vh 0;
+  color: #FFF27A;
 }

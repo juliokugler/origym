@@ -8,19 +8,25 @@
 
 .caloriesContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  position: absolute;
   text-align: center;
-  width: 6vw;
-  left:11.7%;
-  top: 37%
+  position: relative;
+width:13vw
+}
+
+.textContainer{
+  position:absolute;
+  text-align: center;
+  margin-left: 4vw;
 }
 
 .caloriesContainer h1, .caloriesContainer p {
   margin: 0.2vh
 }
 
+.caloriesContainer h1 {
+  font-size: 3vh;
+}
 
 .macroPercentage{
   display: flex;
