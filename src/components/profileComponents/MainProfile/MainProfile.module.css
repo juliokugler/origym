@@ -1,191 +1,159 @@
 .mainInfo {
-   display: flex;
-   position: relative
- }
- 
- .imgSection {
-   width: 21vw;
-   height: 30vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
- 
- .imgSection img {
-   height: 22vh;
-   width: auto;
-   border-radius: 50%;
- }
- 
- .userInfo {
-   display: flex;
-   flex-direction: column;
- }
- 
- .bioContainer {
-   display: flex;
-   flex-direction: column;
-   margin-top: 1vh;
-   width: 36vw;
- }
- 
- .viewBioContainer, .editBioContainer {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
- }
-
- .editBioContainer{
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
- }
-
- .buttonContainer {
-   margin: 2vh 0 -5.5vh
- }
- 
- .bioLabel {
-   display: flex;
-   flex-direction: column;
-   width: 36vw;
- }
-
-
- 
- .bioLabel textarea {
-   border-radius: var(--button-border);
-   background-color: var(--gray-lightest);
-   color: var(--color-text);
-   border: none;
-   width: 33vw;
-   height: 7.6vh;
-   margin-top: 1vh;
-    resize: none;
- font-size: 1.7vh;
- padding: 1vh;
- padding-top: 1.4vh;
-
- }
-
- .viewBioContainer {
-   border-radius: var(--button-border);
-   background-color: var(--gray-dark);
-   color: var(--color-text);
-   border: none;
-   width: 33vw;
-   height: 8vh;
-   margin-top: 1vh;
- font-size: 1.8vh;
- display: flex;
- align-items: first baseline;
- padding: 1vh;
- }
- 
- .textInfo {
-   display: flex;
-   justify-content: space-between;
-   margin-top: 2vh;
-   width: 34vw;
- }
- .bio {
-   color: var(--text-color-secondary);
- }
-
- .bioLabel p {
-   margin: 0;
- }
-
- .followInfo {
-   display: flex;
-   width: 14vw;
-   justify-content: space-between;
-   align-items: center;
- }
- 
- .followCard {
-   display: flex;
-   align-items: center;
- }
- 
- .followCard p {
-   margin-left: 0.5vw;
-   margin-top: 2vh;
- }
- 
- .socialMediaContainer {
-   width: 34vw;
-   display: flex;
-   justify-content: flex-end;
- }
-
- .socialMedia {
-   display: flex;
-   justify-content: space-between;
-   margin-top: 3vh;
-   width: 5vw;
- }
- 
- .socialMedia img {
-   width: 1.2vw;
-   height: auto;
- }
- 
- .editButton, .saveButton, .emojiButton {
-   background: none;
-   border: none;
-   cursor: pointer;
- }
-
- .buttonContainer {
-   width: 13vw;
-   display: flex;
-   justify-content: space-between;
- }
-
- 
- .emojiButton {
-   position: absolute;
-   bottom: 2vh;
-   right: 3vw;
-   height: 2vh;
-   width: 2vh;
- }
-
- .emojiButton img {
-   position: absolute;
-   height: 2vh;
-   width: 2vh;
- }
-
- .emojiPickerContainer {
-   position: absolute;
-   top: 0%; /* Adjust as needed */
-   right: -15%;  /* Adjust as needed */
-   z-index: 10;
-   
- }
- 
- .emojiPickerContainer .emoji-picker-react {
-
-   background-color: var(--gray-dark); /* Adjust to your theme */
-   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-   border-radius: (--card-border);
-   padding: 10px; /* Padding inside the picker */
- }
-
- .emojiPickerContainer .emoji-picker-react .emoji-group {
-   max-height: 200px; /* Limit height */
-   overflow-y: auto; /* Scroll if overflow */
- }
- 
- .emojiPickerContainer .closeButton {
-   position: absolute;
-   top: 5px;
-   right: 5px;
-   background: none;
-   border: none;
-   font-size: 16px;
-   cursor: pointer;
- }
+  display: flex;
+  position: relative 
+}
+.imgSection {
+  width: 21vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgSection img {
+  height: 22vh;
+  width: auto;
+  border-radius: 50%;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+.bioContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vh;
+  width: 36vw;
+}
+.viewBioContainer, .editBioContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.editBioContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.buttonContainer {
+  margin: 2vh 0 -5.5vh 
+}
+.bioLabel {
+  display: flex;
+  flex-direction: column;
+  width: 36vw;
+}
+.bioLabel textarea {
+  border-radius: var(--button-border);
+  background-color: var(--gray-dark);
+  border: 1px solid var(--gray-lightest);
+  color: var(--color-text);
+  width: 33vw;
+  height: 7.6vh;
+  margin-top: 1vh;
+  resize: none;
+  font-size: 1.7vh;
+  padding: 1vh;
+  padding-top: 1.4vh;
+}
+.viewBioContainer {
+  border-radius: var(--button-border);
+  background-color: var(--gray-dark);
+  color: var(--color-text);
+  border: none;
+  width: 33vw;
+  height: 8vh;
+  margin-top: 1vh;
+  font-size: 1.8vh;
+  display: flex;
+  align-items: first baseline;
+  padding: 1vh;
+}
+.textInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+  width: 34vw;
+}
+.bio {
+  color: var(--text-color-secondary);
+}
+.bioLabel p {
+  margin: 0;
+}
+.followInfo {
+  display: flex;
+  width: 14vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.followCard {
+  display: flex;
+  align-items: center;
+}
+.followCard p {
+  margin-left: 0.5vw;
+  margin-top: 2vh;
+}
+.socialMediaContainer {
+  width: 34vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.socialMedia {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vh;
+  width: 5vw;
+}
+.socialMedia img {
+  width: 1.2vw;
+  height: auto;
+}
+.editButton, .saveButton, .emojiButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.buttonContainer {
+  width: 13vw;
+  display: flex;
+  justify-content: space-between;
+}
+.emojiButton {
+  position: absolute;
+  bottom: 2vh;
+  right: 3vw;
+  height: 2vh;
+  width: 2vh;
+}
+.emojiButton img {
+  position: absolute;
+  height: 2vh;
+  width: 2vh;
+}
+.emojiPickerContainer {
+  position: absolute;
+  top: 0%;
+  right: -15%;
+  z-index: 10;
+}
+.emojiPickerContainer .emoji-picker-react {
+  background-color: var(--gray-dark);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: (--card-border);
+  padding: 10px;
+}
+.emojiPickerContainer .emoji-picker-react .emoji-group {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.emojiPickerContainer .closeButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

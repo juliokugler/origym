@@ -19,13 +19,15 @@ import {
 import EmojiPicker from "emoji-picker-react";
 import happyEmoji from "../../assets/Icons/Happy_emoji.png";
 
-const Feed = ({ t, userId, userName }) => {
+const Feed = ({ t, userId, userName, photoURL }) => {
   const [content, setContent] = useState("");
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState("");
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const emojiPickerRef = useRef(null);
   const navigate = useNavigate();
+  console.log("userId:", userId);
+
   const handleClickOutside = (event) => {
     if (
       emojiPickerRef.current &&
@@ -72,12 +74,13 @@ const Feed = ({ t, userId, userName }) => {
     }
 
     try {
-      await addDoc(collection(db, "users", userId, "posts"), {
+      await addDoc(collection(db, "posts"), {
         powerBoosts: [],
         userId,
         content,
         author: userName,
         timestamp: serverTimestamp(),
+        photoURL: photoURL,
       });
       setContent("");
       setError("");
@@ -88,19 +91,41 @@ const Feed = ({ t, userId, userName }) => {
   };
 
   const fetchPosts = async () => {
-    const postsQuery = query(
-      collection(db, "posts"),
-      orderBy("timestamp", "desc"),
-      limit(10)
-    );
+    try {
+      // Fetch the list of users the current user is following
+      const followingQuery = query(collection(db, "users", userId, "follows"));
+      const followingSnapshot = await getDocs(followingQuery);
 
-    const querySnapshot = await getDocs(postsQuery);
-    const userPosts = querySnapshot.docs.map((doc) => {
-      const data = doc.data();
-      // Ensure powerBoosts is always initialized as an array
-      return { ...data, powerBoosts: data.powerBoosts || [] };
-    });
-    setPosts(userPosts);
+      // Extract the followingIds from the documents
+      const followingIds = [];
+      followingSnapshot.forEach((doc) => {
+        const followingId = doc.data().followingId;
+        if (followingId) {
+          followingIds.push(followingId);
+        }
+      });
+
+      // Include the current user's ID in the list of followingIds
+      followingIds.push(userId);
+
+      // Query posts from the current user and followed users
+      const postsQuery = query(
+        collection(db, "posts"),
+        where("userId", "in", followingIds),
+        orderBy("timestamp", "desc"),
+        limit(10)
+      );
+
+      const querySnapshot = await getDocs(postsQuery);
+      const userPosts = querySnapshot.docs.map((doc) => {
+        const data = doc.data();
+        // Ensure powerBoosts is always initialized as an array
+        return { ...data, powerBoosts: data.powerBoosts || [] };
+      });
+      setPosts(userPosts);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
   };
 
   useEffect(() => {

@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    width: 35vw;
+    height: 60vh;
+  }
+  
+  
+  .createButton, .shareButton {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }

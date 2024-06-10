@@ -56,6 +56,7 @@ const Sidebar = () => {
     setActive();
   }, [location]);
 
+
   return (
     <div className={styles.sidebar}>
       <div className={styles.logo}>
@@ -148,7 +149,7 @@ const Sidebar = () => {
         </li>
         <li>
           <NavLink to="/" className={styles.link}>
-            <img src={SignOut} onClick={logout} className={styles.icon} />
+          <img src={SignOut} onClick={logout} className={styles.icon} />
           </NavLink>
         </li>
       </ul>

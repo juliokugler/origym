@@ -45,18 +45,20 @@ const WeeklyWorkoutCard = ({ workouts, onOpen, onFavoriteToggle, user }) => {
   }, [filteredWorkouts, selectedDay]);
 
   return (
-    <div className={styles.exerciseContainer}>
+    <div className={styles.workoutContainer}>
       <DaySelector selectedDay={selectedDay} handleDaySelect={handleDaySelect} />
+      <div className={styles.exerciseListContainer}> 
       <ExerciseList
         exercises={filteredWorkouts}
         number={number}
         onChange={setNumber}
         onFavoriteToggle={onFavoriteToggle}
         user={user}
-      />
-      <button className={styles.addButton} onClick={handleOpenCreateWorkout}>
-        <FaPlus />
-      </button>
+      /></div>
+      <div className={styles.buttonContainer}>
+      <button className="notSelectedButton-medium" onClick={handleOpenCreateWorkout}>
+      {t("createWorkout")}
+      </button></div>
     </div>
   );
 };

@@ -36,7 +36,7 @@ const LoginContainer = () => {
     <div className={styles.loginContainer}>
       <div className={styles.login}>
         <div className={styles.title}>
-          <h2>{t("welcomeBack")}!</h2>
+          <h1>{t("welcomeBack")}</h1>
         </div>
         <form onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>

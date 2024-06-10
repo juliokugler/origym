@@ -1,0 +1,11 @@
+.onboardingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  height: 100vh;
+  padding: 1vh;
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+}
+

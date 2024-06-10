@@ -1,20 +1,50 @@
 import React from "react";
 import styles from "./NutritionalInfo.module.css";
+import classNames from "classnames"
+import NutritionalIntake from "./DailyIntakes/NutritionalIntake";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
+const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade, mealname, t, userData, dailyInfo, mealImage, onUserInfoChange, user }) => {
 
-const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade }) => {
+
+  const addMealToDailyInfo = async () => {
+
+    const db = getFirestore();
+    const currentDate = new Date().toISOString().slice(0, 10);
+    const dailyInfoRef = doc(db, `users/${user.uid}/dailyInfo/${currentDate}`);
+
+    try {
+      await setDoc(
+        dailyInfoRef,
+        {
+          caloriesConsumed: dailyInfo.caloriesConsumed + data.nf_calories,
+          proteinConsumed: dailyInfo.proteinConsumed + data.nf_protein,
+          fatConsumed: dailyInfo.fatConsumed + data.nf_total_fat,
+          carbsConsumed: dailyInfo.carbsConsumed + data.nf_total_carbohydrate,
+        },
+        { merge: true }
+      );
+
+      console.log("Nutritional values added successfully.");
+      onUserInfoChange();
+    } catch (error) {
+      console.error("Error adding nutritional values:", error);
+    }
+
+  };
+
+
   return (
     <div className={styles.popup}>
-      <div className={styles.popupContent}>
-        <h2 className={styles.title}>Informações Nutricionais</h2>
+       <div className={classNames("card", styles.popupContainer)}>       <h2 className={styles.title}>{quantidade} {t`${unidade}`} de {mealname}</h2> <div className={styles.popupContent}>
+        <div className={styles.imageContainer}> <img src={mealImage}></img>
+          <NutritionalIntake ingredientCalories={data.nf_calories} ingredientProtein={data.nf_protein} ingredientFat={data.nf_total_fat} ingredientCarbs={data.nf_total_carbohydrate} t={t} userData={userData} dailyInfo={dailyInfo}/>
+        </div>
+       
+      <div className={styles.tableContainer}>
+ 
         <table className={styles.table}>
           <tbody>
-            <tr>
-              <td>Nome do alimento:</td>
-              <td>
-                {quantidade} {unidade} de {data.food_name}
-              </td>
-            </tr>
-            <tr>
+                        <tr>
               <td>Calorias:</td>
               <td>{data.nf_calories || "-"}</td>
             </tr>
@@ -63,11 +93,13 @@ const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade }) => {
               <td>{data.nf_vitamin_d_mcg || "-"}</td>
             </tr>
           </tbody>
-        </table>
-        <button className={styles.closeButton} onClick={onClose}>
-          Fechar
+        </table></div></div>
+        <div className={styles.buttonContainer}>
+        <button className="notSelectedButton-medium" onClick={onClose}>{t("close")}</button>
+        <button className="button" onClick={addMealToDailyInfo} >{t("addToDailyAndMacros")}
+          
         </button>
-      </div>
+      </div></div>
     </div>
   );
 };

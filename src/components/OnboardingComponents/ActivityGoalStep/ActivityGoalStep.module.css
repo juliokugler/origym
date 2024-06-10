@@ -1,0 +1,118 @@
+
+  
+  .step {
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 40vh;
+    width: 30vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  
+
+  .step label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6vh;
+    margin: 0.5vh auto;
+    text-align: left;
+  }
+  
+  .step input,
+  .step select {
+    width: 26vw;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+    border-radius: var(--input-border);
+    font-size: 14px;
+  }
+  
+  .step select {
+    width: 27vw;
+  }
+  
+    
+  .goalContainer {
+    display: block;
+    text-align: left;
+  }
+  
+  .cardsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 27vw;
+  }
+  
+  .goalCard {
+    border: 1px solid var(--gray-light);
+    border-radius: var(--card-border);
+    width: 12vh;
+    height: 12vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .activeGoal {
+    background-color: var(--primary-color);
+    color: var(--gray-medium);
+    border: none;
+  }
+  
+  .weightContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 27vw;
+    margin: 0 auto;
+  }
+  
+  .weightContainer input {
+    width: 12vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .weightContainer label {
+    width: 13vw;
+    margin: 0;
+  }
+  
+  .activityLevelContainer {
+    text-align: left;
+  }
+
+  .activityButtons {
+    display: flex;
+    width: 28vw;
+justify-content: center;
+margin: 0 auto;
+}
+  
+  .buttonContainer {   
+     display: flex;
+    justify-content: center;
+  margin: 2vh auto 0 auto;
+  }
+  
+  @media (max-width: 600px) {
+    .step {
+      padding: 20px;
+    }
+  
+    .step h2 {
+      font-size: 20px;
+    }
+  
+    .step p {
+      font-size: 14px;
+    }
+  
+    .step button {
+      font-size: 14px;
+    }
+  }

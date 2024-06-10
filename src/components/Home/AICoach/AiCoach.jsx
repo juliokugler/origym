@@ -55,7 +55,7 @@ const AiCoach = ({ userData, timedGreeting, t }) => {
           <div>
             <SpeechContainer
               speaker="Coach"
-              message={<div className={styles.loader}></div>}
+              message={<div className="loader"></div>}
             />
           </div>
         )}

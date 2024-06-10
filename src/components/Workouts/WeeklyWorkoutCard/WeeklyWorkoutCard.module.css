@@ -1,10 +1,21 @@
-.exerciseContainer {
+.workoutContainer {
   display: flex;
   flex-direction: column;
   color: white;
   border-radius: 2vh;
   padding-top: 1vh;
  
+}
+
+.exerciseListContainer {
+  width: 37vw;
+  height: 57vh;
+  margin-bottom: 3vh;
+  overflow-y: hidden
+}
+
+.exerciseListContainer:hover {
+  overflow-y: auto
 }
 
 .mainTitle {
@@ -24,22 +35,8 @@
     height: 24px;
       }
 
-      .addButton {
-        background-color: var(--primary-color);
-        width: 4vh;
-        height: 4vh;
-        border-radius: 2vh;
+      .buttonContainer {
         display: flex;
-        margin-right: 0;
-        padding: 0;
-        align-items: center;
         justify-content: center;
-        border: none;
-      }
-
-      .addButton svg {
-        fill: #242529;
-        font-size: 2vh;
-        margin: 0;
-        padding: 0;
+        margin-left: 1vw;
       }

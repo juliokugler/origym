@@ -25,9 +25,10 @@ const NutritionPage = ({ meal, mealNumber, t, userData, dailyInfo, onUserInfoCha
   const [rerenderCalendar, setRerenderCalendar] = useState(false);
   const [selectedOption, setSelectedOption] = useState(meal);
 
-  if (user && !userData || user && !dailyInfo) {
+  if (!userData || dailyInfo == null || dailyInfo == undefined ) {
     return <p>{t("loading")}...</p>;
   }
+
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -113,7 +114,12 @@ const NutritionPage = ({ meal, mealNumber, t, userData, dailyInfo, onUserInfoCha
           <div className={styles.bottomSection}>
           <div className={classNames("card", styles.calculator)}>
               <h3 className="title">{t("nutritionalCalculator")}</h3>
-              <Calculator t={t} />
+              <Calculator   t={t}
+              userData={userData}
+              dailyInfo={dailyInfo}
+              onUserInfoChange={onUserInfoChange}
+              user={user}
+               />
             </div>
           </div>
         </div>

@@ -1,35 +1,26 @@
-import React, { useState, useEffect } from "react";
-import MealPopup1 from "./MealPopup1";
-import MealPopup2 from "./MealPopup2";
-import MealPopup3 from "./MealPopup3";
+import React, { useState } from "react";
+import Step1 from "./Step1";
+import Step2 from "./Step2.jsx";
+import Step3 from "./Step3";
+import Step4 from "./Step4";
 import styles from "./MealPlanner.module.css";
 
-const MealPlanner = ({
-  onClose,
-  dayFromCard,
-  mealFromCard,
-
-  onCorrectSubmit,
-}) => {
+const MealPlanner = ({ onClose, dayFromCard, mealFromCard, onCorrectSubmit }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [ingredients, setIngredients] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [quantityType, setQuantityType] = useState("");
-  const [meal, setMeal] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
+  const [mealType, setMealType] = useState("");
+  const [mealInfo, setMealInfo] = useState({});
 
-  const handleNext = (ingredientList) => {
-    setCurrentPage(2);
-    setIngredients(ingredientList);
+  const handleNext = (data) => {
+    if (currentPage === 1) {
+      setMealType(data);
+    } else if (currentPage === 2) {
+      setIngredients(data);
+    } else if (currentPage === 3) {
+      setMealInfo(data);
+    }
+    setCurrentPage((prevPage) => prevPage + 1);
   };
-
-  const handleSecondNext = (mealInfo) => {
-    setCurrentPage(3);
-    setMeal(mealInfo);
-  };
-
-  useEffect(() => {
-    console.log("Meal:", meal);
-  }, [meal]); // Log meal whenever it changes
 
   const handlePrevious = () => {
     setCurrentPage((prevPage) => prevPage - 1);
@@ -47,28 +38,24 @@ const MealPlanner = ({
             <button className={styles.closeButton} onClick={onClose}>
               Close
             </button>
-            {currentPage === 1 && (
-              <div className={styles.section}>
-                <MealPopup1 onNext={handleNext} />
-              </div>
-            )}
+            {currentPage === 1 && <Step1 onNext={handleNext} />}
             {currentPage === 2 && (
-              <div className={styles.section}>
-                <MealPopup2
-                  onNext={handleSecondNext}
-                  onPrevious={handlePrevious}
-                  ingredients={ingredients}
-                  dayFromCard={dayFromCard}
-                  mealFromCard={mealFromCard}
-                  onCorrectSubmit={onCorrectSubmit}
-                />
-              </div>
+              <Step2
+                onNext={handleNext}
+                onPrevious={handlePrevious}
+                mealType={mealType}
+              />
             )}
             {currentPage === 3 && (
-              <div className={styles.section}>
-                <MealPopup3 onCreate={handleCreate} />
-              </div>
+              <Step3
+                onNext={handleNext}
+                onPrevious={handlePrevious}
+                ingredients={ingredients}
+                dayFromCard={dayFromCard}
+                mealFromCard={mealFromCard}
+              />
             )}
+            {currentPage === 4 && <Step4 onCreate={handleCreate} />}
           </div>
         </div>
       )}

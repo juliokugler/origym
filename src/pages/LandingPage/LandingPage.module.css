@@ -17,13 +17,17 @@
   margin: 3vh 0
 }  
 
+.heroText button, .bannerText button {
+  margin-left: 0;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
   margin-bottom: 2.6vh;
-  background-image: url( "./newHero.png");
+  background-image: url( "./hero.png");
   background-repeat: no-repeat;
   width: 100vw;
   height: 70vh;

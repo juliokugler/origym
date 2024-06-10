@@ -1,0 +1,35 @@
+.row {
+display: flex;
+justify-content: space-between;
+width: 36vw;
+margin: 0 auto;
+}
+
+
+.input {
+padding: 2px 12px;
+width: 16.8vw;
+height: 3vh;
+}
+
+.selectionInput {
+  cursor: pointer;
+  padding: 2px 12px;
+  width: 16.8vw;
+  height: 3.65vh;
+  }
+
+input::placeholder{
+  color: #8d8d8d;
+}
+
+
+/*Calendar*/
+
+.label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 4vh;
+}

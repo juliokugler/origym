@@ -1,16 +1,24 @@
+//React
 import React, { useState } from "react";
 import { useParams, Routes, Route, Navigate } from "react-router-dom";
-import "./App.css";
+
+//Style
 import "./index.css";
+
+//Components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
+
+//Hooks
 import { useAuth } from "./hooks/useAuth";
 import { useTranslations } from "./hooks/useTranslations";
 import { useTranslation } from "react-i18next";
 import { useGreetingAndMeal } from "./hooks/useGreetingAndMeal";
 import { AuthProvider, useAuthValue } from "./contexts/AuthContext";
 import { UserDataProvider, useUserData } from "./contexts/UserDataContext";
+
+//Pages 
 import Health from "./pages/HealthPage/HealthPage";
 import NutritionPage from "./pages/NutritionPage/NutritionPage";
 import Home from "./pages/HomePage/HomePage";
@@ -20,8 +28,8 @@ import SettingsPage from "./pages/SettingsPage/SettingsPage";
 import Workouts from "./pages/WorkoutsPage/WorkoutsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import AdditionalInfo from "./pages/AdditionalInfoPage/AdditionalInfoPage";
 import Friends from "./pages/FriendsPage/FriendsPage";
+import Onboarding from "./pages/Onboarding/Onboarding";
 
 function AppContent() {
   const { userData, dailyInfo, loading, setUserInfoChange } = useUserData();
@@ -33,7 +41,7 @@ function AppContent() {
   if (loading) {
     return <p>{t("loading")}...</p>;
   }
-  
+  console.log("data:", userData)
   
   const handleUserInfoChange = () => {
     setUserInfoChange((prev) => !prev);
@@ -41,12 +49,12 @@ function AppContent() {
 
   return (
     <div className="App">
-      {!userData ? <Navbar t={t} /> : <Sidebar />}
+      {!user? <Navbar t={t} /> : <Sidebar />}
       <div className="main-container">
         <Routes>
           <Route
             path="/"
-            element={!user ? <Landing t={t} /> : <Navigate to="/home" />}
+            element={!userData ? <Landing t={t} /> : <Navigate to="/home" />}
           />
           <Route
             path="/login"
@@ -55,7 +63,7 @@ function AppContent() {
           <Route
             path="/home"
             element={
-              userData ? (
+             userData ? (
                 <Home
                   t={t}
                   user={user}
@@ -71,11 +79,11 @@ function AppContent() {
               )
             }
           />
-          <Route path="/workouts" element={<Workouts userData={userData} dailyInfo={dailyInfo} t={t} />} />
-          <Route path="/health" element={<Health userData={userData} t={t} />} />
+          <Route path="/workouts" element={userData ? <Workouts userData={userData} dailyInfo={dailyInfo} t={t} /> : <Navigate to="/login" />} />
+          <Route path="/health" element={userData ? <Health userData={userData} t={t} /> : <Navigate to="/login" /> } />
           <Route
             path="/nutrition"
-            element={
+            element={userData ? 
               <NutritionPage
                 onUserInfoChange={handleUserInfoChange}
                 t={t}
@@ -83,7 +91,8 @@ function AppContent() {
                 dailyInfo={dailyInfo}
                 meal={meal}
                 mealNumber={mealNumber}
-              />
+                user={user}
+              /> : <Navigate to="/login" />
             }
           />
           <Route
@@ -96,22 +105,22 @@ function AppContent() {
           />
           <Route
             path="/friends"
-            element={userData ? <Friends user={userData} userData={userData} t={t} /> : <Navigate to="/login" />}
+            element={userData ? <Friends user={user} userData={userData} t={t} /> : <Navigate to="/login" />}
           />
           <Route
             path="/settings"
             element={
-              userData ? (
-                <SettingsPage userData={userData} t={t} switchLanguage={switchLanguage} />
+              user ? (
+                <Onboarding onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userInfo={userData}   user={user} userUid={user.uid} t={t}/>
               ) : (
                 <Navigate to="/login" />
               )
             }
           />
           <Route
-            path="/additionalinfo"
+            path="/onboarding"
             element={
-              user ? <AdditionalInfo user={user} userData={userData} t={t} /> : <Navigate to="/login" />
+              user ? <Onboarding onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userInfo={userData}   user={user} userUid={user.uid} t={t} /> : <Navigate to="/login" />
             }
           />
           <Route path="/profile/:userId" element={<ProfilePage user={user} userData={userData} t={t} />} />

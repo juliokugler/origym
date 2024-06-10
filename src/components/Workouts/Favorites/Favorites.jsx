@@ -41,12 +41,13 @@ const Favorites = ({ favoriteChange }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.mainContent}>
       <div className={styles.groupButtons}>
         {Object.keys(groups).map((groupName) => (
           <button
             key={groupName}
             className={`${styles.groupButton} ${
-              activeGroup === groupName ? "button-small" : "inactiveButton-small"
+              activeGroup === groupName ? "button-small" : "notSelectedButton-small"
             }`}
             onClick={() => handleGroupSelection(groupName)}
           >
@@ -94,7 +95,7 @@ const Favorites = ({ favoriteChange }) => {
             </table>
           )}
         </div>
-      ))}
+      ))}</div>
 
       {showAddExercise && (
         <AddFavorites
@@ -106,7 +107,7 @@ const Favorites = ({ favoriteChange }) => {
       {!showAddExercise && (
         <div className={styles.buttonContainer}>
         <button
-          className="inactiveButton"
+          className="notSelectedButton-medium"
           onClick={() => setShowAddExercise(true)}
         >
           <p>{t("addExercise")}</p>

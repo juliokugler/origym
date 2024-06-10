@@ -100,7 +100,7 @@ button {
   margin: 0;
   }
   
-  input, select {
+  input, select, textarea {
     border-radius: var(--input-border);
     background-color: var(--gray-light);
     color: var(--color-text);
@@ -138,6 +138,21 @@ border: 1px solid var(--gray-lightest);
   background-color: #e0e0e0;
   }
 
+  .notSelectedButton-medium, .notSelectedButton-small, .notSelectedGroupButton{
+    background-color: transparent;
+   border: 1px solid #ffffff;
+   color: #ffffff;
+   border-radius: var(--button-border);
+  height: 3.6vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5vw;
+  cursor: pointer;
+  }
+
+
 .inactiveButton-medium, .inactiveButton-small, .inactiveGroupButton{
    background-color: transparent;
   border: 1px solid #727272;
@@ -149,9 +164,10 @@ border: 1px solid var(--gray-lightest);
  justify-content: center;
  align-items: center;
  margin: 0 0.5vw;
+ cursor: default;
  }
 
-.inactiveButton-medium {
+.inactiveButton-medium, .notSelectedButton-medium, .button-medium {
   width: 14vw;
 }
 
@@ -323,3 +339,81 @@ font-weight: 500;
 margin-bottom:1vh
 }
 
+
+
+.progressBar2 {
+  appearance: none; /* Remove default styles */
+  width: 15vw;
+  height: 1.2vh;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 10px;
+  z-index: 99;
+  margin-bottom: 1vh;
+  transition: width 0.8s ease-in-out;
+}
+
+.progressBar2::-webkit-progress-bar {
+  background-color: #ffffff34; /* Background color of the progress bar */
+  border-radius: 10px;
+}
+
+.progressBar2::-webkit-progress-value {
+  background-color: var(--primary-color); /* Change the color of the progress bar */
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progressBar2::-moz-progress-bar {
+  background-color: var(--primary-color);
+  transition: width 0.8s ease-in-out; /* Add transition for smooth animation */
+}
+
+/* Loader*/
+
+.loader {
+  width: 1.8vw;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#ffffff00);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+.loader-medium {
+  width: 3vw;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#ffffff00);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+  margin-bottom: 12vh;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+.loader-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.364);
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: -2vh;
+}

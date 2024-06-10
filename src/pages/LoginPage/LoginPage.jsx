@@ -1,18 +1,22 @@
-//React
 import React from "react";
 
-//Styles
+// Styles
 import styles from "./LoginPage.module.css";
 
-//Components
+// Components
 import LoginContainer from "../../components/LoginContainer/LoginContainer";
 
-//Hooks
-import useBackgroundImage from "../../hooks/useBackgroundImage";
+// Hooks
+import useImageLoad from "../../hooks/useImageLoad";
 import backgroundImage from "../../assets/Images/background.png";
 
 const LoginPage = () => {
-  const backgroundImageUrl = useBackgroundImage({ backgroundImage });
+  const isImageLoaded = useImageLoad(backgroundImage);
+
+  if (!isImageLoaded) {
+    return <div className="loader-container"><div className="loader-medium"/></div>;
+  }
+
   return (
     <div
       className={styles.background}

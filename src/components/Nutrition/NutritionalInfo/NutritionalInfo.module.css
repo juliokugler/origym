@@ -4,35 +4,80 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 99;
   }
   
+  .popup h2 {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .popupContainer {
+    padding: 2vh 2vw;
+  }
+
   .popupContent {
-    background-color: white;
-    padding: 20px;
-    border-radius: 0.8vh;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background-color: #181818;
+display: flex;
   }
   
   .title {
-    color: var(--primary-color);
-    margin-bottom: 32px;
+    color: var(--text-color);
+    margin-bottom: 3vh;
   }
   
-  .table {
+  .imageContainer {
+    width: 18vw;
+    height:  50vh;
+    position: relative;
+  }
+
+  .imageContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height:  50vh;
+    background-color: rgba(0, 0, 0, 0.6); /* 60% black overlay */
+    border-radius: var(--card-border); /* Match the image border radius */
+    z-index: 1; /* Ensure the overlay is on top of the image */
+  }
+  
+
+  .imageContainer img {
+    position: absolute;
+    width: 18vw;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: var(--card-border);
+    z-index: 0; /* Ensure the image is below the overlay */
+  }
+
+.tableContainer {
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  margin-left: 2vw;
+}
+
+  .table {
+    width: 18vw;
     border-collapse: collapse;
-    margin-top: 10px;
+    
   }
   
   .table th,
   .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid var(--text-color-secondary);
+    padding: 1vh;
     text-align: left;
   }
   
@@ -40,20 +85,16 @@
     background-color: var(--primary-color);
     color: white;
   }
-  
-  .closeButton {
-    margin-top: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 0.8vh;
-    cursor: pointer;
-  }
-  
+
 
   .image {
     height: 120px;
     border-radius: 0.8vh;
     border: 3px solid var(--primary-color);
+  }
+
+  .buttonContainer {
+    display: flex;
+    width: 30vw;
+    margin: 4vh auto 2vh auto
   }

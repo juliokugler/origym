@@ -1,0 +1,82 @@
+.container {
+    text-align: center;
+    width: 35vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .container h2 {margin-top: 0;
+margin-bottom: -1vh;}
+
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .labels button {
+    margin: 0 auto 3vh auto
+  }
+
+ 
+  .labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+  }
+
+  .quantityLabels {
+    display: flex;
+    width: 24vw;
+    margin-bottom: 2vh;
+  }
+
+  .quantityLabel {
+    width: 17vw;
+    margin-right: 1vw;
+  }
+
+  .quantityTypeLabel {
+    width: 6vw;
+  }
+
+  .quantityTypeLabel select {
+    height: 3vh;
+  }
+
+.label, .quantityLabel, .quantityTypeLabel{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 2vh;
+  }
+
+  .label {
+    width: 24vw;
+  }
+
+.label input, .quantityLabel input {
+    height: 2.6vh;
+}
+
+.list {
+    border: none;
+    width: 24vw;
+    height: 12vh;
+    resize: none;
+    background-color: var(--gray-dark);
+    border-radius: 1vh;
+}
+
+.calorieLabel {
+    border: none;
+    background-color: transparent;
+    margin-bottom: 5vh;
+}
+
+.buttonContainer {
+    width: 25vw;
+    margin: 3vh auto;
+}

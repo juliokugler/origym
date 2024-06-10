@@ -1,56 +1,127 @@
-/*Container*/ 
- 
+
 .registerContainer {
   color: #FFFFFF;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: var(--gray-medium);
-background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #2b2c31); 
-width: 34vw;
-margin-top: 16vh;
-margin-right: 9vw;
-border-radius: 2vh;
-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 34vw;
+  margin-top: 5vh;
+  margin-right: 9vw;
+  border-radius: 2vh;
+  height: 78vh;
+  text-align: center;
+  cursor: default;
 }
 
-.registerContainer h2 {
-margin-top:4vh;
-text-align: center;
-margin-bottom: 0;
+.formAddInfo {
+  display: flex;
+  width: 25.6vw;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: -0.5vh;
+  margin-bottom: 3vh;
+  align-items: center;
+  color: rgb(150, 150, 150);
+}
+
+.formAddInfo u {
+  cursor: pointer;
+}
+
+.formAddInfo svg {
+  cursor: pointer;
+  margin-right: 0.5vw;
+  fill: var(--primary-color);
+}
+
+.formAddInfo u:hover {
+  transition: color 0.15s ease;
+  color: #FFFFFF;
+}
+
+.nameAndIcon {
+  display: flex;
+  align-items: center;
+}
+
+.registerContainer h1 {
+  margin:0;
+  text-align: center;
 }
 
 .registerContainer form {
-display: flex;
-flex-direction: column;
-text-align: left;
-width: 26vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 26vw;
 }
 
-.buttonContainer button {
-  margin: 0 auto;
-  margin-top: 4vh;
-  }
-
-
 .registerContainer label {
-display: flex;
-justify-content: flex-end;
-text-align: left;
-flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+  text-align: left;
+  flex-direction: column;
+}
+
+.inputField {
+  margin-bottom: 4vh;
+  padding: 0.5vw;
+  border-radius: 0.8vh;
+  border: 1px solid #4D4F56;
+  background-color: #35373D;
+  width: 26vw;
+}
+
+
+
+.title {
+  margin: 8vh auto;
+}
+
+.register span {
+  text-align: left;
+}
+
+.passwordInputGroup {
+  position: relative;
+}
+
+.eyeButton {
+  position: absolute;
+  right: -1.2vw;
+  top: 11%;
+  padding: 1vw;
+  fill: var(--gray-light);
+  cursor: pointer;
+  font-size: 2vh;
+}
+
+.infoContainer {
+  border-radius: 0.8vh;
+  padding-left: 12px;
+  background-color: #f0f0f0;
+  height: 2vh;
+}
+
+/*Submit Button*/
+
+.buttonContainer button {
+  margin: 2vh auto 0 auto;
+  width: 15vw;
+}
+
+.register a {
+  color: var(--primary-color);
+}
+
+.text {
+  margin: 3vh 0;
 }
 
 .nameContainer {
   display: flex;
+  width: 27vw;
   justify-content: space-between;
-}
-
-.inputField {
-margin-bottom: 2.5vh;
-padding: 0.5vw;
-border-radius: 0.8vh;
-background-color: var(--gray-light);
-border: 1px solid var(--gray-lightest);
 }
 
 .nameInputField {
@@ -61,39 +132,3 @@ border: 1px solid var(--gray-lightest);
   border: 1px solid var(--gray-lightest);
   width: 11vw;
   }
-
-.title {
-  margin-bottom: 5vh;
-}
-
-.registerContainer p {
-text-align: center;
-}
-
-.register span {
-text-align: left;
-}
-
-label span {
-padding-left: 8px;
-margin-bottom: 1vh;
-}  
-
-.or {
-  margin: 3vh 0
-}
-
-
-/*Register Option Buttons */
-
-
-
-/* Styling for icons */
-.registerContainer svg {
-margin-right: 1vw;
-fill:  var(--primary-color);
-}
-
-.register a {
-  color: var(--primary-color);
-}

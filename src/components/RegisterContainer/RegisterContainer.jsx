@@ -49,7 +49,7 @@ const RegisterContainer = () => {
   return (
     <div className={styles.registerContainer}>
       <div className={styles.title}>
-        <h2>{t("register")}</h2>
+        <h1>{t("register")}</h1>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -125,7 +125,7 @@ const RegisterContainer = () => {
         </button></div>
       )}
       {error && <p className="error">{error}</p>}
-      <p className={styles.or}>{t("or")}</p>
+      <p className={styles.text}>{t("or")}</p>
       <div className="loginOptions">
         <button className="socialMediaButton">
           <FaGoogle size={22} />

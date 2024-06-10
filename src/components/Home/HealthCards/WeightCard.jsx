@@ -44,7 +44,7 @@ const WeightCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) => {
             />
             <div className="healthInfo">
               <h2>
-             {userData.userProfile.currentWeight}
+             {userData.userProfile.weight}
                             </h2>
              
               <img

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTimes } from "react-icons/fa";
 import styles from "./Favorites.module.css";
-import ExerciseList from "../../../assets/ExercisesDatabase/Strength.json";
+import ExerciseList from "../../../assets/ExercisesDatabase/ExerciseInfo.json";
 import { db } from "../../../firebase/config";
 import {
   getFirestore,

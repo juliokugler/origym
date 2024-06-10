@@ -58,3 +58,22 @@
   .mainUserData {
     margin-left: 4vw;
   }
+
+  
+.languageContainer {
+
+  display: flex;
+}
+
+.languageContainer img {
+  height: 3.5vh;
+  width: 3.5vh;
+  margin-right: 0.6vw;
+  margin-top: 0.1vh;
+}
+
+.languageDropdown select {
+  padding: 5px 10px;
+  border-radius: 5px;
+ 
+}

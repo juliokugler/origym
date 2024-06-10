@@ -1,0 +1,64 @@
+.container {
+    text-align: center;
+    width: 35vw;
+    height: 65vh;
+    ;
+  }
+  .container h2 {margin-top: 0;
+margin-bottom: -1vh;}
+
+  
+  .imageContainer {
+    position: relative;
+  
+  }
+
+  .nameContainer {
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+  }
+  
+  .recipeImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .editIcon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    background-color: black;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  
+  button {
+    margin: 0 10px;
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 2vh;
+    width: 24vw;
+    margin: 4vh auto;
+}
+
+.label input {
+    height: 2.6vh;
+}

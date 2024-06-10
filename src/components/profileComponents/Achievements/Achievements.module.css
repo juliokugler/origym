@@ -1,27 +1,24 @@
 .cardContainer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 22vw;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 22vw;
+  margin: 0 auto;
 }
-
 .card {
-margin: 0.5vw;
-      height: 6vh;
-    width: 21vw;
-    border-radius:var(--card-border);
-    background-color: var(--gray-light);
-    display: flex;
-    align-items: center;
+  margin: 0.5vw;
+  height: 6vh;
+  width: 21vw;
+  border-radius:var(--card-border);
+  background-color: var(--gray-light);
+  display: flex;
+  align-items: center;
 }
-
 .card img {
-  
-          height: 5vh;
-        width: 5vh;
-        border-radius:var(--card-border);
-        margin-right: 1vw;
-        margin-left: 0.3vw;
-    }
+  height: 5vh;
+  width: 5vh;
+  border-radius:var(--card-border);
+  margin-right: 1vw;
+  margin-left: 0.3vw;
+}

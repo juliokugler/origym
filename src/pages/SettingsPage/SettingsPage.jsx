@@ -2,7 +2,16 @@ import React, { useState, useEffect } from "react";
 
 //Styles
 import styles from "./SettingsPage.module.css";
+import classNames from "classnames"
+
+//Icons
 import { FaEdit } from "react-icons/fa";
+import flagPt from "../../assets/Icons/flag_pt.png";
+import flagEn from "../../assets/Icons/flag_en.png";
+import flagEs from "../../assets/Icons/flag_es.png";
+import flagFr from "../../assets/Icons/flag_fr.png";
+import flagIt from "../../assets/Icons/flag_it.png";
+import flagDe from "../../assets/Icons/flag_de.png";
 
 //Components
 import Header from "../../components/Header/Header";
@@ -12,11 +21,12 @@ import ChangePhotoURL from "../../components/Profile/ChangePhotoURL";
 
 const SettingsPage = ({ switchLanguage, t, userData }) => {
   const [loading, setLoading] = useState(true); // Initialize loading state
-
+const [language, setLanguage] = useState("pt");
 
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
     switchLanguage(selectedLanguage);
+    setLanguage(selectedLanguage)
   };
   // useEffect to handle the loading state
   useEffect(() => {
@@ -70,17 +80,38 @@ const SettingsPage = ({ switchLanguage, t, userData }) => {
                 <FaEdit />
               </div>
             </div>
-
-            <label htmlFor="language">Select Language:</label>
-            <select id="language" onChange={handleLanguageChange}>
-              <option value="en">English</option>
-              <option value="pt">Portuguese</option>
-              <option value="es">Spanish</option>
-              <option value="fr">French</option>
-              <option value="de">German</option>
-              <option value="it">Italian</option>
-
-            </select>
+            <div className={styles.languageContainer}>
+ <div className={styles.flagContainer}>
+    {(() => {
+      switch (language) {
+        case "pt":
+          return <img src={flagPt} alt="Portuguese Flag" />;
+        case "en":
+          return <img src={flagEn} alt="English Flag" />;
+        case "es":
+          return <img src={flagEs} alt="Spanish Flag" />;
+        case "fr":
+          return <img src={flagFr} alt="French Flag" />;
+        case "de":
+          return <img src={flagDe} alt="German Flag" />;
+        case "it":
+          return <img src={flagIt} alt="Italian Flag" />;
+        default:
+          return null;
+      }
+    })()}
+  </div>
+  <div className={classNames("card", styles.languageDropdown)}>
+    <select id="language" onChange={handleLanguageChange}>
+      <option value="pt">{t("portuguese")}</option>
+      <option value="en">{t("english")}</option>
+      <option value="es">{t("spanish")}</option>
+      <option value="fr">{t("french")}</option>
+      <option value="de">{t("german")}</option>
+      <option value="it">{t("italian")}</option>
+    </select>
+  </div>
+</div>
           </div>
         </div>
       )}

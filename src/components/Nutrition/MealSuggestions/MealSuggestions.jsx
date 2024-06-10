@@ -18,7 +18,7 @@ const MealSuggestions = ({ meal, dailyInfo, onUserInfoChange }) => {
     "https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Icons%2FarrowDown.png?alt=media&token=683caa3c-018f-4de5-be6f-b15ee51f7763",
     "https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Icons%2FarrowUp.png?alt=media&token=8f14ddc8-46d9-486f-8f20-b30597c9be92",
   ];
-
+console.log(meal)
   useEffect(() => {
     const fetchRecipes = async () => {
       const cachedData = localStorage.getItem(`recipes-${meal}`);

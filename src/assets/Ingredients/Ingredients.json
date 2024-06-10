@@ -1,0 +1,3191 @@
+[
+    {
+      "name": "adzuki bean",
+      "translations": {
+        "en": "adzuki bean",
+        "pt": "feijão adzuki"
+           }
+    },
+    {
+      "name": "Almond",
+      "translations": {
+        "en": "Almond",
+        "pt": "Amêndoa"
+       
+      }
+    },
+    {
+      "name": "almond milk",
+      "translations": {
+        "en": "almond milk",
+        "pt": "leite de amêndoa"
+    
+      }
+    },
+    {
+      "name": "amaranth",
+      "translations": {
+        "en": "amaranth",
+        "pt": "amaranto"
+   
+      }
+    },
+    {
+      "name": "apple",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM2x4-pEl4w3qOiN6oxAjscNRftb9cFPe6oQ&s",
+      "translations": {
+        "en": "apple",
+        "pt": "maçã"
+    
+      }
+    },
+    {
+      "name": "apricot",
+      "translations": {
+        "en": "apricot",
+        "pt": "damasco"
+  
+      }
+    },
+    {
+      "name": "asparagus",
+      "translations": {
+        "en": "asparagus",
+        "pt": "espargo"
+ 
+      }
+    },
+    {
+      "name": "avocado",
+      "translations": {
+        "en": "avocado",
+        "pt": "abacate"
+
+      }
+    },
+    {
+      "name": "rice",
+      "translations": {
+        "en": "rice",
+        "pt": "arroz"
+       
+      }
+    },
+    {
+      "name": "artichoke",
+      "translations": {
+        "en": "artichoke",
+        "pt": "alcachofra"
+       
+      }
+    },
+    {
+      "name": "arugula",
+      "translations": {
+        "en": "arugula",
+        "pt": "rúcula"
+      
+      }
+    },
+    {
+      "name": "albacore tuna",
+      "translations": {
+        "en": "albacore tuna",
+        "pt": "atum albacora"
+    
+      }
+    },
+    {
+      "name": "anchovy",
+      "translations": {
+        "en": "anchovy",
+        "pt": "anchova"
+   
+      }
+    },
+    {
+      "name": "arrowroot",
+      "translations": {
+        "en": "arrowroot",
+        "pt": "arrowroot"
+      
+      }
+    },
+    {
+      "name": "artificial sweetener",
+      "translations": {
+        "en": "artificial sweetener",
+        "pt": "adoçante"
+      
+      }
+    },
+    {
+      "name": "alfalfa sprouts",
+      "translations": {
+        "en": "alfalfa sprouts",
+        "pt": "broto de alfafa"
+      
+      }
+    },
+    {
+      "name": "acai",
+      "translations": {
+        "en": "acai",
+        "pt": "açaí"
+      
+      }
+    },
+    {
+      "name": "ammonium bicarbonate",
+      "translations": {
+        "en": "ammonium bicarbonate",
+        "pt": "bicarbonato de amônio"
+     
+      }
+    },
+    {
+      "name": "agar",
+      "translations": {
+        "en": "agar",
+        "pt": "agar"
+
+      }
+    },
+    {
+      "name": "apple cider vinegar",
+      "translations": {
+        "en": "apple cider vinegar",
+        "pt": "vinagre de maçã"
+       
+      }
+    },
+    {
+      "name": "apple juice",
+      "translations": {
+        "en": "apple juice",
+        "pt": "suco de maçã"
+     
+      }
+    },
+    {
+      "name": "apple sauce",
+      "translations": {
+        "en": "apple sauce",
+        "pt": "purê de maçã"
+     
+      }
+    },
+    {
+      "name": "apple pie",
+      "translations": {
+        "en": "apple pie",
+        "pt": "torta de maçã"
+    
+      }
+    },
+    {
+      "name": "apple butter",
+      "translations": {
+        "en": "apple butter",
+        "pt": "manteiga de maçã"
+  
+      }
+    },
+    {
+      "name": "apple cider",
+      "translations": {
+        "en": "apple cider",
+        "pt": "sidra de maçã"
+    
+      }
+    },
+    {
+      "name": "apple crisp",
+      "translations": {
+        "en": "apple crisp",
+        "pt": "maçã crocante"
+      
+      }
+    },
+    {
+      "name": "apple fritter",
+      "translations": {
+        "en": "apple fritter",
+        "pt": "bolinho de maçã"
+    
+      }
+    },
+    {
+      "name": "apple turnover",
+      "translations": {
+        "en": "apple turnover",
+        "pt": "pastel de maçã"
+       
+      }
+    },
+    {
+      "name": "apple crumble",
+      "translations": {
+        "en": "apple crumble",
+        "pt": "farofa de maçã"
+  
+      }
+    },
+    {
+      "name": "apple strudel",
+      "translations": {
+        "en": "apple strudel",
+        "pt": "strudel de maçã"
+    
+      }
+    },
+    {
+      "name": "apple compote",
+      "translations": {
+        "en": "apple compote",
+        "pt": "compota de maçã"
+    
+      }
+    },
+    {
+      "name": "apple slaw",
+      "translations": {
+        "en": "apple slaw",
+        "pt": "salada de maçã"
+    
+      }
+    },
+    {
+      "name": "apple dumpling",
+      "translations": {
+        "en": "apple dumpling",
+        "pt": "bolinho de maçã"
+       
+      }
+    },
+    {
+      "name": "apple jelly",
+      "translations": {
+        "en": "apple jelly",
+        "pt": "geléia de maçã"
+       
+      }
+    },
+    {
+      "name": "apple chips",
+      "translations": {
+        "en": "apple chips",
+        "pt": "chips de maçã"
+      
+      }
+    },
+    {
+      "name": "apple cider donut",
+      "translations": {
+        "en": "apple cider donut",
+        "pt": "rosquinha de sidra de maçã"
+
+      }
+    },
+    {
+      "name": "apple cider cake",
+      "translations": {
+        "en": "apple cider cake",
+        "pt": "bolo de sidra de maçã"
+
+      }
+    },
+    {
+      "name": "apple cider vinaigrette",
+      "translations": {
+        "en": "apple cider vinaigrette",
+        "pt": "vinagrete de sidra de maçã"
+
+      }
+    },
+    {
+      "name": "apple cider syrup",
+      "translations": {
+        "en": "apple cider syrup",
+        "pt": "xarope de sidra de maçã"
+   
+      }
+    },
+    {
+      "name": "apple cider reduction",
+      "translations": {
+        "en": "apple cider reduction",
+        "pt": "redução de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider sauce",
+      "translations": {
+        "en": "apple cider sauce",
+        "pt": "molho de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider punch",
+      "translations": {
+        "en": "apple cider punch",
+        "pt": "ponche de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider spritzer",
+      "translations": {
+        "en": "apple cider spritzer",
+        "pt": "spritzer de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider cocktail",
+      "translations": {
+        "en": "apple cider cocktail",
+        "pt": "coquetel de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider sangria",
+      "translations": {
+        "en": "apple cider sangria",
+        "pt": "sangria de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider margarita",
+      "translations": {
+        "en": "apple cider margarita",
+        "pt": "margarita de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider mimosa",
+      "translations": {
+        "en": "apple cider mimosa",
+        "pt": "mimosa de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider mojito",
+      "translations": {
+        "en": "apple cider mojito",
+        "pt": "mojito de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider martini",
+      "translations": {
+        "en": "apple cider martini",
+        "pt": "martini de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider beer",
+      "translations": {
+        "en": "apple cider beer",
+        "pt": "cerveja de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider brandy",
+      "translations": {
+        "en": "apple cider brandy",
+        "pt": "conhaque de sidra de maçã"
+      }
+    },
+    {
+      "name": "apple cider vinegar tonic",
+      "translations": {
+        "en": "apple cider vinegar tonic",
+        "pt": "tônico de vinagre de maçã"
+      }
+    },
+    {
+      "name": "bacon",
+      "translations": {
+        "en": "bacon",
+        "pt": "bacon"
+      }
+    },
+    {
+      "name": "bacon fat",
+      "translations": {
+        "en": "bacon fat",
+        "pt": "gordura de bacon"
+      }
+    },
+    {
+      "name": "banana",
+      "translations": {
+        "en": "banana",
+        "pt": "banana"
+      }
+    },
+    {
+      "name": "barbados cherry",
+      "translations": {
+        "en": "barbados cherry",
+        "pt": "acerola"
+      }
+    },
+    {
+      "name": "barley",
+      "translations": {
+        "en": "barley",
+        "pt": "cevada"
+      }
+    },
+    {
+      "name": "bean",
+      "translations": {
+        "en": "bean",
+        "pt": "feijão"
+      }
+    },
+    {
+      "name": "beef",
+      "translations": {
+        "en": "beef",
+        "pt": "carne de vaca"
+      }
+    },
+    {
+      "name": "beer",
+      "translations": {
+        "en": "beer",
+        "pt": "cerveja"
+      }
+    },
+    {
+      "name": "beetroot",
+      "translations": {
+        "en": "beetroot",
+        "pt": "beterraba"
+      }
+    },
+    {
+      "name": "bell pepper",
+      "translations": {
+        "en": "bell pepper",
+        "pt": "pimentão"
+      }
+    },
+    {
+      "name": "biscuits",
+      "translations": {
+        "en": "biscuits",
+        "pt": "biscoitos"
+      }
+    },
+    {
+      "name": "biscuits",
+      "translations": {
+        "en": "biscuits",
+        "pt": "biscoitos"
+      }
+    },
+    {
+      "name": "black bean",
+      "translations": {
+        "en": "black bean",
+        "pt": "feijão preto"
+      }
+    },
+    {
+      "name": "black sesame seed",
+      "translations": {
+        "en": "black sesame seed",
+        "pt": "semente de gergelim preto"
+      }
+    },
+    {
+      "name": "black-eyed pea",
+      "translations": {
+        "en": "black-eyed pea",
+        "pt": "feijão fradinho"
+      }
+    },
+    {
+      "name": "blue cheese",
+      "translations": {
+        "en": "blue cheese",
+        "pt": "queijo azul"
+      }
+    },
+    {
+      "name": "blueberry",
+      "translations": {
+        "en": "blueberry",
+        "pt": "mirtilo"
+      }
+    },
+    {
+      "name": "bok choy",
+      "translations": {
+        "en": "bok choy",
+        "pt": "acelga chinesa"
+      }
+    },
+    {
+      "name": "bottled drinks",
+      "translations": {
+        "en": "bottled drinks",
+        "pt": "bebidas engarrafadas"
+      }
+    },
+    {
+      "name": "bottled juice",
+      "translations": {
+        "en": "bottled juice",
+        "pt": "suco engarrafado"
+      }
+    },
+    {
+      "name": "bottled sauces",
+      "translations": {
+        "en": "bottled sauces",
+        "pt": "molhos engarrafados"
+      }
+    },
+    {
+      "name": "bottled smoothie",
+      "translations": {
+        "en": "bottled smoothie",
+        "pt": "smoothie engarrafado",
+        "es": "batido embotellado"
+      }
+    },
+    {
+      "name": "bottled tea",
+      "translations": {
+        "en": "bottled tea",
+        "pt": "chá engarrafado"
+      }
+    },
+    {
+      "name": "bottled water",
+      "translations": {
+        "en": "bottled water",
+        "pt": "água engarrafada"
+      }
+    },
+    {
+      "name": "banana",
+      "translations": {
+        "en": "banana",
+        "pt": "banana"
+      }
+    },
+    {
+      "name": "blueberry",
+      "translations": {
+        "en": "blueberry",
+        "pt": "mirtilo"
+      }
+    },
+    {
+      "name": "blackberry",
+      "translations": {
+        "en": "blackberry",
+        "pt": "amora"
+      }
+    },
+    {
+      "name": "broccoli",
+      "translations": {
+        "en": "broccoli",
+        "pt": "brócolis"
+      }
+    },
+    {
+      "name": "bean sprout",
+      "translations": {
+        "en": "bean sprout",
+        "pt": "broto de feijão"
+      }
+    },
+    {
+      "name": "bok choy",
+      "translations": {
+        "en": "bok choy",
+        "pt": "acelga chinesa"
+      }
+    },
+    {
+      "name": "beetroot",
+      "translations": {
+        "en": "beetroot",
+        "pt": "beterraba"
+      }
+    },
+    {
+      "name": "butternut squash",
+      "translations": {
+        "en": "butternut squash",
+        "pt": "abóbora"
+      }
+    },
+    {
+      "name": "basil",
+      "translations": {
+        "en": "basil",
+        "pt": "manjericão"
+      }
+    },
+    {
+      "name": "barley",
+      "translations": {
+        "en": "barley",
+        "pt": "cevada"
+      }
+    },
+    {
+      "name": "bell pepper",
+      "translations": {
+        "en": "bell pepper",
+        "pt": "pimentão"
+      }
+    },
+    {
+      "name": "brie cheese",
+      "translations": {
+        "en": "brie cheese",
+        "pt": "queijo brie"
+      }
+    },
+    {
+      "name": "blue cheese",
+      "translations": {
+        "en": "blue cheese",
+        "pt": "queijo azul"
+      }
+    },
+    {
+      "name": "bratwurst",
+      "translations": {
+        "en": "bratwurst",
+        "pt": "salsicha alemã"
+      }
+    },
+    {
+      "name": "bread",
+      "translations": {
+        "en": "bread",
+        "pt": "pão"
+      }
+    },
+    {
+      "name": "bagel",
+      "translations": {
+        "en": "bagel",
+        "pt": "bagel"
+      }
+    },
+    {
+      "name": "banana bread",
+      "translations": {
+        "en": "banana bread",
+        "pt": "pão de banana"
+      }
+    },
+    {
+      "name": "black bean",
+      "translations": {
+        "en": "black bean",
+        "pt": "feijão preto"
+      }
+    },
+    {
+      "name": "brown rice",
+      "translations": {
+        "en": "brown rice",
+        "pt": "arroz integral"
+      }
+    },
+    {
+      "name": "buckwheat",
+      "translations": {
+        "en": "buckwheat",
+        "pt": "trigo sarraceno"
+      }
+    },
+    {
+      "name": "bulgur",
+      "translations": {
+        "en": "bulgur",
+        "pt": "bulgur"
+      }
+    },
+    {
+      "name": "banana smoothie",
+      "translations": {
+        "en": "banana smoothie",
+        "pt": "smoothie de banana"
+      }
+    },
+    {
+      "name": "blueberry muffin",
+      "translations": {
+        "en": "blueberry muffin",
+        "pt": "muffin de mirtilo"
+      }
+    },
+    {
+      "name": "blackberry pie",
+      "translations": {
+        "en": "blackberry pie",
+        "pt": "torta de amora"
+      }
+    },
+    {
+      "name": "broccoli soup",
+      "translations": {
+        "en": "broccoli soup",
+        "pt": "sopa de brócolis"
+      }
+    },
+    {
+      "name": "bean soup",
+      "translations": {
+        "en": "bean soup",
+        "pt": "sopa de feijão"
+      }
+    },
+    {
+      "name": "beef stew",
+      "translations": {
+        "en": "beef stew",
+        "pt": "ensopado de carne"
+      }
+    },
+    {
+      "name": "bean chili",
+      "translations": {
+        "en": "bean chili",
+        "pt": "chili de feijão"
+      }
+    },
+    {
+      "name": "butter chicken",
+      "translations": {
+        "en": "butter chicken",
+        "pt": "frango à manteiga"
+      }
+    },
+    {
+      "name": "breaded fish",
+      "translations": {
+        "en": "breaded fish",
+        "pt": "peixe empanado"
+      }
+    },
+    {
+      "name": "beef stir-fry",
+      "translations": {
+        "en": "beef stir-fry",
+        "pt": "bife salteado"
+      }
+    },
+    {
+      "name": "baked potato",
+      "translations": {
+        "en": "baked potato",
+        "pt": "batata assada"
+      }
+    },
+    {
+      "name": "bacon",
+      "translations": {
+        "en": "bacon",
+        "pt": "bacon"
+      }
+    },
+    {
+      "name": "beef",
+      "translations": {
+        "en": "beef",
+        "pt": "carne de vaca"
+      }
+    },
+    {
+      "name": "beef jerky",
+      "translations": {
+        "en": "beef jerky",
+        "pt": "carne seca"
+      }
+    },
+    {
+      "name": "beef sausage",
+      "translations": {
+        "en": "beef sausage",
+        "pt": "linguiça de carne"
+      }
+    },
+    {
+      "name": "beef stew",
+      "translations": {
+        "en": "beef stew",
+        "pt": "ensopado de carne"
+      }
+    },
+    {
+      "name": "beef steak",
+      "translations": {
+        "en": "beef steak",
+        "pt": "bife de carne de vaca"
+      }
+    },
+    {
+      "name": "beef tenderloin",
+      "translations": {
+        "en": "beef tenderloin",
+        "pt": "lombo de vaca"
+      }
+    },
+    {
+      "name": "beef liver",
+      "translations": {
+        "en": "beef liver",
+        "pt": "fígado de vaca"
+      }
+    },
+    {
+      "name": "beef ribs",
+      "translations": {
+        "en": "beef ribs",
+        "pt": "costelas de vaca"
+      }
+    },
+    {
+      "name": "beef burger",
+      "translations": {
+        "en": "beef burger",
+        "pt": "hamburguer de carne de vaca"
+      }
+    },
+    {
+      "name": "bratwurst",
+      "translations": {
+        "en": "bratwurst",
+        "pt": "salsicha alemã"
+      }
+    },
+    {
+      "name": "bison",
+      "translations": {
+        "en": "bison",
+        "pt": "bisonte"
+      }
+    },
+    {
+      "name": "beetroot juice",
+      "translations": {
+        "en": "beetroot juice",
+        "pt": "suco de beterraba"
+      }
+    },
+    {
+      "name": "brownie",
+      "translations": {
+        "en": "brownie",
+        "pt": "brownie"
+      }
+    },
+    {
+      "name": "baguette",
+      "translations": {
+        "en": "baguette",
+        "pt": "baguete"
+      }
+    },
+    {
+      "name": "brown bread",
+      "translations": {
+        "en": "brown bread",
+        "pt": "pão integral"
+      }
+    },
+    {
+      "name": "bread roll",
+      "translations": {
+        "en": "bread roll",
+        "pt": "pãozinho"
+      }
+    },
+    {
+      "name": "bread crumbs",
+      "translations": {
+        "en": "bread crumbs",
+        "pt": "farinha de rosca"
+      }
+    },
+    {
+      "name": "carrot",
+      "translations": {
+        "en": "carrot",
+        "pt": "cenoura"
+      }
+    },
+    {
+      "name": "cucumber",
+      "translations": {
+        "en": "cucumber",
+        "pt": "pepino"
+      }
+    },
+    {
+      "name": "cabbage",
+      "translations": {
+        "en": "cabbage",
+        "pt": "repolho"
+      }
+    },
+    {
+      "name": "celery",
+      "translations": {
+        "en": "celery",
+        "pt": "salsão"
+      }
+    },
+    {
+      "name": "corn",
+      "translations": {
+        "en": "corn",
+        "pt": "milho"
+      }
+    },
+    {
+      "name": "cherry",
+      "translations": {
+        "en": "cherry",
+        "pt": "cereja"
+      }
+    },
+    {
+      "name": "chocolate",
+      "translations": {
+        "en": "chocolate",
+        "pt": "chocolate"
+      }
+    },
+    {
+      "name": "cheese",
+      "translations": {
+        "en": "cheese",
+        "pt": "queijo"
+      }
+    },
+    {
+      "name": "cottage cheese",
+      "translations": {
+        "en": "cottage cheese",
+        "pt": "queijo cottage"
+      }
+    },
+    {
+      "name": "cream cheese",
+      "translations": {
+        "en": "cream cheese",
+        "pt": "cream cheese"
+      }
+    },
+    {
+      "name": "cheddar cheese",
+      "translations": {
+        "en": "cheddar cheese",
+        "pt": "queijo cheddar"
+      }
+    },
+    {
+      "name": "cacao powder",
+      "translations": {
+        "en": "cacao powder",
+        "pt": "cacau em pó"
+      }
+    },
+    {
+      "name": "coconut",
+      "translations": {
+        "en": "coconut",
+        "pt": "coco"
+      }
+    },
+    {
+      "name": "coconut oil",
+      "translations": {
+        "en": "coconut oil",
+        "pt": "óleo de coco"
+      }
+    },
+    {
+      "name": "coconut milk",
+      "translations": {
+        "en": "coconut milk",
+        "pt": "leite de coco"
+      }
+    },
+    {
+      "name": "cashew",
+      "translations": {
+        "en": "cashew",
+        "pt": "caju"
+      }
+    },
+    {
+      "name": "cashew butter",
+      "translations": {
+        "en": "cashew butter",
+        "pt": "manteiga de caju"
+      }
+    },
+    {
+      "name": "cashew milk",
+      "translations": {
+        "en": "cashew milk",
+        "pt": "leite de caju"
+      }
+    },
+    {
+      "name": "cashew nuts",
+      "translations": {
+        "en": "cashew nuts",
+        "pt": "castanha de caju"
+      }
+    },
+    {
+      "name": "cranberry",
+      "translations": {
+        "en": "cranberry",
+        "pt": "cranberry"
+      }
+    },
+    {
+      "name": "cranberry juice",
+      "translations": {
+        "en": "cranberry juice",
+        "pt": "suco de cranberry"
+      }
+    },
+    {
+      "name": "cucumber",
+      "translations": {
+        "en": "cucumber",
+        "pt": "pepino"
+      }
+    },
+    {
+      "name": "coconut water",
+      "translations": {
+        "en": "coconut water",
+        "pt": "água de coco"
+      }
+    },
+    {
+      "name": "coconut cream",
+      "translations": {
+        "en": "coconut cream",
+        "pt": "creme de coco"
+      }
+    },
+    {
+      "name": "coconut flour",
+      "translations": {
+        "en": "coconut flour",
+        "pt": "farinha de coco"
+      }
+    },
+    {
+      "name": "coconut sugar",
+      "translations": {
+        "en": "coconut sugar",
+        "pt": "açúcar de coco"
+      }
+    },
+    {
+      "name": "cauliflower",
+      "translations": {
+        "en": "cauliflower",
+        "pt": "couve-flor"
+      }
+    },
+    {
+      "name": "cacao nibs",
+      "translations": {
+        "en": "cacao nibs",
+        "pt": "nibs de cacau"
+      }
+    },
+    {
+      "name": "chia seeds",
+      "translations": {
+        "en": "chia seeds",
+        "pt": "sementes de chia"
+      }
+    },
+    {
+      "name": "chickpeas",
+      "translations": {
+        "en": "chickpeas",
+        "pt": "grão de bico"
+      }
+    },
+    {
+      "name": "coconut yogurt",
+      "translations": {
+        "en": "coconut yogurt",
+        "pt": "iogurte de coco"
+      }
+    },
+    {
+      "name": "chestnut",
+      "translations": {
+        "en": "chestnut",
+        "pt": "castanha"
+      }
+    },
+    {
+      "name": "cantaloupe",
+      "translations": {
+        "en": "cantaloupe",
+        "pt": "melão"
+      }
+    },
+    {
+      "name": "clementine",
+      "translations": {
+        "en": "clementine",
+        "pt": "clementina",
+        "es": "clementina"
+      }
+    },
+    {
+      "name": "cranberry sauce",
+      "translations": {
+        "en": "cranberry sauce",
+        "pt": "molho de cranberry"
+      }
+    },
+    {
+      "name": "cabbage juice",
+      "translations": {
+        "en": "cabbage juice",
+        "pt": "suco de repolho"      }
+    },
+    {
+      "name": "cinnamon",
+      "translations": {
+        "en": "cinnamon",
+        "pt": "canela"
+      }
+    },
+    {
+      "name": "cinnamon powder",
+      "translations": {
+        "en": "cinnamon powder",
+        "pt": "canela em pó"
+      }
+    },
+    {
+      "name": "cinnamon stick",
+      "translations": {
+        "en": "cinnamon stick",
+        "pt": "canela em pau"
+      }
+    },
+    {
+      "name": "cloudberry",
+      "translations": {
+        "en": "cloudberry",
+        "pt": "amora branca"
+      }
+    },
+    {
+      "name": "coconut flakes",
+      "translations": {
+        "en": "coconut flakes",
+        "pt": "flocos de coco"
+      }
+    },
+    {
+      "name": "coconut cream pie",
+      "translations": {
+        "en": "coconut cream pie",
+        "pt": "torta de creme de coco"
+      }
+    },
+    {
+      "name": "coconut water kefir",
+      "translations": {
+        "en": "coconut water kefir",
+        "pt": "kefir de água de coco"
+      }
+    },
+    {
+      "name": "coconut chocolate chip cookies",
+      "translations": {
+        "en": "coconut chocolate chip cookies",
+        "pt": "cookies de coco com gotas de chocolate"
+      }
+    },
+    {
+      "name": "caramel",
+      "translations": {
+        "en": "caramel",
+        "pt": "caramelo"
+      }
+    },
+    {
+      "name": "cacao",
+      "translations": {
+        "en": "cacao",
+        "pt": "cacau"
+      }
+    },
+    {
+      "name": "cacao butter",
+      "translations": {
+        "en": "cacao butter",
+        "pt": "manteiga de cacau"
+      }
+    },
+    {
+      "name": "cacao paste",
+      "translations": {
+        "en": "cacao paste",
+        "pt": "pasta de cacau"
+      }
+    },
+    {
+      "name": "cacao nibs",
+      "translations": {
+        "en": "cacao nibs",
+        "pt": "nibs de cacau"
+      }
+    },
+    {
+      "name": "cacao powder",
+      "translations": {
+        "en": "cacao powder",
+        "pt": "cacau em pó"
+      }
+    },
+    {
+      "name": "cacao tea",
+      "translations": {
+        "en": "cacao tea",
+        "pt": "chá de cacau"
+      }
+    },
+    {
+      "name": "chicken breast",
+      "translations": {
+        "en": "chicken breast",
+        "pt": "peito de frango"
+      }
+    },
+    {
+      "name": "chicken thigh",
+      "translations": {
+        "en": "chicken thigh",
+        "pt": "coxa de frango"
+      }
+    },
+    {
+      "name": "chicken leg",
+      "translations": {
+        "en": "chicken leg",
+        "pt": "perna de frango"
+      }
+    },
+    {
+      "name": "chicken wings",
+      "translations": {
+        "en": "chicken wings",
+        "pt": "asas de frango"
+      }
+    },
+    {
+      "name": "chicken drumsticks",
+      "translations": {
+        "en": "chicken drumsticks",
+        "pt": "sobrecoxas de frango"
+      }
+    },
+    {
+      "name": "chicken soup",
+      "translations": {
+        "en": "chicken soup",
+        "pt": "sopa de frango"
+      }
+    },
+    {
+      "name": "chicken nuggets",
+      "translations": {
+        "en": "chicken nuggets",
+        "pt": "nuggets de frango"
+      }
+    },
+    {
+      "name": "chicken curry",
+      "translations": {
+        "en": "chicken curry",
+        "pt": "curry de frango"
+      }
+    },
+    {
+      "name": "chicken tikka masala",
+      "translations": {
+        "en": "chicken tikka masala",
+        "pt": "tikka masala de frango"
+      }
+    },
+    {
+      "name": "chocolate cake",
+      "translations": {
+        "en": "chocolate cake",
+        "pt": "bolo de chocolate"
+      }
+    },
+    {
+      "name": "chocolate chip cookies",
+      "translations": {
+        "en": "chocolate chip cookies",
+        "pt": "biscoitos de chocolate"
+      }
+    },
+    {
+      "name": "chocolate ice cream",
+      "translations": {
+        "en": "chocolate ice cream",
+        "pt": "sorvete de chocolate"
+      }
+    },
+    {
+      "name": "chocolate milkshake",
+      "translations": {
+        "en": "chocolate milkshake",
+        "pt": "milkshake de chocolate"
+      }
+    },
+    {
+      "name": "chocolate bar",
+      "translations": {
+        "en": "chocolate bar",
+        "pt": "barra de chocolate"
+      }
+    },
+    {
+      "name": "chocolate spread",
+      "translations": {
+        "en": "chocolate spread",
+        "pt": "creme de chocolate"
+      }
+    },
+    {
+      "name": "chocolate syrup",
+      "translations": {
+        "en": "chocolate syrup",
+        "pt": "calda de chocolate"
+      }
+    },
+    {
+      "name": "chocolate pudding",
+      "translations": {
+        "en": "chocolate pudding",
+        "pt": "pudim de chocolate"
+      }
+    },
+    {
+      "name": "chocolate",
+      "translations": {
+        "en": "chocolate",
+        "pt": "chocolate"
+      }
+    },
+    {
+      "name": "chicken",
+      "translations": {
+        "en": "chicken",
+        "pt": "frango"
+      }
+    },
+    {
+      "name": "date",
+      "translations": {
+        "en": "date",
+        "pt": "tâmara"
+      }
+    },
+    {
+      "name": "doughnuts",
+      "translations": {
+        "en": "doughnuts",
+        "pt": "rosquinhas"
+      }
+    },
+    {
+      "name": "dried fruit",
+      "translations": {
+        "en": "dried fruit",
+        "pt": "frutas secas"
+      }
+    },
+    {
+      "name": "duck",
+      "translations": {
+        "en": "duck",
+        "pt": "pato",
+        "es": "pato"
+      }
+    },
+    {
+      "name": "duck fat",
+      "translations": {
+        "en": "duck fat",
+        "pt": "gordura de pato"
+      }
+    },
+    {
+      "name": "eggplant",
+      "translations": {
+        "en": "eggplant",
+        "pt": "beringela"
+      }
+    },
+    {
+      "name": "energy bar",
+      "translations": {
+        "en": "energy bar",
+        "pt": "barra de energia"
+      }
+    },
+    {
+      "name": "energy bar",
+      "translations": {
+        "en": "energy bar",
+        "pt": "barra de energia"
+      }
+    },
+    {
+      "name": "energy drink",
+      "translations": {
+        "en": "energy drink",
+        "pt": "bebida energética"
+      }
+    },
+    {
+      "name": "espresso",
+      "translations": {
+        "en": "espresso",
+        "pt": "espresso"
+      }
+    },
+    {
+      "name": "evaporated milk",
+      "translations": {
+        "en": "evaporated milk",
+        "pt": "leite evaporado"
+      }
+    },
+    {
+      "name": "farro",
+      "translations": {
+        "en": "farro",
+        "pt": "farro"
+      }
+    },
+    {
+      "name": "fava bean",
+      "translations": {
+        "en": "fava bean",
+        "pt": "fava"
+      }
+    },
+    {
+      "name": "feta",
+      "translations": {
+        "en": "feta",
+        "pt": "feta"
+      }
+    },
+    {
+      "name": "fig",
+      "translations": {
+        "en": "fig",
+        "pt": "figo"
+      }
+    },
+    {
+      "name": "flaxseed",
+      "translations": {
+        "en": "flaxseed",
+        "pt": "semente de linhaça"
+      }
+    },
+    {
+      "name": "french fries",
+      "translations": {
+        "en": "french fries",
+        "pt": "batatas fritas"
+      }
+    },
+    {
+      "name": "frozen burrito",
+      "translations": {
+        "en": "frozen burrito",
+        "pt": "burrito congelado"
+      }
+    },
+    {
+      "name": "frozen cake",
+      "translations": {
+        "en": "frozen cake",
+        "pt": "bolo congelado"
+      }
+    },
+    {
+      "name": "frozen desserts",
+      "translations": {
+        "en": "frozen desserts",
+        "pt": "sobremesas congeladas"
+      }
+    },
+    {
+      "name": "frozen dinner",
+      "translations": {
+        "en": "frozen dinner",
+        "pt": "jantar congelado"
+      }
+    },
+    {
+      "name": "frozen dinners",
+      "translations": {
+        "en": "frozen dinners",
+        "pt": "refeições congeladas"
+      }
+    },
+    {
+      "name": "frozen dinners",
+      "translations": {
+        "en": "frozen dinners",
+        "pt": "refeições congeladas"
+      }
+    },
+    {
+      "name": "frozen fruit",
+      "translations": {
+        "en": "frozen fruit",
+        "pt": "frutas congeladas"
+      }
+    },
+    {
+      "name": "frozen meals",
+      "translations": {
+        "en": "frozen meals",
+        "pt": "refeições congeladas"
+      }
+    },
+    {
+      "name": "frozen pastry",
+      "translations": {
+        "en": "frozen pastry",
+        "pt": "massa congelada"
+      }
+    },
+    {
+      "name": "frozen pie",
+      "translations": {
+        "en": "frozen pie",
+        "pt": "torta congelada"
+      }
+    },
+    {
+      "name": "frozen pizza",
+      "translations": {
+        "en": "frozen pizza",
+        "pt": "pizza congelada"
+      }
+    },
+    {
+      "name": "frozen pizza",
+      "translations": {
+        "en": "frozen pizza",
+        "pt": "pizza congelada"
+      }
+    },
+    {
+      "name": "frozen vegetables",
+      "translations": {
+        "en": "frozen vegetables",
+        "pt": "vegetais congelados"
+      }
+    },
+    {
+      "name": "frozen waffle",
+      "translations": {
+        "en": "frozen waffle",
+        "pt": "waffle congelado"
+      }
+    },
+    {
+      "name": "frozen waffles",
+      "translations": {
+        "en": "frozen waffles",
+        "pt": "waffles congelados"
+      }
+    },
+    {
+      "name": "frozen yogurt",
+      "translations": {
+        "en": "frozen yogurt",
+        "pt": "iogurte congelado"
+      }
+    },
+    {
+      "name": "frozen yogurt",
+      "translations": {
+        "en": "frozen yogurt",
+        "pt": "iogurte congelado"
+      }
+    },
+    {
+      "name": "fruit punch",
+      "translations": {
+        "en": "fruit punch",
+        "pt": "ponche de frutas"
+      }
+    },
+    {
+      "name": "garbanzo bean",
+      "translations": {
+        "en": "garbanzo bean",
+        "pt": "grão-de-bico"
+      }
+    },
+    {
+      "name": "garlic",
+      "translations": {
+        "en": "garlic",
+        "pt": "alho"
+      }
+    },
+    {
+      "name": "ghee",
+      "translations": {
+        "en": "ghee",
+        "pt": "ghee"
+      }
+    },
+    {
+      "name": "ginger",
+      "translations": {
+        "en": "ginger",
+        "pt": "gengibre"
+      }
+    },
+    {
+      "name": "ginger ale",
+      "translations": {
+        "en": "ginger ale",
+        "pt": "refrigerante de gengibre"
+      }
+    },
+    {
+      "name": "goat",
+      "translations": {
+        "en": "goat",
+        "pt": "cabra"
+      }
+    },
+    {
+      "name": "gouda",
+      "translations": {
+        "en": "gouda",
+        "pt": "gouda"
+      }
+    },
+    {
+      "name": "granola bar",
+      "translations": {
+        "en": "granola bar",
+        "pt": "barra de granola"
+      }
+    },
+    {
+      "name": "granola bar",
+      "translations": {
+        "en": "granola bar",
+        "pt": "barra de granola"
+      }
+    },
+    {
+      "name": "grape",
+      "translations": {
+        "en": "grape",
+        "pt": "uva"
+      }
+    },
+    {
+      "name": "grape juice",
+      "translations": {
+        "en": "grape juice",
+        "pt": "suco de uva"
+      }
+    },
+    {
+      "name": "grapeseed oil",
+      "translations": {
+        "en": "grapeseed oil",
+        "pt": "óleo de semente de uva"
+      }
+    },
+    {
+      "name": "green bean",
+      "translations": {
+        "en": "green bean",
+        "pt": "feijão verde"
+      }
+    },
+    {
+      "name": "green pea",
+      "translations": {
+        "en": "green pea",
+        "pt": "ervilha verde"
+      }
+    },
+    {
+      "name": "green smoothie",
+      "translations": {
+        "en": "green smoothie",
+        "pt": "smoothie verde"
+      }
+    },
+    {
+      "name": "guava",
+      "translations": {
+        "en": "guava",
+        "pt": "goiaba"
+      }
+    },
+    {
+      "name": "haddock",
+      "translations": {
+        "en": "haddock",
+        "pt": "hadoque"
+      }
+    },
+    {
+      "name": "ham",
+      "translations": {
+        "en": "ham",
+        "pt": "presunto"
+      }
+    },
+    {
+      "name": "hamburger",
+      "translations": {
+        "en": "hamburger",
+        "pt": "hambúrguer"
+      }
+    },
+    {
+      "name": "hazelnut",
+      "translations": {
+        "en": "hazelnut",
+        "pt": "avelã"
+      }
+    },
+    {
+      "name": "hemp oil",
+      "translations": {
+        "en": "hemp oil",
+        "pt": "óleo de cânhamo"
+      }
+    },
+    {
+      "name": "hemp seed",
+      "translations": {
+        "en": "hemp seed",
+        "pt": "semente de cânhamo"
+      }
+    },
+    {
+      "name": "herring",
+      "translations": {
+        "en": "herring",
+        "pt": "arenque"
+      }
+    },
+    {
+      "name": "hot chocolate",
+      "translations": {
+        "en": "hot chocolate",
+        "pt": "chocolate quente"
+      }
+    },
+    {
+      "name": "hot dog",
+      "translations": {
+        "en": "hot dog",
+        "pt": "cachorro-quente"
+      }
+    },
+    {
+      "name": "ice cream",
+      "translations": {
+        "en": "ice cream",
+        "pt": "sorvete"
+      }
+    },
+    {
+      "name": "ice cream",
+      "translations": {
+        "en": "ice cream",
+        "pt": "sorvete"
+      }
+    },
+    {
+      "name": "iced coffee",
+      "translations": {
+        "en": "iced coffee",
+        "pt": "café gelado"
+      }
+    },
+    {
+      "name": "iced tea",
+      "translations": {
+        "en": "iced tea",
+        "pt": "chá gelado"
+      }
+    },
+    {
+      "name": "instant coffee",
+      "translations": {
+        "en": "instant coffee",
+        "pt": "café instantâneo"
+      }
+    },
+    {
+      "name": "instant noodles",
+      "translations": {
+        "en": "instant noodles",
+        "pt": "macarrão instantâneo"
+      }
+    },
+    {
+      "name": "instant noodles",
+      "translations": {
+        "en": "instant noodles",
+        "pt": "macarrão instantâneo"
+      }
+    },
+    {
+      "name": "instant oatmeal",
+      "translations": {
+        "en": "instant oatmeal",
+        "pt": "aveia instantânea"
+      }
+    },
+    {
+      "name": "jack bean",
+      "translations": {
+        "en": "jack bean",
+        "pt": "feijão da Jack"
+      }
+    },
+    {
+      "name": "jackfruit",
+      "translations": {
+        "en": "jackfruit",
+        "pt": "jaca"
+      }
+    },
+    {
+      "name": "jam",
+      "translations": {
+        "en": "jam",
+        "pt": "geleia"
+      }
+    },
+    {
+      "name": "jelly/jam",
+      "translations": {
+        "en": "jelly/jam",
+        "pt": "geleia"      }
+    },
+    {
+      "name": "juice",
+      "translations": {
+        "en": "juice",
+        "pt": "suco"
+      }
+    },
+    {
+      "name": "kale",
+      "translations": {
+        "en": "kale",
+        "pt": "couve"
+      }
+    },
+    {
+      "name": "kidney bean",
+      "translations": {
+        "en": "kidney bean",
+        "pt": "feijão vermelho"
+      }
+    },
+    {
+      "name": "kiwi",
+      "translations": {
+        "en": "kiwi",
+        "pt": "kiwi"
+      }
+    },
+    {
+      "name": "kiwifruit",
+      "translations": {
+        "en": "kiwifruit",
+        "pt": "kiwi"
+      }
+    },
+    {
+      "name": "kombucha",
+      "translations": {
+        "en": "kombucha",
+        "pt": "kombucha"
+      }
+    },
+    {
+      "name": "lamb",
+      "translations": {
+        "en": "lamb",
+        "pt": "cordeiro"
+      }
+    },
+    {
+      "name": "lard",
+      "translations": {
+        "en": "lard",
+        "pt": "banha"
+      }
+    },
+    {
+      "name": "leek",
+      "translations": {
+        "en": "leek",
+        "pt": "alho-poró"
+      }
+    },
+    {
+      "name": "lemon",
+      "translations": {
+        "en": "lemon",
+        "pt": "limão"
+      }
+    },
+    {
+      "name": "lemon water",
+      "translations": {
+        "en": "lemon water",
+        "pt": "água com limão"
+      }
+    },
+    {
+      "name": "lemonade",
+      "translations": {
+        "en": "lemonade",
+        "pt": "limonada"
+      }
+    },
+    {
+      "name": "lentil",
+      "translations": {
+        "en": "lentil",
+        "pt": "lentilha"
+      }
+    },
+    {
+      "name": "lettuce",
+      "translations": {
+        "en": "lettuce",
+        "pt": "alface"
+      }
+    },
+    {
+      "name": "lima bean",
+      "translations": {
+        "en": "lima bean",
+        "pt": "feijão de lima"
+      }
+    },
+    {
+      "name": "lime",
+      "translations": {
+        "en": "lime",
+        "pt": "lima"
+      }
+    },
+    {
+      "name": "linseed oil",
+      "translations": {
+        "en": "linseed oil",
+        "pt": "óleo de linhaça"
+      }
+    },
+    {
+      "name": "lobster",
+      "translations": {
+        "en": "lobster",
+        "pt": "lagosta"
+      }
+    },
+    {
+      "name": "lobster meat",
+      "translations": {
+        "en": "lobster meat",
+        "pt": "carne de lagosta"
+      }
+    },
+    {
+      "name": "lupin",
+      "translations": {
+        "en": "lupin",
+        "pt": "lupino"
+      }
+    },
+    {
+      "name": "lupinus",
+      "translations": {
+        "en": "lupinus",
+        "pt": "lupinus"
+      }
+    },
+    {
+      "name": "lychee",
+      "translations": {
+        "en": "lychee",
+        "pt": "lichia"
+      }
+    },
+    {
+      "name": "macadamia",
+      "translations": {
+        "en": "macadamia",
+        "pt": "macadâmia"
+      }
+    },
+    {
+      "name": "macadamia nut",
+      "translations": {
+        "en": "macadamia nut",
+        "pt": "macadâmia"
+      }
+    },
+    {
+      "name": "macadamia oil",
+      "translations": {
+        "en": "macadamia oil",
+        "pt": "óleo de macadâmia"
+      }
+    },
+    {
+      "name": "mackerel",
+      "translations": {
+        "en": "mackerel",
+        "pt": "cavala"
+      }
+    },
+    {
+      "name": "mango",
+      "translations": {
+        "en": "mango",
+        "pt": "manga"
+      }
+    },
+    {
+      "name": "marama bean",
+      "translations": {
+        "en": "marama bean",
+        "pt": "feijão marama"
+      }
+    },
+    {
+      "name": "margarine",
+      "translations": {
+        "en": "margarine",
+        "pt": "margarina"
+      }
+    },
+    {
+      "name": "margarine",
+      "translations": {
+        "en": "margarine",
+        "pt": "margarina"
+      }
+    },
+    {
+      "name": "matcha tea",
+      "translations": {
+        "en": "matcha tea",
+        "pt": "chá matcha"
+      }
+    },
+    {
+      "name": "mayonnaise",
+      "translations": {
+        "en": "mayonnaise",
+        "pt": "maionese"
+      }
+    },
+    {
+      "name": "melon",
+      "translations": {
+        "en": "melon",
+        "pt": "melão"
+      }
+    },
+    {
+      "name": "milk",
+      "translations": {
+        "en": "milk",
+        "pt": "leite"
+      }
+    },
+    {
+      "name": "milk",
+      "translations": {
+        "en": "milk",
+        "pt": "leite"
+      }
+    },
+    {
+      "name": "millet",
+      "translations": {
+        "en": "millet",
+        "pt": "milheto"
+      }
+    },
+    {
+      "name": "mint tea",
+      "translations": {
+        "en": "mint tea",
+        "pt": "chá de hortelã"
+      }
+    },
+    {
+      "name": "mocha",
+      "translations": {
+        "en": "mocha",
+        "pt": "mocha"
+      }
+    },
+    {
+      "name": "moth",
+      "translations": {
+        "en": "moth",
+        "pt": "traça"
+      }
+    },
+    {
+      "name": "moth bean",
+      "translations": {
+        "en": "moth bean",
+        "pt": "feijão moth"
+      }
+    },
+    {
+      "name": "mozzarella",
+      "translations": {
+        "en": "mozzarella",
+        "pt": "mozarela"
+      }
+    },
+    {
+      "name": "mulberry",
+      "translations": {
+        "en": "mulberry",
+        "pt": "amora"
+      }
+    },
+    {
+      "name": "mung bean",
+      "translations": {
+        "en": "mung bean",
+        "pt": "feijão mungo"
+      }
+    },
+    {
+      "name": "mushroom",
+      "translations": {
+        "en": "mushroom",
+        "pt": "cogumelo"
+      }
+    },
+    {
+      "name": "mussel",
+      "translations": {
+        "en": "mussel",
+        "pt": "mexilhão"
+      }
+    },
+    {
+      "name": "mussel meat",
+      "translations": {
+        "en": "mussel meat",
+        "pt": "carne de mexilhão"
+      }
+    },
+    {
+      "name": "navy bean",
+      "translations": {
+        "en": "navy bean",
+        "pt": "feijão marinho"
+      }
+    },
+    {
+      "name": "nectarine",
+      "translations": {
+        "en": "nectarine",
+        "pt": "nectarina"
+      }
+    },
+    {
+      "name": "oatmeal",
+      "translations": {
+        "en": "oatmeal",
+        "pt": "aveia"
+      }
+    },
+    {
+      "name": "oats",
+      "translations": {
+        "en": "oats",
+        "pt": "aveia"
+      }
+    },
+    {
+      "name": "okra",
+      "translations": {
+        "en": "okra",
+        "pt": "quiabo"
+      }
+    },
+    {
+      "name": "olive oil",
+      "translations": {
+        "en": "olive oil",
+        "pt": "azeite de oliva"
+      }
+    },
+    {
+      "name": "onion",
+      "translations": {
+        "en": "onion",
+        "pt": "cebola"
+      }
+    },
+    {
+      "name": "orange",
+      "translations": {
+        "en": "orange",
+        "pt": "laranja"
+      }
+    },
+    {
+      "name": "orange juice",
+      "translations": {
+        "en": "orange juice",
+        "pt": "suco de laranja"
+      }
+    },
+    {
+      "name": "oyster",
+      "translations": {
+        "en": "oyster",
+        "pt": "ostra"
+      }
+    },
+    {
+      "name": "oyster meat",
+      "translations": {
+        "en": "oyster meat",
+        "pt": "carne de ostra"
+      }
+    },
+    {
+      "name": "palm oil",
+      "translations": {
+        "en": "palm oil",
+        "pt": "óleo de palma"
+      }
+    },
+    {
+      "name": "pancakes",
+      "translations": {
+        "en": "pancakes",
+        "pt": "panquecas"
+      }
+    },
+    {
+      "name": "papaya",
+      "translations": {
+        "en": "papaya",
+        "pt": "mamão"
+      }
+    },
+    {
+      "name": "parmesan",
+      "translations": {
+        "en": "parmesan",
+        "pt": "parmesão"
+      }
+    },
+    {
+      "name": "passion fruit",
+      "translations": {
+        "en": "passion fruit",
+        "pt": "maracujá"
+      }
+    },
+    {
+      "name": "pasta",
+      "translations": {
+        "en": "pasta",
+        "pt": "macarrão"
+      }
+    },
+    {
+      "name": "pea",
+      "translations": {
+        "en": "pea",
+        "pt": "ervilha"
+      }
+    },
+    {
+      "name": "peach",
+      "translations": {
+        "en": "peach"
+      }
+    },
+    {
+      "name": "peanut",
+      "translations": {
+        "en": "peanut",
+        "pt": "amendoim"
+      }
+    },
+    {
+      "name": "peanut",
+      "translations": {
+        "en": "peanut",
+        "pt": "amendoim"
+      }
+    },
+    {
+      "name": "pear",
+      "translations": {
+        "en": "pear",
+        "pt": "pêra"
+      }
+    },
+    {
+      "name": "pecan",
+      "translations": {
+        "en": "pecan",
+        "pt": "noz-pecã"
+      }
+    },
+    {
+      "name": "pecan nut",
+      "translations": {
+        "en": "pecan nut",
+        "pt": "noz-pecã"
+      }
+    },
+    {
+      "name": "persimmon",
+      "translations": {
+        "en": "persimmon",
+        "pt": "caqui"
+      }
+    },
+    {
+      "name": "pigeon pea",
+      "translations": {
+        "en": "pigeon pea",
+        "pt": "guandu"
+      }
+    },
+    {
+      "name": "pine nut",
+      "translations": {
+        "en": "pine nut",
+        "pt": "pinhão"
+      }
+    },
+    {
+      "name": "pineapple",
+      "translations": {
+        "en": "pineapple",
+        "pt": "abacaxi"
+      }
+    },
+    {
+      "name": "pineapple juice",
+      "translations": {
+        "en": "pineapple juice",
+        "pt": "suco de abacaxi"
+      }
+    },
+    {
+      "name": "pinto bean",
+      "translations": {
+        "en": "pinto bean",
+        "pt": "feijão pintado"
+      }
+    },
+    {
+      "name": "pistachio",
+      "translations": {
+        "en": "pistachio",
+        "pt": "pistache"
+      }
+    },
+    {
+      "name": "pizza",
+      "translations": {
+        "en": "pizza",
+        "pt": "pizza"
+      }
+    },
+    {
+      "name": "plum",
+      "translations": {
+        "en": "plum",
+        "pt": "ameixa"
+      }
+    },
+    {
+      "name": "polenta",
+      "translations": {
+        "en": "polenta",
+        "pt": "polenta"
+      }
+    },
+    {
+      "name": "pomegranate",
+      "translations": {
+        "en": "pomegranate",
+        "pt": "romã"
+      }
+    },
+    {
+      "name": "popcorn",
+      "translations": {
+        "en": "popcorn",
+        "pt": "pipoca"
+      }
+    },
+    {
+      "name": "popcorn",
+      "translations": {
+        "en": "popcorn",
+        "pt": "pipoca"
+      }
+    },
+    {
+      "name": "poppy seed",
+      "translations": {
+        "en": "poppy seed",
+        "pt": "semente de papoula"
+      }
+    },
+    {
+      "name": "poppyseed oil",
+      "translations": {
+        "en": "poppyseed oil",
+        "pt": "óleo de semente de papoula"
+      }
+    },
+    {
+      "name": "popsicle",
+      "translations": {
+        "en": "popsicle",
+        "pt": "picolé"
+      }
+    },
+    {
+      "name": "popsicle",
+      "translations": {
+        "en": "popsicle",
+        "pt": "picolé"
+      }
+    },
+    {
+      "name": "pork",
+      "translations": {
+        "en": "pork",
+        "pt": "porco"
+      }
+    },
+    {
+      "name": "potato",
+      "translations": {
+        "en": "potato",
+        "pt": "batata"
+      }
+    },
+    {
+      "name": "potato chips",
+      "translations": {
+        "en": "potato chips",
+        "pt": "batata chips"
+      }
+    },
+       {
+      "name": "pretzels",
+      "translations": {
+        "en": "pretzels",
+        "pt": "pretzels"
+      }
+    },
+    {
+      "name": "protein shake",
+      "translations": {
+        "en": "protein shake",
+        "pt": "shake de proteína"
+      }
+    },
+    {
+      "name": "provolone",
+      "translations": {
+        "en": "provolone",
+        "pt": "provolone"
+      }
+    },
+    {
+      "name": "pudding",
+      "translations": {
+        "en": "pudding",
+        "pt": "pudim"
+      }
+    },
+    {
+      "name": "pumpkin",
+      "translations": {
+        "en": "pumpkin",
+        "pt": "abóbora"
+      }
+    },
+    {
+      "name": "pumpkin seed",
+      "translations": {
+        "en": "pumpkin seed",
+        "pt": "semente de abóbora"
+      }
+    },
+    {
+      "name": "pumpkin seed oil",
+      "translations": {
+        "en": "pumpkin seed oil",
+        "pt": "óleo de semente de abóbora"
+      }
+    },
+    {
+      "name": "quince",
+      "translations": {
+        "en": "quince",
+        "pt": "marmelo"
+      }
+    },
+    {
+      "name": "quinoa",
+      "translations": {
+        "en": "quinoa",
+        "pt": "quinoa"
+      }
+    },
+    {
+      "name": "rabbit",
+      "translations": {
+        "en": "rabbit",
+        "pt": "coelho"
+      }
+    },
+    {
+      "name": "radish",
+      "translations": {
+        "en": "radish",
+        "pt": "rabanete"
+      }
+    },
+    {
+      "name": "raspberry",
+      "translations": {
+        "en": "raspberry",
+        "pt": "framboesa"
+      }
+    },
+    {
+      "name": "red cabbage",
+      "translations": {
+        "en": "red cabbage",
+        "pt": "repolho roxo"
+      }
+    },
+    {
+      "name": "rice",
+      "translations": {
+        "en": "rice",
+        "pt": "arroz"
+      }
+    },
+    {
+      "name": "rice bean",
+      "translations": {
+        "en": "rice bean",
+        "pt": "feijão arroz"
+      }
+    },
+    {
+      "name": "rice bran",
+      "translations": {
+        "en": "rice bran",
+        "pt": "farelo de arroz"
+      }
+    },
+    {
+      "name": "rice flour",
+      "translations": {
+        "en": "rice flour",
+        "pt": "farinha de arroz"
+      }
+    },
+    {
+      "name": "rice noodles",
+      "translations": {
+        "en": "rice noodles",
+        "pt": "macarrão de arroz"
+      }
+    },
+    {
+      "name": "ricotta",
+      "translations": {
+        "en": "ricotta",
+        "pt": "ricota"
+      }
+    },
+    {
+      "name": "root beer",
+      "translations": {
+        "en": "root beer",
+        "pt": "refrigerante de raiz"
+      }
+    },
+    {
+      "name": "rye",
+      "translations": {
+        "en": "rye",
+        "pt": "centeio"
+      }
+    },
+    {
+      "name": "rye berries",
+      "translations": {
+        "en": "rye berries",
+        "pt": "grãos de centeio"
+      }
+    },
+    {
+      "name": "safflower oil",
+      "translations": {
+        "en": "safflower oil",
+        "pt": "óleo de cártamo"
+      }
+    },
+    {
+      "name": "salmon",
+      "translations": {
+        "en": "salmon",
+        "pt": "salmão"
+      }
+    },
+    {
+      "name": "sardine",
+      "translations": {
+        "en": "sardine",
+        "pt": "sardinha"
+      }
+    },
+    {
+      "name": "sausage",
+      "translations": {
+        "en": "sausage",
+        "pt": "linguiça"
+      }
+    },
+    {
+      "name": "semolina",
+      "translations": {
+        "en": "semolina",
+        "pt": "semolina"
+      }
+    },
+    {
+      "name": "sesame",
+      "translations": {
+        "en": "sesame",
+        "pt": "gergelim"
+      }
+    },
+    {
+      "name": "sesame oil",
+      "translations": {
+        "en": "sesame oil",
+        "pt": "óleo de gergelim"
+      }
+    },
+    {
+      "name": "sesame seed",
+      "translations": {
+        "en": "sesame seed",
+        "pt": "semente de gergelim"
+      }
+    },
+    {
+      "name": "sesame seed oil",
+      "translations": {
+        "en": "sesame seed oil",
+        "pt": "óleo de semente de gergelim"
+      }
+    },
+    {
+      "name": "shortening",
+      "translations": {
+        "en": "shortening",
+        "pt": "gordura vegetal hidrogenada"
+      }
+    },
+    {
+      "name": "shrimp",
+      "translations": {
+        "en": "shrimp",
+        "pt": "camarão"
+      }
+    },
+    {
+      "name": "shrimp meat",
+      "translations": {
+        "en": "shrimp meat",
+        "pt": "carne de camarão"
+      }
+    },
+    {
+      "name": "smoothie",
+      "translations": {
+        "en": "smoothie",
+        "pt": "smoothie"
+      }
+    },
+    {
+      "name": "soda",
+      "translations": {
+        "en": "soda",
+        "pt": "refrigerante"
+      }
+    },
+    {
+      "name": "soda",
+      "translations": {
+        "en": "soda",
+        "pt": "refrigerante"
+      }
+    },
+    {
+      "name": "sorghum",
+      "translations": {
+        "en": "sorghum",
+        "pt": "sorgo"
+      }
+    },
+    {
+      "name": "sour cream",
+      "translations": {
+        "en": "sour cream",
+        "pt": "creme de leite azedo"
+      }
+    },
+    {
+      "name": "sour half-and-half",
+      "translations": {
+        "en": "sour half-and-half",
+        "pt": "meio a meio azedo"
+      }
+    },
+    {
+      "name": "sour milk",
+      "translations": {
+        "en": "sour milk",
+        "pt": "leite azedo"
+      }
+    },
+    {
+      "name": "soy milk",
+      "translations": {
+        "en": "soy milk",
+        "pt": "leite de soja"
+      }
+    },
+    {
+      "name": "soybean",
+      "translations": {
+        "en": "soybean",
+        "pt": "soja"
+      }
+    },
+    {
+      "name": "soybean oil",
+      "translations": {
+        "en": "soybean oil",
+        "pt": "óleo de soja"
+      }
+    },
+    {
+      "name": "spelt",
+      "translations": {
+        "en": "spelt",
+        "pt": "espelta"
+      }
+    },
+    {
+      "name": "spinach",
+      "translations": {
+        "en": "spinach",
+        "pt": "espinafre"
+      }
+    },
+    {
+      "name": "split pea",
+      "translations": {
+        "en": "split pea",
+        "pt": "ervilha partida"
+      }
+    },
+    {
+      "name": "squash",
+      "translations": {
+        "en": "squash",
+        "pt": "abobrinha"
+      }
+    },
+    {
+      "name": "star fruit",
+      "translations": {
+        "en": "star fruit",
+        "pt": "carambola"
+      }
+    },
+    {
+      "name": "strawberry",
+      "translations": {
+        "en": "strawberry",
+        "pt": "morango"
+      }
+    },
+    {
+      "name": "sunflower kernel",
+      "translations": {
+        "en": "sunflower kernel",
+        "pt": "semente de girassol"
+      }
+    },
+    {
+      "name": "sunflower oil",
+      "translations": {
+        "en": "sunflower oil",
+        "pt": "óleo de girassol"
+      }
+    },
+    {
+      "name": "sunflower seed",
+      "translations": {
+        "en": "sunflower seed",
+        "pt": "semente de girassol"
+      }
+    },
+    {
+      "name": "sweet potato",
+      "translations": {
+        "en": "sweet potato",
+        "pt": "batata doce"
+      }
+    },
+    {
+      "name": "sweetened condensed milk",
+      "translations": {
+        "en": "sweetened condensed milk",
+        "pt": "leite condensado açucarado"
+      }
+    },
+    {
+      "name": "swiss cheese",
+      "translations": {
+        "en": "swiss cheese",
+        "pt": "queijo suíço"
+      }
+    },
+    {
+      "name": "tallow",
+      "translations": {
+        "en": "tallow",
+        "pt": "sebo"
+      }
+    },
+    {
+      "name": "tamarind",
+      "translations": {
+        "en": "tamarind",
+        "pt": "tamarindo"
+      }
+    },
+    {
+      "name": "tangerine",
+      "translations": {
+        "en": "tangerine",
+        "pt": "tangerina"
+      }
+    },
+    {
+      "name": "tea",
+      "translations": {
+        "en": "tea",
+        "pt": "chá"
+      }
+    },
+    {
+      "name": "teff",
+      "translations": {
+        "en": "teff",
+        "pt": "tef"
+      }
+    },
+    {
+      "name": "teff flour",
+      "translations": {
+        "en": "teff flour",
+        "pt": "farinha de tef"
+      }
+    },
+    {
+      "name": "tepary bean",
+      "translations": {
+        "en": "tepary bean",
+        "pt": "feijão tepary"
+      }
+    },
+    {
+      "name": "tiger bean",
+      "translations": {
+        "en": "tiger bean",
+        "pt": "feijão tigre"
+      }
+    },
+    {
+      "name": "tomato",
+      "translations": {
+        "en": "tomato",
+        "pt": "tomate"
+      }
+    },
+    {
+      "name": "tomato juice",
+      "translations": {
+        "en": "tomato juice",
+        "pt": "suco de tomate"
+      }
+    },
+    {
+      "name": "trout",
+      "translations": {
+        "en": "trout",
+        "pt": "truta"
+      }
+    },
+    {
+      "name": "truffle oil",
+      "translations": {
+        "en": "truffle oil",
+        "pt": "óleo de trufa"
+      }
+    },
+    {
+      "name": "tuna",
+      "translations": {
+        "en": "tuna",
+        "pt": "atum"
+      }
+    },
+    {
+      "name": "turkey",
+      "translations": {
+        "en": "turkey",
+        "pt": "peru"
+      }
+    },
+    {
+      "name": "turnip",
+      "translations": {
+        "en": "turnip",
+        "pt": "nabo"
+      }
+    },
+    {
+      "name": "ugli fruit",
+      "translations": {
+        "en": "ugli fruit",
+        "pt": "ugli"
+      }
+    },
+    {
+      "name": "uranium bean",
+      "translations": {
+        "en": "uranium bean",
+        "pt": "feijão uranium"
+      }
+    },
+    {
+      "name": "veal",
+      "translations": {
+        "en": "veal",
+        "pt": "vitela"
+      }
+    },
+    {
+      "name": "vegetable oil",
+      "translations": {
+        "en": "vegetable oil",
+        "pt": "óleo vegetal"
+      }
+    },
+    {
+      "name": "velvet bean",
+      "translations": {
+        "en": "velvet bean",
+        "pt": "feijão-de-veludo"
+      }
+    },
+    {
+      "name": "walnut",
+      "translations": {
+        "en": "walnut",
+        "pt": "noz"
+      }
+    },
+    {
+      "name": "walnut oil",
+      "translations": {
+        "en": "walnut oil",
+        "pt": "óleo de nozes"
+      }
+    },
+    {
+      "name": "water",
+      "translations": {
+        "en": "water",
+        "pt": "água"
+      }
+    },
+    {
+      "name": "watermelon",
+      "translations": {
+        "en": "watermelon",
+        "pt": "melancia"
+      }
+    },
+    {
+      "name": "watermelon seed",
+      "translations": {
+        "en": "watermelon seed",
+        "pt": "semente de melancia"
+      }
+    },
+    {
+      "name": "wheat",
+      "translations": {
+        "en": "wheat",
+        "pt": "trigo"
+      }
+    },
+    {
+      "name": "wheat berries",
+      "translations": {
+        "en": "wheat berries",
+        "pt": "grãos de trigo"
+      }
+    },
+    {
+      "name": "wheat flour",
+      "translations": {
+        "en": "wheat flour",
+        "pt": "farinha de trigo"
+      }
+    },
+    {
+      "name": "wheat germ",
+      "translations": {
+        "en": "wheat germ",
+        "pt": "germe de trigo"
+      }
+    },
+    {
+      "name": "wild rice",
+      "translations": {
+        "en": "wild rice",
+        "pt": "arroz selvagem"
+      }
+    },
+    {
+      "name": "wine",
+      "translations": {
+        "en": "wine",
+        "pt": "vinho"
+      }
+    },
+    {
+      "name": "winged bean",
+      "translations": {
+        "en": "winged bean",
+        "pt": "feijão de asa"
+      }
+    },
+    {
+      "name": "winged bean",
+      "translations": {
+        "en": "winged bean",
+        "pt": "feijão de asa"
+      }
+    },
+    {
+      "name": "yardlong bean",
+      "translations": {
+        "en": "yardlong bean",
+        "pt": "vagem"
+      }
+    },
+    {
+      "name": "yogurt",
+      "translations": {
+        "en": "yogurt",
+        "pt": "iogurte"
+      }
+    },
+    {
+      "name": "zucchini",
+      "translations": {
+        "en": "zucchini",
+        "pt": "abobrinha"
+      }
+    }
+  ]

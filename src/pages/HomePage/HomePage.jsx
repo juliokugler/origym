@@ -89,7 +89,7 @@ const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUse
               </div>
               <div className={`card ${styles.friendsInActivity}`}>
                 <h3 className="title">{t("friendsInActivity")}</h3>
-                <FriendsInActivity t={t} userData={userData} />
+                <FriendsInActivity t={t} user={user} userData={userData} />
               </div>
             </div>
           </div>

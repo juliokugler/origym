@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./DaySelector.module.css";
 import { useTranslation } from "react-i18next";
 
-const DaySelector = ({ selectedDay, handleDaySelect }) => {
+const DaySelector = ({ selectedDay, selectedDays, handleDaySelect }) => {
   const { t } = useTranslation();
+
+  // Determine if we are in single or multi-selection mode
+  const isMultiSelect = Array.isArray(selectedDays);
 
   return (
     <div className={styles.dayOfWeekContainer}>
@@ -11,7 +14,10 @@ const DaySelector = ({ selectedDay, handleDaySelect }) => {
         <button
           key={day}
           className={`${styles.dayCircle} ${
-            selectedDay === day ? styles.selected : ""
+            (isMultiSelect && selectedDays.includes(day)) ||
+            (!isMultiSelect && selectedDay === day)
+              ? styles.selected
+              : ""
           }`}
           onClick={() => handleDaySelect(day)}
         >

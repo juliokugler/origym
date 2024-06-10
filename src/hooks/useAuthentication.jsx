@@ -15,7 +15,7 @@ export const useAuthentication = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const auth = getAuth();
-
+  const [userData, setUserData] = useState(null);
   const checkIfIsCancelled = useCallback(() => {
     // Implement your cancellation logic here if needed
   }, []);
@@ -158,7 +158,7 @@ export const useAuthentication = () => {
         photoURL: data.photoURL,
       });
 
-      navigate("/additionalinfo");
+      navigate("/onboarding");
     } catch (error) {
       handleError(error);
     } finally {
@@ -168,7 +168,12 @@ export const useAuthentication = () => {
 
   const logout = () => {
     checkIfIsCancelled();
-    signOut(auth);
+    signOut(auth).then(() => {
+      navigate("/");
+      setUserData(null);
+    }).catch(error => {
+      console.error("Logout failed: ", error);
+    });
   };
 
   const login = async (data) => {
@@ -178,7 +183,7 @@ export const useAuthentication = () => {
 
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      navigate("/additionalinfo");
+      navigate("/onboarding");
     } catch (error) {
       handleError(error);
     } finally {

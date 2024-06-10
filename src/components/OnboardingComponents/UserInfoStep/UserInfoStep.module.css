@@ -1,0 +1,94 @@
+
+.avatarContainer {
+  height: 20vh;
+  width: 20vh;
+  border-radius: 50%;
+  display: flex;
+  margin: 1vh auto 3vh auto;
+  position: relative;
+}
+  
+
+  .avatar {
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+  }
+  
+  .step {
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 40vh;
+    width: 30vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .step p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .step label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6vh;
+    margin: 0.5vh auto;
+    text-align: left;
+  }
+  
+  .step input {
+    width: 26vw;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+    border-radius: var(--input-border);
+    font-size: 14px;
+  }
+
+
+ .buttonContainer {   
+     display: flex;
+    justify-content: center;
+  margin: 2vh auto 0 auto;
+  gap: 1vw;
+  }
+  
+  @media (max-width: 600px) {
+    .step {
+      padding: 20px;
+    }
+  
+    .step h2 {
+      font-size: 20px;
+    }
+  
+    .step p {
+      font-size: 14px;
+    }
+  
+    .step button {
+      font-size: 14px;
+    }
+  }
+
+  .uploadIcon {
+    background-color: var(--gray-lightest);
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0.5vw;
+  }
+
+  .uploadIcon img {
+    height: 3vh;
+    padding-left: 0.1vw;
+    padding-top: 0.2vh;
+  }

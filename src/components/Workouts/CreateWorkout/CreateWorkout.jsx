@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Popup1 from "./Popups/Popup1/Popup1";
-import Popup2 from "./Popups/Popup2/Popup2";
-import Popup3 from "./Popups/Popup3/Popup3";
-import Popup4 from "./Popups/Popup4/Popup4";
+import Step1 from "./Steps/Step1/Step1";
+import Step2 from "./Steps/Step2/Step2";
+import Step3 from "./Steps/Step3/Step3";
+import Step4 from "./Steps/Step4/Step4";
 import styles from "./CreateWorkout.module.css";
 
 const CreateWorkout = ({
@@ -16,29 +16,30 @@ const CreateWorkout = ({
   const [workoutName, setWorkoutName] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [selectedExercises, setSelectedExercises] = useState([]);
-  const [selectedDays, setSelectedDays] = useState([]);
+  const [selectedDays, setSelectedDays] = useState([selectedDay || "Sun"]);
   const [partner, setPartner] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [exerciseId, setExerciseId] = useState("");
 
-  const handleNext = (name, selectedOptions, days, selectedType) => {
-    setWorkoutType(selectedType);
+  useEffect(() => {
+    console.log("selectedExercises:", selectedExercises);
+  }, [selectedExercises]);
+
+  const handleNext = (name, options, days, type) => {
+    setWorkoutType(type);
     setWorkoutName(name);
     setSelectedDays(days);
-    setSelectedOptions(selectedOptions);
+    setSelectedOptions(options);
     setCurrentPage(2);
-    console.log("Selected Options:", selectedOptions); // Log the updated options immediately
   };
 
   const handlePrevious = () => {
-    resetState();
-    setCurrentPage(1);
+    setCurrentPage((prevPage) => prevPage - 1);
   };
 
-  const handleFinish = (workouts) => {
-    setSelectedExercises(workouts);
+  const handleFinish = (selectedExercises) => {
+    setSelectedExercises(selectedExercises);
     setCurrentPage(3);
-    console.log(workouts);
   };
 
   const handleFormSubmit = () => {
@@ -55,61 +56,65 @@ const CreateWorkout = ({
   };
 
   const resetState = () => {
-    setWorkoutType("");
+    setWorkoutType("Strength");
     setWorkoutName("");
     setSelectedOptions([]);
     setSelectedExercises([]);
-    setSelectedDays([]);
+    setSelectedDays([selectedDay || "Sun"]);
     setPartner("");
     setExerciseId("");
   };
-  console.log("Selected Type in CreateWorkout:", workoutType);
+
+  const renderStep = () => {
+    switch (currentPage) {
+      case 1:
+        return (
+          <Step1
+            onNext={handleNext}
+            onPartnerChange={handlePartnerChange}
+            selectedDay={selectedDay}
+          />
+        );
+      case 2:
+        return (
+          <Step2
+            selectedGroups={selectedOptions}
+            workoutName={workoutName}
+            onPrevious={handlePrevious}
+            onNext={handleFinish}
+            workoutType={workoutType}
+          />
+        );
+      case 3:
+        return (
+          <Step3
+            selectedType={workoutType}
+            selectedExercises={selectedExercises}
+            selectedDays={selectedDays}
+            workoutName={workoutName}
+            onSubmit={handleFormSubmit}
+            onCreate={onCreate}
+            onCorrectSubmit={onCorrectSubmit}
+            selectedOptions={selectedOptions}
+            exerciseId={exerciseId}
+            userWeight={weight}
+          />
+        );
+      case 4:
+        return <Step4 onCreate={handleCreateAnother} />;
+      default:
+        return null;
+    }
+  };
 
   return (
-    <div>
-      {currentPage !== 0 && (
-        <div className={styles.background}>
-          <div className={styles.popup}>
-            <button className={styles.closeButton} onClick={onClose}>
-              Close
-            </button>
-            <div className={styles.section}>
-              {currentPage === 1 && (
-                <Popup1
-                  onNext={handleNext}
-                  onPartnerChange={handlePartnerChange}
-                  selectedDay={selectedDay}
-                />
-              )}
-              {currentPage === 2 && (
-                <Popup2
-                  selectedGroups={selectedOptions}
-                  workoutName={workoutName}
-                  onPrevious={handlePrevious}
-                  onNext={handleFinish}
-                  workoutType={workoutType}
-                />
-              )}
-
-              {currentPage === 3 && (
-                <Popup3
-                  selectedType={workoutType}
-                  selectedExercises={selectedExercises}
-                  selectedDays={selectedDays}
-                  workoutName={workoutName}
-                  onSubmit={handleFormSubmit}
-                  onCreate={onCreate}
-                  onCorrectSubmit={onCorrectSubmit}
-                  selectedOptions={selectedOptions}
-                  exerciseId={exerciseId}
-                  userWeight={weight}
-                />
-              )}
-              {currentPage === 4 && <Popup4 onCreate={handleCreateAnother} />}
-            </div>
-          </div>
-        </div>
-      )}
+    <div className={styles.background}>
+      <div className={styles.popup}>
+        <button className={styles.closeButton} onClick={onClose}>
+          Close
+        </button>
+        <div className={styles.section}>{renderStep()}</div>
+      </div>
     </div>
   );
 };

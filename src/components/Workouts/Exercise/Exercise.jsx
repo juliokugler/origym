@@ -45,7 +45,7 @@ const Exercise = ({ exercise, allCompleted }) => {
         <tbody>
           <tr className={styles.exerciseTableRow}>
             <td className={styles.exerciseName} style={{ width: "10vw", textAlign: "left" }}>
-              <div className={styles.nameAndIcon}>
+              <div className={styles.nameAndIcon}><div className={styles.iconContainer}>
                 <FaStar
                   className={`${styles.starIcon} ${isFavorite ? styles.favorite : ""}`}
                   color={starColor}
@@ -57,7 +57,7 @@ const Exercise = ({ exercise, allCompleted }) => {
                   }}
                 />
                 {name}
-              </div>
+              </div></div>
             </td>
             {attributes.map((attribute, index) => (
               <td key={index} style={{ textAlign: "center", width: "5vw" }}>

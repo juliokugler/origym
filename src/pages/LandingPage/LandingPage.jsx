@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./LandingPage.module.css";
-import main from "./newHero.png";
+import main from "./hero.png";
 import main2 from "./hero2.png";
 import partners from "../../assets/Icons/partners.png";
 import halteres from "../../assets/Icons/halteres.png";
@@ -8,8 +8,14 @@ import nutrition from "../../assets/Icons/dieta.png";
 import health from "../../assets/Icons/health.png"
 import smartwatch from "../../assets/Icons/smartwatch.png";
 import sleep from "./sleep.png";
+import useImageLoad from "../../hooks/useImageLoad";
 
 const LandingPage = () => {
+  const isImageLoaded = useImageLoad(main);
+
+  if (!isImageLoaded) {
+    return <div className="loader-container"><div className="loader-medium"/></div>;
+  }
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
