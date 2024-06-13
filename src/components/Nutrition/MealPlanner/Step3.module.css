@@ -10,7 +10,7 @@ margin-bottom: -1vh;}
   
   .imageContainer {
     position: relative;
-  
+    margin-right: 1vw;
   }
 
   .nameContainer {
@@ -21,12 +21,17 @@ margin-bottom: -1vh;}
     display: flex;
     margin: 0 auto;
   }
+
+  .nameContainer input {
+    width: 24.6vw;
+  }
   
   .recipeImage {
-    width: 100px;
-    height: 100px;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
     object-fit: cover;
+   
   }
   
   .editIcon {
@@ -45,20 +50,47 @@ margin-bottom: -1vh;}
     margin-top: 20px;
   }
   
-  
-  button {
+.buttonRow {
+  display: flex;
+  width: 30vw;
+ justify-content: space-between;
+}
+
+  .buttonRow button {
     margin: 0 10px;
+    padding: 0 6px;
   }
 
   .label {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-bottom: 2vh;
-    width: 24vw;
-    margin: 4vh auto;
+    width: 30vw;
+    margin: 1vh auto 3vh auto;
 }
 
 .label input {
     height: 2.6vh;
+}
+
+.upload {
+  margin-top: -0.6vh;
+  margin-bottom: 0;
+}
+
+.photoUploadInputs {
+  display: flex;
+  width: 30vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photoUploadInput, .photoUploadInputs button {
+  width: 13vw;
+  margin: 0;
+}
+
+.photoUploadInputs button {
+  height: 3.2vh;
+  border-radius: var(--input-border);
 }

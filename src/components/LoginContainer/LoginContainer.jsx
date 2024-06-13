@@ -34,6 +34,7 @@ const LoginContainer = () => {
 
   return (
     <div className={styles.loginContainer}>
+      
       <div className={styles.login}>
         <div className={styles.title}>
           <h1>{t("welcomeBack")}</h1>
@@ -82,20 +83,16 @@ const LoginContainer = () => {
             </span>
           </div>
           
-          {!loading && (
+          {!loading && 
             <div className={styles.buttonContainer}>
               <button className="button" type="submit">
                 <span>{t("login")}</span>
               </button>
             </div>
-          )}
+          }
         </form>
-        {loading && (
-          <div className={styles.buttonContainer}>
-            <button className="button" disabled>
-              <span>{t("loading")}...</span>
-            </button>
-          </div>
+        {loading && (<div className={styles.loaderContainer}><div className="loader"></div></div>
+          
         )}
         {error && <p className="error">{error}</p>}
         <p className={styles.text}>{t("or")}</p>

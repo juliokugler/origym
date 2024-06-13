@@ -4,9 +4,11 @@ import NutritionalInfo from "../NutritionalInfo/NutritionalInfo";
 import ingredientsTranslation from "../../../assets/Ingredients/Ingredients.json";
 import classNames from "classnames";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
+
+
 const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
-  const [mealImage, setMealImage] = useState("");
-  const [mealname, setMealname] = useState("");
+  const [ingredientImage, setIngredientImage] = useState("");
+  const [ingredientname, setIngredientname] = useState("");
   const [quantity, setQuantity] = useState("");
   const [unidade, setUnidade] = useState("grams");
   const [calorias, setCalorias] = useState("");
@@ -18,11 +20,11 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
   const NUTRITIONIX_APP_ID = process.env.REACT_APP_NUTRITIONIX_APP_ID;
 
   useEffect(() => {
-    if (mealname === "") {
+    if (ingredientname === "") {
       setQuantity("");
       setCalorias("");
     }
-  }, [mealname]);
+  }, [ingredientname]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,8 +43,8 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    if (name === "mealname") {
-      setMealname(value);
+    if (name === "ingredientname") {
+      setIngredientname(value);
       updateSuggestions(value);
     } else if (name === "quantity") {
       setQuantity(value);
@@ -61,9 +63,9 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
     }
     try {
       const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
-      const ingredientName = translateIngredient(mealname, selectedLanguage);
+      const ingredientName = translateIngredient(ingredientname, selectedLanguage);
       if (!ingredientName) {
-        console.error(`Translation for ${mealname} not found in ${selectedLanguage}`);
+        console.error(`Translation for ${ingredientname} not found in ${selectedLanguage}`);
         setCalorias("Translation not found");
         return;
       }
@@ -71,7 +73,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
         "https://trackapi.nutritionix.com/v2/natural/nutrients",
         {
           method: "POST",
-          headers: {
+          headers: { 
             "Content-Type": "application/json",
             "x-app-id": NUTRITIONIX_APP_ID,
             "x-app-key": NUTRITIONIX_API_KEY,
@@ -93,7 +95,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
       setNutritionalData(food);
 
       const highresPhoto = food.photo?.highres || "";
-      setMealImage(highresPhoto);
+      setIngredientImage(highresPhoto);
 
       console.log("Highres Photo:", highresPhoto);
       console.log("Full Photo Data:", food.photo);
@@ -116,7 +118,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
   };
 
   const handleSuggestionClick = (suggestion) => {
-    setMealname(suggestion);
+    setIngredientname(suggestion);
     setSuggestions([]);
   };
 
@@ -128,7 +130,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
     setShowNutritionalInfo(false);
   };
 
-  const addMealToDailyInfo = async (calorias) => {
+  const addIngredientToDailyInfo = async (calorias) => {
 
     const db = getFirestore();
     const currentDate = new Date().toISOString().slice(0, 10);
@@ -159,14 +161,14 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
       <form onSubmit={handleSubmit}>
         <div className={styles.labels}>
           <div className={styles.firstInput}>
-            <label className={styles.label} htmlFor="mealname">
+            <label className={styles.label} htmlFor="ingredientname">
               {t("ingredient")}:
             </label>
             <input
               type="text"
-              id="mealname"
-              name="mealname"
-              value={mealname}
+              id="ingredientname"
+              name="ingredientname"
+              value={ingredientname}
               onChange={handleChange}
               className={styles.ingredientInput}
             />
@@ -208,9 +210,9 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
         </div>
         <div>
           <button
-            className={(mealname !== "" && parseFloat(quantity) > 0) ? "button" : "inactiveButton-medium"}
+            className={(ingredientname !== "" && parseFloat(quantity) > 0) ? "button" : "inactiveButton-medium"}
             type="submit"
-            disabled={mealname === "" || parseFloat(quantity) <= 0}
+            disabled={ingredientname === "" || parseFloat(quantity) <= 0}
           >
             <p>{t("calculate")}</p>
           </button>
@@ -241,7 +243,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
         </button>
 
         <button
-        onClick={addMealToDailyInfo}
+        onClick={addIngredientToDailyInfo}
           className={(calorias && calorias !== "Valor indefinido" && parseFloat(quantity) > 0) ? "button" : "inactiveButton-medium"}
           disabled={!calorias || calorias === "Valor indefinido" || parseFloat(quantity) <= 0}
         >
@@ -251,7 +253,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
 
       {showNutritionalInfo && (
         <NutritionalInfo
-          mealname={mealname}
+          ingredientname={ingredientname}
           data={nutritionalData}
           onClose={handleCloseNutritionalInfo}
           unidade={unidade}
@@ -259,7 +261,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
           t={t}
           userData={userData}
           dailyInfo={dailyInfo}
-          mealImage={mealImage}
+          ingredientImage={ingredientImage}
           user={user}
           onUserInfoChange={onUserInfoChange}
         />

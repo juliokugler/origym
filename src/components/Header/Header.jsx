@@ -1,20 +1,15 @@
-//React
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-//Styles
+import React from "react";
 import styles from "./Header.module.css";
-
-//Contexts
 import { useAuthValue } from "../../contexts/AuthContext";
-
-//Media
 import bell from "../../assets/Icons/Bell.png";
-import lupa from "../../assets/Icons/MagnifyingGlass.png";
-
-const Header = ({ pageType, currentDate, timedGreeting, t }) => {
+import SearchBar from "../SearchBar/SearchBar";
+import { useNavigate } from "react-router-dom";
+const Header = ({ pageType, currentDate, timedGreeting, t, userData}) => {
   const { user } = useAuthValue();
   const navigate = useNavigate();
+
+
+  console.log(userData)
   let greetingContent = null;
 
   switch (pageType) {
@@ -51,7 +46,7 @@ const Header = ({ pageType, currentDate, timedGreeting, t }) => {
         <div className={styles.pageGreeting}>
           <p>{currentDate}</p>
           <h2>
-            {timedGreeting}, {user.displayName}
+            {timedGreeting}, {userData.userProfile.firstName}
           </h2>
         </div>
       );
@@ -70,24 +65,34 @@ const Header = ({ pageType, currentDate, timedGreeting, t }) => {
         </div>
       );
       break;
+    case "friends":
+      greetingContent = (
+        <div className={styles.pageGreeting}>
+          <h2>{t("friends")}</h2>
+        </div>
+      );
+      break;
     default:
       greetingContent = null;
   }
+
+
 
   return (
     <div className={styles.container}>
       <div className={styles.greetingContainer}>
         <div className={styles.greeting}>{greetingContent}</div>
         <div className={styles.searchAndIcons}>
-          <div className={styles.searchBar}>
-            <img src={lupa} alt="magnifying glass"></img>
-            <input placeholder={`${t("search")}...`} />
-          </div>
+          <SearchBar t={t}/>
           <div className={styles.notification}>
             <img src={bell} alt="Notification Bell" />
           </div>
           <div className={styles.avatar}>
-            <img onClick={() => navigate("/profile")} src={user.photoURL}></img>
+            <img
+              onClick={() => navigate("/profile")}
+              src={user.photoURL}
+              alt="User Avatar"
+            />
           </div>
         </div>
       </div>

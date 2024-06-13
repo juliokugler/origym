@@ -49,7 +49,7 @@ const WeeklyWorkoutCard = ({ workouts, onOpen, onFavoriteToggle, user }) => {
       <DaySelector selectedDay={selectedDay} handleDaySelect={handleDaySelect} />
       <div className={styles.exerciseListContainer}> 
       <ExerciseList
-        exercises={filteredWorkouts}
+        exercises={filteredWorkouts} 
         number={number}
         onChange={setNumber}
         onFavoriteToggle={onFavoriteToggle}

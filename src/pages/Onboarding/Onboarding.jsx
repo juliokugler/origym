@@ -13,7 +13,7 @@ import ActivityGoalStep from "../../components/OnboardingComponents/ActivityGoal
 import { useUserData } from "../../contexts/UserDataContext";
 import styles from "./Onboarding.module.css";
 import useImageLoad from "../../hooks/useImageLoad";
-import backgroundImage from "./bg.png"
+import backgroundImage from "./bg.png";
 
 const Onboarding = ({ switchLanguage, t, user, userUid }) => {
   const [language, setLanguage] = useState("pt");
@@ -31,28 +31,26 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
 
   const isImageLoaded = useImageLoad(backgroundImage);
 
- 
-console.log("context:", contextUserData)
+  console.log("context:", contextUserData);
+
   useEffect(() => {
-    setUserInfoChange()
+    setUserInfoChange();
     if (contextUserData) {
       setUserData((prevState) => ({
         ...prevState,
-        displayName: `@${contextUserData.userProfile.firstName}${contextUserData.userProfile.lastName}`,
+        displayName: `${contextUserData.userProfile.firstName}${contextUserData.userProfile.lastName}`,
       }));
     }
   }, [contextUserData]);
 
   if (!contextUserData) {
-    setUserInfoChange(true)
-      return <div className="loader-container"><div className="loader-medium"/></div>;
-    }
-
- if (!isImageLoaded) {
-    return <div className="loader-container"><div className="loader-medium"/></div>;
+    setUserInfoChange(true);
+    return <div className="loader-container"><div className="loader-medium" /></div>;
   }
 
- 
+  if (!isImageLoaded) {
+    return <div className="loader-container"><div className="loader-medium" /></div>;
+  }
 
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
@@ -82,6 +80,10 @@ console.log("context:", contextUserData)
 
       const updatedUserData = {
         ...userData,
+        firstName: contextUserData.userProfile.firstName,
+        lastName: contextUserData.userProfile.lastName,
+        displayName: userData.displayName,
+        displayNameLower: userData.displayName.toLowerCase(),
         photoURL: userData.newPhotoURL || user.photoURL,
         TDEE: Number(TDEE),
         waterIntake: Number(waterIntake),
@@ -91,7 +93,7 @@ console.log("context:", contextUserData)
         bio: "",
       };
 
-      await setDoc(doc(db, `users/${userUid}/userInfo/`, "userProfile"), updatedUserData);
+      await setDoc(doc(db, `users/${userUid}`), updatedUserData);
 
       setUserInfoChange((prev) => !prev); // This will trigger re-fetching of user data in the context
 
@@ -141,15 +143,15 @@ console.log("context:", contextUserData)
     }
     return true;
   };
- 
+
   return (
     <div className={styles.onboardingContainer} style={{
-    backgroundImage: `url(${backgroundImage})`,
-  }}>
+      backgroundImage: `url(${backgroundImage})`}}>
       <LanguageSelector language={language} handleLanguageChange={handleLanguageChange} />
       {loading ? (
         <div className="loader-container">
-       <div className="loader-medium"></div></div>
+          <div className="loader-medium"></div>
+        </div>
       ) : (
         <>
           {step === 1 && <UserInfoStep userUid={userUid} userData={userData} handleChange={handleChange} handleNext={handleNext} navigate={navigate} t={t} />}

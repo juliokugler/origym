@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom";
 
-//Styles
+// Styles
 import styles from "./FriendsInActivity.module.css";
 
-//Assets
+// Assets
 import Lightining_active from "../../../assets/Icons/Lightning_active.png";
 
-//Hooks
+// Hooks
 import { db } from "../../../firebase/config";
-import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import getFriendProfile from "./getFriendsProfile";
 
-const FriendsInActivity = ({ userData, user }) => {
+const FriendsInActivity = ({ user }) => {
   const [friendsData, setFriendsData] = useState([]);
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFriendsData = async () => {
@@ -30,19 +30,14 @@ const FriendsInActivity = ({ userData, user }) => {
           }
         });
 
-        console.log("Following IDs:", followingIds);
-
         // Fetch friend profiles using map and async/await
         const friendsData = await Promise.all(
           followingIds.map(async (followingId) => {
-            console.log("Fetching friend profile for ID:", followingId);
             const friendProfile = await getFriendProfile(followingId);
-            console.log("Friend profile for", followingId, ":", friendProfile); // Added log
             return friendProfile;
           })
         );
 
-        console.log("Fetched Friends Data:", friendsData);
         setFriendsData(friendsData);
       } catch (error) {
         console.error("Error fetching friends data:", error);
@@ -50,10 +45,9 @@ const FriendsInActivity = ({ userData, user }) => {
     };
 
     if (user && user.uid) {
-      console.log("Fetching friends data for user ID:", user.uid);
       fetchFriendsData();
     }
-  }, [userData]);
+  }, [user]);
 
   return (
     <div className={styles.card}>
@@ -61,14 +55,14 @@ const FriendsInActivity = ({ userData, user }) => {
         <div
           className={styles.friendCard}
           key={index}
-          onClick={() => navigate(`/profile/${friend.uid}`)} // Pass friend.uid to goToFriendProfile
+          onClick={() => navigate(`/profile/${friend.uid}`)}
         >
           <div className={styles.avatar}>
             <img src={friend.photoURL} alt={`Friend ${index + 1}`} />
             <div className={styles.onlineIndicator}></div>
           </div>
           <div className={styles.activity}>
-            <p className={styles.friendName}>{friend.firstName}</p>
+            <p className={styles.friendName}>@{friend.displayName}</p>
             <p className={styles.friendWorkout}>Strength Workout</p>
           </div>
           <button className={styles.active}>

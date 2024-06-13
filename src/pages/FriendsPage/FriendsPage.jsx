@@ -46,6 +46,7 @@ console.log(user)
         </div>
         <div className={styles.secondCardColumn}>
         <div className={styles.activityCard}>
+        <h3 className={styles.cardTitle}>Feed</h3>
          <Feed userId={user.uid} photoURL={user.photoURL} userName={user.displayName} t={t} />
          </div>
         </div>

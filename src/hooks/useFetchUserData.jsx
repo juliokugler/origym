@@ -17,10 +17,7 @@ const useFetchUserData = (user, userInfoChange) => {
         const userProfileRef = doc(
           firestore,
           "users",
-          user.uid,
-          "userInfo",
-          "userProfile"
-        );
+          user.uid        );
         const userProfileSnapshot = await getDoc(userProfileRef);
 
         if (userProfileSnapshot.exists()) {

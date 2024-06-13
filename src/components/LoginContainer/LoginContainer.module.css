@@ -117,3 +117,10 @@
 .text {
   margin: 3vh 0;
 }
+
+.loaderContainer {
+  height: 3.6vh;
+  display: flex;
+  justify-content: center;
+  margin: 2vh auto 0 auto
+}

@@ -1,0 +1,65 @@
+
+.searchResults {
+    position: absolute;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: 19vw;
+    background-color: var(--gray-medium);
+    border-radius: 1vh;
+    max-height: 22vh;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 1px;
+  }
+  
+  .searchResultItem {
+    display: flex;
+    align-items: center;
+    padding: 0.5vh 1vw;
+    cursor: pointer;
+    width: 17vw;
+    height: 4.5vh;
+  }
+  
+  .searchResultItem:last-child {
+    border-bottom: none; /* Remove bottom border from last item */
+  }
+  
+  .searchResultItem:hover {
+    background-color: var(--gray-dark);
+    border-radius: 1vh;
+  }
+  
+  .searchResultImage {
+    width: 3.6vh;
+    height: 3.6vh;
+    border-radius: 50%;
+    margin-right: 0.6vw;
+    flex-shrink: 0; /* Ensure image size remains consistent */
+  }
+  
+  .searchBar {
+    position: relative;
+  }
+  
+  .searchBarImage {
+    fill: white;
+    height: 2.6vh;
+    position: absolute;
+    top: 32.1%;
+    left: 5.5%;
+  }
+
+  .searchBar input {
+    height: 6vh;
+    width: 16vw;
+    background-color: transparent;
+    border: 1px solid #4D4F56;
+    border-radius: 100px;
+    color: white;
+    padding-left: 3vw;
+  }
+  
+  .card {
+ 
+  
+  }

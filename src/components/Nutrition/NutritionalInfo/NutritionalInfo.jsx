@@ -3,10 +3,10 @@ import styles from "./NutritionalInfo.module.css";
 import classNames from "classnames"
 import NutritionalIntake from "./DailyIntakes/NutritionalIntake";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade, mealname, t, userData, dailyInfo, mealImage, onUserInfoChange, user }) => {
+const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade, ingredientname, t, userData, dailyInfo, ingredientImage, onUserInfoChange, user }) => {
 
 
-  const addMealToDailyInfo = async () => {
+  const addIngredientToDailyInfo = async () => {
 
     const db = getFirestore();
     const currentDate = new Date().toISOString().slice(0, 10);
@@ -35,8 +35,8 @@ const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade, mealname, t,
 
   return (
     <div className={styles.popup}>
-       <div className={classNames("card", styles.popupContainer)}>       <h2 className={styles.title}>{quantidade} {t`${unidade}`} de {mealname}</h2> <div className={styles.popupContent}>
-        <div className={styles.imageContainer}> <img src={mealImage}></img>
+       <div className={classNames("card", styles.popupContainer)}>       <h2 className={styles.title}>{quantidade} {t`${unidade}`} de {ingredientname}</h2> <div className={styles.popupContent}>
+        <div className={styles.imageContainer}> <img src={ingredientImage}></img>
           <NutritionalIntake ingredientCalories={data.nf_calories} ingredientProtein={data.nf_protein} ingredientFat={data.nf_total_fat} ingredientCarbs={data.nf_total_carbohydrate} t={t} userData={userData} dailyInfo={dailyInfo}/>
         </div>
        
@@ -96,7 +96,7 @@ const NutritionalInfoPopup = ({ data, onClose, unidade, quantidade, mealname, t,
         </table></div></div>
         <div className={styles.buttonContainer}>
         <button className="notSelectedButton-medium" onClick={onClose}>{t("close")}</button>
-        <button className="button" onClick={addMealToDailyInfo} >{t("addToDailyAndMacros")}
+        <button className="button" onClick={addIngredientToDailyInfo} >{t("addToDailyAndMacros")}
           
         </button>
       </div></div>

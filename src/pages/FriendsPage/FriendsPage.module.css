@@ -36,8 +36,8 @@
   }
 
   .activityCard {
-    width: 35vw;
-    height: 70vh;
+    width: 37vw;
+    height: 80vh;
   }
   
   .cardTitle {
@@ -47,10 +47,10 @@
   }
   
   .titleAndButton {
-    width: 22vw;
+    width: 25vw;
     display: flex;
     align-items: center;
-    margin: 2vh auto;
+    margin: 0 auto;
     justify-content: space-between;
   }
   
@@ -61,6 +61,7 @@
     color: #fff;
     cursor: pointer;
     padding: 0.5em;
+    margin-right: 0.8vw;
   }
   
   .addButton:hover {

@@ -102,6 +102,7 @@ const NutritionPage = ({ meal, mealNumber, t, userData, dailyInfo, onUserInfoCha
               rerender={rerenderCalendar}
               onOpen={handleMealPlannerToggle}
               mealNumber={mealNumber}
+              user={user}
             />
           </div>
         </div>
@@ -129,6 +130,7 @@ const NutritionPage = ({ meal, mealNumber, t, userData, dailyInfo, onUserInfoCha
       {showMealPlannerPopup && (
         <MealPlanner
           t={t}
+          userUid={user.uid}
           onCorrectSubmit={handleCorrectSubmit}
           dayFromCard={selectedDay}
           mealFromCard={mealType}

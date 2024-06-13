@@ -3,7 +3,7 @@ import { collection, doc, getDoc } from "firebase/firestore";
 
 const getFriendProfile = async (friendUid) => {
   try {
-    const userDoc = doc(db, "users", friendUid, "userInfo", "userProfile");
+    const userDoc = doc(db, "users", friendUid);
     const userSnapshot = await getDoc(userDoc);
 
     if (userSnapshot.exists()) {

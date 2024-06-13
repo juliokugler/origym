@@ -8,7 +8,7 @@ const Step1 = ({ onNext, selectedDay }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [selectedDays, setSelectedDays] = useState([selectedDay || "Sun"]);
   const [selectedType, setSelectedType] = useState("Strength");
-  const [isNameChanged, setIsNameChanged] = useState(false);
+  const [isNameChanged, setIsNameChanged] = useState(false); 
 
   const toggleDaySelection = (day) => {
     setSelectedDays((prevSelectedDays) => {

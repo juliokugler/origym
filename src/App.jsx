@@ -24,12 +24,12 @@ import NutritionPage from "./pages/NutritionPage/NutritionPage";
 import Home from "./pages/HomePage/HomePage";
 import Landing from "./pages/LandingPage/LandingPage";
 import Login from "./pages/LoginPage/LoginPage";
-import SettingsPage from "./pages/SettingsPage/SettingsPage";
 import Workouts from "./pages/WorkoutsPage/WorkoutsPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Friends from "./pages/FriendsPage/FriendsPage";
 import Onboarding from "./pages/Onboarding/Onboarding";
+import Settings from "./pages/Settings/Settings";
 
 function AppContent() {
   const { userData, dailyInfo, loading, setUserInfoChange } = useUserData();
@@ -63,7 +63,7 @@ function AppContent() {
           <Route
             path="/home"
             element={
-             userData ? (
+             userData && user ? (
                 <Home
                   t={t}
                   user={user}
@@ -83,7 +83,7 @@ function AppContent() {
           <Route path="/health" element={userData ? <Health userData={userData} t={t} /> : <Navigate to="/login" /> } />
           <Route
             path="/nutrition"
-            element={userData ? 
+            element={userData && user ? 
               <NutritionPage
                 onUserInfoChange={handleUserInfoChange}
                 t={t}
@@ -97,7 +97,7 @@ function AppContent() {
           />
           <Route
             path="/profile"
-            element={userData ? <ProfilePage user={user} onUserInfoChange={handleUserInfoChange} userData={userData.userProfile} dailyInfo={userData.dailyInfo} t={t} /> : <Navigate to="/login" />}
+            element={userData && user ? <ProfilePage user={user} onUserInfoChange={handleUserInfoChange} userData={userData.userProfile} dailyInfo={userData.dailyInfo} t={t} /> : <Navigate to="/login" />}
           />
           <Route
             path="/register"
@@ -111,7 +111,7 @@ function AppContent() {
             path="/settings"
             element={
               user ? (
-                <Onboarding onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userInfo={userData}   user={user} userUid={user.uid} t={t}/>
+                <Settings onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userData={userData}   user={user} userUid={user.uid} t={t}/>
               ) : (
                 <Navigate to="/login" />
               )

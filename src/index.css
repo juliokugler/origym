@@ -417,3 +417,24 @@ margin-bottom:1vh
   align-items: center;
   margin-top: -2vh;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+}
+::-webkit-scrollbar-track {
+  background-color: var(--gray-dark);
+  border-radius: 10px;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gray-lightest);
+  border-radius: 10px;
+  cursor: pointer;
+ 
+}
+
+img {
+  user-select: none;
+}

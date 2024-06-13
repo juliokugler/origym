@@ -22,7 +22,7 @@ const ProfilePage = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
         const firestore = getFirestore();
 
         // Fetch user profile data
-        const userProfileRef = doc(firestore, "users", userId, "userInfo", "userProfile");
+        const userProfileRef = doc(firestore, "users", userId);
         console.log("Fetching user profile from:", userProfileRef.path);
         const userProfileSnapshot = await getDoc(userProfileRef);
 
@@ -43,9 +43,11 @@ const ProfilePage = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
             setProfileDailyInfo(dailyInfoData);
           } else {
             console.log("Daily info document for current date does not exist!");
+            setProfileDailyInfo(null); // Ensure to set state to null if not found
           }
         } else {
           console.log("User profile document does not exist!");
+          setProfileData(null); // Ensure to set state to null if not found
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
@@ -104,9 +106,9 @@ const ProfilePage = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
               <div className={`card ${styles.personalFeed}`}>
                 <h3 className="title">{t("personalFeed")}</h3>
                 <PersonalFeed
-                  photoURL={profileData.photoURL || user.photoURL}
+                  photoURL={profileData.photoURL || profileData.photoURL}
                   userId={userId || user.uid}
-                  userName={profileData.firstName || profileData.firstName}
+                  userName={profileData.firstName || profileData.lastName}
                   friendInfo={userId && userId !== user.uid ? profileData : null}
                   t={t}
                 />

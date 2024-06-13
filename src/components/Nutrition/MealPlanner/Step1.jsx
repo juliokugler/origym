@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import StepIndicator from "../../StepIndicator/StepIndicator";
 import styles from "./Step1.module.css";
-import searchImage from "./searchRecipe.png";
-import createImage from "./createRecipe.png";
+import searchImage from "../../../assets/Images/searchRecipe.png";
+import createImage from "../../../assets/Images/createRecipe.png";
+import useImageLoad from "../../../hooks/useImageLoad";
 
-const Step1 = ({ onNext }) => {
+const Step1 = ({ onNext, t }) => {
   const [hovered, setHovered] = useState(null);
+  const searchImageLoaded = useImageLoad(searchImage); // Use the hook for searchImage
+  const createImageLoaded = useImageLoad(createImage); // Use the hook for createImage
 
   const handleSelect = (type) => {
     onNext(type);
@@ -16,12 +19,15 @@ const Step1 = ({ onNext }) => {
   };
 
   const handleMouseLeave = () => {
-    setHovered(null);
+    setHovered(null); 
   };
+
 
   return (
     <div className={styles.container}>
-      <h2>Select Meal Type</h2>
+      {!searchImageLoaded || !createImageLoaded ? (<div className={styles.loaderContainer}><div className="loader"></div></div>) : (
+        <>
+      <h2>{t("selectType")}</h2>
       <StepIndicator currentStep={1} />
       <div className={styles.options}>
         <div
@@ -30,7 +36,7 @@ const Step1 = ({ onNext }) => {
           onMouseEnter={() => handleMouseEnter("search")}
           onMouseLeave={handleMouseLeave}
         >
-          <h3>Search Recipes</h3>
+          <h3>{t("searchRecipes")}</h3>
           <img
             src={searchImage}
             alt="Search Recipes"
@@ -43,22 +49,23 @@ const Step1 = ({ onNext }) => {
           onMouseEnter={() => handleMouseEnter("create")}
           onMouseLeave={handleMouseLeave}
         >
-          <h3>Create Recipe</h3>
+          <h3>{t("createRecipe")}</h3>
           <img
             src={createImage}
             alt="Create Recipe"
             className={styles.image}
           />
         </div>
-      </div>
+      </div></>)}
       {hovered === "search" && (
         <p className={styles.hoverText}>
-          Select your own ingredients and create your own recipe. We also provide calorie information about your selections.
+          
+          {t("searchRecipesText")}
         </p>
       )}
       {hovered === "create" && (
         <p className={styles.hoverText}>
-          Select your meal from a wide range of recipes made by our food experts at ORIGYM.
+          {t("createRecipeText")}
         </p>
       )}
     </div>

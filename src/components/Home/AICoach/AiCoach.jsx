@@ -18,7 +18,7 @@ The loader lasts 5 seconds and after that it gets replaced for the actual messag
 
 const AiCoach = ({ userData, timedGreeting, t }) => {
   const [showLastMessage, setShowLastMessage] = useState(false);
-
+console.log(userData)
   const [initialMessagesRendered, setInitialMessagesRendered] = useState(false);
 
   useEffect(() => {

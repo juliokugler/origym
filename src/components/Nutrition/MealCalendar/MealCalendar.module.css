@@ -2,7 +2,7 @@
   text-align: left;
 }
 
-.card ul {
+.mealsList {
   display: flex;
   flex-direction: column;
   width: 29vw;
@@ -24,7 +24,7 @@
 }
 
 .mealCard h4 {
-  margin-top: 2vh;
+  margin-top: 3vh;
 }
 
 .mealsContainer {
@@ -42,19 +42,38 @@
   bottom: 0;
 }
 
+.mealAndIcon {
+  display: flex;
+  align-items: center;
+
+}
+
+
 .mealCard {
   background-color: #35373d;
-  padding: 0 2vw;
-  width: 24vw;
+  padding: 0 1vw;
+  width: 28vw;
   border-radius: 2vh;
   margin: 1.4vh auto;
   cursor: pointer;
   min-height: 7vh;
 }
 
+.mealCard ul {
+  list-style: none;
+  padding: 0 2vw;
+  margin: 0;
+}
+
 .mealCard.opened {
-  min-height: 16vh;
+  min-height: 13vh;
   position: relative;
+}
+
+.mealIcon {
+  height: 2.2vh;
+  margin-right: 1vw;
+  padding-bottom: 0.2vh;
 }
 
 .arrowIcon {
@@ -68,4 +87,42 @@
   align-items: center;
   justify-content: space-between;
   height:6vh
+}
+
+.mealDisplay {
+  display: flex;
+  margin-left: 0;
+  align-items: center;
+  height: 5vh;
+}
+
+.mealDisplay img {
+  display: flex;
+  align-items: center;
+  width: 5vh;
+  height: 5vh;
+  object-fit: cover;
+  border-radius: 1.5vh;
+  margin-right: 1vw;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.mealInfo p {
+  margin: 0;
+  margin-top: 0.5vh;
+}
+
+.mealInfo {
+  margin-top: -0.5vh;
+}
+
+.mealInfo svg {
+  fill: var(--text-color);
+  margin: 0;
+  margin-right: 0.2vw;
 }

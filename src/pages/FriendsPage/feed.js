@@ -128,6 +128,8 @@ const Feed = ({ t, userId, userName, photoURL }) => {
     }
   };
 
+  console.log(posts);
+
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -140,6 +142,7 @@ const Feed = ({ t, userId, userName, photoURL }) => {
     <div className={styles.feedContainer}>
       <form onSubmit={handleSubmit}>
         <label className={styles.personalFeedLabel}>
+          <img src={photoURL}></img>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -195,7 +198,12 @@ const Feed = ({ t, userId, userName, photoURL }) => {
               ></img>
             }
           </div>
-          <p>{post.content}</p>
+          <div className={styles.postContent}>
+            <p className={styles.postAuthor}>
+              <strong>{post.author}</strong>
+            </p>
+            <p className={styles.postText}>{post.content}</p>
+          </div>
           <div
             onClick={() => toggleLike(post.id)} // Ensure post.id is the correct ID
             className={styles.powerBoosts}

@@ -50,7 +50,7 @@ const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUse
     setWorkoutChange((prev) => !prev);
   };
 
- 
+ console.log(user)
 
   return (
     <div className="container">
@@ -59,6 +59,8 @@ const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUse
         currentDate={currentDate}
         timedGreeting={greeting}
         t={t}
+        userData={userData}
+        userUid={user.uid}
       />
       <div className="mainSection">
         <div className={styles.leftSection}>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   getAuth,
@@ -15,134 +15,82 @@ export const useAuthentication = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const auth = getAuth();
-  const [userData, setUserData] = useState(null);
+  const isCancelled = useRef(false);
+
   const checkIfIsCancelled = useCallback(() => {
-    // Implement your cancellation logic here if needed
+    if (isCancelled.current) throw new Error("Operation cancelled");
   }, []);
 
   const handleError = (error) => {
-    let systemErrorMessage;
+    const errorMessages = {
+      "auth/weak-password": "A senha precisa conter pelo menos 6 caracteres.",
+      "auth/email-already-in-use": "E-mail já cadastrado.",
+      "auth/user-not-found": "Usuário não encontrado.",
+      "auth/wrong-password": "Senha incorreta.",
+    };
 
-    switch (error.code) {
-      case "auth/weak-password":
-        systemErrorMessage = "A senha precisa conter pelo menos 6 caracteres.";
-        break;
-      case "auth/email-already-in-use":
-        systemErrorMessage = "E-mail já cadastrado.";
-        break;
-      case "auth/user-not-found":
-        systemErrorMessage = "Usuário não encontrado.";
-        break;
-      case "auth/wrong-password":
-        systemErrorMessage = "Senha incorreta.";
-        break;
-      default:
-        systemErrorMessage =
-          "Ocorreu um erro, por favor tente novamente mais tarde.";
-    }
-
-    setError(systemErrorMessage);
-  };
-
-  const setDailyInfo = async (userId, date, dailyInfo) => {
-    await setDoc(doc(db, `users/${userId}/dailyInfo/${date}`), dailyInfo);
-  };
-
-  const setWorkouts = async (userId, date, workouts) => {
-    await setDoc(doc(db, `users/${userId}/workouts/${date}`), {
-      workoutsDone: workouts,
-    });
-  };
-
-  const setMeals = async (userId, date, meals) => {
-    await setDoc(doc(db, `users/${userId}/meals/${date}`), {
-      mealsConsumed: meals,
-    });
-  };
-
-  const setWeight = async (userId, date, weight) => {
-    await setDoc(doc(db, `users/${userId}/weight/${date}`), {
-      weight,
-      date: new Date(date),
-    });
-  };
-
-  const setSleep = async (userId, date, hours, minutes) => {
-    await setDoc(doc(db, `users/${userId}/sleep/${date}`), {
-      hours,
-      minutes,
-      date: new Date(date),
-    });
+    setError(errorMessages[error.code] || "Ocorreu um erro, por favor tente novamente mais tarde.");
+    console.error(error);
   };
 
   const setUserInfo = async (userUid, data) => {
-    await setDoc(doc(db, `users/${userUid}/userInfo/`, "userProfile"), {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      photoURL: data.photoURL,
-      following: [
-        "IWbtLCXLwfNeHP20aEVBVGpzeTH3",
-        "u1rEZesuRlU3h9XoL7bfnLEhm4E2",
-        "lFy2vob4kTU6gC9EpMOrG9wu0C83",
-      ],
-      initialWeight: 70,
-      currentWeight: 70,
-      TDEE: 2000,
-      waterIntake: 2,
-      proteinIntake: 110,
-      carbsIntake: 250,
-      fatIntake: 50,
-      height: 170,
-      age: null,
-      activityLevel: "Moderately Active",
-      mainGoal: "Improve Health",
-      bio: "",
-    });
+    try {
+      const flattenedData = {
+        displayName: "",
+        firstName: data.firstName,
+        lastName: data.lastName,
+        photoURL: data.photoURL,
+        following: [
+          "IWbtLCXLwfNeHP20aEVBVGpzeTH3",
+          "u1rEZesuRlU3h9XoL7bfnLEhm4E2",
+          "lFy2vob4kTU6gC9EpMOrG9wu0C83",
+        ],
+        initialWeight: 70,
+        currentWeight: 70,
+        TDEE: 2000,
+        waterIntake: 2,
+        proteinIntake: 110,
+        carbsIntake: 250,
+        fatIntake: 50,
+        height: 170,
+        age: null,
+        activityLevel: "Moderately Active",
+        mainGoal: "Improve Health",
+        bio: "",
+        ...data,
+      };
+
+      // Remove password from the data before storing it in Firestore
+      delete flattenedData.password;
+
+      await setDoc(doc(db, `users/${userUid}`), flattenedData);
+    } catch (error) {
+      handleError(error);
+    }
   };
 
   const createUser = async (data) => {
-    checkIfIsCancelled();
     setLoading(true);
-
     try {
-      const { user } = await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password
-      );
+      const { user } = await createUserWithEmailAndPassword(auth, data.email, data.password);
+      await updateProfile(user, { displayName: data.firstName, photoURL: data.photoURL });
 
-      const sampleSleepData = [
-        { date: "2023-05-14", hours: 7, minutes: 30 },
-        { date: "2023-05-15", hours: 6, minutes: 45 },
-        { date: "2023-05-16", hours: 8, minutes: 15 },
-        { date: "2023-05-17", hours: 5, minutes: 50 },
-        { date: "2023-05-18", hours: 7, minutes: 20 },
-      ];
+      const sampleData = {
+        weight: [
+          { date: "2023-05-14", weight: 71 },
+          { date: "2023-05-15", weight: 71.2 },
+          { date: "2023-05-16", weight: 70.9 },
+          { date: "2023-05-17", weight: 71.1 },
+          { date: "2023-05-18", weight: 70 },
+        ],
+      };
 
-      const sampleWeightData = [
-        { date: "2023-05-14", weight: 71 },
-        { date: "2023-05-15", weight: 71.2 },
-        { date: "2023-05-16", weight: 70.9 },
-        { date: "2023-05-17", weight: 71.1 },
-        { date: "2023-05-18", weight: 70 },
-      ];
-
-      for (const sleepData of sampleSleepData) {
-        await setSleep(
-          user.uid,
-          sleepData.date,
-          sleepData.hours,
-          sleepData.minutes
-        );
-      }
-
-      for (const weightData of sampleWeightData) {
-        await setWeight(user.uid, weightData.date, weightData.weight);
+      for (const { date, weight } of sampleData.weight) {
+        await setDoc(doc(db, `users/${user.uid}/weight/${date}`), { weight, date: new Date(date) });
       }
 
       await setUserInfo(user.uid, data);
 
-      // Initialize follows subcollection
       const initialFollows = [
         { followingId: "IWbtLCXLwfNeHP20aEVBVGpzeTH3" },
         { followingId: "u1rEZesuRlU3h9XoL7bfnLEhm4E2" },
@@ -153,11 +101,6 @@ export const useAuthentication = () => {
         await setDoc(doc(collection(db, `users/${user.uid}/follows`)), follow);
       }
 
-      await updateProfile(user, {
-        displayName: data.firstName,
-        photoURL: data.photoURL,
-      });
-
       navigate("/onboarding");
     } catch (error) {
       handleError(error);
@@ -166,21 +109,21 @@ export const useAuthentication = () => {
     }
   };
 
-  const logout = () => {
-    checkIfIsCancelled();
-    signOut(auth).then(() => {
+  const logout = async () => {
+    setLoading(true);
+    try {
+      await signOut(auth);
       navigate("/");
-      setUserData(null);
-    }).catch(error => {
+    } catch (error) {
       console.error("Logout failed: ", error);
-    });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const login = async (data) => {
-    checkIfIsCancelled();
     setLoading(true);
     setError(null);
-
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       navigate("/onboarding");
@@ -192,8 +135,10 @@ export const useAuthentication = () => {
   };
 
   useEffect(() => {
-    return () => checkIfIsCancelled();
-  }, [checkIfIsCancelled]);
+    return () => {
+      isCancelled.current = true;
+    };
+  }, []);
 
   return { auth, createUser, error, logout, login, loading };
 };

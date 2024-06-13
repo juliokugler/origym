@@ -92,3 +92,49 @@
     padding-left: 0.1vw;
     padding-top: 0.2vh;
   }
+
+  
+.statusMessage {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.messageLoading,
+.messageTaken,
+.messageAvailable {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.messageLoading {
+  color: #999;
+}
+
+.messageTaken {
+  color: #FF7A7A;
+}
+
+.messageAvailable {
+  color: #24BA60;
+}
+
+.iconTaken,
+.iconAvailable {
+  font-size: 1rem;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

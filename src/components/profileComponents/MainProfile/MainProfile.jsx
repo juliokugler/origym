@@ -20,7 +20,7 @@ console.log(userData)
 
   const handleBioSubmit = async () => {
     const db = getFirestore();
-    const dailyInfoRef = doc(db, `users/${user.uid}/userInfo/userProfile/`);
+    const dailyInfoRef = doc(db, `users/${user.uid}`);
   
     try {
       await updateDoc(dailyInfoRef, { bio: newBio });
@@ -56,7 +56,7 @@ console.log(userData)
       </section>
       <div className={styles.userInfo}>
         <div className={styles.textInfo}>
-          <h3>{userData.firstName} {userData.lastName}</h3>
+          <h3>@{userData.displayName}</h3>
           <div className={styles.followInfo}>
             <div className={styles.followCard}>
               <p>{t("following")}:</p>
