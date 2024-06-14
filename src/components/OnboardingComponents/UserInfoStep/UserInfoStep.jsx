@@ -7,12 +7,13 @@ import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage
 import uploadImage from "../../../assets/Icons/add-a-photo-outline.png";
 import useCheckDisplayName from "../../../hooks/useCheckDisplayName";
 import { FaCheckCircle, FaTimesCircle, FaSpinner } from "react-icons/fa";
+import useImageLoad from "../../../hooks/useImageLoad";
 
 const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
   const [uploading, setUploading] = useState(false);
   const [photoURL, setPhotoURL] = useState(userData.newPhotoURL || "https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Frame%20480%20(1).png?alt=media&token=598f9947-2ceb-43d7-b345-7c483944bcdd");
   const [username, setUsername] = useState(userData.displayName);
-
+  const isImageLoaded = useImageLoad(photoURL)
   const { status, loading: checkingDisplayName } = useCheckDisplayName(username);
 
   useEffect(() => {
@@ -65,8 +66,8 @@ const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
     <div>
       <Header t={t} />
       <div className={classNames("card", styles.step)}>
-        <div className={styles.avatarContainer}>
-          <img className={styles.avatar} src={photoURL} alt="Avatar" />
+        <div className={styles.avatarContainer}>{uploading || !isImageLoaded ? (<div className={styles.avatar}><div className="loader"/></div>): (
+          <img className={styles.avatar} src={photoURL} alt="Avatar" />)}
           <input
             type="file"
             id="fileInput"
@@ -112,7 +113,7 @@ const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
           <button
             className="button"
             onClick={handleNext}
-            disabled={uploading || status === "taken" || checkingDisplayName}
+            disabled={uploading || status !== "available" || checkingDisplayName}
           >
             {t("next")}
           </button>

@@ -51,7 +51,7 @@
   width: 6vh;
   height: 6vh;
   border-radius: 3vh;
-  background-color: var(--gray-dark);
+  background-color: var(--gray-medium);
   justify-content: center;
   align-items: center;
 }
