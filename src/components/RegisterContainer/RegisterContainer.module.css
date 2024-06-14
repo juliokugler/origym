@@ -90,7 +90,7 @@
 .eyeButton {
   position: absolute;
   right: -1.2vw;
-  top: 11%;
+  top: -11%;
   padding: 1vw;
   fill: var(--gray-light);
   cursor: pointer;
@@ -132,4 +132,17 @@
   background-color: var(--gray-light);
   border: 1px solid var(--gray-lightest);
   width: 11vw;
+  }
+
+  .loaderContainer {
+    height: 3.6vh;
+    display: flex;
+    justify-content: center;
+    margin: 2vh auto 0 auto
+  }
+
+  .error {
+    display: flex;
+    justify-content: center;
+    margin: 0;
   }

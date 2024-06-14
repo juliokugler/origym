@@ -27,6 +27,7 @@ export const useAuthentication = () => {
       "auth/email-already-in-use": "E-mail já cadastrado.",
       "auth/user-not-found": "Usuário não encontrado.",
       "auth/wrong-password": "Senha incorreta.",
+      "auth/invalid-credential" : "Senha ou usuário incorretos."
     };
 
     setError(errorMessages[error.code] || "Ocorreu um erro, por favor tente novamente mais tarde.");
@@ -123,14 +124,15 @@ export const useAuthentication = () => {
 
   const login = async (data) => {
     setLoading(true);
-    setError(null);
+    setError(null); // Reset error state before attempting login
+  
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      navigate("/onboarding");
+      // Only navigate to "/onboarding" if login is successful
     } catch (error) {
       handleError(error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Stop loading state after attempt, whether success or failure
     }
   };
 

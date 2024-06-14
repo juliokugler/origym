@@ -11,6 +11,7 @@
   height: 78vh;
   text-align: center;
   cursor: default;
+  user-select: none;
 }
 
 .formAddInfo {
@@ -89,7 +90,7 @@
 .eyeButton {
   position: absolute;
   right: -1.2vw;
-  top: 11%;
+  top: 9%;
   padding: 1vw;
   fill: var(--gray-light);
   cursor: pointer;

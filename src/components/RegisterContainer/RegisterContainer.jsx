@@ -2,24 +2,33 @@ import styles from "./RegisterContainer.module.css";
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useTranslation } from "react-i18next";
-import { FaGoogle, FaApple } from "react-icons/fa";
+import { FaGoogle, FaApple, FaRegEye, FaEyeSlash } from "react-icons/fa";
 
 const RegisterContainer = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [age, setAge] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [photoURL, setPhotoURL] = useState(
     "https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Frame%20480%20(1).png?alt=media&token=598f9947-2ceb-43d7-b345-7c483944bcdd"
   );
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
   const [error, setError] = useState("");
   const { createUser, error: authError, loading } = useAuthentication();
   const { t } = useTranslation();
+
+  const handleEyeClick = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const handleConfirmEyeClick = () => {
+    setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setError("");
 
     const user = {
@@ -35,9 +44,11 @@ const RegisterContainer = () => {
       return;
     }
 
-    const res = await createUser(user);
-
-    console.log(res);
+    try {
+      await createUser(user);
+    } catch (error) {
+      setError(error.message || "Ocorreu um erro, por favor tente novamente mais tarde.");
+    }
   };
 
   useEffect(() => {
@@ -45,6 +56,32 @@ const RegisterContainer = () => {
       setError(authError);
     }
   }, [authError]);
+
+  // Debounced password match check
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (password && confirmPassword && password !== confirmPassword) {
+        setError("As senhas precisam ser iguais.");
+      } else {
+        setError("");
+      }
+    }, 700); // Delay in milliseconds
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [password, confirmPassword]);
+
+  // Reset error on typing
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    setError("");
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+    setError("");
+  };
 
   return (
     <div className={styles.registerContainer}>
@@ -92,39 +129,60 @@ const RegisterContainer = () => {
 
         <label>
           <span>{t("password")}:</span>
-          <input
-            className={styles.inputField}
-            type="password"
-            name="password"
-            required
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
+          <div className={styles.passwordInputGroup}>
+            <input
+              className={styles.inputField}
+              type={isPasswordVisible ? "text" : "password"}
+              name="password"
+              required
+              onChange={handlePasswordChange}
+              value={password}
+            />
+            <div className={styles.eyeButton} onClick={handleEyeClick}>
+              {isPasswordVisible ? (
+                <FaEyeSlash aria-label={t("hidePassword")} />
+              ) : (
+                <FaRegEye aria-label={t("showPassword")} />
+              )}
+            </div>
+          </div>
         </label>
 
         <label>
-          <span>{t("confirmPassword")}</span>
-          <input
-            className={styles.inputField}
-            type="password"
-            name="confirmPassword"
-            required
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            value={confirmPassword}
-          />
-        </label>
-
+          <span>{t("confirmPassword")}:</span>
+          <div className={styles.passwordInputGroup}>
+            <input
+              className={styles.inputField}
+              type={isConfirmPasswordVisible ? "text" : "password"}
+              name="confirmPassword"
+              required
+              onChange={handleConfirmPasswordChange}
+              value={confirmPassword}
+            />
+            <div className={styles.eyeButton} onClick={handleConfirmEyeClick}>
+              {isConfirmPasswordVisible ? (
+                <FaEyeSlash aria-label={t("hidePassword")} />
+              ) : (
+                <FaRegEye aria-label={t("showPassword")} />
+              )}
+            </div>
+          </div>
+        </label><div className={styles.errorContainer}>
+      {error && <p className={styles.error}>{error}</p>}</div>
         {!loading && (
           <div className={styles.buttonContainer}>
-          <button className="button"><p>{t("getStarted")}!</p></button></div>
+            <button className="button">
+              <p>{t("getStarted")}!</p>
+            </button>
+          </div>
         )}
       </form>
-      {loading && (<div className={styles.buttonContainer}>
-        <button className="button" disabled>
-          {t("loading")}...
-        </button></div>
+      {loading && (
+        <div className={styles.loaderContainer}>
+          <div className="loader"></div>
+        </div>
       )}
-      {error && <p className="error">{error}</p>}
+
       <p className={styles.text}>{t("or")}</p>
       <div className="loginOptions">
         <button className="socialMediaButton">

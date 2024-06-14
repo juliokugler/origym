@@ -65,13 +65,13 @@ const LoginContainer = () => {
               value={password}
               aria-label={t("password")}
             />
-          <button className={styles.eyeButton} onClick={handleEyeClick}>
+          <div className={styles.eyeButton} onClick={handleEyeClick}>
   {isPasswordVisible ? (
     <FaEyeSlash aria-label={t("hidePassword")} />
   ) : (
     <FaRegEye aria-label={t("showPassword")} />
   )}
-</button>
+</div>
           </div>
           <div className={styles.formAddInfo}>
             <div className={styles.nameAndIcon}>
