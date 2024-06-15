@@ -1,4 +1,10 @@
 {
+    "passwordStrength": "Password Strength",
+    "weak": "Weak",
+    "medium": "Medium",
+    "good": "Good",
+    "strong": "Strong",
+    "showMore": "Show More",
     "username": "Username",
     "checkingUsername": "Checking username...",
     "usernameTaken": "Username is already taken",

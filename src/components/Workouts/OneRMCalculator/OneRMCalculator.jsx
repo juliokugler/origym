@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./OneRMCalculator.module.css";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import useOneRMCalculator from "../../../hooks/useOneRMCalculator";
+import Popup from "./Popup";
 
-const OneRMCalculator = ({ onOneRMChange }) => {
+const OneRMCalculator = ({ onOneRMChange, t }) => {
   const [weight, setWeight] = useState("");
   const [reps, setReps] = useState("");
-  const { t } = useTranslation();
-  const { oneRMResult, error, calculateOneRM } = useOneRMCalculator(weight, reps, t);
+  const [showPopup, setShowPopup] = useState(false);
+  const { oneRMResults, error, calculateOneRM } = useOneRMCalculator(weight, reps, t);
 
   const handleWeightChange = (event) => {
     let value = event.target.value.replace(/[^0-9]/g, "");
@@ -31,7 +32,7 @@ const OneRMCalculator = ({ onOneRMChange }) => {
     <div className={styles.container}>
       <div className={styles.inputs}>
         <div className={styles.input}>
-          <label className={styles.label}  htmlFor="weight">
+          <label className={styles.label} htmlFor="weight">
             <p>{t("weightLabel")}:</p>
           </label>
           <input
@@ -70,15 +71,27 @@ const OneRMCalculator = ({ onOneRMChange }) => {
         >
           <p>{t("calculate")}</p>
         </button>
-        <button className="inactiveButton-medium" onClick={handleReset}>
-          {t("reset")}
-        </button>
       </div>
       {error && <p className={styles.error}>{error}</p>}
-      {oneRMResult && (
-        <div className={styles.oneRMResult}>
-          <h2>~ {oneRMResult} kg</h2>
+      {oneRMResults.length > 0 && (
+        <div>
+          <div className={styles.oneRMResult}>
+            <h2>~ {oneRMResults[0].value} kg</h2>
+        
+          <button
+            className="notSelectedButton-medium"
+            onClick={() => setShowPopup(true)}
+          >
+            {t("showMore")}
+          </button>  </div>
         </div>
+      )}
+      {showPopup && (
+        <Popup
+          results={oneRMResults}
+          onClose={() => setShowPopup(false)}
+          t={t}
+        />
       )}
     </div>
   );

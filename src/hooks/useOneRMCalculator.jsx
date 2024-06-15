@@ -1,8 +1,7 @@
-//React
 import { useState } from "react";
 
 const useOneRMCalculator = (weight, reps, t) => {
-  const [oneRMResult, setOneRMResult] = useState(null);
+  const [oneRMResults, setOneRMResults] = useState([]);
   const [error, setError] = useState("");
 
   const calculateOneRM = () => {
@@ -13,18 +12,21 @@ const useOneRMCalculator = (weight, reps, t) => {
 
     if (weight === "" || reps === "") {
       setError(`${t("pleaseEnterBothWeightAndReps")}`);
-      setOneRMResult("");
+      setOneRMResults([]);
       return;
     }
 
-    const oneRM = weight * (1 + reps / 30);
+    const results = [];
+    for (let i = 1; i <= 12; i++) {
+      const rm = weight * (1 + (reps - i) / 30);
+      results.push({ reps: i, value: rm.toFixed(1) });
+    }
 
-    const roundedOneRM = oneRM.toFixed(2);
-
-    setOneRMResult(roundedOneRM);
+    setOneRMResults(results);
+    setError("");
   };
 
-  return { weight, reps, oneRMResult, error, calculateOneRM };
+  return { weight, reps, oneRMResults, error, calculateOneRM };
 };
 
 export default useOneRMCalculator;

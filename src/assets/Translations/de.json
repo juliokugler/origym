@@ -1,4 +1,11 @@
 {
+    "passwordsShouldMatch": "Die Passwörter müssen übereinstimmen",
+    "passwordStrength": "Passwortstärke",
+    "weak": "Schwach",
+    "medium": "Mittel",
+    "good": "Gut",
+    "strong": "Stark",
+    "showMore": "Zeig Mehr",
     "checkingUsername": "Benutzername wird überprüft...",
     "usernameTaken": "Benutzername ist bereits vergeben",
     "usernameAvailable": "Benutzername ist verfügbar",

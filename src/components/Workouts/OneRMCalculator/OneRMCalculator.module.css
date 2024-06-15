@@ -1,43 +1,48 @@
-
-  .inputField {
-    display: flex;
-    flex-direction: column;
-    width: 8vw;
-    padding: 8px;
-    margin: 5px auto 20px auto;
-    box-sizing: border-box;
-    height: 28px;
-    border-radius: 4px;
-  }
-  
-
-.inputs{
-    display: flex;
-    width: 20.1vw;
-    justify-content: center;
-    border-radius: 12px;
-    height: 10vh;
-    align-items: center;
-    margin-bottom: 1vh;
-}  
-.input{
-
-    margin: 0 0.5vw;
+.inputField {
+  display: flex;
+  flex-direction: column;
+  width: 8vw;
+  padding: 8px;
+  margin: 5px auto 20px auto;
+  box-sizing: border-box;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
+.inputs {
+  display: flex;
+  width: 20.1vw;
+  justify-content: center;
+  border-radius: 12px;
+  height: 10vh;
+  align-items: center;
+  margin-bottom: 1vh;
+}
 
-.container p{
+.input {
+  margin: 0 0.5vw;
+}
+
+.container p {
   text-align: left;
 }
 
-.oneRMResult{
+.oneRMResult {
   margin-right: 10px;
   text-align: center;
-  margin-top: 3vh;
+  margin-bottom: 4vh;
 }
 
-.buttonContainer  {
-  height: 9vh;
+.oneRMResult button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 2vh;
+}
+
+.buttonContainer {
+  height: 3.6vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,8 +50,6 @@
   margin: 0 auto;
 }
 
-
-
 .label p {
-  margin: 1vh 0
+  margin: 1vh 0;
 }

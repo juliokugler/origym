@@ -53,7 +53,7 @@ const Workouts = ({ user, t, userData, dailyInfo }) => {
         <div className={styles.firstColumn}>
           <div className={classNames("card", styles.calculator)}>
             <h3 className="title">{t("oneRMCalculator")}</h3>
-            <OneRMCalculator />
+            <OneRMCalculator t={t} />
           </div>
           <div className={classNames("card", styles.recommendedWorkouts)}>
             <h3 className="title">{t("recommendedWorkouts")}</h3>

@@ -43,19 +43,26 @@
   .cardsContainer {
     display: flex;
     justify-content: space-around;
-    margin: 20px auto;
-    width: 27vw;
+    margin: 2vh auto 3vh auto;
+    width: 24vw;
+  }
+
+  .selectedGoalLabel{
+    display: flex;
+    justify-content: center;
+    color:  var(--text-color-secondary);
   }
   
   .goalCard {
-    border: 1px solid var(--gray-light);
+    border: 1px solid var(--text-color);
     border-radius: var(--card-border);
-    width: 12vh;
-    height: 12vh;
+    width: 10vh;
+    height: 10vh;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+    display: flex;
   }
   
   .activeGoal {
@@ -84,6 +91,7 @@
   
   .activityLevelContainer {
     text-align: left;
+    margin-bottom: 2vh;
   }
 
   .activityButtons {
@@ -92,7 +100,11 @@
 justify-content: center;
 margin: 0 auto;
 }
-  
+
+.goalIcon {
+  height: 6vh;
+}
+
   .buttonContainer {   
      display: flex;
     justify-content: center;
@@ -116,3 +128,4 @@ margin: 0 auto;
       font-size: 14px;
     }
   }
+

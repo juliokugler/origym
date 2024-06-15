@@ -1,4 +1,11 @@
-{ 
+{
+    "passwordsShouldMatch": "As senhas devem coincidir",
+    "passwordStrength": "Força da Senha",
+    "weak": "Fraca",
+    "medium": "Média",
+    "good": "Boa",
+    "strong": "Forte",
+    "showMore": "Mostrar Mais",
     "checkingUsername": "Verificando nome de usuário...",
     "usernameTaken": "Nome de usuário já está em uso",
     "usernameAvailable": "Nome de usuário está disponível",

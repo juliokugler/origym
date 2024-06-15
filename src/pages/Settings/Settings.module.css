@@ -83,3 +83,52 @@ button {
   .activityButtons, .cardsContainer {
     display: flex;
   }  
+
+  
+  .goalContainer {
+    display: block;
+    text-align: left;
+  }
+  
+  .cardsContainer {
+    display: flex;
+    justify-content: space-around;
+    margin: 2vh auto 3vh auto;
+    width: 24vw;
+  }
+
+  .selectedGoalLabel{
+    display: flex;
+    justify-content: center;
+    color:  var(--text-color-secondary);
+  }
+  
+  .goalCard {
+    border: 1px solid var(--text-color);
+    border-radius: var(--card-border);
+    width: 10vh;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  .activeGoal {
+    background-color: var(--primary-color);
+    color: var(--gray-medium);
+    border: none;
+  }
+
+
+  .activityButtons {
+    display: flex;
+    width: 28vw;
+justify-content: center;
+margin: 0 auto;
+}
+
+.goalIcon {
+  height: 6vh;
+}

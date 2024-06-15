@@ -1,4 +1,11 @@
 {
+    "passwordsShouldMatch": "Les mots de passe doivent correspondre",
+    "passwordStrength": "Force du Mot de Passe",
+    "weak": "Faible",
+    "medium": "Moyenne",
+    "good": "Bonne",
+    "strong": "Fort",
+    "showMore": "Montre Plus",
     "checkingUsername": "Vérification du nom d'utilisateur...",
     "usernameTaken": "Le nom d'utilisateur est déjà pris",
     "usernameAvailable": "Nom d'utilisateur est disponible",

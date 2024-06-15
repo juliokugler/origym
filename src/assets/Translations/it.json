@@ -1,4 +1,12 @@
-{"checkingUsername": "Verifica del nome utente...",
+{
+    "passwordsShouldMatch": "Le password devono corrispondere",
+    "passwordStrength": "Forza della Password",
+    "weak": "Debole",
+    "medium": "Media",
+    "good": "Buona",
+    "strong": "Forte",
+    "showMore": "Mostra di Più",
+    "checkingUsername": "Verifica del nome utente...",
     "usernameTaken": "Nome utente già in uso",
     "usernameAvailable": "Nome utente disponibile",
     "of": "di",

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useTranslation } from "react-i18next";
 import { FaGoogle, FaApple, FaRegEye, FaEyeSlash } from "react-icons/fa";
+import classNames from "classnames";
 
 const RegisterContainer = () => {
   const [firstName, setFirstName] = useState("");
@@ -16,6 +17,7 @@ const RegisterContainer = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
   const [error, setError] = useState("");
+  const [passwordStrength, setPasswordStrength] = useState("");
   const { createUser, error: authError, loading } = useAuthentication();
   const { t } = useTranslation();
 
@@ -40,14 +42,14 @@ const RegisterContainer = () => {
     };
 
     if (password !== confirmPassword) {
-      setError("As senhas precisam ser iguais.");
+      setError(t("passwordsShouldMatch"));
       return;
     }
 
     try {
       await createUser(user);
     } catch (error) {
-      setError(error.message || "Ocorreu um erro, por favor tente novamente mais tarde.");
+      setError(error.message || t("errorTryAgainLater"));
     }
   };
 
@@ -61,7 +63,7 @@ const RegisterContainer = () => {
   useEffect(() => {
     const handler = setTimeout(() => {
       if (password && confirmPassword && password !== confirmPassword) {
-        setError("As senhas precisam ser iguais.");
+        setError(t("passwordsShouldMatch"));
       } else {
         setError("");
       }
@@ -72,15 +74,67 @@ const RegisterContainer = () => {
     };
   }, [password, confirmPassword]);
 
-  // Reset error on typing
+  // Reset error on typing and check password strength
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
     setError("");
+    checkPasswordStrength(e.target.value);
   };
 
   const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
     setError("");
+  };
+
+  const checkPasswordStrength = (password) => {
+    let strength = "";
+  
+    // Length-based scoring
+    const lengthScore = password.length >= 6 ? 1 : 0;
+    const mediumLengthScore = password.length >= 8 ? 1 : 0;
+    const goodLengthScore = password.length >= 10 ? 1 : 0;
+    const veryGoodLengthScore = password.length >= 14 ? 1 : 0;
+  
+    // Character types scoring
+    const hasUpperCase = /[A-Z]/.test(password) ? 1 : 0;
+    const hasNumber = /[0-9]/.test(password) ? 1 : 0;
+    const hasSpecialChar = /[@$!%*?&#]/.test(password) ? 1 : 0;
+  
+    const criteriaMet = hasUpperCase + hasNumber + hasSpecialChar;
+  
+    // Calculate strength based on scores
+    if (password.length < 6) {
+      strength = t("weak");
+    } else if (lengthScore && criteriaMet === 1) {
+      strength = t("medium");
+    } else if (mediumLengthScore && criteriaMet === 2) {
+      strength = t("good");
+    } else if (goodLengthScore && criteriaMet >= 2) {
+      strength = t("strong");
+    } else if (veryGoodLengthScore && criteriaMet >= 1) {
+      strength = t("strong");
+    } else {
+      strength = t("medium");
+    }
+  
+    setPasswordStrength(strength);
+  };
+
+  console.log(passwordStrength)
+
+  const getStrengthPercentage = () => {
+    switch (passwordStrength) {
+      case t("weak"):
+        return 25;
+      case t("medium"):
+        return 50;
+      case t("good"):
+        return 75;
+      case t("strong"):
+        return 100;
+      default:
+        return 0;
+    }
   };
 
   return (
@@ -146,6 +200,24 @@ const RegisterContainer = () => {
               )}
             </div>
           </div>
+          {password && (
+            <div className={styles.passwordStrength}>
+              <span className={styles.strengthText}>
+                {t("passwordStrength")}: {passwordStrength}
+              </span>
+              <div className={styles.progressBar}>
+                <div
+                  className={classNames(styles.progress, {
+                    [styles.weak]: passwordStrength === t("weak"),
+                    [styles.medium]: passwordStrength === t("medium"),
+                    [styles.good]: passwordStrength === t("good"),
+                    [styles.strong]: passwordStrength === t("strong"),
+                  })}
+                  style={{ width: `${getStrengthPercentage()}%` }}
+                ></div>
+              </div>
+            </div>
+          )}
         </label>
 
         <label>
@@ -167,8 +239,10 @@ const RegisterContainer = () => {
               )}
             </div>
           </div>
-        </label><div className={styles.errorContainer}>
-      {error && <p className={styles.error}>{error}</p>}</div>
+        </label>
+        <div className={styles.errorContainer}>
+          {error && <p className={styles.error}>{error}</p>}
+        </div>
         {!loading && (
           <div className={styles.buttonContainer}>
             <button className="button">
