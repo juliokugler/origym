@@ -2,16 +2,16 @@ import React, {useState} from 'react'
 import classNames from 'classnames';
 import styles from "./Settings.module.css"
 
-const UserInfoCard = ({contextUserData}) => {
-    const [profilePicture, setProfilePicture] = useState(contextUserData.userProfile.photoURL);
-    const [displayName, setDisplayName] = useState(contextUserData.userProfile.displayName);
+const UserInfoCard = ({userData}) => {
+    const [profilePicture, setProfilePicture] = useState(userData.userProfile.photoURL);
+    const [displayName, setDisplayName] = useState(userData.userProfile.displayName);
     const [gender, setGender] = useState("");
 
     const handleProfilePictureChange = (event) => {
         setProfilePicture(URL.createObjectURL(event.target.files[0]));
       };
     
-      if (!contextUserData) {
+      if (!userData) {
       ;
         return (
           <div className="loader-container">

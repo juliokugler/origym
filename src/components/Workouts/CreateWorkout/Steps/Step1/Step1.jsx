@@ -3,12 +3,30 @@ import styles from "./Step1.module.css";
 import GroupSelection from "./WorkoutGroupSelection/GroupSelection";
 import DaySelector from "../../../../DaySelector/DaySelector";
 
-const Step1 = ({ onNext, selectedDay }) => {
-  const [name, setName] = useState("");
+const Step1 = ({ onNext, selectedDay, t }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [selectedDays, setSelectedDays] = useState([selectedDay || "Sun"]);
   const [selectedType, setSelectedType] = useState("Strength");
-  const [isNameChanged, setIsNameChanged] = useState(false); 
+  const [workoutName, setWorkoutName] = useState("");
+
+  useEffect(() => {
+    switch (selectedType) {
+      case "Strength":
+        setWorkoutName("strengthWorkout");
+        break;
+      case "Endurance":
+        setWorkoutName("enduranceWorkout");
+        break;
+      case "Hypertrophy":
+        setWorkoutName("hypertrophyWorkout");
+        break;
+      case "Cardio":
+        setWorkoutName("cardioSession");
+        break;
+      default:
+        setWorkoutName("");
+    }
+  }, [selectedType]);
 
   const toggleDaySelection = (day) => {
     setSelectedDays((prevSelectedDays) => {
@@ -21,49 +39,15 @@ const Step1 = ({ onNext, selectedDay }) => {
     });
   };
 
-  let workout;
-  switch (selectedType) {
-    case "Strength":
-    case "Crossfit":
-      workout = "Workout";
-      break;
-    case "Cardio":
-    case "Yoga":
-      workout = "Session";
-      break;
-    case "Martial Arts":
-    case "Pilates":
-      workout = "Class";
-      break;
-    default:
-      workout = "";
-  }
-
-  useEffect(() => {
-    setName(`${selectedType} ${workout}`);
-  }, [selectedType]);
-
-  const handleTypeChange = (event) => {
-    setSelectedType(event.target.value);
-    setIsNameChanged(false);
-  };
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-    setIsNameChanged(true);
-  };
-
   const handleSelectedOptionsChange = (options) => {
     setSelectedOptions(options);
   };
 
   const handleNextClick = () => {
-    if (name.trim() && selectedOptions.length > 0) {
-      onNext(name, selectedOptions, selectedDays, selectedType);
+    if (selectedOptions.length > 0) {
+      onNext(workoutName, selectedOptions, selectedDays, selectedType);
     } else {
-      alert(
-        "Please enter a workout name and select at least one muscle group."
-      );
+      alert("Please select at least one muscle group.");
     }
   };
 
@@ -73,45 +57,47 @@ const Step1 = ({ onNext, selectedDay }) => {
 
   return (
     <div className={styles.container}>
-      <h2>New Workout</h2>
+      <h2>{t("newWorkout")}</h2>
       <div className={styles.row}>
         <label>
-          <p>Workout Name:</p>
-          <input
-            onClick={() => (isNameChanged ? "" : setName(""))}
-            className={styles.input}
-            type="text"
-            value={name}
-            onChange={handleNameChange}
-            placeholder="Enter Workout Name"
-          />
-        </label>
-
-        <label>
-          <p>Workout Type:</p>
-          <select
-            className={styles.selectionInput}
-            value={selectedType}
-            onChange={handleTypeChange}
-          >
-            <option>Strength</option>
-            <option>Cardio</option>
-            <option>Crossfit</option>
-            <option>Yoga</option>
-            <option>Pilates</option>
-            <option>Martial Arts</option>
-            <option>Group Fitness Classes</option>
-          </select>
+          <p>{t("workoutType")}:</p>
+          <div className={styles.buttonGroup}>
+            <button
+              className={selectedType === "Strength" ? "button" : "notSelectedButton-medium"}
+              onClick={() => setSelectedType("Strength")}
+            >
+              {t("strength")}
+            </button>
+            <button
+              className={selectedType === "Endurance" ? "button" : "notSelectedButton-medium"}
+              onClick={() => setSelectedType("Endurance")}
+            >
+              {t("endurance")}
+            </button>
+            <button
+              className={selectedType === "Hypertrophy" ? "button" : "notSelectedButton-medium"}
+              onClick={() => setSelectedType("Hypertrophy")}
+            >
+              {t("hypertrophy")}
+            </button>
+            <button
+              className={selectedType === "Cardio" ? "button" : "notSelectedButton-medium"}
+              onClick={() => setSelectedType("Cardio")}
+            >
+              {t("cardio")}
+            </button>
+          </div>
         </label>
       </div>
 
       <GroupSelection
         selectedType={selectedType}
         onChange={handleSelectedOptionsChange}
+        t={t}
       />
 
       <div className={styles.label}>
-        <p>Assign Day(s) of the Week</p>
+        <p>{t("assignDaysOfTheWeek")}</p>
         <DaySelector
           selectedDays={selectedDays}
           handleDaySelect={handleDaySelect}
@@ -119,9 +105,15 @@ const Step1 = ({ onNext, selectedDay }) => {
       </div>
 
       <div className={styles.buttonContainer}>
-        <button className="inactiveButton-medium" onClick={handleNextClick}>
-          Next
-        </button>
+        {selectedOptions.length > 0 ? (
+          <button className="button" onClick={handleNextClick}>
+            {t("next")}
+          </button>
+        ) : (
+          <button className="inactiveButton-medium" onClick={handleNextClick}>
+            {t("next")}
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,54 @@
+/* Features.module.css */
+.features {
+    padding: 3vh 20px;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    margin-bottom: 6vh;
+  }
+
+  .features h2 span {
+    color: var(--primary-color);
+  }
+  
+  .featureList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 60vw;
+    margin: 0 auto;
+  }
+  
+  .featureItem {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    background-color: var(--gray-medium);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c);
+    border-radius: 15px;
+    padding: 30px;
+    padding-bottom: 1vh;
+  }
+  
+  .featureItem img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .featureItem h3 {
+    margin: 1vh 0;
+    font-size: 1.5em;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .featureItem p {
+    font-size: 1em;
+    color: #666;
+  }

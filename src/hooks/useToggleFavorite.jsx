@@ -9,7 +9,7 @@ import {
 } from "firebase/firestore";
 import { useAuthValue } from "../contexts/AuthContext";
 
-const useToggleFavorite = (exercise) => {
+const useToggleFavorite = (exercise, onFavoriteToggle) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [toggleDisabled, setToggleDisabled] = useState(false);
   const [starColor, setStarColor] = useState("#c0c0c0");
@@ -73,6 +73,7 @@ const useToggleFavorite = (exercise) => {
         console.log(`Removed exercise ${exerciseId} from favorites.`);
         setIsFavorite(false);
         setStarColor("#c0c0c0");
+        onFavoriteToggle()
       } else {
         await setDoc(exerciseIsFavoriteDocRef, {
           group: exercise.group,
@@ -86,6 +87,7 @@ const useToggleFavorite = (exercise) => {
         console.log(`Added exercise ${exerciseId} to favorites.`);
         setIsFavorite(true);
         setStarColor("#FFF27A");
+        onFavoriteToggle()
       }
     } catch (error) {
       console.error("Error toggling favorite:", error);

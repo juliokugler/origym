@@ -19,7 +19,7 @@ const HealthPage = ({ t, userData, user, dailyInfo }) => {
 
   return (
     <div className="container">
-      <Header t={t} pageType="health" />
+      <Header userData={userData} t={t} pageType="health" />
       <div className="mainSection">
         <div className={styles.firstColumn}>
           <div className={classNames("mainCard", styles.weightTracker)}>

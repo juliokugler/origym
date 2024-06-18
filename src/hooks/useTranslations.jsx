@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -10,6 +10,8 @@ import itTranslation from "../assets/Translations/it.json";
 import frTranslation from "../assets/Translations/fr.json";
 
 export const useTranslations = () => {
+  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || "en");
+
   useEffect(() => {
     i18n
       .use(initReactI18next)
@@ -27,12 +29,24 @@ export const useTranslations = () => {
         interpolation: {
           escapeValue: false,
         },
+        detection: {
+          order: ['navigator', 'htmlTag', 'cookie', 'localStorage', 'sessionStorage', 'path', 'subdomain'],
+          caches: ['localStorage', 'cookie'],
+        },
       });
+
+    i18n.on("languageChanged", (lng) => {
+      setCurrentLanguage(lng);
+    });
+
+    return () => {
+      i18n.off("languageChanged");
+    };
   }, []);
 
   const switchLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
-  return { switchLanguage };
+  return { switchLanguage, currentLanguage };
 };

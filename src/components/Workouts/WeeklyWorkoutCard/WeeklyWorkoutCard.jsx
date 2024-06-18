@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "./WeeklyWorkoutCard.module.css";
 import ExerciseList from "../ExerciseList/ExerciseList";
-import { useTranslation } from "react-i18next";
-import { FaPlus } from "react-icons/fa";
 import DaySelector from "../../DaySelector/DaySelector";
 
-const WeeklyWorkoutCard = ({ workouts, onOpen, onFavoriteToggle, user }) => {
+const WeeklyWorkoutCard = ({
+  workouts,
+  onOpen,
+  onFavoriteToggle,
+  user,
+  currentLanguage,
+  t
+}) => {
   const [selectedDay, setSelectedDay] = useState(null);
   const [number, setNumber] = useState(null);
-  const { t } = useTranslation();
 
   useEffect(() => {
     setSelectedDay(getCurrentDay());
@@ -36,7 +40,6 @@ const WeeklyWorkoutCard = ({ workouts, onOpen, onFavoriteToggle, user }) => {
 
   useEffect(() => {
     const workoutNumber = filteredWorkouts.length;
-    console.log("filtered:", filteredWorkouts);
     if (workoutNumber === 1) {
       setNumber(0);
     } else {
@@ -44,21 +47,27 @@ const WeeklyWorkoutCard = ({ workouts, onOpen, onFavoriteToggle, user }) => {
     }
   }, [filteredWorkouts, selectedDay]);
 
+  console.log(workouts)
+
   return (
     <div className={styles.workoutContainer}>
       <DaySelector selectedDay={selectedDay} handleDaySelect={handleDaySelect} />
-      <div className={styles.exerciseListContainer}> 
-      <ExerciseList
-        exercises={filteredWorkouts} 
-        number={number}
-        onChange={setNumber}
-        onFavoriteToggle={onFavoriteToggle}
-        user={user}
-      /></div>
+      <div className={styles.exerciseListContainer}>
+        <ExerciseList
+          exercises={filteredWorkouts}
+          number={number}
+          onChange={setNumber}
+          onFavoriteToggle={onFavoriteToggle}
+          user={user}
+          currentLanguage={currentLanguage}
+          t={t}
+        />
+      </div>
       <div className={styles.buttonContainer}>
-      <button className="notSelectedButton-medium" onClick={handleOpenCreateWorkout}>
-      {t("createWorkout")}
-      </button></div>
+        <button className="notSelectedButton-medium" onClick={handleOpenCreateWorkout}>
+          {t("createWorkout")}
+        </button>
+      </div>
     </div>
   );
 };

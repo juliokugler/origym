@@ -8,9 +8,9 @@ import healthIcon_inactive from "../../assets/Icons/healthOption_inactive.png";
 import weightOption_inactive from "../../assets/Icons/weightOption_inactive.png";
 import muscleOption_inactive from "../../assets/Icons/muscleOption_inactive.png";
 
-const ActivityInfoCard = ({contextUserData, t, handleActivityLevelChange, handleGoalChange}) => {
-  const [activityLevel, setActivityLevel] = useState(contextUserData.userProfile.activityLevel);
-  const [mainGoal, setMainGoal] = useState(contextUserData.userProfile.mainGoal);
+const ActivityInfoCard = ({userData, t, handleActivityLevelChange, handleGoalChange}) => {
+  const [activityLevel, setActivityLevel] = useState(userData.userProfile.activityLevel);
+  const [mainGoal, setMainGoal] = useState(userData.userProfile.mainGoal);
 
   
 
@@ -28,17 +28,17 @@ const ActivityInfoCard = ({contextUserData, t, handleActivityLevelChange, handle
       ];
     
       useEffect(() => {
-        if (!contextUserData.userProfile.activityLevel) {
+        if (!userData.userProfile.activityLevel) {
           handleActivityLevelChange(activityLevels[0].value);
         }
-        if (!contextUserData.userProfile.mainGoal) {
+        if (!userData.userProfile.mainGoal) {
           handleGoalChange(goals[0].value);
         }
-      }, [contextUserData.userProfile, handleActivityLevelChange, handleGoalChange]);
+      }, [userData.userProfile, handleActivityLevelChange, handleGoalChange]);
     
-      const selectedGoal = goals.find(goal => goal.value === contextUserData.userProfile.mainGoal);
+      const selectedGoal = goals.find(goal => goal.value === userData.userProfile.mainGoal);
 
-      if (!contextUserData) {
+      if (!userData) {
         ;
           return (
             <div className="loader-container">
@@ -55,7 +55,7 @@ const ActivityInfoCard = ({contextUserData, t, handleActivityLevelChange, handle
             {activityLevels.map(({ label, value }) => (
               <button
                 key={value}
-                className={contextUserData.userProfile.activityLevel === value ? "button-small" : "notSelectedButton-small"}
+                className={userData.userProfile.activityLevel === value ? "button-small" : "notSelectedButton-small"}
                 onClick={() => handleActivityLevelChange(value)}
               >
                 {label}
@@ -70,12 +70,12 @@ const ActivityInfoCard = ({contextUserData, t, handleActivityLevelChange, handle
               <div
                 key={value}
                 className={classNames(styles.goalCard, {
-                  [styles.activeGoal]: contextUserData.userProfile.mainGoal === value,
+                  [styles.activeGoal]: userData.userProfile.mainGoal === value,
                 })}
                 onClick={() => handleGoalChange(value)}
               >
                 <img
-                  src={contextUserData.userProfile.mainGoal === value ? icon : iconInactive}
+                  src={userData.userProfile.mainGoal === value ? icon : iconInactive}
                   alt={value}
                   className={styles.goalIcon}
                 />

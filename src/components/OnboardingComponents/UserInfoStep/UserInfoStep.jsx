@@ -13,7 +13,8 @@ const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
   const [uploading, setUploading] = useState(false);
   const [photoURL, setPhotoURL] = useState(userData.newPhotoURL || "https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Frame%20480%20(1).png?alt=media&token=598f9947-2ceb-43d7-b345-7c483944bcdd");
   const [username, setUsername] = useState(userData.displayName);
-  const isImageLoaded = useImageLoad(photoURL)
+  const [initialLoad, setInitialLoad] = useState(true); // Track initial load state
+  const isImageLoaded = useImageLoad(photoURL);
   const { status, loading: checkingDisplayName } = useCheckDisplayName(username);
 
   useEffect(() => {
@@ -21,6 +22,17 @@ const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
       setPhotoURL(userData.newPhotoURL);
     }
   }, [userData.newPhotoURL]);
+
+  useEffect(() => {
+    if (status === "neutral") {
+      // Only update username if it's not already set
+      setUsername(userData.displayName);
+      setInitialLoad(true);
+    } else if (status === "available" && initialLoad) {
+      // Ensure initial load completes with an available username
+      setInitialLoad(false);
+    }
+  }, [status, userData.displayName, initialLoad]);
 
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
@@ -53,9 +65,16 @@ const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
   };
 
   const handleUsernameChange = (e) => {
-    const { value } = e.target;
+    let { value } = e.target;
+    // Remove any characters that are not letters (a-z, A-Z), numbers (0-9), or underscore (_)
+    value = value.replace(/[^a-zA-Z0-9_]/g, "");
     setUsername(value);
-    handleChange(e);
+    handleChange({
+      target: {
+        name: "displayName",
+        value: value,
+      },
+    });
   };
 
   const triggerFileInput = () => {
@@ -66,8 +85,14 @@ const UserInfoStep = ({ userData, handleChange, handleNext, t, userUid }) => {
     <div>
       <Header t={t} />
       <div className={classNames("card", styles.step)}>
-        <div className={styles.avatarContainer}>{uploading || !isImageLoaded ? (<div className={styles.avatar}><div className="loader"/></div>): (
-          <img className={styles.avatar} src={photoURL} alt="Avatar" />)}
+        <div className={styles.avatarContainer}>
+          {uploading || !isImageLoaded ? (
+            <div className={styles.avatar}>
+              <div className="loader" />
+            </div>
+          ) : (
+            <img className={styles.avatar} src={photoURL} alt="Avatar" />
+          )}
           <input
             type="file"
             id="fileInput"

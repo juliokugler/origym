@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import styles from "./GroupSelection.module.css"
-const GroupSelection = ({ selectedType, onChange }) => {
+import styles from "./GroupSelection.module.css";
+
+const GroupSelection = ({ selectedType, onChange, t }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionClick = (option) => {
@@ -15,221 +16,55 @@ const GroupSelection = ({ selectedType, onChange }) => {
   const getTitleByType = (selectedType) => {
     switch (selectedType) {
       case "Strength":
-        return "Select Muscle Groups";
+        return t("selectMuscleGroups");
       case "Cardio":
         return "Select Cardio Modalities";
-      case "Crossfit":
-        return "Select Crossfit Modalities";
-      case "Yoga":
-        return "Select Yoga Styles";
-      case "Pilates":
-        return "Select Pilates Modalities";
-      case "Martial Arts":
-        return "Select Martial Arts Types";
-      case "Group Fitness Classes":
-        return "Select Class Modalities";
-      default:
+           default:
         return "";
     }
+  };
+
+  // Define muscle group names for each type
+  const groups = {
+    Strength: [
+      "chest",
+      "biceps",
+      "forearms",
+      "triceps",
+      "shoulders",
+      "abs",
+      "obliques",
+      "hamstrings",
+      "quadriceps",
+      "calves",
+      "traps",
+      "glutes",
+    ],
+    Cardio: ["running", "hiit", "walking", "swimming"],
+    
   };
 
   return (
     <div className={styles.groupSection}>
       <p className={styles.title}>{getTitleByType(selectedType)}</p>
-      {selectedType === "Strength" && (
-        <div className={styles.groupRow}>
-          {[
-            "Chest",
-            "Biceps",
-            "Forearms",
-            "Triceps",
-            "Shoulders",
-            "Core",
-            "Obliques",
-            "Hamstrings",
-            "Quadriceps",
-            "Calves",
-            "Traps",
-            "Glutes",
-          ].map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleOptionClick(option)}
-              className={
-                selectedOptions.includes(option)
-                  ? "button-small"
-                  : "notSelectedButton-small"
-              }
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {selectedType === "Cardio" && (
       <div className={styles.groupRow}>
-          {["Running", "HIIT", "Walking", "Swimming"].map((option, index) => (
+        {groups[selectedType].map((optionKey, index) => {
+          const translatedLabel = t(optionKey); // Fetch translation dynamically
+          return (
             <button
               key={index}
-              onClick={() => handleOptionClick(option)}
+              onClick={() => handleOptionClick(optionKey)}
               className={
-                selectedOptions.includes(option)
-                  ? "button"
-                  : "notSelectedButton-small"
+                selectedOptions.includes(optionKey)
+                  ? "activeGroupButton" // Adjust the classes as per your styles
+                  : "notSelectedGroupButton" // Adjust the classes as per your styles
               }
             >
-              {option}
+              {translatedLabel}
             </button>
-          ))}
-        </div>
-      )}
-
-      {selectedType === "Crossfit" && (
-       <div className={styles.groupRow}>
-          {[
-            "Push Press",
-            "Deadlift",
-            "Pull-up",
-            "Muscle-up",
-            "Burpee",
-            "Thruster",
-            "Clean",
-            "Snatch",
-            "Handstand Push-up",
-            "Toes-to-bar",
-            "Double-under",
-          ].map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleOptionClick(option)}
-              className={
-                selectedOptions.includes(option)
-                  ? "activeGroupButton"
-                  : "notSelectedGroupButton"
-              }
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {selectedType === "Yoga" && (
-        <div className={styles.groupRow}>
-          {[
-            "Hatha",
-            "Vinyasa",
-            "Ashtanga",
-            "Bikram",
-            "Iyengar",
-            "Kundalini",
-            "Yin",
-            "Restorative",
-            "Nidra",
-          ].map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleOptionClick(option)}
-              className={
-                selectedOptions.includes(option)
-                  ? "activeGroupButton"
-                  : "notSelectedGroupButton"
-              }
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {selectedType === "Pilates" && (
-        <div className={styles.groupRow}>
-          {[
-            "Classical",
-            "Contemporary",
-            "Mat",
-            "Reformer",
-            "Clinical",
-            "Barre",
-            "Pre and Postnatal",
-            "For Athletes",
-          ].map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleOptionClick(option)}
-              className={
-                selectedOptions.includes(option)
-                  ? "button"
-                  : "notSelectedButton-small"
-              }
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {selectedType === "Martial Arts" && (
-       <div className={styles.groupRow}>
-          {[
-            "Judo",
-            "Karate",
-            "Brazilian Jiu-Jitsu",
-            "Taekwondo",
-            "Muay Thai",
-            "Boxing",
-            "Kickboxing",
-            "Wrestling",
-            "Capoeira",
-            "Krav Maga",
-            "Aikido",
-            "Kung Fu",
-          ].map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleOptionClick(option)}
-              className={
-                selectedOptions.includes(option)
-                  ? "activeGroupButton"
-                  : "notSelectedButton-small"
-              }
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {selectedType === "Group Fitness Classes" && (
-        <div className={styles.groupRow}>
-          {[
-            "Zumba",
-            "Spinning",
-            "Body Pump",
-            "Boot Camp",
-            "Kickboxing",
-            "Barre",
-            "Piloxing",
-            "Aerobics",
-            "Tabata",
-            "TRX",
-            "Boxercise",
-          ].map((option, index) => (
-            <button
-              key={index}
-              onClick={() => handleOptionClick(option)}
-              className={
-                selectedOptions.includes(option)
-                  ? "activeGroupButton"
-                  : "notSelectedButton-small"
-              }
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
+          );
+        })}
+      </div>
     </div>
   );
 };

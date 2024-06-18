@@ -101,6 +101,7 @@ const Navbar = ({ switchLanguage }) => {
             </NavLink>
           </li>
         )}
+        
         {user && (
           <li className="hidden-mobile">
             <NavLink to="/home">

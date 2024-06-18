@@ -83,7 +83,7 @@ const Header = ({ pageType, currentDate, timedGreeting, t, userData}) => {
       <div className={styles.greetingContainer}>
         <div className={styles.greeting}>{greetingContent}</div>
         <div className={styles.searchAndIcons}>
-          <SearchBar t={t}/>
+          <SearchBar t={t} userData={userData}/>
           <div className={styles.notification}>
             <img src={bell} alt="Notification Bell" />
           </div>

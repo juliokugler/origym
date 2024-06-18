@@ -14,10 +14,12 @@ const Step2 = ({
   workoutType,
   onPrevious,
   onNext,
+  currentLanguage,
+  t,
 }) => {
   const [isCheckedMap, setIsCheckedMap] = useState({});
   const [expandedLists, setExpandedLists] = useState({});
-  const [selectedMuscleGroups, setSelectedMuscleGroups] = useState([]); // New state to store selected muscle groups
+  const [showWarning, setShowWarning] = useState(false); // State to manage warning display
 
   // Filtering exercises based on workoutType
   const filteredExercises = ExerciseList.filter(
@@ -41,6 +43,7 @@ const Step2 = ({
       ...prevState,
       [key]: !prevState[key],
     }));
+    setShowWarning(false); // Reset warning on selecting an exercise
   };
 
   const toggleList = (group) => {
@@ -59,75 +62,90 @@ const Step2 = ({
         const exercise = exercisesByGroup[group].find((exercise) => exercise.id === id);
         return { ...exercise, group };
       });
-      console.log(selectedExercises)
-    onNext(selectedExercises);
+
+    if (selectedExercises.length === 0) {
+      setShowWarning(true); // Show warning if no exercise is selected
+    } else {
+      onNext(selectedExercises);
+    }
   };
 
   const handlePrevious = () => {
-    setSelectedMuscleGroups([]); // Reset selected muscle groups if going back
     onPrevious();
-  };
-
-  // Function to update selected muscle groups
-  const updateSelectedMuscleGroups = (group) => {
-    setSelectedMuscleGroups((prevGroups) => [...prevGroups, group]);
   };
 
   return (
     <div className={styles.listContainer}>
-      <h2>{workoutName}</h2>
-      <h3>
-        {workoutType === "Strength"
-          ? "Select Muscle Groups"
-          : workoutType === "Cardio"
-          ? "Select Modalities"
-          : "Select Positions"}
-      </h3>
+      <h2>{t(`${workoutName}`)}</h2>
+      <h3>{t("selectMuscleGroups")}</h3>
       <div className={styles.lists}>
-        {Object.keys(exercisesByGroup).map(
-          (group) =>
-            selectedGroups.includes(group) && (
-              <div key={group} className={`${styles.outsideContainer} ${expandedLists[group] ? styles.expanded : ''}`}>
-                <div
-                  className={styles.arrowContainer}
-                  onClick={() => toggleList(group)}
+        {selectedGroups.map((group) => (
+          <div key={group} className={`${styles.outsideContainer} ${expandedLists[group] ? styles.expanded : ''}`}>
+            <div
+              className={styles.arrowContainer}
+              onClick={() => toggleList(group)}
+            >
+              <p className={styles.arrowContainerSelectExercises}>{t(`${group}`)}</p>
+              {expandedLists[group] ? <FaChevronUp /> : <FaChevronDown />}
+            </div>
+            {expandedLists[group] && (
+              <ul className={styles.groupUl}>
+                {exercisesByGroup[group].map((exercise) => (
+                  <li
+                    key={exercise.id}
+                    className={`${styles.groupItem} ${expandedLists[group] ? '' : styles.collapsed}`}
+                    onClick={() => handleCheckClick(group, exercise)}
+                  >
+                    {isCheckedMap[`${group}-${exercise.id}`] ? (
+                      <FaCheckSquare className={styles.checkedIcon} />
+                    ) : (
+                      <FaRegSquare className={styles.uncheckedIcon} />
+                    )}
+                    <p className={styles.exerciseName}>{t(`${exercise.name}`)}</p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+        <div className={`${styles.outsideContainer} ${expandedLists["Cardio"] ? styles.expanded : ''}`}>
+          <div
+            className={styles.arrowContainer}
+            onClick={() => toggleList("Cardio")}
+          >
+            <p className={styles.arrowContainerSelectExercises}>{t("Cardio")}</p>
+            {expandedLists["Cardio"] ? <FaChevronUp /> : <FaChevronDown />}
+          </div>
+          {expandedLists["Cardio"] && (
+            <ul className={styles.groupUl}>
+              {exercisesByGroup["Cardio"].map((exercise) => (
+                <li
+                  key={exercise.id}
+                  className={`${styles.groupItem} ${expandedLists["Cardio"] ? '' : styles.collapsed}`}
+                  onClick={() => handleCheckClick("Cardio", exercise)}
                 >
-                  <p className={styles.arrowContainerSelectExercises}>{group}</p>
-                  {expandedLists[group] ? <FaChevronUp /> : <FaChevronDown />}
-                </div>
-                {expandedLists[group] && (
-                  <ul className={styles.groupUl}>
-                    {exercisesByGroup[group].map((exercise) => (
-                      <li
-                        key={exercise.id}
-                        className={`${styles.groupItem} ${expandedLists[group] ? '' : styles.collapsed}`}
-                        onClick={() => {
-                          handleCheckClick(group, exercise);
-                          updateSelectedMuscleGroups(group); // Update selected muscle groups
-                        }}
-                      >
-                        {isCheckedMap[`${group}-${exercise.id}`] ? (
-                          <FaCheckSquare className={styles.checkedIcon} />
-                        ) : (
-                          <FaRegSquare className={styles.uncheckedIcon} />
-                        )}
-                        <p className={styles.exerciseName}>{exercise.name}</p>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            )
-        )}
+                  {isCheckedMap[`Cardio-${exercise.id}`] ? (
+                    <FaCheckSquare className={styles.checkedIcon} />
+                  ) : (
+                    <FaRegSquare className={styles.uncheckedIcon} />
+                  )}
+                  <p className={styles.exerciseName}>{t(`${exercise.name}`)}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
-      <div className={styles.buttons}>
-        <button className="inactiveButton-medium" onClick={handlePrevious}>
-          Previous
+
+      <div className={styles.navigationButtons}>
+        <button className="button" onClick={handlePrevious}>
+          {t("back")}
         </button>
-        <button className="inactiveButton-medium" onClick={handleNextClick}>
-          Next
+        <button className="button" onClick={handleNextClick}>
+          {t("next")}
         </button>
       </div>
+      {showWarning && <p className={styles.warning}>{t("warningSelectExercises")}</p>}
     </div>
   );
 };

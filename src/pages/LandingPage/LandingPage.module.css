@@ -5,6 +5,7 @@
   width: 100vw;
   margin: 0 auto;
   align-items: top;
+  user-select: none;
 }
 
 .container h1 {
@@ -72,14 +73,7 @@ margin: 0 auto;
   position: relative
 }
 
-.bannerImage {
-  height: 50vh;
-  width: 38vw;
-  background-image: url("./hero2.png");
-  background-size: 30vw auto;
-  object-fit: cover;
-  background-repeat: no-repeat;
-}
+
 
 .bannerText {
   width: 38vw;

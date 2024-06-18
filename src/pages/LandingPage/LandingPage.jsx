@@ -1,90 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./LandingPage.module.css";
 import main from "./hero.png";
-import main2 from "./hero2.png";
 import partners from "../../assets/Icons/partners.png";
-import halteres from "../../assets/Icons/halteres.png";
-import nutrition from "../../assets/Icons/dieta.png";
-import health from "../../assets/Icons/health.png"
-import smartwatch from "../../assets/Icons/smartwatch.png";
-import sleep from "./sleep.png";
 import useImageLoad from "../../hooks/useImageLoad";
+import Features from "../../components/LandingComponents/Features/Features";
+import Testimonials from "../../components/LandingComponents/Testimonials/Testimonials";
+import Pricing from "../../components/LandingComponents/Pricing/Pricing";
 
 const LandingPage = () => {
   const isImageLoaded = useImageLoad(main);
 
   if (!isImageLoaded) {
-    return <div className="loader-container"><div className="loader-medium"/></div>;
+    return <div className="loader-container"><div className="loader-medium" /></div>;
   }
+
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
         <div className={styles.heroText}>
-      <h1>
-            START YOUR <span>FITNESS</span> 
+          <h1>
+            START YOUR <span>FITNESS</span>
             <br />
             <span>JOURNEY</span> NOW
             <br />
             WITH <span>ORIGYM</span>.
           </h1>
-          <p>Track your workouts, nutrition, sleep and much <br/> more!</p>
+          <p>Track your workouts, nutrition, sleep and much <br /> more!</p>
           <button className="button">
-          <h3>Join Now</h3>
-        </button></div>
+            <h3>Join Now</h3>
+          </button>
+        </div>
       </div>
 
-      {/*Partners*/}
+      {/* Partners */}
       <div className={styles.partners}>
         <div className={styles.partnersInfo}>
           <h2>They trust us</h2>
         </div>
-        <img src={partners}></img>
+        <img src={partners} alt="Partners" />
       </div>
 
-      {/*Banner*/}
-      <div className={styles.banner}>
-        <div className={styles.bannerImage}/>
-        
-        <div className={styles.bannerText}>
-                <h1>
-            <span>STAY ON BEAT</span>.
-            <br />
-            CONNECT YOUR <span>SMARTWATCH</span>
-            <br />
-            EFFORTLESSLY.
-          </h1>
-          <p>Seamless smartwatch integration to keep you on the move.</p>
-          <button className="button">
-            <h3>Try it Now</h3>
-          </button>
-        </div>{" "}
-      </div>
+      {/* Features */}
+      <Features />
 
-      {/*Cards*/}
+      {/* Testimonials */}
+      <Testimonials />
 
-      <div className={styles.cardContainer}>
-        <div className={styles.card}>
-          <h2>Exercises</h2>
-          <img className={styles.icon} src={halteres}></img>
-        </div>
-        <div className={styles.card}>
-          {" "}
-          <h2>Nutrition</h2>
-          <img className={styles.icon} src={nutrition}></img>
-        </div>
-        <div className={styles.card}>
-          <h2>Health</h2>
-          <img className={styles.icon} src={health}></img>
-        </div>
-        <div className={styles.card}>
-          <h2>Smart Tracking</h2>
-          <img className={styles.icon} src={smartwatch}></img>
-        </div>
-        <div className={styles.card}>
-          <h2>Sleep</h2>
-          <img className={styles.icon} src={sleep}></img>
-        </div>
-      </div>
+
+      {/* Pricing */}
+      <Pricing />
     </div>
   );
 };

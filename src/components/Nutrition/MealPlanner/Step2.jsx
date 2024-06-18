@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./Step2.module.css";
 import StepIndicator from "../../StepIndicator/StepIndicator";
 import ingredientsTranslation from "../../../assets/Ingredients/Ingredients.json";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
 const Step2 = ({ onNext, onPrevious, mealType, t }) => {
   const [ingredients, setIngredients] = useState([]);
@@ -11,19 +12,45 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
   const [ingredientImage, setIngredientImage] = useState("");
   const [ingredientname, setIngredientname] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [unidade, setUnidade] = useState("grams");
-  const [calorias, setCalorias] = useState("");
+  const [quantityType, setQuantityType] = useState("grams");
+  const [calories, setCalories] = useState("");
   const [totalCalories, setTotalCalories] = useState(0);
   const [nutritionalData, setNutritionalData] = useState({});
   const [suggestions, setSuggestions] = useState([]);
+  const [mealSuggestions, setMealSuggestions] = useState([]);
   const suggestionsRef = useRef(null);
   const NUTRITIONIX_API_KEY = process.env.REACT_APP_NUTRITIONIX_API_KEY;
   const NUTRITIONIX_APP_ID = process.env.REACT_APP_NUTRITIONIX_APP_ID;
+  const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
+  const [recipeIngredients, setRecipeIngredients] = useState([])
+
+
+  const fetchMealSuggestions = async (searchTerm, selectedLanguage) => {
+    const db = getFirestore();
+    const mealCategories = ["Breakfast", "Lunch", "Dinner", "Snacks", "Supplementation", "Desserts"];
+    const allSuggestions = [];
+
+    for (const category of mealCategories) {
+      const mealsRef = collection(db, "mealSuggestions", category, "meals");
+      const q = query(mealsRef, where(`title.${selectedLanguage}`, ">=", searchTerm), where(`title.${selectedLanguage}`, "<=", searchTerm + "\uf8ff"));
+
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty && selectedLanguage !== "en") {
+        const fallbackQuery = query(mealsRef, where("title.en", ">=", searchTerm), where("title.en", "<=", searchTerm + "\uf8ff"));
+        const fallbackSnapshot = await getDocs(fallbackQuery);
+        fallbackSnapshot.docs.forEach(fallbackDoc => allSuggestions.push(fallbackDoc.data()));
+      } else {
+        querySnapshot.docs.forEach(suggestionDoc => allSuggestions.push(suggestionDoc.data()));
+      }
+    }
+    return allSuggestions;
+  };
 
   useEffect(() => {
     if (ingredientname === "") {
       setQuantity("");
-      setCalorias("");
+      setCalories("");
     }
   }, [ingredientname]);
 
@@ -50,22 +77,23 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
     }
   };
 
-  const handleUnidadeChange = (event) => {
-    setUnidade(event.target.value);
+  const handleQuantityTypeChange = (event) => {
+    setQuantityType(event.target.value);
   };
 
   const handleAddToList = async () => {
+    console.log("Adding to list with quantity:", quantity, "quantity type:", quantityType);
     if (isNaN(parseFloat(quantity)) || parseFloat(quantity) <= 0) {
-      setCalorias("Undefined value");
+      setCalories("Undefined value");
       return;
     }
 
     try {
-      const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
       const ingredientName = translateIngredient(ingredientname, selectedLanguage);
+      console.log("Translated ingredient name:", ingredientName);
       if (!ingredientName) {
         console.error(`Translation for ${ingredientname} not found in ${selectedLanguage}`);
-        setCalorias("Translation not found");
+        setCalories("Translation not found");
         return;
       }
 
@@ -79,7 +107,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
             "x-app-key": NUTRITIONIX_API_KEY,
           },
           body: JSON.stringify({
-            query: `${quantity} ${unidade} ${ingredientName}`,
+            query: `${quantity} ${quantityType} ${ingredientName}`,
           }),
         }
       );
@@ -94,8 +122,8 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
       const newIngredient = {
         name: ingredientname,
         quantity,
-        quantityType: unidade,
-        calorias: food.nf_calories,
+        quantityType: quantityType,
+        calories: food.nf_calories,
       };
 
       setIngredients([...ingredients, newIngredient]);
@@ -103,8 +131,8 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
 
       setIngredientname("");
       setQuantity("");
-      setUnidade("grams");
-      setCalorias("");
+      setQuantityType("grams");
+      setCalories("");
 
       const highresPhoto = food.photo?.highres || "";
       setIngredientImage(highresPhoto);
@@ -126,16 +154,44 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
     const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
     const normalizedInput = input.toLowerCase().trim();
     const filteredSuggestions = ingredientsTranslation.filter(item => item.translations[selectedLanguage]?.toLowerCase().includes(normalizedInput));
+    console.log(`Filtered ${filteredSuggestions.length} suggestions for input "${input}"`);
     setSuggestions(filteredSuggestions.map(item => item.translations[selectedLanguage]));
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    setIngredientname(suggestion);
-    setSuggestions([]);
+  const handleSuggestionClick = (suggestion, type = "ingredient") => {
+    if (type === "ingredient") {
+      setIngredientname(suggestion);
+      setSuggestions([]);
+    } else if (type === "meal") {
+      const selectedMeal = mealSuggestions.find(meal => meal.title[selectedLanguage] === suggestion || meal.title.en === suggestion);
+      if (selectedMeal) {
+        const mealIngredients = selectedMeal.ingredients.map(ingredient => ({
+          name: ingredients.pt || ingredients.en,
+    
+        }));
+        setIngredients([...ingredients, ...mealIngredients]);
+        const newTotalCalories = mealIngredients.reduce((total, ing) => total + ing.calories, totalCalories);
+        setTotalCalories(newTotalCalories);
+        setMealSuggestions([]);
+        setIngredientInput("");
+      }
+    }
   };
 
   const handleNextClick = () => {
     onNext({ ingredients, totalCalories });
+  };
+
+  const handleSearchChange = async (event) => {
+    const searchTerm = event.target.value;
+    setIngredientInput(searchTerm);
+    if (searchTerm.length > 2) {
+      const suggestions = await fetchMealSuggestions(searchTerm, selectedLanguage);
+      console.log("Fetched meal suggestions:", suggestions);
+      setMealSuggestions(suggestions);
+    } else {
+      setMealSuggestions([]);
+    }
   };
 
   return (
@@ -145,7 +201,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
       {mealType === "create" ? (
         <div className={styles.labels}>
           <label className={styles.label} htmlFor="ingredientname">
-           <p>{t("ingredient")}:</p> 
+            <p>{t("ingredient")}:</p> 
           </label>
           <input
             type="text"
@@ -158,7 +214,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
           {suggestions.length > 0 && (
             <ul className={styles.suggestions} ref={suggestionsRef}>
               {suggestions.map((suggestion, index) => (
-                <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
+                <li key={index} onClick={() => handleSuggestionClick(suggestion, "ingredient")}>
                   {suggestion}
                 </li>
               ))}
@@ -166,72 +222,93 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
           )}
           <div className={styles.quantityLabels}>
             <div>
-            <label className={styles.quantityLabel} htmlFor="quantity">
-              <p>{t("quantity")}:</p>
-            </label>
-            <input
-              type="text"
-              id="quantity"
-              name="quantity"
-              value={quantity}
-              onChange={handleChange}
-              className={styles.quantityInput}
-            /></div>
+              <label className={styles.quantityLabel} htmlFor="quantity">
+                <p>{t("quantity")}:</p>
+              </label>
+              <input
+                type="text"
+                id="quantity"
+                name="quantity"
+                value={quantity}
+                onChange={handleChange}
+                className={styles.quantityInput}
+              />
+            </div>
             <select
               className={styles.quantityTypeInput}
-              value={unidade}
-              onChange={handleUnidadeChange}
+              value={quantityType}
+              onChange={handleQuantityTypeChange}
             >
               <option value="grams">{t("grams")}</option>
               <option value="unities">{t("portions")}</option>
               <option value="ml">{t("mililiters")}</option>
               <option value="ounces">{t("ounces")}</option>
-            </select><div>
-          </div></div>
+            </select>
+          </div>
           <button className="button" onClick={handleAddToList}>{t("addToList")}</button>
-
           <label className={styles.label}>
-          <p>{t("ingredientList")}:</p> 
+            <p>{t("ingredientList")}:</p>
             <div className={styles.list}>
-              <ul>
+              <ul className={styles.ingredientList}>
                 {ingredients.map((ingredient, index) => (
                   <li key={index}>
-                    {ingredient.quantity} {ingredient.quantityType} {t("of")} {ingredient.name} - {ingredient.calorias} {t("calories")}
+                    {ingredient.name} - {ingredient.quantity} {ingredient.quantityType} - {t("calories")}: {ingredient.calories}
                   </li>
                 ))}
               </ul>
             </div>
           </label>
           <label className={styles.label}>
-          <p>{t("totalCalories")}:</p>  </label>
-          <input className={styles.ingredientInput} type="text" value={totalCalories} readOnly/>
-         
+            <p>{t("totalCalories")}: {totalCalories}</p>
+          </label>
         </div>
       ) : (
         <div>
-          <label className={styles.label}>
-          <p>{t("searchRecipes")}:</p>
-            <input type="text" />
+          <label className={styles.label} htmlFor="searchMeal">
+            <p>{t("searchMeal")}:</p>
           </label>
-          <label className={styles.label}>
-          <p>{t("ingredientList")}:</p>
-            <ul>
-              {ingredients.map((ingredient, index) => (
-                <li key={index}>
-                  {ingredient.quantity} {ingredient.quantityType} of {ingredient.name} - {ingredient.calorias} {t("calories")}
+          <input
+            type="text"
+            id="searchMeal"
+            name="searchMeal"
+            value={ingredientInput}
+            onChange={handleSearchChange}
+            className={styles.ingredientInput}
+          />
+          {mealSuggestions.length > 0 && (
+            <ul className={styles.suggestions} ref={suggestionsRef}>
+              {mealSuggestions.map((suggestion, index) => (
+                <li key={index} onClick={() => handleSuggestionClick(suggestion.title[selectedLanguage] || suggestion.title.en, "meal")}>
+                  {suggestion.title[selectedLanguage] || suggestion.title.en}
                 </li>
               ))}
             </ul>
+          )}
+          <label className={styles.label}>
+            <p>{t("ingredientList")}:</p>
+            <div className={styles.list}>
+              <ul className={styles.ingredientList}>
+                {ingredients.map((ingredient, index) => (
+                  <li key={index}>
+                    {ingredient.name} - {ingredient.quantity} {ingredient.quantityType} - {t("calories")}: {ingredient.calories}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </label>
           <label className={styles.label}>
-          <p>{t("totalCalories")}:</p>  </label>
-            <input className={styles.caloriesResultInput} type="text" value={totalCalories} readOnly/>
-         
+            <p>{t("totalCalories")}: {totalCalories}</p>
+          </label>
         </div>
       )}
+
       <div className={styles.buttonContainer}>
-        <button className="notSelectedButton-medium" onClick={onPrevious}>{t("back")}</button>
-        <button className="button" onClick={handleNextClick}>{t("next")}</button>
+        <button className="button" onClick={onPrevious}>
+          {t("previous")}
+        </button>
+        <button className="button" onClick={handleNextClick}>
+          {t("next")}
+        </button>
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ const LoginContainer = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
-            <label htmlFor="email">{t("email")}:</label>
+            <label htmlFor="email"><p>{t("email")}:</p></label>
             <input
               id="email"
               className={styles.inputField}
@@ -54,7 +54,7 @@ const LoginContainer = () => {
             />
           </div>
           <div className={styles.passwordInputGroup}>
-            <label htmlFor="password">{t("password")}:</label>
+            <label htmlFor="password"><p>{t("password")}:</p></label>
             <input
               id="password"
               className={styles.inputField}
@@ -76,24 +76,25 @@ const LoginContainer = () => {
           <div className={styles.formAddInfo}>
             <div className={styles.nameAndIcon}>
               <FaCheckSquare aria-hidden="true" />
-              <span>{t("rememberMe")}</span>{" "}
+              <p>{t("rememberMe")}</p>{" "}
             </div>
-            <span>
+            <p>
               <u>{t("forgotYourPassword")}?</u>
-            </span>
+            </p>
           </div>
           
-          {!loading && 
-            <div className={styles.buttonContainer}>
-              <button className="button" type="submit">
-                <span>{t("login")}</span>
-              </button>
-            </div>
-          }
+          <div className={styles.buttonContainer}>
+            {loading ? (
+         <button disabled className="inactiveButton-medium">
+         <div className="loader"></div>
+       </button>): (
+            <button className="button" >
+              <p>{t("getStarted")}!</p>
+            </button>
+         )}
+        </div>
         </form>
-        {loading && (<div className={styles.loaderContainer}><div className="loader"></div></div>
-          
-        )}
+       
         {error && <p className="error">{error}</p>}
         <p className={styles.text}>{t("or")}</p>
         <div className="loginOptions">

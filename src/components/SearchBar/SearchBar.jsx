@@ -5,9 +5,10 @@ import useFetchUsers from "../../hooks/useFetchUsers";
 import lupa from "../../assets/Icons/MagnifyingGlass.png";
 import classNames from "classnames"
 
-const SearchBar = ({ t }) => {
+const SearchBar = ({ t, userData }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { users, loading, error } = useFetchUsers(searchTerm);
+  const currentUsername = userData.userProfile.displayNameLower;
+  const { users, loading, error } = useFetchUsers(searchTerm, currentUsername);
   const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
@@ -18,6 +19,7 @@ const SearchBar = ({ t }) => {
     navigate(`/profile/${uid}`);
   };
 
+ 
   return (
     <div className={styles.searchBar}>
       <img className={styles.searchBarImage} src={lupa} alt="magnifying glass" />
@@ -28,22 +30,26 @@ const SearchBar = ({ t }) => {
       />
       {searchTerm.length >= 3 && (
         <div className={classNames(styles.searchResults, styles.card)}>
-          {loading && <p>Loading...</p>}
+          {loading && <p>{t("loading")}...</p>}
           {error && <p>Error: {error.message}</p>}
-          {users.map((user) => (
-            <div
-              key={user.uid}
-              className={styles.searchResultItem}
-              onClick={() => handleUserClick(user.uid)}
-            >
-              <img
-                src={user.newPhotoURL ? user.newPhotoURL : user.photoURL}
-                alt={user.displayName}
-                className={styles.searchResultImage}
-              />
-              <p>@{user.displayName}</p>
-            </div>
-          ))}
+          {users.length > 0 ? (
+            users.map((user) => (
+              <div
+                key={user.uid}
+                className={styles.searchResultItem}
+                onClick={() => handleUserClick(user.uid)}
+              >
+                <img
+                  src={user.newPhotoURL ? user.newPhotoURL : user.photoURL}
+                  alt={user.displayName}
+                  className={styles.searchResultImage}
+                />
+                <p>@{user.displayName}</p>
+              </div>
+            ))
+          ) : (
+            <p>{t("noResults")}</p>
+          )}
         </div>
       )}
     </div>

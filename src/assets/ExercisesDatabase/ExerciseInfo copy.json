@@ -1,0 +1,4618 @@
+[
+    {
+        "ExerciseType": "Strength",
+        "chest": [
+            {
+                "id": "C1",
+                "name": {
+                    "en": "Bench Press",
+                    "pt": "Supíno",
+                    "fr": "Développé couché",
+                    "it": "Panca piana",
+                    "es": "Press de banca",
+                    "de": "Bankdrücken"
+                },
+                "MET": 7.5,
+                "exampleUrl": "https://example.com/bench-press"
+            },
+            {
+                "id": "C2",
+                "name": {
+                    "en": "Push-Ups",
+                    "pt": "Flexões de Braço",
+                    "fr": "Pompes",
+                    "it": "Flessioni",
+                    "es": "Flexiones",
+                    "de": "Liegestütze"
+                },
+                "MET": 8,
+                "exampleUrl": "https://example.com/push-ups"
+            },
+            {
+                "id": "C3",
+                "name": {
+                    "en": "Incline Bench Press",
+                    "pt": "Supíno Inclinado",
+                    "fr": "Développé incliné",
+                    "it": "Panca inclinata",
+                    "es": "Press inclinado",
+                    "de": "Schrägbankdrücken"
+                },
+                "MET": 8,
+                "exampleUrl": "https://example.com/incline-bench-press"
+            },
+            {
+                "id": "C4",
+                "name": {
+                    "en": "Dumbbell Flyes",
+                    "pt": "Crucifixo com Halteres",
+                    "fr": "Écartés avec haltères",
+                    "it": "Aperture con manubri",
+                    "es": "Aperturas con mancuernas",
+                    "de": "Fliegende mit Kurzhanteln"
+                },
+                "MET": 5.5,
+                "exampleUrl": "https://example.com/dumbbell-flyes"
+            },
+            {
+                "id": "C5",
+                "name": {
+                    "en": "Chest Dips",
+                    "pt": "Mergulhos no Banco",
+                    "fr": "Dips pour les pectoraux",
+                    "it": "Dips per il petto",
+                    "es": "Fondos en paralelas",
+                    "de": "Brust-Dips"
+                },
+                "MET": 8,
+                "exampleUrl": "https://example.com/chest-dips"
+            },
+            {
+                "id": "C6",
+                "name": {
+                    "en": "Decline Bench Press",
+                    "pt": "Supíno Declinado",
+                    "fr": "Développé décliné",
+                    "it": "Panca declinata",
+                    "es": "Press declinado",
+                    "de": "Negativbankdrücken"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/decline-bench-press"
+            },
+            {
+                "id": "C7",
+                "name": {
+                    "en": "Chest Press Machine",
+                    "pt": "Máquina de Supíno",
+                    "fr": "Presse pectorale à la machine",
+                    "it": "Pressa per il petto",
+                    "es": "Máquina de press de pecho",
+                    "de": "Brustpresse"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/chest-press-machine"
+            },
+            {
+                "id": "C8",
+                "name": {
+                    "en": "Pec Deck Machine",
+                    "pt": "Máquina Pec Deck",
+                    "fr": "Machine Pec Deck",
+                    "it": "Macchina Pec Deck",
+                    "es": "Máquina Pec Deck",
+                    "de": "Butterfly-Maschine"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/pec-deck-machine"
+            },
+            {
+                "id": "C9",
+                "name": {
+                    "en": "Dumbbell Bench Press",
+                    "pt": "Supíno com Halteres",
+                    "fr": "Développé couché avec haltères",
+                    "it": "Panca piana con manubri",
+                    "es": "Press de banca con mancuernas",
+                    "de": "Bankdrücken mit Kurzhanteln"
+                },
+                "MET": 7,
+                "exampleUrl": "https://example.com/dumbbell-bench-press"
+            },
+            {
+                "id": "C10",
+                "name": {
+                    "en": "Chest Fly Machine",
+                    "pt": "Máquina de Crucifixo",
+                    "fr": "Machine pour écartés",
+                    "it": "Macchina per aperture",
+                    "es": "Máquina de aperturas",
+                    "de": "Brustfly-Maschine"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/chest-fly-machine"
+            },
+            {
+                "id": "C11",
+                "name": {
+                    "en": "Machine Chest Press",
+                    "pt": "Máquina de Supíno",
+                    "fr": "Presse pectorale à la machine",
+                    "it": "Pressa per il petto",
+                    "es": "Máquina de press de pecho",
+                    "de": "Brustpresse"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/machine-chest-press"
+            },
+            {
+                "id": "C12",
+                "name": {
+                    "en": "Incline Dumbbell Press",
+                    "pt": "Supíno Inclinado com Halteres",
+                    "fr": "Développé incliné avec haltères",
+                    "it": "Panca inclinata con manubri",
+                    "es": "Press inclinado con mancuernas",
+                    "de": "Schrägbankdrücken mit Kurzhanteln"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/incline-dumbbell-press"
+            },
+            {
+                "id": "C13",
+                "name": {
+                    "en": "Dumbbell Pullover",
+                    "pt": "Pullover com Halteres",
+                    "fr": "Pull-over avec haltères",
+                    "it": "Pull-over con manubri",
+                    "es": "Pullover con mancuernas",
+                    "de": "Kurzhantel-Pullover"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/dumbbell-pullover"
+            },
+            {
+                "id": "C14",
+                "name": {
+                    "en": "Cable Crossovers",
+                    "pt": "Crossover com Cabos",
+                    "fr": "Crossover à la poulie",
+                    "it": "Crossover ai cavi",
+                    "es": "Cruces en poleas",
+                    "de": "Kabelüberzüge"
+                },
+                "MET": 5.5,
+                "exampleUrl": "https://example.com/cable-crossovers"
+            },
+            {
+                "id": "C15",
+                "name": {
+                    "en": "Cable Chest Press",
+                    "pt": "Supíno com Cabos",
+                    "fr": "Développé couché à la poulie",
+                    "it": "Panca con cavi",
+                    "es": "Press de pecho en poleas",
+                    "de": "Kabel-Brustdrücken"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/cable-chest-press"
+            },
+            {
+                "id": "C16",
+                "name": {
+                    "en": "Machine Flyes",
+                    "pt": "Máquina de Crucifixo",
+                    "fr": "Machine pour écartés",
+                    "it": "Macchina per aperture",
+                    "es": "Máquina de aperturas",
+                    "de": "Brustfly-Maschine"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/machine-flyes"
+            },
+            {
+                "id": "C17",
+                "name": {
+                    "en": "Smith Machine Bench Press",
+                    "pt": "Supíno na Smith",
+                    "fr": "Développé couché à la Smith",
+                    "it": "Panca piana alla Smith",
+                    "es": "Press de banca en máquina Smith",
+                    "de": "Bankdrücken an der Smith-Maschine"
+                },
+                "MET": 6.5,
+                "exampleUrl": "https://example.com/smith-machine-bench-press"
+            },
+            {
+                "id": "C18",
+                "name": {
+                    "en": "Dumbbell Pullover",
+                    "pt": "Pullover com Halteres",
+                    "fr": "Pull-over avec haltères",
+                    "it": "Pull-over con manubri",
+                    "es": "Pullover con mancuernas",
+                    "de": "Kurzhantel-Pullover"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/dumbbell-pullover"
+            }
+        ],
+        "back": [
+            {
+                "id": "BA1",
+                "name": {
+                    "en": "Pull-ups",
+                    "pt": "Barra Fixa",
+                    "fr": "Tractions",
+                    "it": "Trazioni",
+                    "es": "Dominadas",
+                    "de": "Klimmzüge"
+                },
+                "MET": 6,
+                "exampleUrl": "https://example.com/pull-ups"
+            },
+            {
+                "id": "BA2",
+                "name": {
+                    "en": "Deadlifts",
+                    "pt": "Levantamento Terra",
+                    "fr": "Soulevé de terre",
+                    "it": "Stacchi da terra",
+                    "es": "Peso muerto",
+                    "de": "Kreuzheben"
+                },
+                "MET": 7.5,
+                "exampleUrl": "https://example.com/deadlifts"
+            },
+            {
+                "id": "BA3",
+                "name": {
+                    "en": "Bent-Over Rows",
+                    "pt": "Remada Curvada",
+                    "fr": "Rowing buste penché",
+                    "it": "Rematore piegato",
+                    "es": "Remo inclinado",
+                    "de": "Vorgebeugtes Rudern"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/bent-over-rows"
+            },
+            {
+                "id": "BA4",
+                "name": {
+                    "en": "Lat Pulldowns",
+                    "pt": "Pulldown",
+                    "fr": "Tirage vertical",
+                    "it": "Lat machine",
+                    "es": "Jalón de espalda",
+                    "de": "Latzug"
+                },
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/lat-pulldowns"
+            },
+            {
+                "id": "BA5",
+                "name": {
+                    "en": "T-Bar Rows",
+                    "pt": "Remada T",
+                    "fr": "Rowing barre en T",
+                    "it": "Rematore con T-bar",
+                    "es": "Remo con barra T",
+                    "de": "T-Bar-Rudern"
+                },
+                "MET": 5.25,
+                "exampleUrl": "https://example.com/t-bar-rows"
+            },
+            {
+                "id": "BA6",
+                "name": {
+                    "en": "Seated Cable Rows",
+                    "pt": "Remada Sentado",
+                    "fr": "Rowing assis à la poulie",
+                    "it": "Rematore da seduto",
+                    "es": "Remo en polea",
+                    "de": "Sitzendes Rudern am Kabelzug"
+                },
+                "MET": 4.25,
+                "exampleUrl": "https://example.com/seated-cable-rows"
+            },
+            {
+                "id": "BA7",
+                "name": {
+                    "en": "One-Arm Dumbbell Rows",
+                    "pt": "Remada Unilateral com Halteres",
+                    "fr": "Rowing à un bras avec haltères",
+                    "it": "Rematore con manubri a un braccio",
+                    "es": "Remo a un brazo con mancuernas",
+                    "de": "Einarmiges Kurzhantelrudern"
+                },
+                "MET": 3.75,
+                "exampleUrl": "https://example.com/one-arm-dumbbell-rows"
+            },
+            {
+                "id": "BA8",
+                "name": {
+                    "en": "Romanian Deadlifts",
+                    "pt": "Levantamento Terra Romeno",
+                    "fr": "Soulevé de terre roumain",
+                    "it": "Stacchi rumeni",
+                    "es": "Peso muerto rumano",
+                    "de": "Rumänisches Kreuzheben"
+                },
+                "MET": 5.75,
+                "exampleUrl": "https://example.com/romanian-deadlifts"
+            },
+            {
+                "id": "BA9",
+                "name": {
+                    "en": "Good Mornings",
+                    "pt": "Bom Dia",
+                    "fr": "Good Mornings",
+                    "it": "Good Mornings",
+                    "es": "Buenos Días",
+                    "de": "Good Mornings"
+                },
+                "MET": 3.75,
+                "exampleUrl": "https://example.com/good-mornings"
+            },
+            {
+                "id": "BA10",
+                "name": {
+                    "en": "Hyperextensions",
+                    "pt": "Hiperextensões",
+                    "fr": "Hyperextensions",
+                    "it": "Iperestensioni",
+                    "es": "Hiperextensiones",
+                    "de": "Hyperextensions"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/hyperextensions"
+            },
+            {
+                "id": "BA11",
+                "name": {
+                    "en": "Machine Rows",
+                    "pt": "Remada na Máquina",
+                    "fr": "Rowing à la machine",
+                    "it": "Rematore alla macchina",
+                    "es": "Remo en máquina",
+                    "de": "Rudern an der Maschine"
+                },
+                "MET": 4.25,
+                "exampleUrl": "https://example.com/machine-rows"
+            },
+            {
+                "id": "BA12",
+                "name": {
+                    "en": "Pendlay Rows",
+                    "pt": "Remada Pendlay",
+                    "fr": "Rowing Pendlay",
+                    "it": "Rematore Pendlay",
+                    "es": "Remo Pendlay",
+                    "de": "Pendlay-Rudern"
+                },
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/pendlay-rows"
+            },
+            {
+                "id": "BA13",
+                "name": {
+                    "en": "Inverted Rows",
+                    "pt": "Remada Invertida",
+                    "fr": "Rowing inversé",
+                    "it": "Rematore inverso",
+                    "es": "Remo invertido",
+                    "de": "Umgekehrtes Rudern"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/inverted-rows"
+            },
+            {
+                "id": "BA14",
+                "name": {
+                    "en": "Machine Lat Pulldowns",
+                    "pt": "Pulldown na Máquina",
+                    "fr": "Tirage vertical à la machine",
+                    "it": "Lat machine alla macchina",
+                    "es": "Jalón de espalda en máquina",
+                    "de": "Latzug an der Maschine"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/machine-lat-pulldowns"
+            },
+            {
+                "id": "BA15",
+                "name": {
+                    "en": "Straight Arm Pulldowns",
+                    "pt": "Pulldown com Braços Retos",
+                    "fr": "Tirage bras tendus",
+                    "it": "Lat machine a braccia tese",
+                    "es": "Jalón con brazos rectos",
+                    "de": "Gerade Arm-Latzüge"
+                },
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/straight-arm-pulldowns"
+            },
+            {
+                "id": "BA16",
+                "name": {
+                    "en": "Close-Grip Pulldowns",
+                    "pt": "Pulldown com Pegada Fechada",
+                    "fr": "Tirage prise serrée",
+                    "it": "Lat machine con presa stretta",
+                    "es": "Jalón con agarre cerrado",
+                    "de": "Latzug mit engem Griff"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/close-grip-pulldowns"
+            },
+            {
+                "id": "BA17",
+                "name": {
+                    "en": "Meadows Rows",
+                    "pt": "Remada Meadows",
+                    "fr": "Rowing Meadows",
+                    "it": "Rematore Meadows",
+                    "es": "Remo Meadows",
+                    "de": "Meadows-Rudern"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/meadows-rows"
+            },
+            {
+                "id": "BA18",
+                "name": {
+                    "en": "Kroc Rows",
+                    "pt": "Remada Kroc",
+                    "fr": "Rowing Kroc",
+                    "it": "Rematore Kroc",
+                    "es": "Remo Kroc",
+                    "de": "Kroc-Rudern"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/kroc-rows"
+            }
+        ],
+        "shoulders": [
+            {
+                "id": "S1",
+                "name": {
+                    "en": "Military Press",
+                    "pt": "Desenvolvimento Militar",
+                    "fr": "Développé militaire",
+                    "it": "Military press",
+                    "es": "Press militar",
+                    "de": "Schulterdrücken"
+                },
+                "MET": 5.5,
+                "exampleUrl": "https://example.com/military-press"
+            },
+            {
+                "id": "S2",
+                "name": {
+                    "en": "Lateral Raises",
+                    "pt": "Elevações Laterais",
+                    "fr": "Élévations latérales",
+                    "it": "Alzate laterali",
+                    "es": "Elevaciones laterales",
+                    "de": "Seitliche Hebungen"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/lateral-raises"
+            },
+            {
+                "id": "S3",
+                "name": {
+                    "en": "Front Raises",
+                    "pt": "Elevações Frontais",
+                    "fr": "Élévations frontales",
+                    "it": "Alzate frontali",
+                    "es": "Elevaciones frontales",
+                    "de": "Vordere Hebungen"
+                },
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/front-raises"
+            },
+            {
+                "id": "S4",
+                "name": {
+                    "en": "Rear Delt Flyes",
+                    "pt": "Crucifixo Invertido",
+                    "fr": "Élévations postérieures",
+                    "it": "Alzate posteriori",
+                    "es": "Aperturas inversas",
+                    "de": "Reverse Flyes"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/rear-delt-flyes"
+            },
+            {
+                "id": "S5",
+                "name": {
+                    "en": "Arnold Press",
+                    "pt": "Desenvolvimento Arnold",
+                    "fr": "Développé Arnold",
+                    "it": "Arnold press",
+                    "es": "Press Arnold",
+                    "de": "Arnold-Drücken"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/arnold-press"
+            },
+            {
+                "id": "S6",
+                "name": {
+                    "en": "Upright Rows",
+                    "pt": "Remada Alta",
+                    "fr": "Rowing vertical",
+                    "it": "Tirate al mento",
+                    "es": "Remo vertical",
+                    "de": "Aufrechtes Rudern"
+                },
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/upright-rows"
+            },
+            {
+                "id": "S7",
+                "name": {
+                    "en": "Shrugs",
+                    "pt": "Encolhimentos",
+                    "fr": "Haussements d'épaules",
+                    "it": "Scrollate",
+                    "es": "Encogimientos",
+                    "de": "Schulterzucken"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/shrugs"
+            },
+            {
+                "id": "S8",
+                "name": {
+                    "en": "Face Pulls",
+                    "pt": "Puxadas Face",
+                    "fr": "Tirages face",
+                    "it": "Face pulls",
+                    "es": "Tirones a la cara",
+                    "de": "Face Pulls"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/face-pulls"
+            },
+            {
+                "id": "S9",
+                "name": {
+                    "en": "Dumbbell Shoulder Press",
+                    "pt": "Desenvolvimento com Halteres",
+                    "fr": "Développé épaules avec haltères",
+                    "it": "Pressa spalle con manubri",
+                    "es": "Press de hombros con mancuernas",
+                    "de": "Schulterdrücken mit Kurzhanteln"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/dumbbell-shoulder-press"
+            },
+            {
+                "id": "S10",
+                "name": {
+                    "en": "Barbell Shrugs",
+                    "pt": "Encolhimentos com Barra",
+                    "fr": "Haussements d'épaules avec barre",
+                    "it": "Scrollate con bilanciere",
+                    "es": "Encogimientos con barra",
+                    "de": "Schulterzucken mit Langhantel"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/barbell-shrugs"
+            },
+            {
+                "id": "S11",
+                "name": {
+                    "en": "Machine Shoulder Press",
+                    "pt": "Desenvolvimento na Máquina",
+                    "fr": "Développé épaules à la machine",
+                    "it": "Pressa spalle alla macchina",
+                    "es": "Press de hombros en máquina",
+                    "de": "Schulterdrücken an der Maschine"
+                },
+                "MET": 5.5,
+                "exampleUrl": "https://example.com/machine-shoulder-press"
+            },
+            {
+                "id": "S12",
+                "name": {
+                    "en": "Cable Lateral Raises",
+                    "pt": "Elevações Laterais com Cabo",
+                    "fr": "Élévations latérales à la poulie",
+                    "it": "Alzate laterali ai cavi",
+                    "es": "Elevaciones laterales en polea",
+                    "de": "Seitliche Hebungen am Kabelzug"
+                },
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/cable-lateral-raises"
+            },
+            {
+                "id": "S13",
+                "name": {
+                    "en": "Reverse Flyes",
+                    "pt": "Crucifixo Invertido",
+                    "fr": "Élévations inversées",
+                    "it": "Reverse flyes",
+                    "es": "Aperturas inversas",
+                    "de": "Reverse Flyes"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/reverse-flyes"
+            },
+            {
+                "id": "S14",
+                "name": {
+                    "en": "Lying Rear Delt Raise",
+                    "pt": "Elevações Posteriores Deitado",
+                    "fr": "Élévations postérieures allongé",
+                    "it": "Alzate posteriori sdraiato",
+                    "es": "Elevación posterior acostado",
+                    "de": "Liegendes hinteres Deltheben"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/lying-rear-delt-raise"
+            },
+            {
+                "id": "S15",
+                "name": {
+                    "en": "Front Plate Raise",
+                    "pt": "Elevação Frontal com Placa",
+                    "fr": "Élévation frontale avec disque",
+                    "it": "Alzate frontali con piastra",
+                    "es": "Elevaciones frontales con disco",
+                    "de": "Vorderes Plattenheben"
+                },
+                "MET": 4,
+                "exampleUrl": "https://example.com/front-plate-raise"
+            },
+            {
+                "id": "S16",
+                "name": {
+                    "en": "Smith Machine Overhead Press",
+                    "pt": "Desenvolvimento na Smith",
+                    "fr": "Développé épaules à la Smith",
+                    "it": "Pressa spalle alla Smith machine",
+                    "es": "Press de hombros en máquina Smith",
+                    "de": "Überkopfdrücken an der Smith-Maschine"
+                },
+                "MET": 5.5,
+                "exampleUrl": "https://example.com/smith-machine-overhead-press"
+            },
+            {
+                "id": "S17",
+                "name": {
+                    "en": "Machine Lateral Raises",
+                    "pt": "Elevações Laterais na Máquina",
+                    "fr": "Élévations latérales à la machine",
+                    "it": "Alzate laterali alla macchina",
+                    "es": "Elevaciones laterales en máquina",
+                    "de": "Seitliche Hebungen an der Maschine"
+                },
+                "MET": 5,
+                "exampleUrl": "https://example.com/machine-lateral-raises"
+            }
+        ],
+        "biceps": [
+            {
+                "id": "B1",
+                "name": {
+                    "en": "Barbell Curls",
+                    "pt": "Rosca Direta",
+                    "fr": "Curl à la Barre",
+                    "it": "Curl con Bilanciere",
+                    "es": "Curl con Barra",
+                    "de": "Langhantel-Curls"
+                },
+                "description": "Description of barbell curls exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/barbell-curls"
+            },
+            {
+                "id": "B2",
+                "name": {
+                    "en": "Dumbbell Hammer Curls",
+                    "pt": "Rosca Martelo",
+                    "fr": "Curl Marteau",
+                    "it": "Curl a Martello con Manubri",
+                    "es": "Curl Martillo con Mancuernas",
+                    "de": "Hammer-Curls"
+                },
+                "description": "Description of dumbbell hammer curls exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/dumbbell-hammer-curls"
+            },
+            {
+                "id": "B3",
+                "name": {
+                    "en": "Preacher Curls",
+                    "pt": "Rosca Scott",
+                    "fr": "Curl au Pupitre",
+                    "it": "Curl al Preacher",
+                    "es": "Curl en Banco Scott",
+                    "de": "Scott-Curls"
+                },
+                "description": "Description of preacher curls exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/preacher-curls"
+            },
+            {
+                "id": "B4",
+                "name": {
+                    "en": "Concentration Curls",
+                    "pt": "Rosca Concentrada",
+                    "fr": "Curl Concentré",
+                    "it": "Curl Concentrato",
+                    "es": "Curl de Concentración",
+                    "de": "Konzentrations-Curls"
+                },
+                "description": "Description of concentration curls exercise.",
+                "MET": 3,
+                "exampleUrl": "https://example.com/concentration-curls"
+            },
+            {
+                "id": "B5",
+                "name": {
+                    "en": "Cable Bicep Curls",
+                    "pt": "Rosca na Polia",
+                    "fr": "Curl à la Câble",
+                    "it": "Curl al Cavo",
+                    "es": "Curl de Biceps en Polea",
+                    "de": "Kabel-Bizeps-Curls"
+                },
+                "description": "Description of cable bicep curls exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/cable-bicep-curls"
+            },
+            {
+                "id": "B6",
+                "name": {
+                    "en": "Zottman Curls",
+                    "pt": "Rosca Zottman",
+                    "fr": "Curl Zottman",
+                    "it": "Curl Zottman",
+                    "es": "Curl Zottman",
+                    "de": "Zottman-Curls"
+                },
+                "description": "Description of zottman curls exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/zottman-curls"
+            },
+            {
+                "id": "B7",
+                "name": {
+                    "en": "Reverse Curls",
+                    "pt": "Rosca Inversa",
+                    "fr": "Curl Inversé",
+                    "it": "Curl Inverso",
+                    "es": "Curl Invertido",
+                    "de": "Umgekehrte Curls"
+                },
+                "description": "Description of reverse curls exercise.",
+                "MET": 3.3,
+                "exampleUrl": "https://example.com/reverse-curls"
+            },
+            {
+                "id": "B8",
+                "name": {
+                    "en": "EZ-Bar Curls",
+                    "pt": "Rosca EZ-Bar",
+                    "fr": "Curl à la Barre EZ",
+                    "it": "Curl con Bilanciere EZ",
+                    "es": "Curl con Barra EZ",
+                    "de": "EZ-Bar-Curls"
+                },
+                "description": "Description of EZ-bar curls exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/ez-bar-curls"
+            },
+            {
+                "id": "B9",
+                "name": {
+                    "en": "Incline Dumbbell Curls",
+                    "pt": "Rosca Inclinado com Halteres",
+                    "fr": "Curl Incliné avec Haltères",
+                    "it": "Curl Inclinato con Manubri",
+                    "es": "Curl Inclinado con Mancuernas",
+                    "de": "Schrägbank-Hantel-Curls"
+                },
+                "description": "Description of incline dumbbell curls exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/incline-dumbbell-curls"
+            },
+            {
+                "id": "B10",
+                "name": {
+                    "en": "Spider Curls",
+                    "pt": "Rosca Aranha",
+                    "fr": "Curl Araignée",
+                    "it": "Curl Ragno",
+                    "es": "Curl de Araña",
+                    "de": "Spider-Curls"
+                },
+                "description": "Description of spider curls exercise.",
+                "MET": 3,
+                "exampleUrl": "https://example.com/spider-curls"
+            },
+            {
+                "id": "B11",
+                "name": {
+                    "en": "Alternating Dumbbell Curls",
+                    "pt": "Rosca Alternada com Halteres",
+                    "fr": "Curl Alterné avec Haltères",
+                    "it": "Curl Alternato con Manubri",
+                    "es": "Curl Alterno con Mancuernas",
+                    "de": "Alternierende Hantel-Curls"
+                },
+                "description": "Description of alternating dumbbell curls exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/alternating-dumbbell-curls"
+            },
+            {
+                "id": "B12",
+                "name": {
+                    "en": "Machine Bicep Curls",
+                    "pt": "Rosca na Máquina",
+                    "fr": "Curl à la Machine",
+                    "it": "Curl alla Macchina",
+                    "es": "Curl en Máquina",
+                    "de": "Maschinen-Bizeps-Curls"
+                },
+                "description": "Description of machine bicep curls exercise.",
+                "MET": 3,
+                "exampleUrl": "https://example.com/machine-bicep-curls"
+            },
+            {
+                "id": "B13",
+                "name": {
+                    "en": "Cross Body Hammer Curls",
+                    "pt": "Rosca Martelo Cruzado",
+                    "fr": "Curl Marteau en Travers",
+                    "it": "Curl a Martello Incrociato",
+                    "es": "Curl Martillo Cruzado",
+                    "de": "Kreuzhammer-Curls"
+                },
+                "description": "Description of cross body hammer curls exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/cross-body-hammer-curls"
+            },
+            {
+                "id": "B14",
+                "name": {
+                    "en": "21s",
+                    "pt": "21s",
+                    "fr": "21s",
+                    "it": "21s",
+                    "es": "21s",
+                    "de": "21s"
+                },
+                "description": "Description of 21s exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/21s"
+            },
+            {
+                "id": "B15",
+                "name": {
+                    "en": "Cheat Curls",
+                    "pt": "Rosca Trapaceada",
+                    "fr": "Curl Triché",
+                    "it": "Curl Barato",
+                    "es": "Curl de Trampa",
+                    "de": "Schummel-Curls"
+                },
+                "description": "Description of cheat curls exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/cheat-curls"
+            },
+            {
+                "id": "B16",
+                "name": {
+                    "en": "Seated Alternating Dumbbell Curls",
+                    "pt": "Rosca Sentada Alternada com Halteres",
+                    "fr": "Curl Alterné Assis avec Haltères",
+                    "it": "Curl Alternato Seduto con Manubri",
+                    "es": "Curl Alterno Sentado con Mancuernas",
+                    "de": "Sitzende alternierende Hantel-Curls"
+                },
+                "description": "Description of seated alternating dumbbell curls exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/seated-alternating-dumbbell-curls"
+            },
+            {
+                "id": "B17",
+                "name": {
+                    "en": "Machine Preacher Curls",
+                    "pt": "Rosca Scott na Máquina",
+                    "fr": "Curl au Pupitre à la Machine",
+                    "it": "Curl al Preacher alla Macchina",
+                    "es": "Curl en Banco Scott en Máquina",
+                    "de": "Maschinen-Scott-Curls"
+                },
+                "description": "Description of machine preacher curls exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/machine-preacher-curls"
+            }
+        ],
+        "triceps": [
+            {
+                "id": "T1",
+                "name": {
+                    "en": "Tricep Dips",
+                    "pt": "Mergulho no Banco",
+                    "fr": "Dips Triceps",
+                    "it": "Dip per Tricipiti",
+                    "es": "Fondos de Tríceps",
+                    "de": "Trizeps-Dips"
+                },
+                "description": "Description of tricep dips exercise.",
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/tricep-dips"
+            },
+            {
+                "id": "T2",
+                "name": {
+                    "en": "Tricep Pushdown",
+                    "pt": "Puxada de Tríceps",
+                    "fr": "Pushdown Triceps",
+                    "it": "Pushdown per Tricipiti",
+                    "es": "Extensiones de Tríceps",
+                    "de": "Trizeps-Drücken"
+                },
+                "description": "Description of tricep pushdown exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/tricep-pushdown"
+            },
+            {
+                "id": "T3",
+                "name": {
+                    "en": "Skull Crushers",
+                    "pt": "Tríceps Testa",
+                    "fr": "Casseur de Crâne",
+                    "it": "Spaccacranio",
+                    "es": "Rompecráneos",
+                    "de": "Skull Crushers"
+                },
+                "description": "Description of skull crushers exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/skull-crushers"
+            },
+            {
+                "id": "T4",
+                "name": {
+                    "en": "Overhead Tricep Extension",
+                    "pt": "Extensão de Tríceps acima da Cabeça",
+                    "fr": "Extension Triceps au-dessus de la Tête",
+                    "it": "Estensione del Tricipite Sopra la Testa",
+                    "es": "Extensión de Tríceps sobre la Cabeza",
+                    "de": "Überkopf-Trizeps-Extension"
+                },
+                "description": "Description of overhead tricep extension exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/overhead-tricep-extension"
+            },
+            {
+                "id": "T5",
+                "name": {
+                    "en": "Close Grip Bench Press",
+                    "pt": "Supino Fechado",
+                    "fr": "Développé Couché Prise Serrée",
+                    "it": "Panca Stretta",
+                    "es": "Press de Banca con Agarre Cerrado",
+                    "de": "Enges Bankdrücken"
+                },
+                "description": "Description of close grip bench press exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/close-grip-bench-press"
+            },
+            {
+                "id": "T6",
+                "name": {
+                    "en": "Diamond Push-Ups",
+                    "pt": "Flexões Diamante",
+                    "fr": "Pompes Diamant",
+                    "it": "Flessioni Diamante",
+                    "es": "Flexiones Diamante",
+                    "de": "Diamant-Liegestütze"
+                },
+                "description": "Description of diamond push-ups exercise.",
+                "MET": 5,
+                "exampleUrl": "https://example.com/diamond-push-ups"
+            },
+            {
+                "id": "T7",
+                "name": {
+                    "en": "Cable Tricep Kickbacks",
+                    "pt": "Tríceps na Polia",
+                    "fr": "Kickbacks Triceps à la Câble",
+                    "it": "Kickbacks per Tricipiti al Cavo",
+                    "es": "Patadas de Tríceps en Polea",
+                    "de": "Kabel-Trizeps-Kickbacks"
+                },
+                "description": "Description of cable tricep kickbacks exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/cable-tricep-kickbacks"
+            },
+            {
+                "id": "T8",
+                "name": {
+                    "en": "Single Arm Tricep Pushdowns",
+                    "pt": "Puxada Unilateral de Tríceps",
+                    "fr": "Pushdown Triceps à un Bras",
+                    "it": "Pushdown per Tricipiti a un Braccio",
+                    "es": "Extensiones de Tríceps a un Brazo",
+                    "de": "Einarmiges Trizeps-Drücken"
+                },
+                "description": "Description of single arm tricep pushdowns exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/single-arm-tricep-pushdowns"
+            },
+            {
+                "id": "T9",
+                "name": {
+                    "en": "Rope Tricep Pushdowns",
+                    "pt": "Puxada de Tríceps com Corda",
+                    "fr": "Pushdown Triceps à la Corde",
+                    "it": "Pushdown per Tricipiti con Corda",
+                    "es": "Extensiones de Tríceps con Cuerda",
+                    "de": "Seil-Trizeps-Drücken"
+                },
+                "description": "Description of rope tricep pushdowns exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/rope-tricep-pushdowns"
+            },
+            {
+                "id": "T10",
+                "name": {
+                    "en": "Bench Dips",
+                    "pt": "Mergulho no Banco",
+                    "fr": "Dips sur Banc",
+                    "it": "Dip su Panca",
+                    "es": "Fondos en Banco",
+                    "de": "Bank-Dips"
+                },
+                "description": "Description of bench dips exercise.",
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/bench-dips"
+            },
+            {
+                "id": "T11",
+                "name": {
+                    "en": "Lying Tricep Extensions",
+                    "pt": "Extensão de Tríceps deitado",
+                    "fr": "Extension Triceps Couché",
+                    "it": "Estensioni del Tricipite Disteso",
+                    "es": "Extensiones de Tríceps Acostado",
+                    "de": "Liegende Trizeps-Extensions"
+                },
+                "description": "Description of lying tricep extensions exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/lying-tricep-extensions"
+            },
+            {
+                "id": "T12",
+                "name": {
+                    "en": "Tricep Kickbacks",
+                    "pt": "Tríceps Coice",
+                    "fr": "Kickbacks Triceps",
+                    "it": "Kickbacks per Tricipiti",
+                    "es": "Patadas de Tríceps",
+                    "de": "Trizeps-Kickbacks"
+                },
+                "description": "Description of tricep kickbacks exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/tricep-kickbacks"
+            },
+            {
+                "id": "T13",
+                "name": {
+                    "en": "Machine Tricep Extensions",
+                    "pt": "Extensão de Tríceps na Máquina",
+                    "fr": "Extension Triceps à la Machine",
+                    "it": "Estensione del Tricipite alla Macchina",
+                    "es": "Extensión de Tríceps en Máquina",
+                    "de": "Maschinen-Trizeps-Extensions"
+                },
+                "description": "Description of machine tricep extensions exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/machine-tricep-extensions"
+            },
+            {
+                "id": "T14",
+                "name": {
+                    "en": "Overhead Rope Extensions",
+                    "pt": "Extensão de Tríceps com Corda",
+                    "fr": "Extension Triceps au-dessus de la Tête avec Corde",
+                    "it": "Estensioni del Tricipite sopra la Testa con Corda",
+                    "es": "Extensión de Tríceps sobre la Cabeza con Cuerda",
+                    "de": "Überkopf-Seil-Extensions"
+                },
+                "description": "Description of overhead rope extensions exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/overhead-rope-extensions"
+            },
+            {
+                "id": "T15",
+                "name": {
+                    "en": "Cable Overhead Tricep Extensions",
+                    "pt": "Extensão de Tríceps acima da Cabeça com Polia",
+                    "fr": "Extension Triceps au-dessus de la Tête à la Câble",
+                    "it": "Estensione del Tricipite Sopra la Testa al Cavo",
+                    "es": "Extensiones de Tríceps sobre la Cabeza con Polea",
+                    "de": "Überkopf-Seil-Extensions"
+                },
+                "description": "Description of cable overhead tricep extensions exercise.",
+                "MET": 3.8,
+                "exampleUrl": "https://example.com/cable-overhead-tricep-extensions"
+            },
+            {
+                "id": "T16",
+                "name": {
+                    "en": "Kettlebell Tricep Extensions",
+                    "pt": "Extensão de Tríceps com Kettlebell",
+                    "fr": "Extension Triceps avec Kettlebell",
+                    "it": "Estensione del Tricipite con Kettlebell",
+                    "es": "Extensiones de Tríceps con Kettlebell",
+                    "de": "Kettlebell-Trizeps-Extensions"
+                },
+                "description": "Description of kettlebell tricep extensions exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/kettlebell-tricep-extensions"
+            },
+            {
+                "id": "T17",
+                "name": {
+                    "en": "Bench Tricep Dips",
+                    "pt": "Mergulho no Banco para Tríceps",
+                    "fr": "Dips Triceps sur Banc",
+                    "it": "Dip su Panca per Tricipiti",
+                    "es": "Fondos de Tríceps en Banco",
+                    "de": "Bank-Trizeps-Dips"
+                },
+                "description": "Description of bench tricep dips exercise.",
+                "MET": 4.5,
+                "exampleUrl": "https://example.com/bench-tricep-dips"
+            },
+            {
+                "id": "T18",
+                "name": {
+                    "en": "Tricep Bench Press",
+                    "pt": "Supino para Tríceps",
+                    "fr": "Développé Couché Triceps",
+                    "it": "Panca per Tricipiti",
+                    "es": "Press de Banca para Tríceps",
+                    "de": "Bankdrücken für Trizeps"
+                },
+                "description": "Description of tricep bench press exercise.",
+                "MET": 4,
+                "exampleUrl": "https://example.com/tricep-bench-press"
+            },
+            {
+                "id": "T19",
+                "name": {
+                    "en": "Tricep Rope Pushdowns",
+                    "pt": "Pushdown de Tríceps com Corda",
+                    "fr": "Pushdown Triceps à la Corde",
+                    "it": "Pushdown per Tricipiti con Corda",
+                    "es": "Extensiones de Tríceps con Cuerda",
+                    "de": "Seil-Trizeps-Pushdowns"
+                },
+                "description": "Description of tricep rope pushdowns exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/tricep-rope-pushdowns"
+            },
+            {
+                "id": "T20",
+                "name": {
+                    "en": "Tricep Rope Extensions",
+                    "pt": "Extensão de Tríceps com Corda",
+                    "fr": "Extension Triceps à la Corde",
+                    "it": "Estensione del Tricipite con Corda",
+                    "es": "Extensiones de Tríceps con Cuerda",
+                    "de": "Seil-Trizeps-Extensions"
+                },
+                "description": "Description of tricep rope extensions exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/tricep-rope-extensions"
+            },
+            {
+                "id": "T21",
+                "name": {
+                    "en": "Tricep T-Bar Pushdowns",
+                    "pt": "Pushdown de Tríceps com T-Bar",
+                    "fr": "Pushdown Triceps à la Barre en T",
+                    "it": "Pushdown per Tricipiti con T-Bar",
+                    "es": "Extensiones de Tríceps con Barra T",
+                    "de": "T-Bar-Trizeps-Pushdowns"
+                },
+                "description": "Description of tricep T-bar pushdowns exercise.",
+                "MET": 3.5,
+                "exampleUrl": "https://example.com/tricep-t-bar-pushdowns"
+            }
+        ],
+        "abs": [
+            {
+                "id": "A1",
+                "name": {
+                    "en": "Crunches",
+                    "pt": "Abdominais",
+                    "fr": "Redressements assis",
+                    "it": "Crunch",
+                    "es": "Encogimientos",
+                    "de": "Crunches"
+                },
+                "description": "Description of crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/crunches"
+            },
+            {
+                "id": "A2",
+                "name": {
+                    "en": "Leg Raises",
+                    "pt": "Elevação de Pernas",
+                    "fr": "Levées de jambes",
+                    "it": "Sollevamento delle gambe",
+                    "es": "Elevación de piernas",
+                    "de": "Beinheben"
+                },
+                "description": "Description of leg raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-raises"
+            },
+            {
+                "id": "A3",
+                "name": {
+                    "en": "Planks",
+                    "pt": "Prancha",
+                    "fr": "Planche",
+                    "it": "Piano",
+                    "es": "Plancha",
+                    "de": "Planks"
+                },
+                "description": "Description of planks exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/planks"
+            },
+            {
+                "id": "A4",
+                "name": {
+                    "en": "Russian Twists",
+                    "pt": "Giros Russos",
+                    "fr": "Torsions russes",
+                    "it": "Torsioni russe",
+                    "es": "Giros rusos",
+                    "de": "Russische Twists"
+                },
+                "description": "Description of russian twists exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/russian-twists"
+            },
+            {
+                "id": "A5",
+                "name": {
+                    "en": "Bicycle Crunches",
+                    "pt": "Abdominais Bicicleta",
+                    "fr": "Crunch bicyclette",
+                    "it": "Crunch in bicicletta",
+                    "es": "Encogimientos de bicicleta",
+                    "de": "Fahrrad-Crunches"
+                },
+                "description": "Description of bicycle crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/bicycle-crunches"
+            },
+            {
+                "id": "A6",
+                "name": {
+                    "en": "Mountain Climbers",
+                    "pt": "Subida de Montanha",
+                    "fr": "Montée de genoux",
+                    "it": "Arrampicatori",
+                    "es": "Escaladores de montaña",
+                    "de": "Bergsteiger"
+                },
+                "description": "Description of mountain climbers exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/mountain-climbers"
+            },
+            {
+                "id": "A7",
+                "name": {
+                    "en": "Sit-ups",
+                    "pt": "Abdominais",
+                    "fr": "Redressements assis",
+                    "it": "Addominali",
+                    "es": "Abdominales",
+                    "de": "Sit-ups"
+                },
+                "description": "Description of sit-ups exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/sit-ups"
+            },
+            {
+                "id": "A8",
+                "name": {
+                    "en": "Hanging Leg Raises",
+                    "pt": "Elevação de Pernas na Barra",
+                    "fr": "Levées de jambes suspendues",
+                    "it": "Sollevamento delle gambe appese",
+                    "es": "Elevación de piernas colgado",
+                    "de": "Hängende Beinheben"
+                },
+                "description": "Description of hanging leg raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hanging-leg-raises"
+            },
+            {
+                "id": "A9",
+                "name": {
+                    "en": "Flutter Kicks",
+                    "pt": "Chutes de Borboleta",
+                    "fr": "Coups de pied de papillon",
+                    "it": "Calcio farfalla",
+                    "es": "Patadas de mariposa",
+                    "de": "Schmetterlingskicks"
+                },
+                "description": "Description of flutter kicks exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/flutter-kicks"
+            },
+            {
+                "id": "A10",
+                "name": {
+                    "en": "Ab Rollouts",
+                    "pt": "Rolamentos de Abdômen",
+                    "fr": "Déroulements abdominaux",
+                    "it": "Ab rollouts",
+                    "es": "Ab rollouts",
+                    "de": "Ab-Rollouts"
+                },
+                "description": "Description of ab rollouts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/ab-rollouts"
+            },
+            {
+                "id": "A11",
+                "name": {
+                    "en": "Cable Crunches",
+                    "pt": "Abdominais com Corda",
+                    "fr": "Crunch de câble",
+                    "it": "Crunch con cavo",
+                    "es": "Encogimientos de cable",
+                    "de": "Seil-Crunches"
+                },
+                "description": "Description of cable crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/cable-crunches"
+            },
+            {
+                "id": "A12",
+                "name": {
+                    "en": "Captain's Chair Leg Raises",
+                    "pt": "Elevação de Pernas na Cadeira Romana",
+                    "fr": "Levées de jambes de la chaise du capitaine",
+                    "it": "Sollevamento delle gambe della sedia del capitano",
+                    "es": "Elevación de piernas en silla capitán",
+                    "de": "Beinheben am Captain's Chair"
+                },
+                "description": "Description of captain's chair leg raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/captains-chair-leg-raises"
+            },
+            {
+                "id": "A13",
+                "name": {
+                    "en": "V-ups",
+                    "pt": "V-ups",
+                    "fr": "V-ups",
+                    "it": "V-ups",
+                    "es": "V-ups",
+                    "de": "V-ups"
+                },
+                "description": "Description of v-ups exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/v-ups"
+            },
+            {
+                "id": "A14",
+                "name": {
+                    "en": "Oblique Crunches",
+                    "pt": "Abdominais Oblíquos",
+                    "fr": "Crunch oblique",
+                    "it": "Crunch obliqui",
+                    "es": "Encogimientos oblicuos",
+                    "de": "Schräge Crunches"
+                },
+                "description": "Description of oblique crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/oblique-crunches"
+            },
+            {
+                "id": "A15",
+                "name": {
+                    "en": "Medicine Ball Slams",
+                    "pt": "Medicine Ball Slams",
+                    "fr": "Medicine Ball Slams",
+                    "it": "Medicine Ball Slams",
+                    "es": "Medicine Ball Slams",
+                    "de": "Medizinball Slams"
+                },
+                "description": "Description of medicine ball slams exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/medicine-ball-slams"
+            },
+            {
+                "id": "A16",
+                "name": {
+                    "en": "Hanging Knee Raises",
+                    "pt": "Elevação de Joelhos na Barra",
+                    "fr": "Levées de genoux suspendues",
+                    "it": "Sollevamento delle ginocchia appese",
+                    "es": "Elevación de rodillas colgado",
+                    "de": "Hängende Knieheben"
+                },
+                "description": "Description of hanging knee raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hanging-knee-raises"
+            },
+            {
+                "id": "A17",
+                "name": {
+                    "en": "Reverse Crunches",
+                    "pt": "Abdominais Invertidos",
+                    "fr": "Redressements inversés",
+                    "it": "Crunch inversi",
+                    "es": "Encogimientos inversos",
+                    "de": "Reverse Crunches"
+                },
+                "description": "Description of reverse crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/reverse-crunches"
+            },
+            {
+                "id": "A18",
+                "name": {
+                    "en": "Dead Bug",
+                    "pt": "Dead Bug",
+                    "fr": "Dead Bug",
+                    "it": "Dead Bug",
+                    "es": "Dead Bug",
+                    "de": "Dead Bug"
+                },
+                "description": "Description of dead bug exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/dead-bug"
+            },
+            {
+                "id": "A19",
+                "name": {
+                    "en": "Dragon Flags",
+                    "pt": "Bandeira Dragão",
+                    "fr": "Drapeaux du dragon",
+                    "it": "Bandiere del drago",
+                    "es": "Bandera del dragón",
+                    "de": "Drachenflaggen"
+                },
+                "description": "Description of dragon flags exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/dragon-flags"
+            },
+            {
+                "id": "A20",
+                "name": {
+                    "en": "Barbell Rollouts",
+                    "pt": "Rolamentos de Barra",
+                    "fr": "Déroulements de barre",
+                    "it": "Barbell Rollouts",
+                    "es": "Barbell Rollouts",
+                    "de": "Barbell Rollouts"
+                },
+                "description": "Description of barbell rollouts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/barbell-rollouts"
+            },
+            {
+                "id": "A21",
+                "name": {
+                    "en": "Woodchoppers",
+                    "pt": "Woodchoppers",
+                    "fr": "Woodchoppers",
+                    "it": "Woodchoppers",
+                    "es": "Woodchoppers",
+                    "de": "Woodchoppers"
+                },
+                "description": "Description of woodchoppers exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/woodchoppers"
+            },
+            {
+                "id": "A22",
+                "name": {
+                    "en": "Pallof Press",
+                    "pt": "Pressão Pallof",
+                    "fr": "Presse Pallof",
+                    "it": "Pallof Press",
+                    "es": "Prensa Pallof",
+                    "de": "Pallof Press"
+                },
+                "description": "Description of pallof press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/pallof-press"
+            },
+            {
+                "id": "A23",
+                "name": {
+                    "en": "Hollow Body Hold",
+                    "pt": "Hollow Body Hold",
+                    "fr": "Hollow Body Hold",
+                    "it": "Hollow Body Hold",
+                    "es": "Hollow Body Hold",
+                    "de": "Hollow Body Hold"
+                },
+                "description": "Description of hollow body hold exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hollow-body-hold"
+            },
+            {
+                "id": "A24",
+                "name": {
+                    "en": "Side Plank",
+                    "pt": "Prancha Lateral",
+                    "fr": "Planche latérale",
+                    "it": "Plank laterale",
+                    "es": "Plancha lateral",
+                    "de": "Seitliche Planke"
+                },
+                "description": "Description of side plank exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank"
+            },
+            {
+                "id": "A25",
+                "name": {
+                    "en": "Toes to Bar",
+                    "pt": "Toes to Bar",
+                    "fr": "Toes to Bar",
+                    "it": "Toes to Bar",
+                    "es": "Toes to Bar",
+                    "de": "Toes to Bar"
+                },
+                "description": "Description of toes to bar exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/toes-to-bar"
+            },
+            {
+                "id": "A26",
+                "name": {
+                    "en": "Lying Leg Raises",
+                    "pt": "Elevação de Pernas deitado",
+                    "fr": "Levées de jambes couché",
+                    "it": "Sollevamento delle gambe sdraiato",
+                    "es": "Elevación de piernas acostado",
+                    "de": "Liegender Beinheben"
+                },
+                "description": "Description of lying leg raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/lying-leg-raises"
+            },
+            {
+                "id": "A27",
+                "name": {
+                    "en": "Russian Twist with Medicine Ball",
+                    "pt": "Giros Russos com Bola Medicinal",
+                    "fr": "Torsion russe avec balle médicinale",
+                    "it": "Torsione russa con palla medicinale",
+                    "es": "Giro ruso con pelota medicinal",
+                    "de": "Russischer Twist mit Medizinball"
+                },
+                "description": "Description of russian twist with medicine ball exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/russian-twist-with-medicine-ball"
+            },
+            {
+                "id": "A28",
+                "name": {
+                    "en": "Ab Wheel Rollouts",
+                    "pt": "Rolamentos com Roda Abdominal",
+                    "fr": "Déroulements de roue abdominale",
+                    "it": "Ab Wheel Rollouts",
+                    "es": "Ab Wheel Rollouts",
+                    "de": "Ab Wheel Rollouts"
+                },
+                "description": "Description of ab wheel rollouts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/ab-wheel-rollouts"
+            },
+            {
+                "id": "A29",
+                "name": {
+                    "en": "Plank with Knee to Elbow",
+                    "pt": "Prancha com Joelho no Cotovelo",
+                    "fr": "Planche avec genou au coude",
+                    "it": "Plank con ginocchio a gomito",
+                    "es": "Plancha con rodilla a codo",
+                    "de": "Plank mit Knie zum Ellenbogen"
+                },
+                "description": "Description of Plank with Knee to Elbow exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/plank-with-knee-to-elbow"
+            },
+            {
+                "id": "A30",
+                "name": {
+                    "en": "Standing Cable Crunches",
+                    "pt": "Abdominais com Corda em Pé",
+                    "fr": "Crunch debout avec câble",
+                    "it": "Crunch con cavo in piedi",
+                    "es": "Encogimientos de cable de pie",
+                    "de": "Stehende Seil-Crunches"
+                },
+                "description": "Description of Standing Cable Crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-cable-crunches"
+            },
+            {
+                "id": "A31",
+                "name": {
+                    "en": "Kneeling Cable Crunches",
+                    "pt": "Abdominais com Corda Ajoelhado",
+                    "fr": "Crunch à genoux avec câble",
+                    "it": "Crunch con cavo inginocchiato",
+                    "es": "Encogimientos de cable arrodillado",
+                    "de": "Kniende Seil-Crunches"
+                },
+                "description": "Description of Kneeling Cable Crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kneeling-cable-crunches"
+            }
+        ],
+        "forearms": [
+            {
+                "id": "F1",
+                "name": {
+                    "en": "Wrist Curls",
+                    "pt": "Curl de Punho",
+                    "fr": "Curls de poignet",
+                    "it": "Curl del polso",
+                    "es": "Curl de muñeca",
+                    "de": "Handgelenk-Curls"
+                },
+                "description": "Description of wrist curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/wrist-curls"
+            },
+            {
+                "id": "F2",
+                "name": {
+                    "en": "Reverse Wrist Curls",
+                    "pt": "Curl de Punho Reverso",
+                    "fr": "Curls de poignet inversés",
+                    "it": "Curl del polso inverso",
+                    "es": "Curl de muñeca inverso",
+                    "de": "Reverse Handgelenk-Curls"
+                },
+                "description": "Description of reverse wrist curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/reverse-wrist-curls"
+            },
+            {
+                "id": "F3",
+                "name": {
+                    "en": "Farmer's Walks",
+                    "pt": "Caminhada do Fazendeiro",
+                    "fr": "Marche du fermier",
+                    "it": "Passeggiata del contadino",
+                    "es": "Caminata del granjero",
+                    "de": "Bauernspaziergänge"
+                },
+                "description": "Description of farmer's walks exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/farmers-walks"
+            },
+            {
+                "id": "F4",
+                "name": {
+                    "en": "Forearm Squeezes",
+                    "pt": "Apertos de Antebraço",
+                    "fr": "Pressions d'avant-bras",
+                    "it": "Compressioni dell'avambraccio",
+                    "es": "Aprietos de antebrazo",
+                    "de": "Unterarm-Drücken"
+                },
+                "description": "Description of forearm squeezes exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/forearm-squeezes"
+            },
+            {
+                "id": "F5",
+                "name": {
+                    "en": "Plate Pinch",
+                    "pt": "Pinça de Placa",
+                    "fr": "Pincement de plaque",
+                    "it": "Pizzicamento della piastra",
+                    "es": "Pinza de placa",
+                    "de": "Plattenklemme"
+                },
+                "description": "Description of plate pinch exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/plate-pinch"
+            },
+            {
+                "id": "F6",
+                "name": {
+                    "en": "Bar Hang",
+                    "pt": "Barra de Suspensão",
+                    "fr": "Barre de suspension",
+                    "it": "Barra appesa",
+                    "es": "Colgar de barra",
+                    "de": "Stangenhang"
+                },
+                "description": "Description of bar hang exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/bar-hang"
+            },
+            {
+                "id": "F7",
+                "name": {
+                    "en": "Wrist Roller",
+                    "pt": "Rolo de Punho",
+                    "fr": "Rouleau de poignet",
+                    "it": "Rotolo del polso",
+                    "es": "Rodillo de muñeca",
+                    "de": "Handgelenk-Roller"
+                },
+                "description": "Description of wrist roller exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/wrist-roller"
+            },
+            {
+                "id": "F8",
+                "name": {
+                    "en": "Towel Hang",
+                    "pt": "Suspensão de Toalha",
+                    "fr": "Suspendre la serviette",
+                    "it": "Appendi asciugamano",
+                    "es": "Colgar de toalla",
+                    "de": "Handtuchhang"
+                },
+                "description": "Description of towel hang exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/towel-hang"
+            },
+            {
+                "id": "F9",
+                "name": {
+                    "en": "Grip Strengthening Ball Squeezes",
+                    "pt": "Apertos de Bola para Fortalecimento da Pegada",
+                    "fr": "Pressions de balle pour renforcer la prise",
+                    "it": "Compressioni di palla per il rinforzo della presa",
+                    "es": "Aprietos de bola para fortalecer el agarre",
+                    "de": "Griffstärkende Ballpressen"
+                },
+                "description": "Description of grip strengthening ball squeezes exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/grip-strengthening-ball-squeezes"
+            },
+            {
+                "id": "F10",
+                "name": {
+                    "en": "Hand Grip Exercises",
+                    "pt": "Exercícios de Pegada",
+                    "fr": "Exercices de prise en main",
+                    "it": "Esercizi di presa della mano",
+                    "es": "Ejercicios de agarre de mano",
+                    "de": "Handgriffübungen"
+                },
+                "description": "Description of hand grip exercises.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hand-grip-exercises"
+            },
+            {
+                "id": "F11",
+                "name": {
+                    "en": "Finger Extensions",
+                    "pt": "Extensões de Dedos",
+                    "fr": "Extensions de doigts",
+                    "it": "Estensioni delle dita",
+                    "es": "Extensiones de dedos",
+                    "de": "Fingerstreckungen"
+                },
+                "description": "Description of finger extensions exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/finger-extensions"
+            },
+            {
+                "id": "F12",
+                "name": {
+                    "en": "Grip Strengthening Exercises",
+                    "pt": "Exercícios para Fortalecimento da Pegada",
+                    "fr": "Exercices de renforcement de la prise",
+                    "it": "Esercizi di rinforzo della presa",
+                    "es": "Ejercicios de fortalecimiento del agarre",
+                    "de": "Griffstärkende Übungen"
+                },
+                "description": "Description of grip strengthening exercises.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/grip-strengthening-exercises"
+            },
+            {
+                "id": "F13",
+                "name": {
+                    "en": "Behind the Back Barbell Wrist Curl",
+                    "pt": "Curl de Punho com Barra Atrás das Costas",
+                    "fr": "Curl de poignet derrière le dos avec barre",
+                    "it": "Curl del polso dietro la schiena con bilanciere",
+                    "es": "Curl de muñeca detrás de la espalda con barra",
+                    "de": "Barbell Handgelenk-Curl hinter dem Rücken"
+                },
+                "description": "Description of behind the back barbell wrist curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/behind-the-back-barbell-wrist-curl"
+            },
+            {
+                "id": "F14",
+                "name": {
+                    "en": "Dumbbell Wrist Twist",
+                    "pt": "Torção de Punho com Halteres",
+                    "fr": "Torsion du poignet avec haltère",
+                    "it": "Torsione del polso con manubrio",
+                    "es": "Giro de muñeca con mancuerna",
+                    "de": "Hantel Handgelenk-Drehung"
+                },
+                "description": "Description of dumbbell wrist twist exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/dumbbell-wrist-twist"
+            },
+            {
+                "id": "F15",
+                "name": {
+                    "en": "Zottman Wrist Curl",
+                    "pt": "Curl de Punho Zottman",
+                    "fr": "Curl de poignet Zottman",
+                    "it": "Curl del polso Zottman",
+                    "es": "Curl de muñeca Zottman",
+                    "de": "Zottman Handgelenk-Curl"
+                },
+                "description": "Description of zottman wrist curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/zottman-wrist-curl"
+            },
+            {
+                "id": "F16",
+                "name": {
+                    "en": "Fingertip Push-ups",
+                    "pt": "Flexões na Ponta dos Dedos",
+                    "fr": "Pompes sur les doigts",
+                    "it": "Flessioni sulle punte delle dita",
+                    "es": "Flexiones de punta de los dedos",
+                    "de": "Fingerkuppenliegestütze"
+                },
+                "description": "Description of fingertip push-ups exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/fingertip-push-ups"
+            },
+            {
+                "id": "F17",
+                "name": {
+                    "en": "Wrist Roller Reverse",
+                    "pt": "Rolo de Punho Reverso",
+                    "fr": "Rouleau de poignet inversé",
+                    "it": "Rotolo del polso inverso",
+                    "es": "Rodillo de muñeca inverso",
+                    "de": "Reverse Handgelenk-Roller"
+                },
+                "description": "Description of wrist roller reverse exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/wrist-roller-reverse"
+            },
+            {
+                "id": "F18",
+                "name": {
+                    "en": "Finger Curls",
+                    "pt": "Cachos de Dedo",
+                    "fr": "Boucles de doigts",
+                    "it": "Curl delle dita",
+                    "es": "Curl de dedos",
+                    "de": "Fingerlocken"
+                },
+                "description": "Description of finger curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/finger-curls"
+            },
+            {
+                "id": "F19",
+                "name": {
+                    "en": "Wrist Roller Curl",
+                    "pt": "Curl de Rolo de Punho",
+                    "fr": "Curl de rouleau de poignet",
+                    "it": "Curl del rullo del polso",
+                    "es": "Curl de rodillo de muñeca",
+                    "de": "Handgelenk-Roller-Curl"
+                },
+                "description": "Description of wrist roller curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/wrist-roller-curl"
+            },
+            {
+                "id": "F20",
+                "name": {
+                    "en": "Finger Flexion with Rubber Band",
+                    "pt": "Flexão de Dedo com Banda de Borracha",
+                    "fr": "Flexion des doigts avec bande de caoutchouc",
+                    "it": "Flessione delle dita con fascia di gomma",
+                    "es": "Flexión de dedos con banda de goma",
+                    "de": "Fingerbeugung mit Gummiband"
+                },
+                "description": "Description of finger flexion with rubber band exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/finger-flexion-with-rubber-band"
+            },
+            {
+                "id": "F21",
+                "name": {
+                    "en": "Finger Abduction with Rubber Band",
+                    "pt": "Abdução de Dedo com Banda de Borracha",
+                    "fr": "Abduction des doigts avec bande de caoutchouc",
+                    "it": "Abduzione delle dita con fascia di gomma",
+                    "es": "Abducción de dedos con banda de goma",
+                    "de": "Fingerabduktion mit Gummiband"
+                },
+                "description": "Description of finger abduction with rubber band exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/finger-abduction-with-rubber-band"
+            },
+            {
+                "id": "F22",
+                "name": {
+                    "en": "Dumbbell Finger Curl",
+                    "pt": "Cachos de Dedo com Halteres",
+                    "fr": "Boucle de doigt avec haltère",
+                    "it": "Curl del dito con manubrio",
+                    "es": "Curl de dedo con mancuerna",
+                    "de": "Hantel Finger Curl"
+                },
+                "description": "Description of dumbbell finger curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/dumbbell-finger-curl"
+            },
+            {
+                "id": "F23",
+                "name": {
+                    "en": "Barbell Reverse Wrist Curl",
+                    "pt": "Curl de Rolo de Punho Reverso com Barra",
+                    "fr": "Curl de poignet inversé avec barre",
+                    "it": "Curl del rullo del polso inverso con bilanciere",
+                    "es": "Curl de muñeca inverso con barra",
+                    "de": "Barbell Reverse Handgelenk-Curl"
+                },
+                "description": "Description of barbell reverse wrist curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/barbell-reverse-wrist-curl"
+            },
+            {
+                "id": "F24",
+                "name": {
+                    "en": "Finger Adduction with Rubber Band",
+                    "pt": "Adição de Dedo com Banda de Borracha",
+                    "fr": "Adduction des doigts avec bande de caoutchouc",
+                    "it": "Adduzione delle dita con fascia di gomma",
+                    "es": "Aducción de dedos con banda de goma",
+                    "de": "Fingeradduktion mit Gummiband"
+                },
+                "description": "Description of finger adduction with rubber band exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/finger-adduction-with-rubber-band"
+            },
+            {
+                "id": "F25",
+                "name": {
+                    "en": "Grip Strengthener with Rubber Band",
+                    "pt": "Fortalecedor de Pegada com Banda de Borracha",
+                    "fr": "Renforceur de poignée avec bande de caoutchouc",
+                    "it": "Rafforzatore della presa con fascia di gomma",
+                    "es": "Fortalecedor de agarre con banda de goma",
+                    "de": "Griffstärker mit Gummiband"
+                },
+                "description": "Description of grip strengthener with rubber band exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/grip-strengthener-with-rubber-band"
+            },
+            {
+                "id": "F26",
+                "name": {
+                    "en": "Thumbs-up Wrist Curl",
+                    "pt": "Curl de Punho com Polegar para Cima",
+                    "fr": "Curl de poignet avec pouce levé",
+                    "it": "Curl del polso con pollice in su",
+                    "es": "Curl de muñeca con pulgar hacia arriba",
+                    "de": "Daumen hoch Handgelenk-Curl"
+                },
+                "description": "Description of thumbs-up wrist curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/thumbs-up-wrist-curl"
+            },
+            {
+                "id": "F27",
+                "name": {
+                    "en": "Thumbs-up Reverse Wrist Curl",
+                    "pt": "Curl de Punho Reverso com Polegar para Cima",
+                    "fr": "Curl de poignet inversé avec pouce levé",
+                    "it": "Curl del polso inverso con pollice in su",
+                    "es": "Curl de muñeca inverso con pulgar hacia arriba",
+                    "de": "Daumen hoch Reverse Handgelenk-Curl"
+                },
+                "description": "Description of thumbs-up reverse wrist curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/thumbs-up-reverse-wrist-curl"
+            }
+        ],
+        "calves": [
+            {
+                "id": "CA1",
+                "name": {
+                    "en": "Seated Calf Raises",
+                    "pt": "Elevação de Gêmeos Sentado",
+                    "fr": "Élévations assises des mollets",
+                    "it": "Alzate di polpacci seduto",
+                    "es": "Elevación de talones sentado",
+                    "de": "Wadenheben im Sitzen"
+                },
+                "description": "Description of seated calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/seated-calf-raises"
+            },
+            {
+                "id": "CA2",
+                "name": {
+                    "en": "Donkey Calf Raises",
+                    "pt": "Elevação de Gêmeos no Aparelho",
+                    "fr": "Élévations des mollets sur machine à mollets",
+                    "it": "Alzate di polpacci al macchinario",
+                    "es": "Elevación de talones en máquina",
+                    "de": "Wadenheben am Donkey-Calf-Maschine"
+                },
+                "description": "Description of donkey calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/donkey-calf-raises"
+            },
+            {
+                "id": "CA3",
+                "name": {
+                    "en": "Standing Calf Raises",
+                    "pt": "Elevação de Gêmeos em Pé",
+                    "fr": "Élévations debout des mollets",
+                    "it": "Alzate di polpacci in piedi",
+                    "es": "Elevación de talones de pie",
+                    "de": "Stehendes Wadenheben"
+                },
+                "description": "Description of standing calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-calf-raises"
+            },
+            {
+                "id": "CA4",
+                "name": {
+                    "en": "Calf Press",
+                    "pt": "Pressão de Gêmeos",
+                    "fr": "Presses des mollets",
+                    "it": "Pressa polpacci",
+                    "es": "Prensa de gemelos",
+                    "de": "Wadenpresse"
+                },
+                "description": "Description of calf press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/calf-press"
+            },
+            {
+                "id": "CA5",
+                "name": {
+                    "en": "Calf Jumps",
+                    "pt": "Saltos de Gêmeos",
+                    "fr": "Sauts de mollets",
+                    "it": "Salti di polpacci",
+                    "es": "Saltos de gemelos",
+                    "de": "Wadensprünge"
+                },
+                "description": "Description of calf jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/calf-jumps"
+            },
+            {
+                "id": "CA6",
+                "name": {
+                    "en": "Single-Leg Calf Raises",
+                    "pt": "Elevação de Gêmeos em Uma Perna",
+                    "fr": "Élévations des mollets sur une jambe",
+                    "it": "Alzate di polpacci su una gamba",
+                    "es": "Elevación de talones en una pierna",
+                    "de": "Einbeiniges Wadenheben"
+                },
+                "description": "Description of single-leg calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-calf-raises"
+            },
+            {
+                "id": "CA7",
+                "name": {
+                    "en": "Smith Machine Calf Raises",
+                    "pt": "Elevação de Gêmeos na Máquina Smith",
+                    "fr": "Élévations des mollets à la Smith machine",
+                    "it": "Alzate di polpacci alla Smith machine",
+                    "es": "Elevación de talones en máquina Smith",
+                    "de": "Wadenheben an der Smith-Maschine"
+                },
+                "description": "Description of smith machine calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/smith-machine-calf-raises"
+            },
+            {
+                "id": "CA8",
+                "name": {
+                    "en": "Leg Press Calf Raises",
+                    "pt": "Elevação de Gêmeos na Prensa de Pernas",
+                    "fr": "Élévations des mollets à la presse à jambes",
+                    "it": "Alzate di polpacci alla leg press",
+                    "es": "Elevación de talones en prensa de piernas",
+                    "de": "Wadenheben an der Beinpresse"
+                },
+                "description": "Description of leg press calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-calf-raises"
+            },
+            {
+                "id": "CA9",
+                "name": {
+                    "en": "Leg Press",
+                    "pt": "Prensa de Pernas",
+                    "fr": "Presse à jambes",
+                    "it": "Leg press",
+                    "es": "Prensa de piernas",
+                    "de": "Beinpresse"
+                },
+                "description": "Description of leg press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press"
+            },
+            {
+                "id": "CA10",
+                "name": {
+                    "en": "Jump Rope",
+                    "pt": "Pular Corda",
+                    "fr": "Saut à la corde",
+                    "it": "Salto con la corda",
+                    "es": "Saltar a la cuerda",
+                    "de": "Seilspringen"
+                },
+                "description": "Description of jump rope exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/jump-rope"
+            },
+            {
+                "id": "CA11",
+                "name": {
+                    "en": "Ankle Hops",
+                    "pt": "Saltos de Tornozelo",
+                    "fr": "Sauts de cheville",
+                    "it": "Salti alla caviglia",
+                    "es": "Saltos de tobillo",
+                    "de": "Knöchelsprünge"
+                },
+                "description": "Description of ankle hops exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/ankle-hops"
+            },
+            {
+                "id": "CA12",
+                "name": {
+                    "en": "Box Jumps",
+                    "pt": "Saltos na Caixa",
+                    "fr": "Sauts sur boîte",
+                    "it": "Salti sulla scatola",
+                    "es": "Saltos de caja",
+                    "de": "Boxsprünge"
+                },
+                "description": "Description of box jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/box-jumps"
+            },
+            {
+                "id": "CA13",
+                "name": {
+                    "en": "Plyometric Push-ups",
+                    "pt": "Flexões Pliométricas",
+                    "fr": "Pompes plyométriques",
+                    "it": "Flessioni plyometriche",
+                    "es": "Flexiones pliométricas",
+                    "de": "Plyometrische Liegestütze"
+                },
+                "description": "Description of plyometric push-ups exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/plyometric-push-ups"
+            },
+            {
+                "id": "CA14",
+                "name": {
+                    "en": "Jump Squats",
+                    "pt": "Agachamento com Salto",
+                    "fr": "Squats sautés",
+                    "it": "Squat con salto",
+                    "es": "Sentadillas con salto",
+                    "de": "Sprungkniebeugen"
+                },
+                "description": "Description of jump squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/jump-squats"
+            },
+            {
+                "id": "CA15",
+                "name": {
+                    "en": "Lateral Box Jumps",
+                    "pt": "Saltos Laterais na Caixa",
+                    "fr": "Sauts latéraux sur boîte",
+                    "it": "Salti laterali sulla scatola",
+                    "es": "Saltos laterales de caja",
+                    "de": "Laterale Boxsprünge"
+                },
+                "description": "Description of lateral box jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/lateral-box-jumps"
+            },
+            {
+                "id": "CA16",
+                "name": {
+                    "en": "Depth Jumps",
+                    "pt": "Saltos de Profundidade",
+                    "fr": "Sauts de profondeur",
+                    "it": "Salti profondità",
+                    "es": "Saltos de profundidad",
+                    "de": "Tiefensprünge"
+                },
+                "description": "Description of depth jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/depth-jumps"
+            },
+            {
+                "id": "CA17",
+                "name": {
+                    "en": "Split Squat Jumps",
+                    "pt": "Saltos de Agachamento Alternado",
+                    "fr": "Squats sautés alternés",
+                    "it": "Squat a scatto alternato",
+                    "es": "Sentadillas con salto alternado",
+                    "de": "Split-Squat-Sprünge"
+                },
+                "description": "Description of split squat jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/split-squat-jumps"
+            },
+            {
+                "id": "CA18",
+                "name": {
+                    "en": "Bounding",
+                    "pt": "Saltos com Passadas Largas",
+                    "fr": "Bondissements",
+                    "it": "Fase di balzo",
+                    "es": "Saltos largos",
+                    "de": "Grenzen"
+                },
+                "description": "Description of bounding exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/bounding"
+            },
+            {
+                "id": "CA19",
+                "name": {
+                    "en": "Squat Jumps",
+                    "pt": "Saltos de Agachamento",
+                    "fr": "Squats sautés",
+                    "it": "Squat con salto",
+                    "es": "Sentadillas con salto",
+                    "de": "Kniebeugen"
+                },
+                "description": "Description of squat jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/squat-jumps"
+            },
+            {
+                "id": "CA20",
+                "name": {
+                    "en": "Tuck Jumps",
+                    "pt": "Saltos com Joelhos ao Peito",
+                    "fr": "Sauts groupés",
+                    "it": "Salti a gambe corte",
+                    "es": "Saltos de rodillas al pecho",
+                    "de": "Kniesprünge"
+                },
+                "description": "Description of tuck jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/tuck-jumps"
+            },
+            {
+                "id": "CA21",
+                "name": {
+                    "en": "Star Jumps",
+                    "pt": "Saltos Estrela",
+                    "fr": "Sauts en étoile",
+                    "it": "Salti stella",
+                    "es": "Saltos estrella",
+                    "de": "Sternsprünge"
+                },
+                "description": "Description of star jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/star-jumps"
+            },
+            {
+                "id": "CA22",
+                "name": {
+                    "en": "Broad Jumps",
+                    "pt": "Saltos Longos",
+                    "fr": "Sauts en longueur",
+                    "it": "Salti lunghi",
+                    "es": "Saltos largos",
+                    "de": "Weitsprünge"
+                },
+                "description": "Description of broad jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/broad-jumps"
+            },
+            {
+                "id": "CA23",
+                "name": {
+                    "en": "Pistol Squat Jumps",
+                    "pt": "Saltos Agachamento Pistola",
+                    "fr": "Squats pistolet sautés",
+                    "it": "Squat pistola con salto",
+                    "es": "Sentadillas con pistola y salto",
+                    "de": "Pistolensprungkniebeugen"
+                },
+                "description": "Description of pistol squat jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/pistol-squat-jumps"
+            },
+            {
+                "id": "CA24",
+                "name": {
+                    "en": "Box Jump with Step Down",
+                    "pt": "Salto na Caixa com Descida",
+                    "fr": "Saut sur boîte avec descente",
+                    "it": "Salto sulla scatola con discesa",
+                    "es": "Salto en caja con descenso",
+                    "de": "Boxsprung mit Abstieg"
+                },
+                "description": "Description of box jump with step down exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/box-jump-with-step-down"
+            },
+            {
+                "id": "CA25",
+                "name": {
+                    "en": "Jump Lunges",
+                    "pt": "Avanço com Salto",
+                    "fr": "Fentes sautées",
+                    "it": "Affondi con salto",
+                    "es": "Zancadas con salto",
+                    "de": "Sprungausfallschritte"
+                },
+                "description": "Description of jump lunges exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/jump-lunges"
+            },
+            {
+                "id": "CA26",
+                "name": {
+                    "en": "Single-Leg Box Jumps",
+                    "pt": "Saltos em Uma Perna na Caixa",
+                    "fr": "Sauts sur boîte sur une jambe",
+                    "it": "Salti su una gamba sulla scatola",
+                    "es": "Saltos en una pierna en caja",
+                    "de": "Einbeinige Boxsprünge"
+                },
+                "description": "Description of single-leg box jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-box-jumps"
+            },
+            {
+                "id": "CA27",
+                "name": {
+                    "en": "Standing Long Jump",
+                    "pt": "Salto em Distância em Pé",
+                    "fr": "Saut en longueur debout",
+                    "it": "Salto in lungo in piedi",
+                    "es": "Salto largo de pie",
+                    "de": "Stehender Weitsprung"
+                },
+                "description": "Description of standing long jump exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-long-jump"
+            },
+            {
+                "id": "CA28",
+                "name": {
+                    "en": "Seated Box Jumps",
+                    "pt": "Saltos na Caixa Sentado",
+                    "fr": "Sauts sur boîte assis",
+                    "it": "Salti sulla scatola seduti",
+                    "es": "Saltos en caja sentado",
+                    "de": "Sitzende Boxsprünge"
+                },
+                "description": "Description of seated box jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/seated-box-jumps"
+            },
+            {
+                "id": "CA29",
+                "name": {
+                    "en": "Scissor Jumps",
+                    "pt": "Saltos Tesoura",
+                    "fr": "Sauts ciseaux",
+                    "it": "Salti forbice",
+                    "es": "Saltos tijera",
+                    "de": "Schere-Sprünge"
+                },
+                "description": "Description of scissor jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/scissor-jumps"
+            },
+            {
+                "id": "CA30",
+                "name": {
+                    "en": "Burpee Broad Jumps",
+                    "pt": "Saltos Longos com Burpee",
+                    "fr": "Sauts en longueur avec burpee",
+                    "it": "Salti larghi con burpee",
+                    "es": "Saltos largos con burpee",
+                    "de": "Burpee Weitsprünge"
+                },
+                "description": "Description of burpee broad jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/burpee-broad-jumps"
+            }
+        ],
+        "obliques": [
+            {
+                "id": "O1",
+                "name": {
+                    "en": "Side Bends",
+                    "pt": "Flexões laterais",
+                    "fr": "Flexions latérales",
+                    "it": "Flessioni laterali",
+                    "es": "Flexiones laterales",
+                    "de": "Seitliche Biegungen"
+                },
+                "description": "Description of side bends exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-bends"
+            },
+            {
+                "id": "O2",
+                "name": {
+                    "en": "Oblique Crunches",
+                    "pt": "Crunches oblíquos",
+                    "fr": "Crunches obliques",
+                    "it": "Crunch obliqui",
+                    "es": "Crunches oblicuos",
+                    "de": "Schräge Crunches"
+                },
+                "description": "Description of oblique crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/oblique-crunches"
+            },
+            {
+                "id": "O3",
+                "name": {
+                    "en": "Russian Twists with Dumbbell",
+                    "pt": "Giros russos com halteres",
+                    "fr": "Torsions russes avec haltère",
+                    "it": "Torsioni russe con manubrio",
+                    "es": "Giros rusos con mancuerna",
+                    "de": "Russische Twists mit Hantel"
+                },
+                "description": "Description of russian twists with dumbbell exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/russian-twists-dumbbell"
+            },
+            {
+                "id": "O4",
+                "name": {
+                    "en": "Bicycle Crunches",
+                    "pt": "Crunches de bicicleta",
+                    "fr": "Crunches à la bicyclette",
+                    "it": "Crunch alla bicicletta",
+                    "es": "Bicycle crunches",
+                    "de": "Fahrrad-Crunches"
+                },
+                "description": "Description of bicycle crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/bicycle-crunches"
+            },
+            {
+                "id": "O5",
+                "name": {
+                    "en": "Plank with Hip Dips",
+                    "pt": "Prancha com oscilação de quadril",
+                    "fr": "Planche avec tremblements de hanches",
+                    "it": "Plank con oscillazioni dell'anca",
+                    "es": "Plancha con balanceo de caderas",
+                    "de": "Plank mit Hüftsenken"
+                },
+                "description": "Description of plank with hip dips exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/plank-hip-dips"
+            },
+            {
+                "id": "O6",
+                "name": {
+                    "en": "Woodchoppers",
+                    "pt": "Cortadores de lenha",
+                    "fr": "Coupes de bois",
+                    "it": "Taglialegna",
+                    "es": "Lenadores",
+                    "de": "Holzhacker"
+                },
+                "description": "Description of woodchoppers exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/woodchoppers"
+            },
+            {
+                "id": "O7",
+                "name": {
+                    "en": "Hanging Oblique Raises",
+                    "pt": "Elevações oblíquas penduradas",
+                    "fr": "Élévations obliques pendantes",
+                    "it": "Sollevamenti obliqui appesi",
+                    "es": "Elevaciones oblicuas colgantes",
+                    "de": "Hängende seitliche Heben"
+                },
+                "description": "Description of hanging oblique raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hanging-oblique-raises"
+            },
+            {
+                "id": "O8",
+                "name": {
+                    "en": "Decline Oblique Crunches",
+                    "pt": "Crunches oblíquos declinados",
+                    "fr": "Crunches obliques déclinés",
+                    "it": "Crunch obliqui declinati",
+                    "es": "Crunches oblicuos declinados",
+                    "de": "Schräge Crunches am Gerät"
+                },
+                "description": "Description of decline oblique crunches exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/decline-oblique-crunches"
+            },
+            {
+                "id": "O9",
+                "name": {
+                    "en": "Standing Oblique Twists",
+                    "pt": "Torções oblíquas em pé",
+                    "fr": "Torsions obliques debout",
+                    "it": "Torsioni oblique in piedi",
+                    "es": "Giros oblicuos de pie",
+                    "de": "Stehende seitliche Drehungen"
+                },
+                "description": "Description of standing oblique twists exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-oblique-twists"
+            },
+            {
+                "id": "O10",
+                "name": {
+                    "en": "Cable Woodchoppers",
+                    "pt": "Cortadores de lenha com cabo",
+                    "fr": "Coupes de bois avec câble",
+                    "it": "Taglialegna con cavo",
+                    "es": "Lenadores con cable",
+                    "de": "Kabelgebundene Holzhacker"
+                },
+                "description": "Description of cable woodchoppers exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/cable-woodchoppers"
+            },
+            {
+                "id": "O11",
+                "name": {
+                    "en": "Windshield Wipers",
+                    "pt": "Limpadores de para-brisa",
+                    "fr": "Essuie-glaces",
+                    "it": "Terzini",
+                    "es": "Limpiaparabrisas",
+                    "de": "Scheibenwischer"
+                },
+                "description": "Description of windshield wipers exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/windshield-wipers"
+            },
+            {
+                "id": "O12",
+                "name": {
+                    "en": "Medicine Ball Side Throws",
+                    "pt": "Arremessos laterais com bola medicinal",
+                    "fr": "Lancers latéraux avec medecine ball",
+                    "it": "Lanci laterali con palla medicinale",
+                    "es": "Lanzamientos laterales con balón medicinal",
+                    "de": "Seitliche Medizinballwürfe"
+                },
+                "description": "Description of medicine ball side throws exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/medicine-ball-side-throws"
+            },
+            {
+                "id": "O13",
+                "name": {
+                    "en": "Suitcase Carries",
+                    "pt": "Carregamentos de mala",
+                    "fr": "Transport de valise",
+                    "it": "Trasporti di valigia",
+                    "es": "Transporte de maleta",
+                    "de": "Koffertragen"
+                },
+                "description": "Description of suitcase carries exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/suitcase-carries"
+            },
+            {
+                "id": "O14",
+                "name": {
+                    "en": "Pallof Press",
+                    "pt": "Imprensa Pallof",
+                    "fr": "Presse Pallof",
+                    "it": "Pressa di Pallof",
+                    "es": "Prensa de Pallof",
+                    "de": "Pallof-Presse"
+                },
+                "description": "Description of pallof press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/pallof-press"
+            },
+            {
+                "id": "O15",
+                "name": {
+                    "en": "Side Plank Hip Abduction",
+                    "pt": "Abdução do quadril prancha lateral",
+                    "fr": "Abduction de hanche en planche latérale",
+                    "it": "Aduzione dell'anca in plank laterale",
+                    "es": "Abducción de cadera en plancha lateral",
+                    "de": "Seitliche Plank-Hüftabduktion"
+                },
+                "description": "Description of side plank hip abduction exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-hip-abduction"
+            },
+            {
+                "id": "O16",
+                "name": {
+                    "en": "Side Plank with Reach",
+                    "pt": "Prancha lateral com alcance",
+                    "fr": "Planche latérale avec extension",
+                    "it": "Plank laterale con allungamento",
+                    "es": "Plancha lateral con alcance",
+                    "de": "Seitliche Plank mit Streckung"
+                },
+                "description": "Description of side plank with reach exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-reach"
+            },
+            {
+                "id": "O17",
+                "name": {
+                    "en": "Side Plank with Leg Lift",
+                    "pt": "Prancha lateral com elevação de perna",
+                    "fr": "Planche latérale avec élévation de jambe",
+                    "it": "Plank laterale con sollevamento della gamba",
+                    "es": "Plancha lateral con elevación de pierna",
+                    "de": "Seitliche Plank mit Beinheben"
+                },
+                "description": "Description of side plank with leg lift exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-leg-lift"
+            },
+            {
+                "id": "O18",
+                "name": {
+                    "en": "Side Plank Knee to Elbow",
+                    "pt": "Prancha lateral joelho no cotovelo",
+                    "fr": "Planche latérale genou vers coude",
+                    "it": "Plank laterale ginocchio a gomito",
+                    "es": "Plancha lateral rodilla a codo",
+                    "de": "Seitliche Plank Knie zum Ellbogen"
+                },
+                "description": "Description of side plank knee to elbow exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-knee-elbow"
+            },
+            {
+                "id": "O19",
+                "name": {
+                    "en": "Side Plank Rotation",
+                    "pt": "Rotação da prancha lateral",
+                    "fr": "Rotation de la planche latérale",
+                    "it": "Rotazione della plank laterale",
+                    "es": "Rotación de la plancha lateral",
+                    "de": "Seitliche Plank Rotation"
+                },
+                "description": "Description of side plank rotation exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-rotation"
+            },
+            {
+                "id": "O20",
+                "name": {
+                    "en": "Oblique V-ups",
+                    "pt": "V-ups oblíquos",
+                    "fr": "V-ups obliques",
+                    "it": "V-ups obliqui",
+                    "es": "V-ups oblicuos",
+                    "de": "Schräge V-ups"
+                },
+                "description": "Description of oblique v-ups exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/oblique-v-ups"
+            },
+            {
+                "id": "O21",
+                "name": {
+                    "en": "Oblique V Crunch",
+                    "pt": "Crunch oblíquo em V",
+                    "fr": "Crunch oblique en V",
+                    "it": "Crunch obliqui a V",
+                    "es": "Crunch oblicuo en V",
+                    "de": "Schräger V-Crunch"
+                },
+                "description": "Description of oblique v crunch exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/oblique-v-crunch"
+            },
+            {
+                "id": "O22",
+                "name": {
+                    "en": "Side Plank Clamshell",
+                    "pt": "Prancha lateral com concha",
+                    "fr": "Planche latérale coquillage",
+                    "it": "Plank laterale con conchiglia",
+                    "es": "Plancha lateral con concha",
+                    "de": "Seitliche Plank Muschel"
+                },
+                "description": "Description of side plank clamshell exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-clamshell"
+            },
+            {
+                "id": "O23",
+                "name": {
+                    "en": "Side Plank Rotation with Dumbbell",
+                    "pt": "Rotação da prancha lateral com halteres",
+                    "fr": "Rotation de la planche latérale avec haltère",
+                    "it": "Rotazione della plank laterale con manubrio",
+                    "es": "Rotación de la plancha lateral con mancuerna",
+                    "de": "Seitliche Plank Rotation mit Hantel"
+                },
+                "description": "Description of side plank rotation with dumbbell exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-rotation-dumbbell"
+            },
+            {
+                "id": "O24",
+                "name": {
+                    "en": "Side Plank with Cable Row",
+                    "pt": "Prancha lateral com remo de cabo",
+                    "fr": "Planche latérale avec rangée de câble",
+                    "it": "Plank laterale con fila di cavi",
+                    "es": "Plancha lateral con remo de cable",
+                    "de": "Seitliche Plank mit Kabelzug"
+                },
+                "description": "Description of side plank with cable row exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-plank-cable-row"
+            },
+            {
+                "id": "O25",
+                "name": {
+                    "en": "Spiderman Plank",
+                    "pt": "Prancha do Homem-Aranha",
+                    "fr": "Planche Spiderman",
+                    "it": "Plank Spiderman",
+                    "es": "Plancha Spiderman",
+                    "de": "Spiderman-Plank"
+                },
+                "description": "Description of spiderman plank exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/spiderman-plank"
+            },
+            {
+                "id": "O26",
+                "name": {
+                    "en": "Dumbbell Side Bend",
+                    "pt": "Curva lateral do haltere",
+                    "fr": "Courbe latérale avec haltère",
+                    "it": "Piega laterale con manubrio",
+                    "es": "Curva lateral con mancuerna",
+                    "de": "Seitliche Hantelbiegung"
+                },
+                "description": "Description of dumbbell side bend exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/dumbbell-side-bend"
+            },
+            {
+                "id": "O27",
+                "name": {
+                    "en": "Barbell Side Bend",
+                    "pt": "Curva lateral da barra",
+                    "fr": "Courbe latérale avec barre",
+                    "it": "Piega laterale con bilanciere",
+                    "es": "Curva lateral con barra",
+                    "de": "Seitliche Stangenbiegung"
+                },
+                "description": "Description of barbell side bend exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/barbell-side-bend"
+            },
+            {
+                "id": "O28",
+                "name": {
+                    "en": "Landmine Russian Twist",
+                    "pt": "Torsão russa da mina terrestre",
+                    "fr": "Torsion russe avec barre fixe",
+                    "it": "Torsione russa con mina terrestre",
+                    "es": "Giro ruso con mina terrestre",
+                    "de": "Landmine Russian Twist"
+                },
+                "description": "Description of landmine russian twist exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/landmine-russian-twist"
+            },
+            {
+                "id": "O29",
+                "name": {
+                    "en": "Medicine Ball Woodchopper",
+                    "pt": "Cortador de lenha com bola medicinal",
+                    "fr": "Coupe de bois avec medecine ball",
+                    "it": "Taglialegna con palla medicinale",
+                    "es": "Lenador con balón medicinal",
+                    "de": "Medizinball-Holzhacker"
+                },
+                "description": "Description of medicine ball woodchopper exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/medicine-ball-woodchopper"
+            },
+            {
+                "id": "O30",
+                "name": {
+                    "en": "Kettlebell Windmill",
+                    "pt": "Moinho de vento com kettlebell",
+                    "fr": "Moulin à vent avec kettlebell",
+                    "it": "Mulino a vento con kettlebell",
+                    "es": "Molino de viento con kettlebell",
+                    "de": "Kettlebell Windmühle"
+                },
+                "description": "Description of kettlebell windmill exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kettlebell-windmill"
+            }
+        ],
+        "glutes": [
+            {
+                "id": "G1",
+                "name": {
+                    "en": "Hip Thrusts",
+                    "pt": "Elevação pélvica",
+                    "fr": "Poussée de hanche",
+                    "it": "Spinta dell'anca",
+                    "es": "Empuje de cadera",
+                    "de": "Hüftheben"
+                },
+                "description": "Description of hip thrusts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hip-thrusts"
+            },
+            {
+                "id": "G2",
+                "name": {
+                    "en": "Cable Kickbacks",
+                    "pt": "Chutes com cabo",
+                    "fr": "Extensions de câble",
+                    "it": "Calcio con cavo",
+                    "es": "Patadas de cable",
+                    "de": "Kabel-Kickbacks"
+                },
+                "description": "Description of cable kickbacks exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/cable-kickbacks"
+            },
+            {
+                "id": "G3",
+                "name": {
+                    "en": "Donkey Kicks",
+                    "pt": "Chutes de burro",
+                    "fr": "Coups de pied d'âne",
+                    "it": "Calcio dell'asino",
+                    "es": "Patadas de burro",
+                    "de": "Eselskicks"
+                },
+                "description": "Description of donkey kicks exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/donkey-kicks"
+            },
+            {
+                "id": "G4",
+                "name": {
+                    "en": "Hip Abduction Machine",
+                    "pt": "Máquina de abdução de quadril",
+                    "fr": "Machine d'abduction de hanche",
+                    "it": "Macchina di abduzione dell'anca",
+                    "es": "Máquina de abducción de cadera",
+                    "de": "Hüftabduktionsmaschine"
+                },
+                "description": "Description of hip abduction machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hip-abduction-machine"
+            },
+            {
+                "id": "G5",
+                "name": {
+                    "en": "Barbell Hip Thrusts",
+                    "pt": "Elevações pélvicas com barra",
+                    "fr": "Poussées de hanche à la barre",
+                    "it": "Spinte dell'anca con bilanciere",
+                    "es": "Empujes de cadera con barra",
+                    "de": "Langhantel-Hüftheben"
+                },
+                "description": "Description of barbell hip thrusts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/barbell-hip-thrusts"
+            },
+            {
+                "id": "G6",
+                "name": {
+                    "en": "Glute-Ham Raises",
+                    "pt": "Flexões de glúteo-ham",
+                    "fr": "Extensions de glute-ham",
+                    "it": "Sollevamenti del gluteo-ham",
+                    "es": "Elevaciones de glúteo-ham",
+                    "de": "Glute-Ham-Raises"
+                },
+                "description": "Description of glute-ham raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/glute-ham-raises"
+            },
+            {
+                "id": "G7",
+                "name": {
+                    "en": "Reverse Lunges",
+                    "pt": "Avanços invertidos",
+                    "fr": "Fentes inversées",
+                    "it": "Affondi inversi",
+                    "es": "Estocadas inversas",
+                    "de": "Umgekehrte Ausfallschritte"
+                },
+                "description": "Description of reverse lunges exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/reverse-lunges"
+            },
+            {
+                "id": "G8",
+                "name": {
+                    "en": "Fire Hydrants",
+                    "pt": "Hidrantes de incêndio",
+                    "fr": "Hydrants de feu",
+                    "it": "Idranti antincendio",
+                    "es": "Hidrantes de fuego",
+                    "de": "Feuerhydranten"
+                },
+                "description": "Description of fire hydrants exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/fire-hydrants"
+            },
+            {
+                "id": "G9",
+                "name": {
+                    "en": "Kettlebell Swings",
+                    "pt": "Baloiços de kettlebell",
+                    "fr": "Balancements de kettlebell",
+                    "it": "Altalene di kettlebell",
+                    "es": "Balanceos de kettlebell",
+                    "de": "Kettlebell-Swings"
+                },
+                "description": "Description of kettlebell swings exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kettlebell-swings"
+            },
+            {
+                "id": "G10",
+                "name": {
+                    "en": "Leg Presses",
+                    "pt": "Prensas de pernas",
+                    "fr": "Presses à jambes",
+                    "it": "Presse per gambe",
+                    "es": "Prensas de piernas",
+                    "de": "Beinpresse"
+                },
+                "description": "Description of leg presses exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-presses"
+            },
+            {
+                "id": "G11",
+                "name": {
+                    "en": "Clamshell Exercise",
+                    "pt": "Exercício de concha",
+                    "fr": "Exercice de coquillage",
+                    "it": "Esercizio a conchiglia",
+                    "es": "Ejercicio de concha",
+                    "de": "Muschelübung"
+                },
+                "description": "Description of clamshell exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/clamshell-exercise"
+            },
+            {
+                "id": "G12",
+                "name": {
+                    "en": "Standing Cable Hip Abduction",
+                    "pt": "Abdução de quadril em pé com cabo",
+                    "fr": "Abduction de hanche debout avec câble",
+                    "it": "Abduzione dell'anca in piedi con cavo",
+                    "es": "Abducción de cadera de pie con cable",
+                    "de": "Stehende Hüftabduktion mit Kabel"
+                },
+                "description": "Description of standing cable hip abduction exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-cable-hip-abduction"
+            },
+            {
+                "id": "G13",
+                "name": {
+                    "en": "Standing Glute Kickback",
+                    "pt": "Chute de glúteo em pé",
+                    "fr": "Coup de pied de fessier debout",
+                    "it": "Calcio di gluteo in piedi",
+                    "es": "Patada de glúteo de pie",
+                    "de": "Stehender Glute Kickback"
+                },
+                "description": "Description of standing glute kickback exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-glute-kickback"
+            },
+            {
+                "id": "G14",
+                "name": {
+                    "en": "Sumo Deadlifts",
+                    "pt": "Levantamento terra sumô",
+                    "fr": "Soulevé de terre sumo",
+                    "it": "Deadlift sumo",
+                    "es": "Levantamiento de peso sumo",
+                    "de": "Sumo-Deadlifts"
+                },
+                "description": "Description of sumo deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/sumo-deadlifts"
+            },
+            {
+                "id": "G15",
+                "name": {
+                    "en": "Banded Lateral Walks",
+                    "pt": "Caminhadas laterais com banda",
+                    "fr": "Marches latérales avec bande",
+                    "it": "Passeggiate laterali con fascia",
+                    "es": "Caminatas laterales con banda",
+                    "de": "Bandseitige Spaziergänge"
+                },
+                "description": "Description of banded lateral walks exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/banded-lateral-walks"
+            },
+            {
+                "id": "G16",
+                "name": {
+                    "en": "Glute Activation Lunges",
+                    "pt": "Avanços de ativação glútea",
+                    "fr": "Fentes d'activation des fessiers",
+                    "it": "Affondi di attivazione dei glutei",
+                    "es": "Estocadas de activación de glúteos",
+                    "de": "Glute Activation Lunges"
+                },
+                "description": "Description of glute activation lunges exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/glute-activation-lunges"
+            },
+            {
+                "id": "G17",
+                "name": {
+                    "en": "Single-Leg Glute Bridge",
+                    "pt": "Ponte de glúteo com uma perna",
+                    "fr": "Pont de fessier à une jambe",
+                    "it": "Ponte di gluteo a una gamba",
+                    "es": "Puente de glúteo a una pierna",
+                    "de": "Einbeiniger Glute Bridge"
+                },
+                "description": "Description of single-leg glute bridge exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-glute-bridge"
+            },
+            {
+                "id": "G18",
+                "name": {
+                    "en": "Standing Cable Kickback",
+                    "pt": "Kickback de pé com cabo",
+                    "fr": "Kickback debout avec câble",
+                    "it": "Kickback in piedi con cavo",
+                    "es": "Kickback de pie con cable",
+                    "de": "Stehender Kabel-Kickback"
+                },
+                "description": "Description of standing cable kickback exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-cable-kickback"
+            },
+            {
+                "id": "G19",
+                "name": {
+                    "en": "Banded Glute Bridge",
+                    "pt": "Ponte de glúteo com banda",
+                    "fr": "Pont de fessier avec bande",
+                    "it": "Ponte di gluteo con fascia",
+                    "es": "Puente de glúteo con banda",
+                    "de": "Bandglute Bridge"
+                },
+                "description": "Description of banded glute bridge exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/banded-glute-bridge"
+            },
+            {
+                "id": "G20",
+                "name": {
+                    "en": "Side-Lying Clam",
+                    "pt": "Concha deitada de lado",
+                    "fr": "Coquillage latéral couché",
+                    "it": "Conchiglia sdraiata di lato",
+                    "es": "Concha acostada de lado",
+                    "de": "Seitlich liegende Muschel"
+                },
+                "description": "Description of side-lying clam exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/side-lying-clam"
+            },
+            {
+                "id": "G21",
+                "name": {
+                    "en": "Glute Activation Squats",
+                    "pt": "Agachamentos de ativação glútea",
+                    "fr": "Squats d'activation des fessiers",
+                    "it": "Squat di attivazione dei glutei",
+                    "es": "Sentadillas de activación de glúteos",
+                    "de": "Glute Activation Squats"
+                },
+                "description": "Description of glute activation squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/glute-activation-squats"
+            },
+            {
+                "id": "G22",
+                "name": {
+                    "en": "Banded Hip Thrusts",
+                    "pt": "Elevações pélvicas com banda",
+                    "fr": "Poussées de hanche avec bande",
+                    "it": "Spinte dell'anca con fascia",
+                    "es": "Empujes de cadera con banda",
+                    "de": "Band-Hüftheben"
+                },
+                "description": "Description of banded hip thrusts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/banded-hip-thrusts"
+            },
+            {
+                "id": "G23",
+                "name": {
+                    "en": "Bulgarian Split Squats",
+                    "pt": "Agachamentos búlgaros",
+                    "fr": "Squats bulgares",
+                    "it": "Affondi bulgari",
+                    "es": "Sentadillas búlgaras",
+                    "de": "Bulgarische Ausfallschritte"
+                },
+                "description": "Description of bulgarian split squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/bulgarian-split-squats"
+            },
+            {
+                "id": "G24",
+                "name": {
+                    "en": "Cable Pull Throughs",
+                    "pt": "Puxadas de cabo",
+                    "fr": "Tirages de câble",
+                    "it": "Tiri attraverso il cavo",
+                    "es": "Tirones de cable",
+                    "de": "Kabelziehübungen"
+                },
+                "description": "Description of cable pull throughs exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/cable-pull-throughs"
+            },
+            {
+                "id": "G25",
+                "name": {
+                    "en": "Hip Thrust Machine",
+                    "pt": "Máquina de elevação pélvica",
+                    "fr": "Machine de poussée de hanche",
+                    "it": "Macchina di spinta dell'anca",
+                    "es": "Máquina de empuje de cadera",
+                    "de": "Hüfthebemaschine"
+                },
+                "description": "Description of hip thrust machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hip-thrust-machine"
+            },
+            {
+                "id": "G26",
+                "name": {
+                    "en": "Single-Leg Romanian Deadlifts",
+                    "pt": "Levantamento terra romeno com uma perna",
+                    "fr": "Soulevé de terre roumain à une jambe",
+                    "it": "Stacco rumeno a una gamba",
+                    "es": "Peso muerto rumano a una pierna",
+                    "de": "Einbeiniges rumänisches Kreuzheben"
+                },
+                "description": "Description of single-leg romanian deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-romanian-deadlifts"
+            },
+            {
+                "id": "G27",
+                "name": {
+                    "en": "Hip Extension with Resistance Band",
+                    "pt": "Extensão de quadril com banda de resistência",
+                    "fr": "Extension de hanche avec bande de résistance",
+                    "it": "Estensione dell'anca con fascia di resistenza",
+                    "es": "Extensión de cadera con banda de resistencia",
+                    "de": "Hüftextension mit Widerstandsband"
+                },
+                "description": "Description of hip extension with resistance band exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hip-extension-resistance-band"
+            },
+            {
+                "id": "G28",
+                "name": {
+                    "en": "Glute Activation Deadlifts",
+                    "pt": "Levantamentos terra de ativação glútea",
+                    "fr": "Soulevés de terre d'activation des fessiers",
+                    "it": "Stacchi di attivazione dei glutei",
+                    "es": "Peso muerto de activación de glúteos",
+                    "de": "Glute Activation Deadlifts"
+                },
+                "description": "Description of glute activation deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/glute-activation-deadlifts"
+            },
+            {
+                "id": "G29",
+                "name": {
+                    "en": "Glute Activation Leg Press",
+                    "pt": "Prensa de pernas de ativação glútea",
+                    "fr": "Presse à cuisses d'activation des fessiers",
+                    "it": "Pressa per gambe di attivazione dei glutei",
+                    "es": "Prensa de piernas de activación de glúteos",
+                    "de": "Glute Activation Leg Press"
+                },
+                "description": "Description of glute activation leg press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/glute-activation-leg-press"
+            }
+        ],
+        "hamstrings": [
+            {
+                "id": "H1",
+                "name": {
+                    "en": "Stiff-Legged Deadlifts",
+                    "pt": "Levantamento terra com pernas esticadas",
+                    "fr": "Soulevé de terre jambes tendues",
+                    "it": "Stacco da terra gambe rigide",
+                    "es": "Peso muerto con piernas rígidas",
+                    "de": "Kreuzheben mit gestreckten Beinen"
+                },
+                "description": "Description of stiff-legged deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/stiff-legged-deadlifts"
+            },
+            {
+                "id": "H2",
+                "name": {
+                    "en": "Lying Leg Curls",
+                    "pt": "Curl de pernas deitado",
+                    "fr": "Curls de jambes allongé",
+                    "it": "Curl gambe sdraiato",
+                    "es": "Curl de piernas acostado",
+                    "de": "Liegender Beincurl"
+                },
+                "description": "Description of lying leg curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/lying-leg-curls"
+            },
+            {
+                "id": "H3",
+                "name": {
+                    "en": "Kettlebell Swings",
+                    "pt": "Baloiços de kettlebell",
+                    "fr": "Balancements de kettlebell",
+                    "it": "Altalene di kettlebell",
+                    "es": "Balanceos de kettlebell",
+                    "de": "Kettlebell-Swings"
+                },
+                "description": "Description of kettlebell swings exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kettlebell-swings"
+            },
+            {
+                "id": "H4",
+                "name": {
+                    "en": "Good Mornings",
+                    "pt": "Bom dia",
+                    "fr": "Bons matins",
+                    "it": "Buongiorni",
+                    "es": "Buenos días",
+                    "de": "Guten Morgen"
+                },
+                "description": "Description of good mornings exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/good-mornings"
+            },
+            {
+                "id": "H5",
+                "name": {
+                    "en": "Single-Leg Romanian Deadlifts",
+                    "pt": "Levantamento terra romeno com uma perna",
+                    "fr": "Soulevé de terre roumain à une jambe",
+                    "it": "Stacco rumeno a una gamba",
+                    "es": "Peso muerto rumano a una pierna",
+                    "de": "Einbeiniges rumänisches Kreuzheben"
+                },
+                "description": "Description of single-leg romanian deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-romanian-deadlifts"
+            },
+            {
+                "id": "H6",
+                "name": {
+                    "en": "Glute-Ham Raises",
+                    "pt": "Flexões de glúteo-ham",
+                    "fr": "Extensions de glute-ham",
+                    "it": "Sollevamenti del gluteo-ham",
+                    "es": "Elevaciones de glúteo-ham",
+                    "de": "Glute-Ham-Raises"
+                },
+                "description": "Description of glute-ham raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/glute-ham-raises"
+            },
+            {
+                "id": "H7",
+                "name": {
+                    "en": "Standing Leg Curls",
+                    "pt": "Curl de pernas em pé",
+                    "fr": "Curls de jambes debout",
+                    "it": "Curl gambe in piedi",
+                    "es": "Curl de piernas de pie",
+                    "de": "Stehender Beincurl"
+                },
+                "description": "Description of standing leg curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-leg-curls"
+            },
+            {
+                "id": "H8",
+                "name": {
+                    "en": "Dumbbell Deadlifts",
+                    "pt": "Levantamento terra com halteres",
+                    "fr": "Soulevé de terre avec haltères",
+                    "it": "Stacchi con manubri",
+                    "es": "Peso muerto con mancuernas",
+                    "de": "Kurzhantel-Kreuzheben"
+                },
+                "description": "Description of dumbbell deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/dumbbell-deadlifts"
+            },
+            {
+                "id": "H9",
+                "name": {
+                    "en": "Romanian Deadlifts",
+                    "pt": "Levantamento terra romeno",
+                    "fr": "Soulevé de terre roumain",
+                    "it": "Stacchi rumeni",
+                    "es": "Peso muerto rumano",
+                    "de": "Rumänisches Kreuzheben"
+                },
+                "description": "Description of romanian deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/romanian-deadlifts"
+            },
+            {
+                "id": "H10",
+                "name": {
+                    "en": "Reverse Hyperextensions",
+                    "pt": "Hiperekstensões reversas",
+                    "fr": "Extensions hyper inverses",
+                    "it": "Iperestensioni inverse",
+                    "es": "Hiperextensiones inversas",
+                    "de": "Umgekehrte Hyperextensions"
+                },
+                "description": "Description of reverse hyperextensions exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/reverse-hyperextensions"
+            },
+            {
+                "id": "H11",
+                "name": {
+                    "en": "Seated Leg Curls",
+                    "pt": "Curl de pernas sentado",
+                    "fr": "Curls de jambes assis",
+                    "it": "Curl gambe seduto",
+                    "es": "Curl de piernas sentado",
+                    "de": "Sitzender Beincurl"
+                },
+                "description": "Description of seated leg curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/seated-leg-curls"
+            },
+            {
+                "id": "H12",
+                "name": {
+                    "en": "Nordic Hamstring Curls",
+                    "pt": "Flexões nórdicas de isquiotibiais",
+                    "fr": "Curls nordiques des ischio-jambiers",
+                    "it": "Curl nordici per i muscoli posteriori della coscia",
+                    "es": "Flexiones nórdicas de isquiotibiales",
+                    "de": "Nordische Hamstring Curls"
+                },
+                "description": "Description of nordic hamstring curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/nordic-hamstring-curls"
+            },
+            {
+                "id": "H13",
+                "name": {
+                    "en": "Single-Leg Deadlifts",
+                    "pt": "Levantamento terra com uma perna",
+                    "fr": "Soulevé de terre à une jambe",
+                    "it": "Stacco con una gamba",
+                    "es": "Peso muerto a una pierna",
+                    "de": "Einbeiniges Kreuzheben"
+                },
+                "description": "Description of single-leg deadlifts exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-deadlifts"
+            },
+            {
+                "id": "H14",
+                "name": {
+                    "en": "Prone Leg Curls",
+                    "pt": "Curl de pernas prono",
+                    "fr": "Curls de jambes en position pronée",
+                    "it": "Curl gambe prono",
+                    "es": "Curl de piernas prono",
+                    "de": "Bauchlage Beincurl"
+                },
+                "description": "Description of prone leg curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/prone-leg-curls"
+            },
+            {
+                "id": "H15",
+                "name": {
+                    "en": "Banded Hamstring Curls",
+                    "pt": "Curl de isquiotibiais com banda",
+                    "fr": "Curls de ischio-jambiers avec bande",
+                    "it": "Curl di ischio con fascia",
+                    "es": "Curl de isquiotibiales con banda",
+                    "de": "Band hamstring curls"
+                },
+                "description": "Description of banded hamstring curls exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/banded-hamstring-curls"
+            },
+            {
+                "id": "H16",
+                "name": {
+                    "en": "Hamstring Stretch",
+                    "pt": "Alongamento de isquiotibiais",
+                    "fr": "Étirement des ischio-jambiers",
+                    "it": "Stretching degli ischiocrurali",
+                    "es": "Estiramiento de isquiotibiales",
+                    "de": "Hamstring-Stretch"
+                },
+                "description": "Description of hamstring stretch exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hamstring-stretch"
+            },
+            {
+                "id": "H17",
+                "name": {
+                    "en": "Single-Leg Swiss Ball Leg Curl",
+                    "pt": "Curl de perna única com bola suíça",
+                    "fr": "Curl de jambe unique avec Swiss Ball",
+                    "it": "Curl di gamba singola sulla palla svizzera",
+                    "es": "Curl de pierna individual con pelota suiza",
+                    "de": "Einbeiniges Swiss Ball Bein Curl"
+                },
+                "description": "Description of single-leg swiss ball leg curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-swiss-ball-leg-curl"
+            },
+            {
+                "id": "H18",
+                "name": {
+                    "en": "Single-Leg Deadlift with Dumbbell",
+                    "pt": "Levantamento terra com uma perna e haltere",
+                    "fr": "Soulevé de terre à une jambe avec haltère",
+                    "it": "Stacco a una gamba con manubrio",
+                    "es": "Peso muerto a una pierna con mancuerna",
+                    "de": "Einbeiniges Kreuzheben mit Kurzhantel"
+                },
+                "description": "Description of single-leg deadlift with dumbbell exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-deadlift-with-dumbbell"
+            },
+            {
+                "id": "H19",
+                "name": {
+                    "en": "Seated Leg Curl Machine",
+                    "pt": "Máquina de curl de pernas sentado",
+                    "fr": "Machine à curl des jambes assis",
+                    "it": "Macchina per curl gambe seduto",
+                    "es": "Máquina de curl de piernas sentado",
+                    "de": "Sitzende Beincurl-Maschine"
+                },
+                "description": "Description of seated leg curl machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/seated-leg-curl-machine"
+            },
+            {
+                "id": "H20",
+                "name": {
+                    "en": "Romanian Deadlift with Dumbbell",
+                    "pt": "Levantamento terra romeno com haltere",
+                    "fr": "Soulevé de terre roumain avec haltère",
+                    "it": "Stacco rumeno con manubrio",
+                    "es": "Peso muerto rumano con mancuerna",
+                    "de": "Rumänisches Kreuzheben mit Kurzhantel"
+                },
+                "description": "Description of romanian deadlift with dumbbell exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/romanian-deadlift-with-dumbbell"
+            },
+            {
+                "id": "H21",
+                "name": {
+                    "en": "Kneeling Leg Curl",
+                    "pt": "Curl de pernas ajoelhado",
+                    "fr": "Curls de jambes à genoux",
+                    "it": "Curl gambe inginocchiato",
+                    "es": "Curl de piernas arrodillado",
+                    "de": "Knien Beincurl"
+                },
+                "description": "Description of kneeling leg curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kneeling-leg-curl"
+            },
+            {
+                "id": "H22",
+                "name": {
+                    "en": "Kettlebell Romanian Deadlift",
+                    "pt": "Levantamento terra romeno com kettlebell",
+                    "fr": "Soulevé de terre roumain avec kettlebell",
+                    "it": "Stacco rumeno con kettlebell",
+                    "es": "Peso muerto rumano con kettlebell",
+                    "de": "Rumänisches Kreuzheben mit Kettlebell"
+                },
+                "description": "Description of kettlebell romanian deadlift exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kettlebell-romanian-deadlift"
+            },
+            {
+                "id": "H23",
+                "name": {
+                    "en": "Kettlebell Stiff-Legged Deadlift",
+                    "pt": "Levantamento terra com kettlebell com pernas esticadas",
+                    "fr": "Soulevé de terre jambes tendues avec kettlebell",
+                    "it": "Stacco da terra gambe rigide con kettlebell",
+                    "es": "Peso muerto con kettlebell y piernas rígidas",
+                    "de": "Kettlebell-Stiff-Legged-Deadlift"
+                },
+                "description": "Description of kettlebell stiff-legged deadlift exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/kettlebell-stiff-legged-deadlift"
+            },
+            {
+                "id": "H24",
+                "name": {
+                    "en": "Smith Machine Stiff-Legged Deadlift",
+                    "pt": "Levantamento terra com máquina Smith",
+                    "fr": "Soulevé de terre jambes tendues à la machine Smith",
+                    "it": "Stacco da terra gambe rigide con macchina Smith",
+                    "es": "Peso muerto con piernas rígidas en máquina Smith",
+                    "de": "Smith Machine Stiff-Legged-Deadlift"
+                },
+                "description": "Description of smith machine stiff-legged deadlift exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/smith-machine-stiff-legged-deadlift"
+            },
+            {
+                "id": "H25",
+                "name": {
+                    "en": "Lying Hamstring Curl Machine",
+                    "pt": "Máquina de curl de isquiotibiais deitado",
+                    "fr": "Machine à curl des ischio-jambiers allongé",
+                    "it": "Macchina per curl ischiocrurali sdraiato",
+                    "es": "Máquina de curl de isquiotibiales acostado",
+                    "de": "Liegender Hamstring-Curl-Maschine"
+                },
+                "description": "Description of lying hamstring curl machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/lying-hamstring-curl-machine"
+            },
+            {
+                "id": "H26",
+                "name": {
+                    "en": "Standing Hamstring Curl Machine",
+                    "pt": "Máquina de curl de isquiotibiais em pé",
+                    "fr": "Machine à curl des ischio-jambiers debout",
+                    "it": "Macchina per curl ischiocrurali in piedi",
+                    "es": "Máquina de curl de isquiotibiales de pie",
+                    "de": "Stehende Hamstring-Curl-Maschine"
+                },
+                "description": "Description of standing hamstring curl machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/standing-hamstring-curl-machine"
+            },
+            {
+                "id": "H27",
+                "name": {
+                    "en": "Single-Leg Press Down",
+                    "pt": "Pressão única de perna para baixo",
+                    "fr": "Appui vers le bas à une jambe",
+                    "it": "Pressa singola gamba giù",
+                    "es": "Prensa de una pierna hacia abajo",
+                    "de": "Einbeinige Press Down"
+                },
+                "description": "Description of single-leg press down exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/single-leg-press-down"
+            }
+        ],
+        "quadriceps": [
+            {
+                "id": "Q1",
+                "name": {
+                    "en": "Leg Extensions",
+                    "pt": "Extensões de perna",
+                    "fr": "Extensions de jambes",
+                    "it": "Estensioni delle gambe",
+                    "es": "Extensiones de piernas",
+                    "de": "Bein Extensions"
+                },
+                "description": "Description of leg extensions exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-extensions"
+            },
+            {
+                "id": "Q2",
+                "name": {
+                    "en": "Hack Squats",
+                    "pt": "Agachamentos Hack",
+                    "fr": "Squats Hack",
+                    "it": "Squat Hack",
+                    "es": "Sentadillas Hack",
+                    "de": "Hack Squats"
+                },
+                "description": "Description of hack squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/hack-squats"
+            },
+            {
+                "id": "Q3",
+                "name": {
+                    "en": "Split Squats",
+                    "pt": "Agachamentos divididos",
+                    "fr": "Squats divisés",
+                    "it": "Squat diviso",
+                    "es": "Sentadillas divididas",
+                    "de": "Split Squats"
+                },
+                "description": "Description of split squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/split-squats"
+            },
+            {
+                "id": "Q4",
+                "name": {
+                    "en": "Front Squats",
+                    "pt": "Agachamentos frontais",
+                    "fr": "Squats frontaux",
+                    "it": "Squat frontali",
+                    "es": "Sentadillas frontales",
+                    "de": "Front Squats"
+                },
+                "description": "Description of front squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/front-squats"
+            },
+            {
+                "id": "Q5",
+                "name": {
+                    "en": "Sumo Squats",
+                    "pt": "Agachamentos sumô",
+                    "fr": "Squats sumo",
+                    "it": "Squat sumo",
+                    "es": "Sentadillas sumo",
+                    "de": "Sumo Squats"
+                },
+                "description": "Description of sumo squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/sumo-squats"
+            },
+            {
+                "id": "Q6",
+                "name": {
+                    "en": "Pistol Squats",
+                    "pt": "Agachamentos com uma perna",
+                    "fr": "Squats pistolet",
+                    "it": "Squat pistol",
+                    "es": "Sentadillas pistola",
+                    "de": "Pistol Squats"
+                },
+                "description": "Description of pistol squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/pistol-squats"
+            },
+            {
+                "id": "Q7",
+                "name": {
+                    "en": "Lunges",
+                    "pt": "Avanços",
+                    "fr": "Fentes",
+                    "it": "Affondi",
+                    "es": "Zancadas",
+                    "de": "Lunges"
+                },
+                "description": "Description of lunges exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/lunges"
+            },
+            {
+                "id": "Q8",
+                "name": {
+                    "en": "Step-ups",
+                    "pt": "Subidas em step",
+                    "fr": "Montées sur step",
+                    "it": "Step-up",
+                    "es": "Step-ups",
+                    "de": "Step-ups"
+                },
+                "description": "Description of step-ups exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/step-ups"
+            },
+            {
+                "id": "Q9",
+                "name": {
+                    "en": "Box Jumps",
+                    "pt": "Saltos em caixa",
+                    "fr": "Sauts à la boîte",
+                    "it": "Salti sulla scatola",
+                    "es": "Saltos de caja",
+                    "de": "Box Jumps"
+                },
+                "description": "Description of box jumps exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/box-jumps"
+            },
+            {
+                "id": "Q10",
+                "name": {
+                    "en": "Sissy Squats",
+                    "pt": "Agachamentos Sissy",
+                    "fr": "Squats Sissy",
+                    "it": "Squat Sissy",
+                    "es": "Sentadillas Sissy",
+                    "de": "Sissy Squats"
+                },
+                "description": "Description of sissy squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/sissy-squats"
+            },
+            {
+                "id": "Q11",
+                "name": {
+                    "en": "Wall Sits",
+                    "pt": "Sentar na parede",
+                    "fr": "S'asseoir contre le mur",
+                    "it": "Seduta al muro",
+                    "es": "Sentadilla en la pared",
+                    "de": "Wandsitzen"
+                },
+                "description": "Description of wall sits exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/wall-sits"
+            },
+            {
+                "id": "Q12",
+                "name": {
+                    "en": "Bulgarian Split Squats",
+                    "pt": "Agachamentos búlgaros divididos",
+                    "fr": "Squats bulgares divisés",
+                    "it": "Squat divisi bulgari",
+                    "es": "Sentadillas búlgaras divididas",
+                    "de": "Bulgarische Split Squats"
+                },
+                "description": "Description of bulgarian split squats exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/bulgarian-split-squats"
+            },
+            {
+                "id": "Q13",
+                "name": {
+                    "en": "Leg Press",
+                    "pt": "Prensa de perna",
+                    "fr": "Presse à jambes",
+                    "it": "Pressa per gambe",
+                    "es": "Prensa de piernas",
+                    "de": "Beinpresse"
+                },
+                "description": "Description of leg press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press"
+            },
+            {
+                "id": "Q14",
+                "name": {
+                    "en": "Leg Press Calf Raises",
+                    "pt": "Elevações de panturrilha na prensa de perna",
+                    "fr": "Élévations des mollets à la presse à jambes",
+                    "it": "Alzate di polpaccio alla pressa per gambe",
+                    "es": "Elevaciones de pantorrillas en prensa de piernas",
+                    "de": "Wadenheben an der Beinpresse"
+                },
+                "description": "Description of leg press calf raises exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-calf-raises"
+            },
+            {
+                "id": "Q15",
+                "name": {
+                    "en": "Leg Press Hack Squat",
+                    "pt": "Prensa de perna e agachamento hack",
+                    "fr": "Presse à jambes et squat hack",
+                    "it": "Pressa per gambe e squat hack",
+                    "es": "Prensa de piernas y sentadilla hack",
+                    "de": "Beinpresse Hack Squat"
+                },
+                "description": "Description of leg press hack squat exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-hack-squat"
+            },
+            {
+                "id": "Q16",
+                "name": {
+                    "en": "Leg Press Deadlift",
+                    "pt": "Prensa de perna e levantamento terra",
+                    "fr": "Presse à jambes et soulevé de terre",
+                    "it": "Pressa per gambe e stacco",
+                    "es": "Prensa de piernas y peso muerto",
+                    "de": "Beinpresse Deadlift"
+                },
+                "description": "Description of leg press deadlift exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-deadlift"
+            },
+            {
+                "id": "Q17",
+                "name": {
+                    "en": "Leg Press Lunges",
+                    "pt": "Prensa de perna e avanços",
+                    "fr": "Presse à jambes et fentes",
+                    "it": "Pressa per gambe e affondi",
+                    "es": "Prensa de piernas y zancadas",
+                    "de": "Beinpresse Lunges"
+                },
+                "description": "Description of leg press lunges exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-lunges"
+            },
+            {
+                "id": "Q18",
+                "name": {
+                    "en": "Leg Press Squat",
+                    "pt": "Agachamento na prensa de perna",
+                    "fr": "Squat à la presse à jambes",
+                    "it": "Squat alla pressa per gambe",
+                    "es": "Sentadilla en la prensa de piernas",
+                    "de": "Beinpresse Squat"
+                },
+                "description": "Description of leg press squat exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-squat"
+            },
+            {
+                "id": "Q19",
+                "name": {
+                    "en": "Leg Press Leg Extension",
+                    "pt": "Extensão de perna na prensa de perna",
+                    "fr": "Extension des jambes à la presse à jambes",
+                    "it": "Estensione della gamba alla pressa per gambe",
+                    "es": "Extensión de pierna en prensa de piernas",
+                    "de": "Beinpresse Bein Extension"
+                },
+                "description": "Description of leg press leg extension exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-leg-extension"
+            },
+            {
+                "id": "Q20",
+                "name": {
+                    "en": "Leg Press Leg Curl",
+                    "pt": "Curl de perna na prensa de perna",
+                    "fr": "Boucle de jambe à la presse à jambes",
+                    "it": "Curl della gamba alla pressa per gambe",
+                    "es": "Curl de pierna en prensa de piernas",
+                    "de": "Beinpresse Bein Curl"
+                },
+                "description": "Description of leg press leg curl exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-leg-curl"
+            },
+            {
+                "id": "Q21",
+                "name": {
+                    "en": "Leg Press Shoulder Press",
+                    "pt": "Prensa de perna e press de ombro",
+                    "fr": "Presse à jambes et pression d'épaule",
+                    "it": "Pressa per gambe e pressa delle spalle",
+                    "es": "Prensa de piernas y press de hombros",
+                    "de": "Beinpresse Schulterpresse"
+                },
+                "description": "Description of leg press shoulder press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-shoulder-press"
+            },
+            {
+                "id": "Q22",
+                "name": {
+                    "en": "Leg Press Calf Raise",
+                    "pt": "Elevação de panturrilha na prensa de perna",
+                    "fr": "Élévation des mollets à la presse à jambes",
+                    "it": "Alzata di polpaccio alla pressa per gambe",
+                    "es": "Elevación de pantorrilla en prensa de piernas",
+                    "de": "Beinpresse Wadenheben"
+                },
+                "description": "Description of leg press calf raise exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-calf-raise"
+            },
+            {
+                "id": "Q23",
+                "name": {
+                    "en": "Leg Press Hack Squat Machine",
+                    "pt": "Máquina de prensa de pernas e agachamento hack",
+                    "fr": "Machine de presse à jambes et squat hack",
+                    "it": "Macchina per squat e squat hack",
+                    "es": "Máquina de prensa de piernas y sentadilla hack",
+                    "de": "Beinpresse Hack Squat Maschine"
+                },
+                "description": "Description of leg press hack squat machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-hack-squat-machine"
+            },
+            {
+                "id": "Q24",
+                "name": {
+                    "en": "Leg Press Glute Press",
+                    "pt": "Prensa de perna e pressão glútea",
+                    "fr": "Presse à jambes et presse fessière",
+                    "it": "Pressa per gambe e pressa glutea",
+                    "es": "Prensa de piernas y prensa glútea",
+                    "de": "Beinpresse Gesäßpresse"
+                },
+                "description": "Description of leg press glute press exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-glute-press"
+            },
+            {
+                "id": "Q25",
+                "name": {
+                    "en": "Leg Press Pull-in",
+                    "pt": "Prensa de perna e puxada",
+                    "fr": "Presse à jambes et traction",
+                    "it": "Pressa per gambe e tiro",
+                    "es": "Prensa de piernas y pull-in",
+                    "de": "Beinpresse Pull-in"
+                },
+                "description": "Description of leg press pull-in exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-pull-in"
+            },
+            {
+                "id": "Q26",
+                "name": {
+                    "en": "Leg Press Calf Machine",
+                    "pt": "Máquina de panturrilha na prensa de perna",
+                    "fr": "Machine de mollet à la presse à jambes",
+                    "it": "Macchina per polpaccio alla pressa per gambe",
+                    "es": "Máquina de pantorrilla en prensa de piernas",
+                    "de": "Beinpresse Wadenmaschine"
+                },
+                "description": "Description of leg press calf machine exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-calf-machine"
+            },
+            {
+                "id": "Q27",
+                "name": {
+                    "en": "Leg Press Calf Raise on Toes",
+                    "pt": "Elevação de panturrilha na prensa de perna com os dedos dos pés",
+                    "fr": "Élévation des mollets à la presse à jambes sur les orteils",
+                    "it": "Alzata di polpaccio alla pressa per gambe sulle punte",
+                    "es": "Elevación de pantorrilla en prensa de piernas sobre los dedos de los pies",
+                    "de": "Beinpresse Wadenheben auf Zehenspitzen"
+                },
+                "description": "Description of leg press calf raise on toes exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-calf-raise-on-toes"
+            },
+            {
+                "id": "Q28",
+                "name": {
+                    "en": "Leg Press Quad Extension",
+                    "pt": "Extensão de quadríceps na prensa de perna",
+                    "fr": "Extension du quadriceps à la presse à jambes",
+                    "it": "Estensione del quadricipite alla pressa per gambe",
+                    "es": "Extensión de cuádriceps en prensa de piernas",
+                    "de": "Beinpresse Quad Extension"
+                },
+                "description": "Description of leg press quad extension exercise.",
+                "MET": 6,
+                "exampleUrl": "https://example.com/leg-press-quad-extension"
+            }
+        ]
+    },
+    {
+        "ExerciseType": "Cardio",
+        "running": [
+            {
+                "id": "CR1",
+                "name": {
+                    "en": "Treadmill Running",
+                    "pt": "Corrida na esteira",
+                    "fr": "Course sur tapis roulant",
+                    "it": "Corsa sul tapis roulant",
+                    "es": "Correr en la cinta",
+                    "de": "Laufband Laufen"
+                },
+                "description": {
+                    "en": "Description of treadmill running.",
+                    "pt": "Descrição da corrida na esteira.",
+                    "fr": "Description de la course sur tapis roulant.",
+                    "it": "Descrizione della corsa sul tapis roulant.",
+                    "es": "Descripción de correr en la cinta.",
+                    "de": "Beschreibung des Laufbandlaufens."
+                },
+                "exampleUrl": "https://example.com/treadmill-running"
+            },
+            {
+                "id": "CR2",
+                "name": {
+                    "en": "Outdoor Running",
+                    "pt": "Corrida ao ar livre",
+                    "fr": "Course en plein air",
+                    "it": "Corsa all'aperto",
+                    "es": "Correr al aire libre",
+                    "de": "Laufen im Freien"
+                },
+                "description": {
+                    "en": "Description of outdoor running.",
+                    "pt": "Descrição da corrida ao ar livre.",
+                    "fr": "Description de la course en plein air.",
+                    "it": "Descrizione della corsa all'aperto.",
+                    "es": "Descripción de correr al aire libre.",
+                    "de": "Beschreibung des Laufens im Freien."
+                },
+                "exampleUrl": "https://example.com/outdoor-running"
+            },
+            {
+                "id": "CR3",
+                "name": {
+                    "en": "Interval Training",
+                    "pt": "Treino intervalado",
+                    "fr": "Entraînement par intervalles",
+                    "it": "Allenamento a intervalli",
+                    "es": "Entrenamiento intervalado",
+                    "de": "Intervalltraining"
+                },
+                "description": {
+                    "en": "Description of interval training.",
+                    "pt": "Descrição do treino intervalado.",
+                    "fr": "Description de l'entraînement par intervalles.",
+                    "it": "Descrizione dell'allenamento a intervalli.",
+                    "es": "Descripción del entrenamiento intervalado.",
+                    "de": "Beschreibung des Intervalltrainings."
+                },
+                "exampleUrl": "https://example.com/interval-training"
+            }
+        ],
+        "cycling": [
+            {
+                "id": "CC1",
+                "name": {
+                    "en": "Stationary Cycling",
+                    "pt": "Ciclismo estacionário",
+                    "fr": "Cyclisme d'intérieur",
+                    "it": "Ciclismo stazionario",
+                    "es": "Ciclismo estacionario",
+                    "de": "Stationäres Radfahren"
+                },
+                "description": {
+                    "en": "Description of stationary cycling.",
+                    "pt": "Descrição do ciclismo estacionário.",
+                    "fr": "Description du cyclisme d'intérieur.",
+                    "it": "Descrizione del ciclismo stazionario.",
+                    "es": "Descripción del ciclismo estacionario.",
+                    "de": "Beschreibung des stationären Radfahrens."
+                },
+                "exampleUrl": "https://example.com/stationary-cycling"
+            },
+            {
+                "id": "CC2",
+                "name": {
+                    "en": "Outdoor Cycling",
+                    "pt": "Ciclismo ao ar livre",
+                    "fr": "Cyclisme en extérieur",
+                    "it": "Ciclismo all'aperto",
+                    "es": "Ciclismo al aire libre",
+                    "de": "Radfahren im Freien"
+                },
+                "description": {
+                    "en": "Description of outdoor cycling.",
+                    "pt": "Descrição do ciclismo ao ar livre.",
+                    "fr": "Description du cyclisme en extérieur.",
+                    "it": "Descrizione del ciclismo all'aperto.",
+                    "es": "Descripción del ciclismo al aire libre.",
+                    "de": "Beschreibung des Radfahrens im Freien."
+                },
+                "exampleUrl": "https://example.com/outdoor-cycling"
+            },
+            {
+                "id": "CC3",
+                "name": {
+                    "en": "Spinning",
+                    "pt": "Spinning",
+                    "fr": "Spinning",
+                    "it": "Spinning",
+                    "es": "Spinning",
+                    "de": "Spinning"
+                },
+                "description": {
+                    "en": "Description of spinning.",
+                    "pt": "Descrição do spinning.",
+                    "fr": "Description du spinning.",
+                    "it": "Descrizione dello spinning.",
+                    "es": "Descripción del spinning.",
+                    "de": "Beschreibung des Spinning."
+                },
+                "exampleUrl": "https://example.com/spinning"
+            }
+        ],
+        "swimming": [
+            {
+                "id": "CS1",
+                "name": "Freestyle Swimming",
+                "description": "Description of freestyle swimming.",
+                "exampleUrl": "https://example.com/freestyle-swimming"
+            },
+            {
+                "id": "CS2",
+                "name": "Breaststroke",
+                "description": "Description of breaststroke swimming.",
+                "exampleUrl": "https://example.com/breaststroke-swimming"
+            },
+            {
+                "id": "CS3",
+                "name": "Backstroke",
+                "description": "Description of backstroke swimming.",
+                "exampleUrl": "https://example.com/backstroke-swimming"
+            }
+        ]
+    },
+    {
+        "ExerciseType": "Crossfit",
+        "metcon": [
+            {
+                "id": "CX1",
+                "name": {
+                    "en": "AMRAP (As Many Rounds As Possible)",
+                    "pt": "AMRAP (Tantas Rodadas Quanto Possível)",
+                    "fr": "AMRAP (Autant de Tours Que Possible)",
+                    "it": "AMRAP (Tante Ripetizioni Quanto Possibile)",
+                    "es": "AMRAP (Tantas Rondas Como Sea Posible)",
+                    "de": "AMRAP (So viele Runden wie möglich)"
+                },
+                "exampleUrl": "https://example.com/amrap"
+            },
+            {
+                "id": "CX2",
+                "name": {
+                    "en": "EMOM (Every Minute on the Minute)",
+                    "pt": "EMOM (Cada Minuto no Minuto)",
+                    "fr": "EMOM (Chaque Minute sur la Minute)",
+                    "it": "EMOM (Ogni Minuto sul Minuto)",
+                    "es": "EMOM (Cada Minuto en el Minuto)",
+                    "de": "EMOM (Jede Minute zur vollen Stunde)"
+                },
+                "exampleUrl": "https://example.com/emom"
+            },
+            {
+                "id": "CX3",
+                "name": {
+                    "en": "For Time",
+                    "pt": "Por Tempo",
+                    "fr": "Pour le Temps",
+                    "it": "Per Tempo",
+                    "es": "Por Tiempo",
+                    "de": "Für Zeit"
+                },
+                "exampleUrl": "https://example.com/for-time"
+            }
+        ],
+        "strength": [
+            {
+                "id": "CS1",
+                "name": "Deadlifts",
+                "description": "Description of deadlifts exercise.",
+                "exampleUrl": "https://example.com/deadlifts"
+            },
+            {
+                "id": "CS2",
+                "name": "Squats",
+                "description": "Description of squats exercise.",
+                "exampleUrl": "https://example.com/squats"
+            },
+            {
+                "id": "CS3",
+                "name": "Clean and Jerk",
+                "description": "Description of clean and jerk exercise.",
+                "exampleUrl": "https://example.com/clean-and-jerk"
+            }
+        ]
+    },
+    {
+        "ExerciseType": "Yoga",
+        "hatha": [
+            {
+                "id": "YH1",
+                "name": {
+                    "en": "Mountain Pose (Tadasana)",
+                    "pt": "Postura da Montanha (Tadasana)",
+                    "fr": "Pose de la Montagne (Tadasana)",
+                    "it": "Posizione della Montagna (Tadasana)",
+                    "es": "Postura de la Montaña (Tadasana)",
+                    "de": "Berghaltung (Tadasana)"
+                }
+            },
+            {
+                "id": "YH2",
+                "name": {
+                    "en": "Downward-Facing Dog (Adho Mukha Svanasana)",
+                    "pt": "Cachorro Olhando para Baixo (Adho Mukha Svanasana)",
+                    "fr": "Chien Tête en Bas (Adho Mukha Svanasana)",
+                    "it": "Cane a Testa in Giù (Adho Mukha Svanasana)",
+                    "es": "Perro Mirando Abajo (Adho Mukha Svanasana)",
+                    "de": "Herabschauender Hund (Adho Mukha Svanasana)"
+                }
+            },
+            {
+                "id": "YH3",
+                "name": {
+                    "en": "Child's Pose (Balasana)",
+                    "pt": "Postura da Criança (Balasana)",
+                    "fr": "Pose de l'Enfant (Balasana)",
+                    "it": "Posizione del Bambino (Balasana)",
+                    "es": "Postura del Niño (Balasana)",
+                    "de": "Kindhaltung (Balasana)"
+                }
+            }
+        ],
+        "vinyasa": [
+            {
+                "id": "YV1",
+                "name": {
+                    "en": "Sun Salutation (Surya Namaskar)",
+                    "pt": "Saudação ao Sol (Surya Namaskar)",
+                    "fr": "Salutation au Soleil (Surya Namaskar)",
+                    "it": "Saluto al Sole (Surya Namaskar)",
+                    "es": "Saludo al Sol (Surya Namaskar)",
+                    "de": "Sonnengruß (Surya Namaskar)"
+                }
+            },
+            {
+                "id": "YV2",
+                "name": {
+                    "en": "Warrior Pose (Virabhadrasana)",
+                    "pt": "Postura do Guerreiro (Virabhadrasana)",
+                    "fr": "Posture du Guerrier (Virabhadrasana)",
+                    "it": "Posizione del Guerriero (Virabhadrasana)",
+                    "es": "Postura del Guerrero (Virabhadrasana)",
+                    "de": "Kriegerhaltung (Virabhadrasana)"
+                }
+            },
+            {
+                "id": "YV3",
+                "name": {
+                    "en": "Plank Pose (Phalakasana)",
+                    "pt": "Postura de Prancha (Phalakasana)",
+                    "fr": "Posture de la Planche (Phalakasana)",
+                    "it": "Posizione della Plank (Phalakasana)",
+                    "es": "Postura de la Plancha (Phalakasana)",
+                    "de": "Plankenhaltung (Phalakasana)"
+                }
+            }
+        ],
+        "ashtanga": [
+            {
+                "id": "YA1",
+                "name": {
+                    "en": "Primary Series",
+                    "pt": "Série Primária",
+                    "fr": "Série Primaire",
+                    "it": "Serie Primaria",
+                    "es": "Serie Primaria",
+                    "de": "Primärserie"
+                }
+            },
+            {
+                "id": "YA2",
+                "name": {
+                    "en": "Second Series",
+                    "pt": "Segunda Série",
+                    "fr": "Deuxième Série",
+                    "it": "Seconda Serie",
+                    "es": "Segunda Serie",
+                    "de": "Zweite Serie"
+                }
+            },
+            {
+                "id": "YA3",
+                "name": {
+                    "en": "Third Series",
+                    "pt": "Terceira Série",
+                    "fr": "Troisième Série",
+                    "it": "Terza Serie",
+                    "es": "Tercera Serie",
+                    "de": "Dritte Serie"
+                }
+            }
+        ],
+        "bikram": [
+            {
+                "id": "YB1",
+                "name": {
+                    "en": "Standing Deep Breathing (Pranayama)",
+                    "pt": "Respiração Profunda em Pé (Pranayama)",
+                    "fr": "Respiration Profonde Debout (Pranayama)",
+                    "it": "Respiro Profondo in Piedi (Pranayama)",
+                    "es": "Respiración Profunda de Pie (Pranayama)",
+                    "de": "Stehende Tiefenatmung (Pranayama)"
+                }
+            },
+            {
+                "id": "YB2",
+                "name": {
+                    "en": "Half Moon Pose (Ardha Chandrasana)",
+                    "pt": "Postura da Meia Lua (Ardha Chandrasana)",
+                    "fr": "Posture de la Demi-Lune (Ardha Chandrasana)",
+                    "it": "Posizione della Mezzaluna (Ardha Chandrasana)",
+                    "es": "Postura de la Media Luna (Ardha Chandrasana)",
+                    "de": "Halbmondhaltung (Ardha Chandrasana)"
+                }
+            },
+            {
+                "id": "YB3",
+                "name": {
+                    "en": "Tree Pose (Vrksasana)",
+                    "pt": "Postura da Árvore (Vrksasana)",
+                    "fr": "Posture de l'Arbre (Vrksasana)",
+                    "it": "Posizione dell'Albero (Vrksasana)",
+                    "es": "Postura del Árbol (Vrksasana)",
+                    "de": "Baumhaltung (Vrksasana)"
+                }
+            }
+        ],
+        "iyengar": [
+            {
+                "id": "YI1",
+                "name": {
+                    "en": "Trikonasana (Triangle Pose)",
+                    "pt": "Postura do Triângulo (Trikonasana)",
+                    "fr": "Posture du Triangle (Trikonasana)",
+                    "it": "Posizione del Triangolo (Trikonasana)",
+                    "es": "Postura del Triángulo (Trikonasana)",
+                    "de": "Dreieckshaltung (Trikonasana)"
+                }
+            },
+            {
+                "id": "YI2",
+                "name": {
+                    "en": "Supta Virasana (Reclining Hero Pose)",
+                    "pt": "Postura do Herói Reclinado (Supta Virasana)",
+                    "fr": "Posture du Héros Couché (Supta Virasana)",
+                    "it": "Posizione dell'Eroe Supino (Supta Virasana)",
+                    "es": "Postura del Héroe Reclinado (Supta Virasana)",
+                    "de": "Liegender Held (Supta Virasana)"
+                }
+            },
+            {
+                "id": "YI3",
+                "name": {
+                    "en": "Sirsasana (Headstand)",
+                    "pt": "Postura de Cabeça (Sirsasana)",
+                    "fr": "Posture sur la Tête (Sirsasana)",
+                    "it": "Posizione sul Capo (Sirsasana)",
+                    "es": "Postura de la Cabeza (Sirsasana)",
+                    "de": "Kopfstand (Sirsasana)"
+                }
+            }
+        ],
+        "kundalini": [
+            {
+                "id": "YK1",
+                "name": {
+                    "en": "Cat-Cow Stretch (Marjaryasana-Bitilasana)",
+                    "pt": "Alongamento Gato-Vaca (Marjaryasana-Bitilasana)",
+                    "fr": "Étirement Chat-Vache (Marjaryasana-Bitilasana)",
+                    "it": "Stretching Gatto-Mucca (Marjaryasana-Bitilasana)",
+                    "es": "Estiramiento Gato-Vaca (Marjaryasana-Bitilasana)",
+                    "de": "Katze-Kuh-Streckung (Marjaryasana-Bitilasana)"
+                }
+            },
+            {
+                "id": "YK2",
+                "name": {
+                    "en": "Seated Forward Bend (Paschimottanasana)",
+                    "pt": "Flexão para Frente Sentado (Paschimottanasana)",
+                    "fr": "Plier en Avant Assis (Paschimottanasana)",
+                    "it": "Piega in Avanti Seduta (Paschimottanasana)",
+                    "es": "Flexión Hacia Adelante Sentado (Paschimottanasana)",
+                    "de": "Sitzende Vorwärtsbeugung (Paschimottanasana)"
+                }
+            },
+            {
+                "id": "YK3",
+                "name": {
+                    "en": "Camel Pose (Ustrasana)",
+                    "pt": "Postura do Camelo (Ustrasana)",
+                    "fr": "Posture du Chameau (Ustrasana)",
+                    "it": "Posizione del Cammello (Ustrasana)",
+                    "es": "Postura del Camello (Ustrasana)",
+                    "de": "Kamelhaltung (Ustrasana)"
+                }
+            }
+        ],
+        "yin": [
+            {
+                "id": "YY1",
+                "name": {
+                    "en": "Butterfly Pose (Baddha Konasana)",
+                    "pt": "Postura da Borboleta (Baddha Konasana)",
+                    "fr": "Posture du Papillon (Baddha Konasana)",
+                    "it": "Posizione della Farfalla (Baddha Konasana)",
+                    "es": "Postura de la Mariposa (Baddha Konasana)",
+                    "de": "Schmetterlingshaltung (Baddha Konasana)"
+                },
+                "YY2": {
+                    "name": {
+                        "en": "Dragon Pose (Yin Yoga Variation of Lunge)",
+                        "pt": "Postura do Dragão (Variação Yin Yoga do Avanço)",
+                        "fr": "Posture du Dragon (Variante Yin Yoga de la Fente)",
+                        "it": "Posizione del Drago (Variazione Yin Yoga della Flessione)",
+                        "es": "Postura del Dragón (Variación Yin Yoga de la Zancada)",
+                        "de": "Drachenhaltung (Yin Yoga Variante der Ausfallschrittposition)"
+                    },
+                    "exampleUrl": "https://example.com/dragon-pose",
+                    "difficulty": 5
+                },
+                "YY3": {
+                    "name": {
+                        "en": "Banana Pose (Bananasana)",
+                        "pt": "Postura da Banana (Bananasana)",
+                        "fr": "Posture de la Banane (Bananasana)",
+                        "it": "Posizione della Banana (Bananasana)",
+                        "es": "Postura del Plátano (Bananasana)",
+                        "de": "Banenenhaltung (Bananasana)"
+                    },
+                    "exampleUrl": "https://example.com/banana-pose",
+                    "difficulty": 4
+                }
+            }
+        ],
+        "restorative": [
+            {
+                "id": "YR1",
+                "name": {
+                    "en": "Supported Child's Pose (Balasana)",
+                    "pt": "Postura da Criança Apoiada (Balasana)",
+                    "fr": "Posture de l'Enfant Supportée (Balasana)",
+                    "it": "Posizione del Bambino Supportata (Balasana)",
+                    "es": "Postura del Niño Apoyada (Balasana)",
+                    "de": "Unterstützte Kindeshaltung (Balasana)"
+                },
+                "exampleUrl": "https://example.com/supported-childs-pose",
+                "difficulty": 2
+            },
+            {
+                "id": "YR2",
+                "name": {
+                    "en": "Supported Reclining Bound Angle Pose (Supta Baddha Konasana)",
+                    "pt": "Postura Apoiada da Borboleta Deitada (Supta Baddha Konasana)",
+                    "fr": "Posture de la Déclive Angulaire Liée Supportée (Supta Baddha Konasana)",
+                    "it": "Posizione della Farfalla Legata Supportata (Supta Baddha Konasana)",
+                    "es": "Postura de la Mariposa Atada Apoyada (Supta Baddha Konasana)",
+                    "de": "Unterstützte Rückenliegende Gebundene Winkelhaltung (Supta Baddha Konasana)"
+                },
+                "exampleUrl": "https://example.com/supported-reclining-bound-angle-pose",
+                "difficulty": 3
+            },
+            {
+                "id": "YR3",
+                "name": {
+                    "en": "Supported Legs-Up-the-Wall Pose (Viparita Karani)",
+                    "pt": "Postura das Pernas para Cima na Parede Apoiada (Viparita Karani)",
+                    "fr": "Posture des Jambes Levées au Mur Supportée (Viparita Karani)",
+                    "it": "Posizione delle Gambe a Muro Supportata (Viparita Karani)",
+                    "es": "Postura de las Piernas hacia Arriba en la Pared Apoyada (Viparita Karani)",
+                    "de": "Unterstützte Beine-an-die-Wand-Haltung (Viparita Karani)"
+                },
+                "exampleUrl": "https://example.com/supported-legs-up-the-wall-pose",
+                "difficulty": 2
+            }
+        ],
+        "nidra": [
+            {
+                "id": "YN1",
+                "name": {
+                    "en": "Yoga Nidra for Deep Relaxation",
+                    "pt": "Yoga Nidra para Relaxamento Profundo",
+                    "fr": "Yoga Nidra pour une Relaxation Profonde",
+                    "it": "Yoga Nidra per un Rilassamento Profondo",
+                    "es": "Yoga Nidra para una Relajación Profunda",
+                    "de": "Yoga Nidra für tiefe Entspannung"
+                },
+                "exampleUrl": "https://example.com/yoga-nidra",
+                "difficulty": 1
+            },
+            {
+                "id": "YN2",
+                "name": {
+                    "en": "Guided Visualization for Sleep",
+                    "pt": "Visualização Guiada para o Sono",
+                    "fr": "Visualisation Guidée pour le Sommeil",
+                    "it": "Visualizzazione Guidata per il Sonno",
+                    "es": "Visualización Guiada para el Sueño",
+                    "de": "Geführte Visualisierung für den Schlaf"
+                },
+                "exampleUrl": "https://example.com/guided-visualization",
+                "difficulty": 1
+            },
+            {
+                "id": "YN3",
+                "name": {
+                    "en": "Body Scan Meditation",
+                    "pt": "Meditação de Escaneamento Corporal",
+                    "fr": "Méditation de Scan Corporel",
+                    "it": "Meditazione di Scansione del Corpo",
+                    "es": "Meditación de Escaneo Corporal",
+                    "de": "Körper-Scan-Meditation"
+                },
+                "exampleUrl": "https://example.com/body-scan-meditation",
+                "difficulty": 1
+            }
+        ]
+    }
+]

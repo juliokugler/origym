@@ -1,9 +1,9 @@
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 import styles from "./RegisterContainer.module.css";
-import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
 import { useTranslation } from "react-i18next";
 import { FaGoogle, FaApple, FaRegEye, FaEyeSlash } from "react-icons/fa";
-import classNames from "classnames";
 
 const RegisterContainer = () => {
   const [firstName, setFirstName] = useState("");
@@ -88,20 +88,20 @@ const RegisterContainer = () => {
 
   const checkPasswordStrength = (password) => {
     let strength = "";
-  
+
     // Length-based scoring
     const lengthScore = password.length >= 6 ? 1 : 0;
     const mediumLengthScore = password.length >= 8 ? 1 : 0;
     const goodLengthScore = password.length >= 10 ? 1 : 0;
     const veryGoodLengthScore = password.length >= 14 ? 1 : 0;
-  
+
     // Character types scoring
     const hasUpperCase = /[A-Z]/.test(password) ? 1 : 0;
     const hasNumber = /[0-9]/.test(password) ? 1 : 0;
     const hasSpecialChar = /[@$!%*?&#]/.test(password) ? 1 : 0;
-  
+
     const criteriaMet = hasUpperCase + hasNumber + hasSpecialChar;
-  
+
     // Calculate strength based on scores
     if (password.length < 6) {
       strength = t("weak");
@@ -116,11 +116,9 @@ const RegisterContainer = () => {
     } else {
       strength = t("medium");
     }
-  
+
     setPasswordStrength(strength);
   };
-
-  console.log(passwordStrength)
 
   const getStrengthPercentage = () => {
     switch (passwordStrength) {
@@ -137,6 +135,20 @@ const RegisterContainer = () => {
     }
   };
 
+  const handleFirstNameChange = (e) => {
+    let { value } = e.target;
+    // Remove any characters that are not letters (a-z, A-Z), numbers (0-9), or underscore (_)
+    value = value.replace(/[^a-zA-Z]/g, "");
+    setFirstName(value);
+  };
+
+  const handleLastNameChange = (e) => {
+    let { value } = e.target;
+    // Remove any characters that are not letters (a-z, A-Z), numbers (0-9), or underscore (_)
+    value = value.replace(/[^a-zA-Z]/g, "");
+    setLastName(value);
+  };
+
   return (
     <div className={styles.registerContainer}>
       <div className={styles.title}>
@@ -146,31 +158,31 @@ const RegisterContainer = () => {
       <form onSubmit={handleSubmit}>
         <div className={styles.nameContainer}>
           <label>
-            <span>{t("firstName")}:</span>
+            <p>{t("firstName")}:</p>
             <input
               className={styles.nameInputField}
               type="text"
               name="firstName"
               required
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={handleFirstNameChange}
               value={firstName}
             />
           </label>
           <label>
-            <span>{t("lastName")}:</span>
+            <p>{t("lastName")}:</p>
             <input
               className={styles.nameInputField}
               type="text"
               name="lastName"
               required
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={handleLastNameChange}
               value={lastName}
             />
           </label>
         </div>
 
         <label>
-          <span>{t("email")}:</span>
+          <p>{t("email")}:</p>
           <input
             className={styles.inputField}
             type="email"
@@ -182,7 +194,7 @@ const RegisterContainer = () => {
         </label>
 
         <label>
-          <span>{t("password")}:</span>
+          <p>{t("password")}:</p>
           <div className={styles.passwordInputGroup}>
             <input
               className={styles.inputField}
@@ -221,7 +233,7 @@ const RegisterContainer = () => {
         </label>
 
         <label>
-          <span>{t("confirmPassword")}:</span>
+          <p>{t("confirmPassword")}:</p>
           <div className={styles.passwordInputGroup}>
             <input
               className={styles.inputField}
@@ -243,19 +255,21 @@ const RegisterContainer = () => {
         <div className={styles.errorContainer}>
           {error && <p className={styles.error}>{error}</p>}
         </div>
-        {!loading && (
+        
           <div className={styles.buttonContainer}>
+            {loading ? (
+         <button disabled className="inactiveButton-medium">
+         <div className="loader"></div>
+       </button>): (
             <button className="button">
               <p>{t("getStarted")}!</p>
             </button>
-          </div>
-        )}
-      </form>
-      {loading && (
-        <div className={styles.loaderContainer}>
-          <div className="loader"></div>
+         )}
         </div>
-      )}
+      </form>
+      
+       
+      
 
       <p className={styles.text}>{t("or")}</p>
       <div className="loginOptions">
@@ -265,7 +279,7 @@ const RegisterContainer = () => {
         </button>
         <button className="socialMediaButton">
           <FaApple size={24} />
-          <p>{t("continueWithApple")}</p>
+                 <p>{t("continueWithApple")}</p>
         </button>
       </div>
     </div>

@@ -23,7 +23,7 @@ console.log(user)
 
   return (
     <div className={styles.container}>
-      <Header t={t} pageType="friends" />
+      <Header userData={userData} t={t} pageType="friends" />
 
       <div className={styles.mainSection}>
         <div className={styles.firstCardColumn}>

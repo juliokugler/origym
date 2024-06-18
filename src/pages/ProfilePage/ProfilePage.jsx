@@ -8,7 +8,7 @@ import PersonalFeed from "../../components/profileComponents/PersonalFeed/Person
 import Media from "../../components/profileComponents/Media/Media";
 import { useParams } from "react-router-dom";
 
-const ProfilePage = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
+const ProfilePage = ({ t, userInfo, dailyInfo, user, onUserInfoChange, userData }) => {
   const { userId } = useParams();
   const [profileData, setProfileData] = useState(null);
   const [profileDailyInfo, setProfileDailyInfo] = useState(null);
@@ -60,11 +60,11 @@ const ProfilePage = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
     if (userId && userId !== user.uid) {
       fetchProfileData(userId);
     } else {
-      setProfileData(userData);
+      setProfileData(userInfo);
       setProfileDailyInfo(dailyInfo);
-      console.log("Using default userData and dailyInfo");
+      console.log("Using default userInfo and dailyInfo");
     }
-  }, [userId, user, userData, dailyInfo]);
+  }, [userId, user, userInfo, dailyInfo]);
 
   if (loading) {
     return <p>{t("loading")}...</p>;
@@ -80,7 +80,7 @@ const ProfilePage = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
 
   return (
     <div className="container">
-      <Header t={t} pageType="profile" />
+      <Header userData={userData} t={t} pageType="profile" />
       <div className="mainSection">
         <div className={styles.leftSection}>
           <div className={`card ${styles.profile}`}>

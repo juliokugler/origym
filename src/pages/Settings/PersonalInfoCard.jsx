@@ -2,14 +2,14 @@ import React, {useState} from 'react'
 import classNames from 'classnames';
 import styles from "./Settings.module.css"
 
-const PersonalInfoCard = ({contextUserData, t}) => {
-  const [gender, setGender] = useState(contextUserData.userProfile.gender)
-  const [age, setAge] = useState(contextUserData.userProfile.age);
-  const [height, setHeight] = useState(contextUserData.userProfile.height);
-  const [weight, setWeight] = useState(contextUserData.userProfile.weight);
-  const [weightGoal, setWeightGoal] = useState(contextUserData.userProfile.weightGoal);
+const PersonalInfoCard = ({userData, t}) => {
+  const [gender, setGender] = useState(userData.userProfile.gender)
+  const [age, setAge] = useState(userData.userProfile.age);
+  const [height, setHeight] = useState(userData.userProfile.height);
+  const [weight, setWeight] = useState(userData.userProfile.weight);
+  const [weightGoal, setWeightGoal] = useState(userData.userProfile.weightGoal);
 
-      if (!contextUserData) {
+      if (!userData) {
       ;
         return (
           <div className="loader-container">
@@ -18,7 +18,7 @@ const PersonalInfoCard = ({contextUserData, t}) => {
         );
       }
 
-    console.log(contextUserData)
+    console.log(userData)
   return (
     <div className={classNames('card', styles.personalInfoContainer)}>
     <h3>Personal Information</h3>

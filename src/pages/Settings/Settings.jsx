@@ -8,9 +8,9 @@ import UserInfoCard from './UserInfoCard';
 import ActivityInfoCard from './ActivityInfoCard';
 import PersonalInfoCard from './PersonalInfoCard';
 
-const Settings = ({ t, user }) => {
-  const { userData: contextUserData, setUserInfoChange } = useUserData();
-  const { userData, setUserData, handleChange, handleGoalChange, handleActivityLevelChange } = useFormData(user, contextUserData);
+const Settings = ({ t, user, userData }) => {
+  const { setUserInfoChange } = useUserData();
+  const { handleGoalChange, handleActivityLevelChange } = useFormData(user, userData);
 
 
 
@@ -18,8 +18,7 @@ const Settings = ({ t, user }) => {
     // Handle form submission
   };
 
-  if (!contextUserData) {
-    setUserInfoChange(true);
+  if (!userData) {
     return (
       <div className="loader-container">
         <div className="loader-medium" />
@@ -27,21 +26,21 @@ const Settings = ({ t, user }) => {
     );
   }
 
-console.log(contextUserData)
+console.log(userData)
 
   return (
     <div className={classNames('container')}>
-      <Header t={t} pageType="settings" />
+      <Header userData={userData} t={t} pageType="settings" />
       <div className="mainSection">
         <div className={styles.profileContainer}>
           <div className={styles.column}>
-          <UserInfoCard contextUserData={contextUserData}/>
+          <UserInfoCard userData={userData}/>
           </div>
           <div className={styles.column}>
-            <PersonalInfoCard t={t} contextUserData={contextUserData}/>
+            <PersonalInfoCard t={t} userData={userData}/>
           </div>
           <div className={styles.column}>
-            <ActivityInfoCard t={t} handleActivityLevelChange={handleActivityLevelChange} handleGoalChange={handleGoalChange} contextUserData={contextUserData}/>
+            <ActivityInfoCard t={t} handleActivityLevelChange={handleActivityLevelChange} handleGoalChange={handleGoalChange} userData={userData}/>
           </div>
         </div>
       </div>

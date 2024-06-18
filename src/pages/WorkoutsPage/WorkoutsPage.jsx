@@ -48,7 +48,7 @@ const Workouts = ({ user, t, userData, dailyInfo }) => {
 
   return (
     <div className="container">
-      <Header t={t} pageType="workouts" />
+      <Header userData={userData} t={t} pageType="workouts" />
       <div className="mainSection">
         <div className={styles.firstColumn}>
           <div className={classNames("card", styles.calculator)}>
@@ -68,7 +68,7 @@ const Workouts = ({ user, t, userData, dailyInfo }) => {
           <div className={classNames("card", styles.exerciseBenchmarks)}>
             <div className={styles.exerciseBenchmarksBackground}>
               <h3 className="title">{t("exerciseBenchmarks")}</h3>
-              <Favorites workouts={workouts} favoriteChange={favoriteChange} />
+              <Favorites workouts={workouts} favoriteChange={favoriteChange} t={t} />
             </div>
           </div>
         </div>
@@ -81,6 +81,7 @@ const Workouts = ({ user, t, userData, dailyInfo }) => {
               onExerciseListNameChange={handleExerciseListNameChange}
               onFavoriteToggle={handleFavoriteToggle}
               user={user}
+              t={t}
             />
           </div>
         </div>
@@ -90,7 +91,8 @@ const Workouts = ({ user, t, userData, dailyInfo }) => {
           onClose={handleToggleCreateWorkout}
           selectedDay={selectedDay}
           onCreate={handleWorkoutChange}
-          weight={userData.userProfile.currentWeight}
+          weight={userData.userProfile.weight}
+          t={t}
         />
       )}
     </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ExerciseList.module.css";
-import { useTranslation } from "react-i18next";
 import WorkoutDetails from "../WorkoutDetails/WorkoutDetails";
 import strengthIcon from "../../../assets/Icons/strength.png";
 import cardioIcon from "../../../assets/Icons/cardio.png";
@@ -17,12 +16,13 @@ const ExerciseList = ({
   onChange,
   onFavoriteToggle,
   user,
+  currentLanguage,
+  t
 }) => {
   const [openWorkoutIndex, setOpenWorkoutIndex] = useState(null);
   const [doneExercises, setDoneExercises] = useState(0);
-  const { t } = useTranslation();
-  const { newNumber, setNewNumber } = useState(null);
-  console.log("exercises", exercises);
+  const [newNumber, setNewNumber] = useState(null);
+
   useEffect(() => {
     if (number !== null) {
       setOpenWorkoutIndex(number);
@@ -88,7 +88,7 @@ const ExerciseList = ({
                         className={styles.buttonIcon}
                       />
                       <div className={styles.textInfo}>
-                        <p>{workout.name}</p>
+                        <p>{t(`${workout.name}`)}</p> {/* Display name in the selected language */}
                         <p>
                           <FaFire />
                           {workout.totalCalories} calorie burn
@@ -113,15 +113,15 @@ const ExerciseList = ({
                 </div>
                 {isOpen && (
                   <div className={styles.workoutDetails}>
-                    {/* Render workout details here */}
                     <WorkoutDetails
-                      name={workout.name}
+                      name={workout.name[currentLanguage] || workout.name.en}
                       type={workout.type}
                       exercises={workout.exercises}
                       onCheck={handleExerciseCheck}
                       onFavoriteToggle={onFavoriteToggle}
                       workoutId={workout.id}
                       user={user}
+                      t={t}
                     />
                   </div>
                 )}

@@ -3,29 +3,36 @@
 .groupUl {
     margin: 0;
     list-style: none;
-    max-height: 16vh; /* Example max-height */
+    max-height: 16vh;
     overflow-y: auto;
     padding-left: 0;
   }
   
   .outsideContainer {
-    width: 18vw;
+    width: 22vw;
     border-radius: 8px;
     background-color: #35373D;
     border: 1px solid #4D4F56;
-    padding: 0.6vh 0.5vw;
-    position: relative;
-    transition: padding 0.3s;
+    padding: 0;
+    transition: height 0.3s ease;
+    margin-bottom: 2vh;
+    
   }
   
   .groupUl li {
     display: flex;
-    margin-bottom: 0.8vh;
-    transition: height 0.3s ease; /* Add transition effect */
+    transition: height 0.5s ease;
     cursor: pointer;
+    align-items: center;
+    min-height: 3vh;
+    padding-left: 0.5vw;
   }
   
-  .uncheckedIcon, .arrowIcon {
+  .groupUl li:hover {
+    background-color: var(--gray-lightest);
+  }
+
+  .uncheckedIcon {
     fill: var(--text-color);
     font-size: 2vh;
     cursor: pointer;
@@ -38,7 +45,8 @@
   }
   
   .exerciseName {
-    width: 15vw;
+    width: 19vw;
+    margin: 1.4vh 0;
   }
   
   .lists {
@@ -47,12 +55,12 @@
   }
   
   .exerciseList {
-    overflow: hidden; /* Hide overflow content */
-    transition: height 0.3s ease; /* Add transition effect */
+    overflow: hidden;
+    transition: height 0.3s ease;
   }
   
   .exerciseList.open {
-    height: auto; /* Auto height when open */
+    height: auto;
   }
   
   .selectExercises {
@@ -64,7 +72,6 @@
   
   .groupUl li.collapsed {
     height: 1.4vh;
-    padding: 0;
   }
   
   .arrowContainer {
@@ -72,22 +79,19 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1vh;
-    right: 2.38%;
-    top: 3%;
-    position: absolute;
-    z-index: 999;
+ margin: 0.5vh auto;
+ cursor: pointer;
   }
-  
+
+
+
   .groupItem {
     list-style: none;
     display: flex;
     width: 18w;
     justify-content: space-between;
   }
-  
-  .outsideContainer.expanded {
-    padding-top: 4vh;
-  }
+ 
   
   .buttons {
     margin-top: 6vh;

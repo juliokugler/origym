@@ -12,29 +12,30 @@ const Step3 = ({
   onSubmit,
   onCreate,
   userWeight,
+  currentLanguage,
+  t,
 }) => {
   const { user } = useAuthValue();
   const [exerciseAttributes, setExerciseAttributes] = useState({});
   const [formError, setFormError] = useState("");
   const [totalCalories, setTotalCalories] = useState(0);
   const [muscleGroups, setMuscleGroups] = useState([]);
-console.log("sel:", selectedExercises)
+
   useEffect(() => {
-    setDefaultValues();
+    if (selectedExercises && Array.isArray(selectedExercises)) {
+      setDefaultValues();
+    }
   }, [selectedExercises]);
 
   useEffect(() => {
     calculateTotalCalories();
-    // Calculate muscleGroups based on selectedExercises
-    const groups = [
-      ...new Set(selectedExercises.map((exercise) => exercise.group)),
-    ];
+    const groups = [...new Set(selectedExercises.map(exercise => exercise.group))];
     setMuscleGroups(groups);
-  }, [selectedExercises]);
+  }, [selectedExercises, exerciseAttributes]);
 
   const setDefaultValues = () => {
     const defaultExerciseAttributes = {};
-    selectedExercises.forEach(({ group, name, id, MET }) => {
+    selectedExercises.forEach(({ id, name, MET, group }) => {
       defaultExerciseAttributes[id] = {
         exerciseName: name,
         group: group,
@@ -50,8 +51,6 @@ console.log("sel:", selectedExercises)
     setExerciseAttributes(defaultExerciseAttributes);
   };
 
-  console.log(exerciseAttributes)
-
   const handleInputChange = (id, field, value) => {
     const parsedValue = value !== "" ? parseInt(value, 10) : 0;
 
@@ -65,16 +64,18 @@ console.log("sel:", selectedExercises)
   };
 
   const calculateTotalCalories = () => {
-    let total = 0;
+    let totalCalories = 0;
+
     for (const key in exerciseAttributes) {
       const { MET, sets, reps } = exerciseAttributes[key];
-      const effectiveSets = sets > 0 ? sets : 3;
-      const effectiveReps = reps > 0 ? reps : 10;
-      const duration = effectiveSets * effectiveReps * 0.1;
-      const calories = Math.ceil((MET * 3.5 * userWeight * duration) / 200);
-      total += calories;
+
+      const avgDurationPerRep = 0.1;
+      const caloriesPerRep = (MET * 3.5 * userWeight * avgDurationPerRep) / 200;
+      const totalCaloriesForExercise = caloriesPerRep * sets * reps;
+      totalCalories += totalCaloriesForExercise;
     }
-    setTotalCalories(total);
+
+    setTotalCalories(Math.ceil(totalCalories));
   };
 
   const handleSubmit = async (event) => {
@@ -84,28 +85,35 @@ console.log("sel:", selectedExercises)
       const userDocRef = doc(firestore, "users", user.uid);
       const workoutInfoCollectionRef = collection(userDocRef, "workouts");
 
-      // Construct the workout object with the data
       const exercises = exerciseAttributes;
       const totalCaloriesPerExercise = {};
 
-      Object.values(exercises).forEach(({ exerciseName, MET, sets, reps }) => {
-        const effectiveSets = sets > 0 ? sets : 3;
-        const effectiveReps = reps > 0 ? reps : 10;
-        const duration = effectiveSets * effectiveReps * 0.5;
-        const calories = Math.ceil((MET * 3.5 * userWeight * duration) / 200);
-        totalCaloriesPerExercise[exerciseName] = calories;
-      });
+      for (const key in exercises) {
+        const { MET, sets, reps } = exercises[key];
+        const avgDurationPerRep = 0.1;
+        const caloriesPerRep = (MET * 3.5 * userWeight * avgDurationPerRep) / 200;
+        const totalCaloriesForExercise = caloriesPerRep * sets * reps;
+        totalCaloriesPerExercise[exercises[key].exerciseName] = Math.ceil(totalCaloriesForExercise);
+      }
 
       const workout = {
         type: selectedType,
         name: workoutName,
-        exercises: exercises,
+        exercises: {},
         days: selectedDays,
         muscleGroups: muscleGroups,
         totalCalories: totalCalories,
         totalCaloriesPerExercise: totalCaloriesPerExercise,
         isWorkoutDone: false,
       };
+
+      for (const key in exercises) {
+        const exercise = exercises[key];
+        workout.exercises[key] = {
+          ...exercise,
+          exerciseName: selectedExercises.find(e => e.id === key).name, // Store exercise name in English
+        };
+      }
 
       onCreate();
       await addDoc(workoutInfoCollectionRef, workout);
@@ -122,6 +130,8 @@ console.log("sel:", selectedExercises)
   const renderInputFields = (id) => {
     const attributes = exerciseAttributes[id];
 
+    if (!attributes) return null;
+
     switch (selectedType) {
       case "Strength":
         return (
@@ -129,7 +139,6 @@ console.log("sel:", selectedExercises)
             <input
               className={styles.inputContainer}
               type="number"
-              placeholder="Sets"
               min="0"
               value={attributes.sets}
               onChange={(e) => handleInputChange(id, "sets", e.target.value)}
@@ -137,7 +146,6 @@ console.log("sel:", selectedExercises)
             <input
               className={styles.inputContainer}
               type="number"
-              placeholder="Reps"
               min="0"
               value={attributes.reps}
               onChange={(e) => handleInputChange(id, "reps", e.target.value)}
@@ -145,12 +153,9 @@ console.log("sel:", selectedExercises)
             <input
               className={styles.inputContainer}
               type="number"
-              placeholder="Weight"
               min="0"
               value={attributes.weight}
-              onChange={(e) =>
-                handleInputChange(id, "weight", e.target.value)
-              }
+              onChange={(e) => handleInputChange(id, "weight", e.target.value)}
             />
           </div>
         );
@@ -161,43 +166,46 @@ console.log("sel:", selectedExercises)
 
   return (
     <div className={styles.container}>
-      <h2>{workoutName} Card</h2>
-      <p>Total Calories: {totalCalories}</p>
-      <div className={styles.groupContainer}>
-        <div className={styles.header}>
-          <h3>Muscle Group</h3>
-          <div className={styles.setsRepsWeightHeader}>
-            {selectedType === "Strength" ? (
-              <>
-                <h3>Sets</h3>
-                <h3>Reps</h3>
-                <h3>Weight</h3>
-              </>
-            ) : (
-              <>
-                <h3>Distance</h3>
-                <h3>Speed</h3>
-                <h3>Time</h3>
-                <h3>Inclination</h3>
-              </>
-            )}
-          </div>
-          </div>
-      </div>
+      <h2>{workoutName}</h2>
+      <p>Estimated Total Calories Burned: {totalCalories}</p>
+
       {muscleGroups.map((group) => (
         <div key={group} className={styles.exerciseList}>
-          <h4>{group}</h4>
+          <div className={styles.groupContainer}>
+            <div className={styles.header}>
+              <h4>{t(`${group}Exercises`)}</h4>
+              <div className={styles.setsRepsWeightHeader}>
+                {selectedType === "Strength" ? (
+                  <>
+                    <h4>{t("sets")}</h4>
+                    <h4>{t("reps")}</h4>
+                    <h4>{t("weight")}</h4>
+                  </>
+                ) : (
+                  <>
+                    <h4>{t("distance")}</h4>
+                    <h4>{t("speed")}</h4>
+                    <h4>{t("time")}</h4>
+                    <h4>{t("inclination")}</h4>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+
           {selectedExercises
             .filter((exercise) => exercise.group === group)
             .map(({ name, id }) => (
               <div key={id} className={styles.exerciseItem}>
-                <h4>{name}</h4>
+                <p>{t(`${name}`)}</p>
                 {renderInputFields(id)}
               </div>
             ))}
         </div>
       ))}
-      <button className="button" onClick={handleSubmit}>Submit</button>
+      <button className="button" onClick={handleSubmit}>
+        {t("submit")}
+      </button>
       {formError && <p className={styles.error}>{formError}</p>}
     </div>
   );

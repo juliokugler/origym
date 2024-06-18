@@ -38,13 +38,13 @@ const [language, setLanguage] = useState("pt");
 
   // Render loading state if userData is not available yet
   if (loading) {
-    return <div>{t("loading")}...</div>;
+    return <div className="loader-container"><div className="loader"/></div>;
   }
 
   // Render the Settings component when userData is available
   return (
     <div className={styles.container}>
-      <Header t={t} pageType="settings" />
+      <Header userData={userData} t={t} pageType="settings" />
       {userData.userProfile && userData.userProfile.firstName && (
         <div className={styles.mainSection}>
           {" "}

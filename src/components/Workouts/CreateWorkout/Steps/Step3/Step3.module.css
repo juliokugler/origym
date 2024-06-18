@@ -9,9 +9,7 @@
     align-items: center;
   }
  
-  .groupContainer{
-    margin-bottom: 3vh;
-  }
+  
   
   .inputContainer {
     background-color: #35373D;
@@ -22,7 +20,7 @@
     text-align: center;
   }
 
-  .groupContainer h3{
+  .groupContainer h4{
    margin:0
   }
 
@@ -32,6 +30,12 @@
     justify-content: space-between;
     margin-right: 0;
    margin-bottom: -1vh;
+   border-bottom: 1px solid var(--gray-lightest);
+  }
+
+  .exerciseList{
+    padding-bottom: 2vh;
+    margin-bottom: 2vh;
   }
 
   .exerciseItem input {
@@ -39,7 +43,7 @@
     width:4vw;
   }
 
-  .exerciseItem h3{
+  .exerciseItem h4{
     flex: 1;
   }
 
@@ -51,8 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5vh;
-    margin-top: 0.5vh;
+    margin-top: 1.6vh;
    
   }
 .exerciseItem h4{
@@ -71,7 +74,7 @@
     align-items: center;
     width: 19vw;
   }
-  .setsRepsWeightHeader h3{
+  .setsRepsWeightHeader h4{
     margin-left: 2.2vw
   }
 

@@ -47,7 +47,7 @@ const NutritionPage = ({ meal, mealNumber, t, userData, dailyInfo, onUserInfoCha
 
   return (
     <div className="container">
-      <Header t={t} pageType="nutrition" />
+      <Header userData={userData} t={t} pageType="nutrition" />
 
       <div className="mainSection">
         <div className={styles.firstColumn}>

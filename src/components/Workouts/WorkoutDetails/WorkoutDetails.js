@@ -10,10 +10,11 @@ const WorkoutDetails = ({
   name,
   type,
   onCheck,
+  onFavoriteToggle,
+  currentLanguage,
+  t,
 }) => {
   const [allCompleted, setAllCompleted] = useState(false);
-
-  console.log("Received type:", type);
 
   const getAttributes = (type) => {
     switch (type) {
@@ -77,6 +78,8 @@ const WorkoutDetails = ({
               allCompleted={allCompleted}
               favoriteList={favoriteList}
               onCheck={onCheck}
+              t={t}
+              onFavoriteToggle={onFavoriteToggle}
             />
           ))}
         </tbody>

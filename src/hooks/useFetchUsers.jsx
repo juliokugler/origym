@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
 
-const useFetchUsers = (searchTerm) => {
+const useFetchUsers = (searchTerm, currentUsername) => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -28,9 +28,10 @@ const useFetchUsers = (searchTerm) => {
       const fetchedUsers = [];
       querySnapshot.forEach((doc) => {
         const userData = doc.data();
-      
+        // Exclude the current user from search results
+        if (userData.displayNameLower !== currentUsername.toLowerCase()) {
           fetchedUsers.push({ id: doc.id, uid: doc.id, ...userData });
-        
+        }
       });
 
       setUsers(fetchedUsers);
@@ -40,7 +41,7 @@ const useFetchUsers = (searchTerm) => {
     } finally {
       setLoading(false);
     }
-  }, [searchTerm]);
+  }, [searchTerm, currentUsername]);
 
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -48,7 +49,7 @@ const useFetchUsers = (searchTerm) => {
     }, 300);
 
     return () => clearTimeout(debounceTimer);
-  }, [fetchUsers]);
+  }, [fetchUsers, searchTerm, currentUsername]); 
 
   return { users, loading, error };
 };

@@ -3,10 +3,10 @@ import styles from "./Exercise.module.css";
 import { FaCheckSquare, FaRegSquare, FaStar } from "react-icons/fa";
 import useToggleFavorite from "../../../hooks/useToggleFavorite";
 
-const Exercise = ({ exercise, allCompleted }) => {
+const Exercise = ({ exercise, allCompleted, onFavoriteToggle, t }) => {
   const { name, type } = exercise;
   const [isChecked, setIsChecked] = useState(false);
-  const { toggleFavorite, starColor, isFavorite } = useToggleFavorite(exercise);
+  const { toggleFavorite, starColor, isFavorite } = useToggleFavorite(exercise, onFavoriteToggle);
   const [, forceUpdate] = useState(); // Dummy state to force re-render
 
   useEffect(() => {
@@ -31,13 +31,7 @@ const Exercise = ({ exercise, allCompleted }) => {
         return [];
     }
   };
-
   const attributes = getAttributes(type);
-
-  useEffect(() => {
-    // Force update to re-render component when favorite status changes
-    forceUpdate({});
-  }, [isFavorite]);
 
   return (
     <div className={styles.exerciseCard} id={`exercise-${exercise.id}`}>
@@ -45,19 +39,21 @@ const Exercise = ({ exercise, allCompleted }) => {
         <tbody>
           <tr className={styles.exerciseTableRow}>
             <td className={styles.exerciseName} style={{ width: "10vw", textAlign: "left" }}>
-              <div className={styles.nameAndIcon}><div className={styles.iconContainer}>
-                <FaStar
-                  className={`${styles.starIcon} ${isFavorite ? styles.favorite : ""}`}
-                  color={starColor}
-                  size={18}
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    console.log(`Toggling favorite for ${name}`);
-                    toggleFavorite();
-                  }}
-                />
-                {name}
-              </div></div>
+              <div className={styles.nameAndIcon}>
+                <div className={styles.iconContainer}>
+                  <FaStar
+                    className={`${styles.starIcon} ${isFavorite ? styles.favorite : ""}`}
+                    color={starColor}
+                    size={18}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      console.log(`Toggling favorite for ${name}`);
+                      toggleFavorite();
+                    }}
+                  />
+                  {t(`${exercise.name}`)} {/* Display name in the selected language */}
+                </div>
+              </div>
             </td>
             {attributes.map((attribute, index) => (
               <td key={index} style={{ textAlign: "center", width: "5vw" }}>

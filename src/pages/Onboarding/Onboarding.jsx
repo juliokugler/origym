@@ -31,8 +31,6 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
 
   const isImageLoaded = useImageLoad(backgroundImage);
 
-  console.log("context:", contextUserData);
-
   useEffect(() => {
     setUserInfoChange();
     if (contextUserData) {

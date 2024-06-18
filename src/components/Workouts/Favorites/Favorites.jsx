@@ -7,9 +7,6 @@ import styles from "./Favorites.module.css";
 //Icons
 import { FaStar } from "react-icons/fa";
 
-//Translation Hook
-import { useTranslation } from "react-i18next";
-
 //Custom Hooks
 import useFetchFavorites from "../../../hooks/useFetchFavorites";
 import useRemoveFavorites from "../../../hooks/useRemoveFavorites";
@@ -18,9 +15,8 @@ import { useAuthValue } from "../../../contexts/AuthContext";
 //Components
 import AddFavorites from "./AddFavorites";
 
-const Favorites = ({ favoriteChange }) => {
+const Favorites = ({ favoriteChange, t }) => {
   const { user } = useAuthValue();
-  const { t } = useTranslation();
   const [activeGroup, setActiveGroup] = useState(null);
 
   // Fetch favorites using the custom hook
@@ -51,7 +47,7 @@ const Favorites = ({ favoriteChange }) => {
             }`}
             onClick={() => handleGroupSelection(groupName)}
           >
-            {groupName}
+             {t(`${groupName}`)}
           </button>
         ))}
       </div>
@@ -84,7 +80,7 @@ const Favorites = ({ favoriteChange }) => {
                           handleFavoriteToggle(groupName, exercise.id)
                         }
                       />
-                      {exercise.name}
+                      {t(`${exercise.name}`)}
                     </td>
                     <td>{exercise.reps}</td>
                     <td>{exercise.maxWeight}kgs</td>

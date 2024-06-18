@@ -1,0 +1,97 @@
+.pricing {
+    padding: 50px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .pricing h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  
+  .pricing h3 {
+    font-size: 1.5em;    color: var(--text-color-secondary);
+    margin-bottom: 4vh;
+  }
+  
+  .pricingTiers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px; /* Increased by 20% */
+  }
+  
+  .pricingTier {
+    width: 300px; /* Increased by 20% */
+    margin: 24px; /* Increased by 20% */
+    padding: 36px 24px; /* Increased by 20% */
+    text-align: center;
+    background-color: var(--gray-medium);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c);
+    border-radius: 12px; /* Increased by 20% */
+    box-shadow: 0 4.8px 9.6px rgba(0, 0, 0, 0.2); /* Increased by 20% */
+    transition: transform 0.3s, box-shadow 0.3s, fill 0.3s;
+  }
+  
+  .pricingTier svg {
+    font-size: 3.6vh; /* Increased by 20% */
+    fill: var(--gray-light);
+    transition: fill 0.3s;
+    margin-top: 1vh;
+  }
+  
+  .pricingTier:hover,
+  .pricingTier.active {
+    transform: translateY(-12px); /* Increased by 20% */
+    box-shadow: 0 9.6px 19.2px rgba(0, 0, 0, 0.3); /* Increased by 20% */
+  }
+  
+  .pricingTier:hover svg,
+  .pricingTier.active svg {
+    fill: var(--primary-color);
+  }
+  
+  .pricingTier h4 {
+    margin-bottom: 12px; /* Increased by 20% */
+    font-size: 2.16em; /* Increased by 20% */
+    color: var(--text-color);
+    margin-top: 3vh;
+  }
+
+  .pricingTier:hover h4, .pricingTier.active h4 {
+    margin-bottom: 12px; /* Increased by 20% */
+    font-size: 2.16em; /* Increased by 20% */
+    color: var(--primary-color);
+    margin-top: 3vh;
+  }
+  
+  .pricingTier p {
+    font-size: 1.8em; /* Increased by 20% */
+    color: var(--text-color);
+    margin-bottom: 24px; /* Increased by 20% */
+    font-weight: 500;
+  }
+  
+  .pricingTier ul {
+    list-style-type: none;
+    padding: 0;
+    color: #ddd;
+  }
+  
+  .pricingTier ul li {
+    font-size: 1.2em; /* Increased by 20% */
+    margin: 12px 0; /* Increased by 20% */
+  }
+  
+  .pricingTier button {
+    display: flex;
+    justify-content: center;
+    margin: 4.8vh auto 1vh auto; /* Increased by 20% */
+  }
+  
+  .pricingTier ul li:before {
+    content: "✔";
+    margin-right: 9.6px; /* Increased by 20% */
+    color: var(--primary-color);
+  }

@@ -11,6 +11,7 @@ const CreateWorkout = ({
   selectedDay,
   onCreate,
   weight,
+  currentLanguage, t
 }) => {
   const [workoutType, setWorkoutType] = useState("Strength");
   const [workoutName, setWorkoutName] = useState("");
@@ -73,6 +74,7 @@ const CreateWorkout = ({
             onNext={handleNext}
             onPartnerChange={handlePartnerChange}
             selectedDay={selectedDay}
+            t={t}
           />
         );
       case 2:
@@ -83,6 +85,8 @@ const CreateWorkout = ({
             onPrevious={handlePrevious}
             onNext={handleFinish}
             workoutType={workoutType}
+            currentLanguage={currentLanguage}
+            t={t}
           />
         );
       case 3:
@@ -98,10 +102,12 @@ const CreateWorkout = ({
             selectedOptions={selectedOptions}
             exerciseId={exerciseId}
             userWeight={weight}
+            currentLanguage={currentLanguage}
+            t={t}
           />
         );
       case 4:
-        return <Step4 onCreate={handleCreateAnother} />;
+        return <Step4 onCreate={handleCreateAnother}   t={t} />;
       default:
         return null;
     }
