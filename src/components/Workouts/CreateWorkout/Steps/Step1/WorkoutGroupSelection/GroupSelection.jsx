@@ -10,38 +10,42 @@ const GroupSelection = ({ selectedType, onChange, t }) => {
       : [...selectedOptions, option];
 
     setSelectedOptions(updatedOptions);
-    onChange(updatedOptions); // Pass the updated options directly
+    onChange(updatedOptions);
   };
 
   const getTitleByType = (selectedType) => {
     switch (selectedType) {
-      case "Strength":
-        return t("selectMuscleGroups");
       case "Cardio":
-        return "Select Cardio Modalities";
-           default:
-        return "";
+        return t("selectCardioModalities");
+               default:
+        return t("selectMuscleGroups");
     }
   };
 
-  // Define muscle group names for each type
+  
+  const strengthGroups = [
+    "chest",
+    "biceps",
+    "forearms",
+    "triceps",
+    "shoulders",
+    "abs",
+    "obliques",
+    "hamstrings",
+    "quadriceps",
+    "calves",
+    "traps",
+    "glutes",
+  ];
+
+  const cardioGroups = ["indoors", "outdoors", "homeWorkouts"];
+
+ 
   const groups = {
-    Strength: [
-      "chest",
-      "biceps",
-      "forearms",
-      "triceps",
-      "shoulders",
-      "abs",
-      "obliques",
-      "hamstrings",
-      "quadriceps",
-      "calves",
-      "traps",
-      "glutes",
-    ],
-    Cardio: ["running", "hiit", "walking", "swimming"],
-    
+    Strength: strengthGroups,
+    Hypertrophy: strengthGroups,
+    Endurance: cardioGroups,
+    Cardio: cardioGroups,
   };
 
   return (
@@ -49,15 +53,15 @@ const GroupSelection = ({ selectedType, onChange, t }) => {
       <p className={styles.title}>{getTitleByType(selectedType)}</p>
       <div className={styles.groupRow}>
         {groups[selectedType].map((optionKey, index) => {
-          const translatedLabel = t(optionKey); // Fetch translation dynamically
+          const translatedLabel = t(optionKey);
           return (
             <button
               key={index}
               onClick={() => handleOptionClick(optionKey)}
               className={
                 selectedOptions.includes(optionKey)
-                  ? "activeGroupButton" // Adjust the classes as per your styles
-                  : "notSelectedGroupButton" // Adjust the classes as per your styles
+                  ? "activeGroupButton"
+                  : "notSelectedGroupButton"
               }
             >
               {translatedLabel}

@@ -1,9 +1,9 @@
-/*General Structure*/
+/* General Structure */
 
 .title2 {
   margin: 0;
   margin-top: 2vh;
-}  
+}
 
 .innerSection {
   display: flex;
@@ -21,108 +21,140 @@
   width: 27vw;
 }
 
-.firstColumn, .innerSection {
+.firstColumn,
+.innerSection {
   margin-right: 1vw;
 }
 
+/* First Column */
 
-/*First Column*/
+.achievements {
+  flex: 1;
+  height: 48vh;
+}
 
-  .achievements{
-    width: flex 1;
-    height: 48vh;
+.titleAndIcon {
+  display: flex;
+  align-items: center;
+}
+
+.titleAndIcon img {
+  width: 1.8vw;
+  height: 1.8vw;
+  margin-left: 1vw;
+  margin-right: -1vw;
+}
+
+/* Second Column */
+
+.personalFeed {
+  flex: 1;
+  height: 48vh;
+}
+
+.innerContainer {
+  width: 25vw;
+  max-height: 22vh;
+  overflow-y: hidden;
+}
+
+.innerContainer:hover {
+  overflow-y: auto;
+}
+
+/* Third Column */
+
+.media {
+  flex: 1;
+  height: 80vh;
+}
+
+.mediaTitle {
+  margin-bottom: 0;
+  margin-left: 1vw;
+}
+
+.titleAndDropdown {
+  width: 26vw;
+  display: flex;
+  align-items: center;
+  margin: 2vh auto;
+  justify-content: space-between;
+}
+
+.selection {
+  color: var(--text-color);
+  background-color: var(--gray-light);
+  border: 1px solid #4D4F56;
+  border-radius: 1vh;
+  padding: 0.2vh 0.2vw;
+  cursor: pointer;
+}
+
+.dropdown {
+  background-color: var(--gray-light);
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+}
+
+.dailyIntakes {
+  flex: 1;
+  height: 30vh;
+}
+
+.titleAndMenu {
+  width: 26vw;
+  display: flex;
+  align-items: baseline;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.titleAndMenu u {
+  cursor: pointer;
+}
+
+.profile {
+  width: 58vw;
+  height: 30vh;
+}
+
+.profile_mobile {
+  width: 90%;
+  display: flex;
+  margin: 0 auto
+}
+
+/* Mobile */
+
+.personalFeed_mobile {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
   }
 
-  .titleAndIcon {
-    display: flex;
-    align-items: center;
-  }
+.mobileButtons {
+  display: flex;
+  justify-content: space-around;
+  margin: 2vh auto;
+  width: 90%;
+}
 
-  .titleAndIcon img {
-    width: 1.8vw;
-    height: 1.8vw;
-    margin-left: 1vw;
-    margin-right: -1vw;
-  }   
+.mobileButtons button {
+  width: 30%;
+  padding: 1vh;
+  border: none;
+  background-color: var(--gray-light);
+  color: var(--text-color);
+  border-radius: 1vh;
+  cursor: pointer;
+}
 
+.mobileButtons .activeButton {
+  background-color: var(--gray-medium);
+}
 
-/*Second Column*/
-
- .personalFeed {
-    width: flex 1;
-    height: 48vh;
-  }
-
-  .innerContainer {
-    width: 25vw;
-    max-height: 22vh;
-    overflow-y: hidden
-  }
-
-  .innerContainer:hover{
-    overflow-y: auto;
-  }
-
-
-
-
-/*Third Column*/
-
-  .media{
-    width: flex 1;
-    height: 80vh;
-  }
-
-  .mediaTitle {
-    margin-bottom: 0;
-    margin-left: 1vw;
-  }
-
-
-  .titleAndDropdown {
-    width: 26vw;
-    display: flex;
-    align-items: center;
-    margin: 2vh auto;
-    justify-content: space-between;
-  }
-
-  .selection {
-    color: var(--text-color);
-    background-color: var(--gray-light);
-    border: 1px solid #4D4F56;
-    border-radius:1vh;
-    padding: 0.2vh 0.2vw;
-    cursor:pointer;
-  }
-
-  .dropdown {
-    background-color: var(--gray-light);
-    border:none;
-    border-radius: 1vh;
-    cursor:pointer;
-  }
-
-
-  .dailyIntakes {
-    width: flex 1;
-    height: 30vh;
-  }
-
-  .titleAndMenu {
-    width: 26vw;
-    display: flex;
-    align-items: baseline;
-    margin: 0 auto;
-    justify-content: space-between;
-  }
-
-  .titleAndMenu u {
-    cursor: pointer;
-  }
-
-  .profile {
-    width: 58vw;
-    height: 30vh;
-  
-  }
+.mobileContent {
+  margin-top: 2vh;
+}

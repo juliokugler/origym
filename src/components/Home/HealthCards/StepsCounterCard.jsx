@@ -5,7 +5,7 @@ import dotsActive from "../../../assets/Icons/DotsThreeVertical_inactive.png";
 import steps from "../../../assets/Icons/steps.png";
 import classNames from "classnames";
 
-const StepsCounterCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) => {
+const StepsCounterCard = ({ user, dailyInfo, userData, t, onUserInfoChange, isMobile }) => {
   const [showSlider, setShowSlider] = useState(false);
   const [newStepsTaken, setNewStepsTaken] = useState(dailyInfo.stepsTaken);
 
@@ -34,10 +34,7 @@ const StepsCounterCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) =>
     }
   };
 
-  return (
-
- 
-   
+  return (<> {!isMobile? (
           <div className={classNames("card", "healthCard")}>
             <img
               className="healthIcon"
@@ -65,6 +62,7 @@ const StepsCounterCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) =>
               )}
               <img
                 src={showSlider ? dots : dotsActive}
+                className="dots"
                 alt="dots menu"
                 onClick={() => setShowSlider(!showSlider)}
               />
@@ -72,7 +70,43 @@ const StepsCounterCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) =>
                 <p>{`/ 10K ${t("steps")}`}</p>
               )}
             </div>
-          </div>
+          </div>): (<div className={classNames("card", "healthCard_mobile")}>
+            
+            <div className="healthInfo_mobile"><img
+              className="healthIcon_mobile"
+              src={steps}
+              alt="Steps"
+            />
+              <h3>
+                {showSlider
+                  ? `${newStepsTaken}K / 10K ${t("steps")}`
+                  : <h2>{newStepsTaken}</h2>}
+              </h3>
+              {showSlider && (
+                <div className="slider">
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                    value={newStepsTaken}
+                    onChange={handleStepsChange}
+                  />
+                  <button className="button-small" onClick={handleStepsSubmit}>{t("submit")}</button>
+                </div>
+              )}
+              <img
+                src={showSlider ? dots : dotsActive}
+                alt="dots menu"
+                onClick={() => setShowSlider(!showSlider)}
+                className="dots"
+              />
+              {!showSlider && (
+                <p>{`/ 10K`}</p>
+              )}
+            </div>
+          </div>)
+          }</>
  
      
    

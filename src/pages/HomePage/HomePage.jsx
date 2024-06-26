@@ -22,7 +22,7 @@ import useFetchExercises from "../../hooks/useFetchExercises";
 import { useAuthValue } from "../../contexts/AuthContext";
 import AiCoach from "../../components/Home/AICoach/AiCoach";
 
-const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUserInfoChange}) => {
+const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUserInfoChange, currentLanguage, isMobile}) => {
   const [workouts, setWorkouts] = useState([]);
   const [workoutChange, setWorkoutChange] = useState(false);
   const [workoutCheck, setWorkoutCheck] = useState(false);
@@ -53,18 +53,20 @@ const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUse
  console.log(user)
 
   return (
-    <div className="container">
+    <div className={ !isMobile ? "container" : "container-mobile"}>
       <Header
+      isMobile={isMobile}
         pageType="home"
         currentDate={currentDate}
         timedGreeting={greeting}
         t={t}
         userData={userData}
         userUid={user.uid}
-      />
+        currentLanguage={currentLanguage}
+      />{!isMobile? (
       <div className="mainSection">
         <div className={styles.leftSection}>
-          <HealthCards t={t} onUserInfoChange={onUserInfoChange} user={user} userData={userData} dailyInfo={dailyInfo} />
+          <HealthCards t={t} isMobile={isMobile } onUserInfoChange={onUserInfoChange} user={user} userData={userData} dailyInfo={dailyInfo} />
           <div className={styles.innerSection}>
             <div className={styles.firstColumn}>
               <div className={`card ${styles.AICoach}`}>
@@ -136,10 +138,63 @@ const Home = ({ greeting, meal, currentDate, t, userData, dailyInfo, user, onUse
               dailyInfo={dailyInfo}
               meal={selectedOption}
               t={t}
+              language={currentLanguage}
             />
           </div>
         </div>
-      </div>
+      </div>): (<div className="mainSection-mobile"><div className={styles.topContainer_mobile}><HealthCards t={t} isMobile={isMobile} onUserInfoChange={onUserInfoChange} user={user} userData={userData} dailyInfo={dailyInfo} />   <div>
+           
+            <DailyIntakes
+              t={t}
+              userData={userData}
+              dailyInfo={dailyInfo}
+            isMobile={isMobile}
+            /></div>
+          </div> <div className={`card ${styles.todaysWorkouts_mobile}`}>
+                <h3 className={styles.title}>{t("todaysWorkout")}</h3>
+                <div className={styles.innerContainer_mobile}>
+                  <WorkoutList
+                    t={t}
+                    isMobile={isMobile}
+                    workouts={workouts}
+                    user={user}
+                    onCheck={handleWorkoutCheck}
+                    dailyInfo={dailyInfo}
+          onUserInfoChange={onUserInfoChange}
+                  />
+                  
+                </div></div> <div className={`card ${styles.mealSuggestions_mobile}`}>
+            <div className={styles.titleAndDropdown_mobile}>
+              <h3 className={styles.mealSuggestionsTitle}>
+                {t("mealSuggestions")}
+              </h3>
+              <div className={styles.dropdown}>
+                <select
+                  className={styles.selection}
+                  value={selectedOption}
+                  onChange={handleOptionChange}
+                >
+                  <option value="Breakfast">{t("Breakfast")}</option>
+                  <option value="Lunch">{t("Lunch")}</option>
+                  <option value="Dinner">{t("Dinner")}</option>
+                  <option value="Snacks">{t("Snacks")}</option>
+                  <option value="Desserts">{t("Desserts")}</option>
+                  <option value="Supplementation">
+                    {t("Supplementation")}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <MealSuggestions
+              onUserInfoChange={onUserInfoChange}
+              dailyInfo={dailyInfo}
+              meal={selectedOption}
+              t={t}
+              language={currentLanguage}
+              isMobile={isMobile}
+            />
+          </div>
+              </div>)}
     </div>
   );
 };

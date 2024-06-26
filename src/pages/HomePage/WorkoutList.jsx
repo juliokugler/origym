@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./WorkoutList.module.css";
 import ExerciseList from "./HomeExerciseList";
-import { useTranslation } from "react-i18next";
 import { FaPlus } from "react-icons/fa";
 
-const WorkoutList = ({ workouts, onOpen, user, onCheck, dailyInfo, setDailyInfo, onUserInfoChange }) => {
+const WorkoutList = ({ isMobile, t, workouts, onOpen, user, onCheck, dailyInfo, setDailyInfo, onUserInfoChange }) => {
   const [selectedDay, setSelectedDay] = useState(null);
-  const { t } = useTranslation();
 
   const getCurrentDay = () => {
     const today = new Date();
@@ -33,7 +31,7 @@ const WorkoutList = ({ workouts, onOpen, user, onCheck, dailyInfo, setDailyInfo,
 
   return (
     <div className={styles.card}>
-      <ExerciseList
+      <ExerciseList isMobile={isMobile}
         exercises={filteredWorkouts}
         user={user}
         onCheck={onCheck}

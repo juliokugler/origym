@@ -19,7 +19,7 @@
 cursor: pointer;
 }
 
-.container{
+.container, .container_mobile{
 display: flex;
 flex-direction: column;
 margin: 0 auto;
@@ -31,7 +31,7 @@ display: flex;
 flex-direction: column;
   text-align: center;
   margin-top: 2vh;
-  color: rgb(137, 137, 137);
+  color: var(--text-color-secondary)
 }
 
 .noWorkoutsMessage button {
@@ -54,12 +54,28 @@ justify-content: space-between;
 margin-bottom: 1vh;
 }
 
+.button_mobile{
+  margin-left: 3vw;
+  width: 90%;
+padding: 0;
+border: none;
+display: flex;
+align-items: center;
+margin-bottom: 2vh;
+ }
+
+ .button_mobile img {
+  height: 5vh;
+  margin-right: 3vw;
+ }
+
+
 .buttonIcon {
 height: 5vh;
 margin-right: 1.2vw;
 }
 
-.button p {
+.button p, .button_mobile p {
 margin: 0.5vh 0;
 }
 
@@ -71,17 +87,29 @@ text-align: left;
 width: 34vw;
 }
 
+.workoutInfo_mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  width: 70%;
+  }
+
 .arrowIcon {
 height: 2.8vh;
 cursor: pointer;
 }
 
 .textInfo{
-width: 60%;
+width: 65%;
+
+}
+
+.calories {
+  color: #DCDCDD;
 }
 
 .textInfo svg {
-  color: var(--text-color);
   margin: 0;
   margin-right: 0.3vw;
   font-size: 1.8vh;
@@ -96,7 +124,7 @@ width: 100%;
 }
 
 .exerciseCardClosed {
-background-color: #35373D;
+  background-color: var(--gray-medium);
 height: 9vh;
 padding: 0;
 width: 34vw;
@@ -106,8 +134,19 @@ cursor: pointer;
 
 }
 
+.exerciseCardClosed_mobile {
+  background-color: var(--gray-medium);
+height: 9vh;
+padding: 0;
+width: 100%;
+border-radius: 2vh;
+margin: 1.4vh auto;
+cursor: pointer;
+
+}
+
 .exerciseCardOpened {
-background-color: #35373D;
+background-color: var(--gray-medium);
 min-height: 16vh;
 padding: 0;
 width: 34vw;
@@ -122,8 +161,22 @@ margin: 0 auto;
 padding: 0;
 }
 
+.container_mobile ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  }
+
 .iconAndText {
 display: flex;
 width: 25vw;
 cursor: pointer;
 }
+
+.iconAndText_mobile {
+  display: flex;
+  width: 90%;
+  cursor: pointer;
+  }
+  

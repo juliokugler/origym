@@ -37,7 +37,7 @@ top: 4.3vh;
 }
 
 .buttonContainer {
-  height: 9vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

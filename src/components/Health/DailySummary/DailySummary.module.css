@@ -4,7 +4,7 @@
   }
 
   .cardClosed {
-    background-color: var(--gray-light);
+    background-color: var(--gray-medium);
     min-height: 7vh;
     padding: 0 2vw;
     width: 24vw;
@@ -14,7 +14,7 @@
   }
 
   .cardOpened {
-    background-color: var(--gray-light);
+    background-color: var(--gray-medium);
     min-height: 30vh;
     padding: 0 2vw;
     width: 24vw;

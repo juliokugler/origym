@@ -6,7 +6,7 @@
     width: 24vw;
     height: 4.5vh;
     border-radius: 100vh;
-    background-color: #4D4F56;
+    background-color: var(--gray-light);
     display: flex;
     margin: 0 auto;
     margin-top: 2.5vh;

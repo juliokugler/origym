@@ -5,8 +5,7 @@ import ingredientsTranslation from "../../../assets/Ingredients/Ingredients.json
 import classNames from "classnames";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
-
-const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
+const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange, currentLanguage }) => {
   const [ingredientImage, setIngredientImage] = useState("");
   const [ingredientname, setIngredientname] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -39,8 +38,6 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
     };
   }, []);
 
-  
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     if (name === "ingredientname") {
@@ -57,15 +54,16 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("Current Language in handleSubmit:", currentLanguage);
     if (isNaN(parseFloat(quantity)) || parseFloat(quantity) <= 0) {
       setCalorias("Valor indefinido");
       return;
     }
     try {
-      const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
-      const ingredientName = translateIngredient(ingredientname, selectedLanguage);
+      const ingredientName = translateIngredient(ingredientname, currentLanguage);
+      console.log("Translated Ingredient Name:", ingredientName);
       if (!ingredientName) {
-        console.error(`Translation for ${ingredientname} not found in ${selectedLanguage}`);
+        console.error(`Translation for ${ingredientname} not found in ${currentLanguage}`);
         setCalorias("Translation not found");
         return;
       }
@@ -73,7 +71,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
         "https://trackapi.nutritionix.com/v2/natural/nutrients",
         {
           method: "POST",
-          headers: { 
+          headers: {
             "Content-Type": "application/json",
             "x-app-id": NUTRITIONIX_APP_ID,
             "x-app-key": NUTRITIONIX_API_KEY,
@@ -105,16 +103,17 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
   };
 
   const translateIngredient = (ingredient, language) => {
+    console.log("Current Language in translateIngredient:", language);
     const normalizedIngredient = ingredient.toLowerCase().trim();
     const ingredientObject = ingredientsTranslation.find(item => item.translations[language]?.toLowerCase() === normalizedIngredient);
     return ingredientObject ? ingredientObject.name : null;
   };
 
   const updateSuggestions = (input) => {
-    const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
+    console.log("Current Language in updateSuggestions:", currentLanguage);
     const normalizedInput = input.toLowerCase().trim();
-    const filteredSuggestions = ingredientsTranslation.filter(item => item.translations[selectedLanguage]?.toLowerCase().includes(normalizedInput));
-    setSuggestions(filteredSuggestions.map(item => item.translations[selectedLanguage]));
+    const filteredSuggestions = ingredientsTranslation.filter(item => item.translations[currentLanguage]?.toLowerCase().includes(normalizedInput));
+    setSuggestions(filteredSuggestions.map(item => item.translations[currentLanguage]));
   };
 
   const handleSuggestionClick = (suggestion) => {
@@ -131,7 +130,6 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
   };
 
   const addIngredientToDailyInfo = async (calorias) => {
-
     const db = getFirestore();
     const currentDate = new Date().toISOString().slice(0, 10);
     const dailyInfoRef = doc(db, `users/${user.uid}/dailyInfo/${currentDate}`);
@@ -153,9 +151,7 @@ const Calculator = ({ t, userData, dailyInfo, user, onUserInfoChange }) => {
     } catch (error) {
       console.error("Error adding nutritional values:", error);
     }
-
   };
-
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>

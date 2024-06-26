@@ -1,58 +1,66 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    border-radius: 2vh;
-    background-color: transparent;
-    padding:0 20px 20px 20px;
-    margin: 2vh 0;
-    align-items: center;
-    
-  }
-  
- 
-  .input {
-    height: 27px;
-    border-radius: 4px;
-    border: none;
-    width: 7vw;
-  }
 
-  .option{
-    height: 27px;
-    border-radius: 4px;
-    border: none;
-    min-width: 8vw;
-  }
+.addContainer {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 2vh;
+  border: 2px solid rgb(49, 49, 49);;
+  padding:0 20px 20px 20px;
+  margin: 2vh 0;
+  position: absolute;
+  left:0.2vw;
+  width: 25vw;
+}
 
-  .exerciseOptions{
-    display: flex;
-  }
 
-  .exerciseOption{
-    display: flex;
-    flex-direction: column;
-    margin-right: 16px;
-  }
+.input {
+  height: 27px;
+  border-radius: 4px;
+  border: none;
+  width: 6vw;
+}
 
-  
-  .optionsContainer{
-    display: flex;
-    flex-direction: row;;
-  }
+.option{
+  height: 27px;
+  border-radius: 4px;
+  border: none;
+  min-width: 8vw;
+}
 
-  .closeButton{
-    cursor: pointer;
-  }
+.exerciseOptions{
+  display: flex;
+}
 
-  .buttonContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
+.exerciseOption{
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+  width: 6vw;
+}
 
-  .buttonsContainer{
-    display: flex;
-    justify-content: center;
-  }
+
+.optionsContainer{
+  display: flex;
+  flex-direction: row;;
+}
+
+.closeButton{
+  cursor: pointer;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.buttonsContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.addContainer button {
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}

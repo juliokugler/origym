@@ -12,6 +12,10 @@ code {
   font-family: 'Poppins', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  height: 100vh;
+}
  
 .container {
   display: flex;
@@ -19,6 +23,14 @@ code {
   justify-content: center;
   margin: 0 auto;
   width: 89vw;
+}
+
+.container-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 .mainSection{
@@ -29,6 +41,10 @@ code {
   margin-bottom: 3vh;
   }
 
+  .mainSection-mobile {
+    display: flex;
+    flex-direction: column;
+  }
 
 .title {
   margin-top: 2vh;
@@ -59,7 +75,7 @@ code {
   width: flex 1;
 }
 
-.button, .button-small, .activeGroupButton {
+.button, .button-small, .activeGroupButton, .button_mobile {
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);;
   color: var(--gray-medium);
@@ -75,6 +91,10 @@ code {
 
 .button {
   width: 14vw;
+}
+
+.button_mobile{
+  width: 28vw
 }
 
 .button-small {
@@ -112,6 +132,37 @@ border: 1px solid var(--gray-lightest);
     color: var(--color-text);
   }
   
+
+  .loginOptions_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .socialMediaButton_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #35373D;
+    color: white;
+    border: none;
+    border-radius: 0.8vh;
+    width: 60vw;
+    padding: 0 0.8vh;
+    cursor: pointer;
+    margin: 1vh 0;
+    transition: background-color 0.3s;
+  }
+  
+  .socialMediaButton:hover,
+  .socialMediaButton_mobile:hover {
+    background-color: #4D4F56;
+  }
+
+  .socialMediaButton_mobile svg {
+    margin-right: 1vw;
+    fill: var(--primary-color);
+  }
+
   .socialMediaButton {
   display: flex;
   align-items: center;
@@ -245,12 +296,46 @@ p {
   --input-border: 0.5vh;
 }
 
+.progressBar_mobile {
+  appearance: none; /* Remove default styles */
+  width: 55vw;
+  height: 1.2vh;
+  display: flex;
+ margin: 0 auto;
+ border-radius: 10px;
+ z-index: 99;
+ margin-bottom: 1vh;
+ transition: width 0.8s ease-in-out;
+}
+
+.progressBar_mobile::-webkit-progress-bar {
+  background-color: #FFFFFF; /* Background color of the progress bar */
+  border-radius: 10px
+}
+
+.progressBar_mobile::-webkit-progress-value {
+  background-color: #343B47; /* Change the color of the progress bar */
+   border-radius: 10px;
+   transition: width 0.5s ease-in-out;
+}
+
+.progressBar_mobile::-moz-progress-bar {
+  background-color: #343B47;
+  transition: width 0.8s ease-in-out; /* Add transition for smooth animation */
+}
+
 
 /* Health Cards */
 
 .healthIcon {
   margin-top: 2vh;
   height: 5vh;
+}
+
+.healthIcon_mobile {
+  margin-right: 3vw;
+  width: 3.2vh;
+  margin-bottom: 0;
 }
 
 .healthCard{
@@ -263,6 +348,16 @@ p {
   flex-direction: column;
   position: relative;
   margin-bottom: 1vh;
+} 
+
+.healthCard_mobile{
+ width: 40vw;
+ height: 7.6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 2vh;
 } 
 
 
@@ -281,8 +376,12 @@ p {
   margin-top:0.5vh;
 }
 
-
-
+.healthCard_mobile p {
+  color: var(--text-color-secondary);
+  margin:0;
+  padding: 0;
+  font-size: 2vh
+}
 
 .healthInfo {
   margin-top: 2vh ;
@@ -290,7 +389,15 @@ p {
  
 }
 
-.healthInfo img {
+.healthInfo_mobile {
+  margin-top: 0 ;
+  text-align: center;
+  display: flex;
+ align-items: center;
+ 
+}
+
+.dots {
 position: absolute;
 top: 3%;
 right: 0%;
@@ -339,7 +446,11 @@ font-weight: 500;
 margin-bottom:1vh
 }
 
-
+.healthCard_mobile h2 {
+  margin: 0;
+font-weight: 500;
+font-size: 2.4vh
+}
 
 .progressBar2 {
   appearance: none; /* Remove default styles */

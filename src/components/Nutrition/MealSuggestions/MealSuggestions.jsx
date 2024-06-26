@@ -6,7 +6,7 @@ import RecipeDetails from "../../Nutrition/RecipeDetails/RecipeDetails";
 import { useAuthValue } from "../../../contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 
-const MealSuggestions = ({ meal, dailyInfo, onUserInfoChange }) => {
+const MealSuggestions = ({ meal, dailyInfo, onUserInfoChange, language, isMobile }) => {
   const { t, i18n } = useTranslation();
   const [recipes, setRecipes] = useState([]);
   const [showPopupForMealId, setShowPopupForMealId] = useState(null);
@@ -106,12 +106,12 @@ console.log(meal)
     setTimeout(() => setAnimateMealId(null), 500);
   };
 
-  const language = i18n.language; // Get the current language
+  
 
   return (
-    <div className={styles.container}>
+    <div className={isMobile? styles.container_mobile : styles.container}>
       {memoizedRecipes.map((meal) => (
-        <div className={styles.mealCard} key={meal.id}>
+        <div className={isMobile? styles.mealCard_mobile : styles.mealCard} key={meal.id}>
           <div className={styles.cardContent}>
             <div
               onClick={() => handleOpenPopup(meal.id)}
@@ -119,12 +119,12 @@ console.log(meal)
             >
               {meal.image && (
                 <img
-                  className={styles.mealImage}
+                className={isMobile? styles.mealImage_mobile : styles.mealImage}
                   src={meal.image}
                   alt={t(meal.title[language])}
                 />
               )}
-              <div className={styles.mealInfo}>
+               <div className={isMobile? styles.mealInfo_mobile : styles.mealInfo}>
                 <p>{meal.title[language]}</p>
                 <p className={animateMealId === meal.id ? styles.pulse : ""}>
                   <FaFire /> {meal.totalCalories * (quantities[meal.id] || 1)}{" "}

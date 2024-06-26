@@ -47,7 +47,7 @@ const Step1 = ({ onNext, selectedDay, t }) => {
     if (selectedOptions.length > 0) {
       onNext(workoutName, selectedOptions, selectedDays, selectedType);
     } else {
-      alert("Please select at least one muscle group.");
+      alert(t("pleaseSelectOneMuscle"));
     }
   };
 
@@ -57,31 +57,32 @@ const Step1 = ({ onNext, selectedDay, t }) => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.content}>
       <h2>{t("newWorkout")}</h2>
       <div className={styles.row}>
-        <label>
-          <p>{t("workoutType")}:</p>
+        <label className={styles.label}>
+          <p className={styles.title}>{t("workoutType")}</p>
           <div className={styles.buttonGroup}>
             <button
-              className={selectedType === "Strength" ? "button" : "notSelectedButton-medium"}
+              className={selectedType === "Strength" ? "button-small" : "notSelectedButton-small"}
               onClick={() => setSelectedType("Strength")}
             >
               {t("strength")}
             </button>
             <button
-              className={selectedType === "Endurance" ? "button" : "notSelectedButton-medium"}
+              className={selectedType === "Endurance" ? "button-small" : "notSelectedButton-small"}
               onClick={() => setSelectedType("Endurance")}
             >
               {t("endurance")}
             </button>
             <button
-              className={selectedType === "Hypertrophy" ? "button" : "notSelectedButton-medium"}
+              className={selectedType === "Hypertrophy" ? "button-small" : "notSelectedButton-small"}
               onClick={() => setSelectedType("Hypertrophy")}
             >
               {t("hypertrophy")}
             </button>
             <button
-              className={selectedType === "Cardio" ? "button" : "notSelectedButton-medium"}
+              className={selectedType === "Cardio" ? "button-small" : "notSelectedButton-small"}
               onClick={() => setSelectedType("Cardio")}
             >
               {t("cardio")}
@@ -89,29 +90,29 @@ const Step1 = ({ onNext, selectedDay, t }) => {
           </div>
         </label>
       </div>
-
+      <label className={styles.label}>
       <GroupSelection
         selectedType={selectedType}
         onChange={handleSelectedOptionsChange}
         t={t}
       />
-
+</label>
       <div className={styles.label}>
-        <p>{t("assignDaysOfTheWeek")}</p>
+      <p className={styles.title2}>{t("assignDaysOfTheWeek")}</p>
         <DaySelector
           selectedDays={selectedDays}
           handleDaySelect={handleDaySelect}
         />
       </div>
-
+      </div>
       <div className={styles.buttonContainer}>
         {selectedOptions.length > 0 ? (
           <button className="button" onClick={handleNextClick}>
-            {t("next")}
+           <p> {t("next")}</p>
           </button>
         ) : (
           <button className="inactiveButton-medium" onClick={handleNextClick}>
-            {t("next")}
+            <p>{t("next")}</p>
           </button>
         )}
       </div>

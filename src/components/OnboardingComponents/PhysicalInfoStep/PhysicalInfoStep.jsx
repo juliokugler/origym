@@ -60,7 +60,7 @@ const PhysicalInfoStep = ({ userData, handleChange, handleNext, handleBack, t })
       </div>
       <div className={styles.buttonContainer}>
         <button className="inactiveButton-medium" onClick={handleBack}>
-          {t("back")}
+          {t("goBack")}
         </button>
         <button className="button" onClick={handleNext}>
           {t("next")}

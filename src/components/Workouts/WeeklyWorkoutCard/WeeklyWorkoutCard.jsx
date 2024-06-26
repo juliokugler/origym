@@ -9,7 +9,8 @@ const WeeklyWorkoutCard = ({
   onFavoriteToggle,
   user,
   currentLanguage,
-  t
+  t,
+  isMobile
 }) => {
   const [selectedDay, setSelectedDay] = useState(null);
   const [number, setNumber] = useState(null);
@@ -47,12 +48,10 @@ const WeeklyWorkoutCard = ({
     }
   }, [filteredWorkouts, selectedDay]);
 
-  console.log(workouts)
-
   return (
-    <div className={styles.workoutContainer}>
+    <div className={isMobile ? styles.workoutContainer_mobile : styles.workoutContainer}>
       <DaySelector selectedDay={selectedDay} handleDaySelect={handleDaySelect} />
-      <div className={styles.exerciseListContainer}>
+      <div className={isMobile ? styles.exerciseListContainer_mobile : styles.exerciseListContainer}>
         <ExerciseList
           exercises={filteredWorkouts}
           number={number}
@@ -61,6 +60,7 @@ const WeeklyWorkoutCard = ({
           user={user}
           currentLanguage={currentLanguage}
           t={t}
+          isMobile={isMobile}
         />
       </div>
       <div className={styles.buttonContainer}>

@@ -5,7 +5,7 @@ import dotsActive from "../../../assets/Icons/DotsThreeVertical_inactive.png";
 import water from "../../../assets/Icons/water.png";
 import classNames from "classnames";
 
-const WaterIntakeCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) => {
+const WaterIntakeCard = ({ user, dailyInfo, userData, t, onUserInfoChange, isMobile }) => {
   const [showSlider, setShowSlider] = useState(false);
   const [newWaterConsumed, setNewWaterConsumed] = useState(dailyInfo.waterConsumed);
 
@@ -37,47 +37,83 @@ const WaterIntakeCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) => 
   };
 
   return (
-
- 
-   
-          <div className={classNames("card", "healthCard")}>
+    <>
+      {!isMobile ? (
+        <div className={classNames("card", "healthCard")}>
+          <img
+            className="healthIcon"
+            src={water}
+            alt="Water"
+          />
+          <div className="healthInfo">
+            <h3>
+              {showSlider
+                ? `${newWaterConsumed} / ${userData.userProfile.waterIntake} ${t("liters")}`
+                : <h2>{newWaterConsumed}L</h2>}
+            </h3>
+            {showSlider && (
+              <div className="slider">
+                <input
+                  type="range"
+                  min="0"
+                  max={userData.userProfile.waterIntake}
+                  step="0.1"
+                  value={newWaterConsumed}
+                  onChange={handleWaterChange}
+                />
+                <button className="button-small" onClick={handleWaterSubmit}>{t("submit")}</button>
+              </div>
+            )}
             <img
-              className="healthIcon"
-              src={water}
-              alt="Water"
+              src={showSlider ? dots : dotsActive}
+              alt="dots menu"
+               className="dots"
+              onClick={() => setShowSlider(!showSlider)}
             />
-            <div className="healthInfo">
-              <h3>
-                {showSlider
-                  ? `${newWaterConsumed} / ${userData.userProfile.waterIntake} ${t("liters")}`
-                  : <h2>{newWaterConsumed}L</h2>}
-              </h3>
-              {showSlider && (
-                <div className="slider">
-                  <input
-                    type="range"
-                    min="0"
-                    max={userData.userProfile.waterIntake}
-                    step="0.1"
-                    value={newWaterConsumed}
-                    onChange={handleWaterChange}
-                  />
-                  <button className="button-small" onClick={handleWaterSubmit}>{t("submit")}</button>
-                </div>
-              )}
-              <img
-                src={showSlider ? dots : dotsActive}
-                alt="dots menu"
-                onClick={() => setShowSlider(!showSlider)}
-              />
-              {!showSlider && (
-                <p>{`/ ${userData.userProfile.waterIntake} ${t("liters")}`}</p>
-              )}
-            </div>
+            {!showSlider && (
+              <p>{`/ ${userData.userProfile.waterIntake} ${t("liters")}`}</p>
+            )}
           </div>
- 
-     
-   
+        </div>
+      ) : (
+        <div className={classNames("card", "healthCard_mobile")}>
+          
+          <div className="healthInfo_mobile"><img
+            className="healthIcon_mobile"
+            src={water}
+            alt="Water"
+          />
+            <h3>
+              {showSlider
+                ? `${newWaterConsumed} / ${userData.userProfile.waterIntake} ${t("liters")}`
+                : <h2>{newWaterConsumed}</h2>}
+            </h3>
+            {showSlider && (
+              <div className="slider">
+                <input
+                  type="range"
+                  min="0"
+                  max={userData.userProfile.waterIntake}
+                  step="0.1"
+                  value={newWaterConsumed}
+                  onChange={handleWaterChange}
+                />
+                <button className="button-small" onClick={handleWaterSubmit}>{t("submit")}</button>
+              </div>
+            )}
+            <img
+              src={showSlider ? dots : dotsActive}
+              alt="dots menu"
+               className="dots"
+              onClick={() => setShowSlider(!showSlider)}
+            />
+            {!showSlider && (
+              <p>{`/${userData.userProfile.waterIntake}L`}</p>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

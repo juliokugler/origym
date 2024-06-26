@@ -50,7 +50,7 @@
 
 
 .mealCard {
-  background-color: #35373d;
+  background-color: var(--gray-medium);
   padding: 0 1vw;
   width: 28vw;
   border-radius: 2vh;

@@ -7,7 +7,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { setDoc, doc, collection } from "firebase/firestore";
+import { setDoc, doc, collection, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 export const useAuthentication = () => {
@@ -27,7 +27,7 @@ export const useAuthentication = () => {
       "auth/email-already-in-use": "E-mail já cadastrado.",
       "auth/user-not-found": "Usuário não encontrado.",
       "auth/wrong-password": "Senha incorreta.",
-      "auth/invalid-credential" : "Senha ou usuário incorretos."
+      "auth/invalid-credential": "Senha ou usuário incorretos.",
     };
 
     setError(errorMessages[error.code] || "Ocorreu um erro, por favor tente novamente mais tarde.");
@@ -41,11 +41,6 @@ export const useAuthentication = () => {
         firstName: data.firstName,
         lastName: data.lastName,
         photoURL: data.photoURL,
-        following: [
-          "IWbtLCXLwfNeHP20aEVBVGpzeTH3",
-          "u1rEZesuRlU3h9XoL7bfnLEhm4E2",
-          "lFy2vob4kTU6gC9EpMOrG9wu0C83",
-        ],
         initialWeight: 70,
         currentWeight: 70,
         TDEE: 2000,
@@ -58,10 +53,10 @@ export const useAuthentication = () => {
         activityLevel: "Moderately Active",
         mainGoal: "Improve Health",
         bio: "",
+        following: [], // Initialize empty following array
         ...data,
       };
 
-      // Remove password from the data before storing it in Firestore
       delete flattenedData.password;
 
       await setDoc(doc(db, `users/${userUid}`), flattenedData);
@@ -92,17 +87,47 @@ export const useAuthentication = () => {
 
       await setUserInfo(user.uid, data);
 
-      const initialFollows = [
-        { followingId: "IWbtLCXLwfNeHP20aEVBVGpzeTH3" },
-        { followingId: "u1rEZesuRlU3h9XoL7bfnLEhm4E2" },
-        { followingId: "lFy2vob4kTU6gC9EpMOrG9wu0C83" },
-      ];
-
-      for (const follow of initialFollows) {
-        await setDoc(doc(collection(db, `users/${user.uid}/follows`)), follow);
-      }
-
       navigate("/onboarding");
+    } catch (error) {
+      handleError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const followUser = async (currentUserId, followUserId) => {
+    setLoading(true);
+    try {
+      const currentUserRef = doc(db, `users/${currentUserId}`);
+      const followUserRef = doc(db, `users/${followUserId}`);
+
+      await updateDoc(currentUserRef, {
+        following: arrayUnion(followUserId),
+      });
+
+      await updateDoc(followUserRef, {
+        followers: arrayUnion(currentUserId),
+      });
+    } catch (error) {
+      handleError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const unfollowUser = async (currentUserId, unfollowUserId) => {
+    setLoading(true);
+    try {
+      const currentUserRef = doc(db, `users/${currentUserId}`);
+      const unfollowUserRef = doc(db, `users/${unfollowUserId}`);
+
+      await updateDoc(currentUserRef, {
+        following: arrayRemove(unfollowUserId),
+      });
+
+      await updateDoc(unfollowUserRef, {
+        followers: arrayRemove(currentUserId),
+      });
     } catch (error) {
       handleError(error);
     } finally {
@@ -124,15 +149,14 @@ export const useAuthentication = () => {
 
   const login = async (data) => {
     setLoading(true);
-    setError(null); // Reset error state before attempting login
-  
+    setError(null);
+
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      // Only navigate to "/onboarding" if login is successful
     } catch (error) {
       handleError(error);
     } finally {
-      setLoading(false); // Stop loading state after attempt, whether success or failure
+      setLoading(false);
     }
   };
 
@@ -142,5 +166,5 @@ export const useAuthentication = () => {
     };
   }, []);
 
-  return { auth, createUser, error, logout, login, loading };
+  return { auth, createUser, error, logout, login, loading, followUser, unfollowUser };
 };

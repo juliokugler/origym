@@ -7,7 +7,7 @@ import styles from "./MealPlanner.module.css";
 import { db } from '../../../firebase/config';  // Assuming you have configured Firebase in this file
 import { doc, setDoc, getDoc } from "firebase/firestore"; 
 
-const MealPlanner = ({ onClose, dayFromCard, mealFromCard, onCorrectSubmit, userUid, t }) => {
+const MealPlanner = ({ onClose, dayFromCard, mealFromCard, onCorrectSubmit, userUid, t, currentLanguage }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [ingredients, setIngredients] = useState([]);
   const [mealType, setMealType] = useState("");
@@ -15,25 +15,30 @@ const MealPlanner = ({ onClose, dayFromCard, mealFromCard, onCorrectSubmit, user
   const [selectedDay, setSelectedDay] = useState(dayFromCard);
   const [totalCalories, setTotalCalories] = useState(0);
   const [number, setNumber] = useState(null);
-
+  const [recipePhoto, setRecipePhoto] = useState("")
+const [recipeName, setRecipeName] = useState("")
   const handleNext = (data) => {
     if (currentPage === 1) {
       setMealType(data);
     } else if (currentPage === 2) {
       setIngredients(data.ingredients);
       setTotalCalories(data.totalCalories); // Update totalCalories separately
+      setRecipePhoto(data.recipePhoto)
+      setRecipeName(data.recipeName)
       setMealInfo((prevMealInfo) => ({
         ...prevMealInfo,
         ingredients: data.ingredients,
-        totalCalories: data.totalCalories, // Include totalCalories in mealInfo
+        totalCalories: data.totalCalories,
+        recipePhoto: data.recipePhoto || "",
+        recipeName: data.recipeName || ""
       }));
     } else if (currentPage === 3) {
-      setMealInfo({ ...mealInfo, ...data, totalCalories }); // Ensure totalCalories is included in mealInfo
+      setMealInfo({ ...mealInfo, ...data, totalCalories, recipePhoto }); // Ensure totalCalories is included in mealInfo
     }
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
-  console.log(userUid)
+  console.log(recipePhoto)
 
   const handlePrevious = () => {
     setCurrentPage((prevPage) => prevPage - 1);
@@ -128,6 +133,7 @@ const MealPlanner = ({ onClose, dayFromCard, mealFromCard, onCorrectSubmit, user
                 onPrevious={handlePrevious}
                 mealType={mealType}
                 t={t}
+                selectedLanguage={currentLanguage}
               />
             )}
             {currentPage === 3 && (
@@ -139,6 +145,9 @@ const MealPlanner = ({ onClose, dayFromCard, mealFromCard, onCorrectSubmit, user
                 mealFromCard={mealFromCard}
                 onCreate={handleCreate}
                 t={t}
+                selectedMeal={mealInfo.selectedMeal} 
+                recipePhoto={recipePhoto}// Pass selectedMeal to Step3
+                name={recipeName}
               />
             )}
             {currentPage === 4 && <Step4 onCreate={() => handleCreate(mealInfo)} />}

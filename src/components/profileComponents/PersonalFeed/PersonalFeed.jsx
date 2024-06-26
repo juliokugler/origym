@@ -6,7 +6,7 @@ import { collection, addDoc, serverTimestamp, query, where, orderBy, limit, getD
 import EmojiPicker from 'emoji-picker-react';
 import happyEmoji from "../../../assets/Icons/Happy_emoji.png";
 
-const PersonalFeed = ({ t, userId, userName, photoURL, friendInfo }) => {
+const PersonalFeed = ({ t, userId, userName, photoURL, friendInfo, isMobile }) => {
   const [content, setContent] = useState('');
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState('');
@@ -69,9 +69,9 @@ const PersonalFeed = ({ t, userId, userName, photoURL, friendInfo }) => {
   }, [userId]); // Add userId to the dependency array
 
   return (
-    <div className={styles.feedContainer}>{!friendInfo && (
+    <div className={!isMobile? styles.feedContainer : styles.feedContainer_mobile}>{!friendInfo && (
       <form onSubmit={handleSubmit}>
-        <label className={styles.personalFeedLabel}>
+        <label className={!isMobile? styles.personalFeedLabel : styles.personalFeedLabel_mobile}>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}

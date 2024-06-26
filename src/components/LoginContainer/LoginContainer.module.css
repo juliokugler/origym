@@ -14,9 +14,42 @@
   user-select: none;
 }
 
+.loginContainer_mobile {
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+  margin-top: 5vh;
+  border-radius: 2vh;
+  height: 78vh;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+}
+
+.loginContainer_mobile h1 {
+  margin: 0;
+  text-align: center;
+  margin-bottom: -2vh;
+}
+
+
 .formAddInfo {
   display: flex;
   width: 25.6vw;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: -0.5vh;
+  margin-bottom: 3vh;
+  align-items: center;
+  color: rgb(150, 150, 150);
+}
+
+
+.formAddInfo_mobile {
+  display: flex;
+  width: 330px;
   justify-content: space-between;
   margin: 0 auto;
   margin-top: -0.5vh;
@@ -50,6 +83,7 @@
   text-align: center;
 }
 
+
 .loginContainer form {
   display: flex;
   flex-direction: column;
@@ -57,7 +91,15 @@
   width: 26vw;
 }
 
-.loginContainer label {
+.loginContainer_mobile form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 330px;
+  margin: 0 auto;
+}
+
+.loginContainer label, .loginContainer_mobile label {
   display: flex;
   justify-content: flex-end;
   text-align: left;
@@ -73,7 +115,14 @@
   width: 26vw;
 }
 
-
+.inputField_mobile {
+  margin-bottom: 2.4vh;
+  padding: 1vw;
+  border-radius: 0.8vh;
+  border: 1px solid #4D4F56;
+  background-color: #35373D;
+  width: 330px;
+}
 
 .title {
   margin: 8vh auto;
@@ -83,14 +132,49 @@
   text-align: left;
 }
 
-.passwordInputGroup {
+.passwordInputGroup, .passwordInputGroup_mobile {
   position: relative;
 }
 
+.loginContainer form p {
+  margin: 0.5vh 0;
+}
+
+.loginContainer_mobile form p {
+  margin: 0.5vh 0;
+}
+
+.nameInputField {
+  margin-bottom: 2.4vh;
+  padding: 0.5vw;
+  border-radius: 0.8vh;
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-lightest);
+  width: 11vw;
+}
+
+.nameInputField_mobile {
+  margin-bottom: 2vh;
+  padding: 1vw;
+  border-radius: 0.8vh;
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-lightest);
+  width: 70vw;
+}
 .eyeButton {
   position: absolute;
   right: -1.2vw;
-  top: 17%;
+  top: -11%;
+  padding: 1vw;
+  fill: var(--gray-light);
+  cursor: pointer;
+  font-size: 2vh;
+}
+
+.eyeButton_mobile {
+  position: absolute;
+  right: 2vw;
+  top: 0;
   padding: 1vw;
   fill: var(--gray-light);
   cursor: pointer;
@@ -119,6 +203,15 @@
   margin: 3vh 0;
 }
 
+.text_mobile {
+  margin: 4vh 0;
+}
+
+.text2_mobile {
+  margin: 6vh 0;
+}
+
+
 .loaderContainer {
   height: 3.6vh;
   display: flex;
@@ -128,4 +221,11 @@
 
 .loginContainer form p {
   margin: 0.5vh 0;
+}
+
+.buttonContainer_mobile {
+  margin: 2vh auto 0 auto;
+  width: 50vw;
+display: flex;
+justify-content: center;
 }

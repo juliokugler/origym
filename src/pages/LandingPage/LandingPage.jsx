@@ -6,33 +6,23 @@ import useImageLoad from "../../hooks/useImageLoad";
 import Features from "../../components/LandingComponents/Features/Features";
 import Testimonials from "../../components/LandingComponents/Testimonials/Testimonials";
 import Pricing from "../../components/LandingComponents/Pricing/Pricing";
+import { useNavigate } from "react-router-dom";
+import Hero from "./Hero";
 
-const LandingPage = () => {
+const LandingPage = (currentLanguage, isMobile) => {
   const isImageLoaded = useImageLoad(main);
 
+  console.log(currentLanguage)
+
+const navigate = useNavigate()
   if (!isImageLoaded) {
     return <div className="loader-container"><div className="loader-medium" /></div>;
   }
 
   return (
     <div className={styles.container}>
-      <div className={styles.hero}>
-        <div className={styles.heroText}>
-          <h1>
-            START YOUR <span>FITNESS</span>
-            <br />
-            <span>JOURNEY</span> NOW
-            <br />
-            WITH <span>ORIGYM</span>.
-          </h1>
-          <p>Track your workouts, nutrition, sleep and much <br /> more!</p>
-          <button className="button">
-            <h3>Join Now</h3>
-          </button>
-        </div>
-      </div>
+  <Hero isMobile={isMobile} currentLanguage={currentLanguage.currentLanguage}/>
 
-      {/* Partners */}
       <div className={styles.partners}>
         <div className={styles.partnersInfo}>
           <h2>They trust us</h2>
@@ -40,15 +30,12 @@ const LandingPage = () => {
         <img src={partners} alt="Partners" />
       </div>
 
-      {/* Features */}
-      <Features />
+      <Features currentLanguage={currentLanguage.currentLanguage} />
 
-      {/* Testimonials */}
-      <Testimonials />
+      <Testimonials currentLanguage={currentLanguage.currentLanguage} />
 
+      <Pricing currentLanguage={currentLanguage.currentLanguage} />
 
-      {/* Pricing */}
-      <Pricing />
     </div>
   );
 };

@@ -3,6 +3,13 @@
   overflow-y: scroll;
   width: 33vw;
 }
+
+.feedContainer_mobile {
+  height: 40vh;
+  overflow-y: hidden;
+  width: 100%;
+}
+
 .personalFeedLabel textarea {
   border-radius: var(--button-border);
   background-color: var(--gray-dark);
@@ -16,6 +23,20 @@
   padding: 1vh 1vw;
   margin-bottom: 2vh;
 }
+
+.personalFeedLabel_mobile textarea {
+  border-radius: var(--button-border);
+  background-color: var(--gray-dark);
+  color: var(--text-color);
+  border: none;
+  width: 90%;
+  height: 7vh;
+  display: flex;
+  margin: 0 auto;
+  padding: 1vh 1vw;
+  margin-bottom: 2vh;
+}
+
 .submitRow {
   display: flex;
   width: 32vw;

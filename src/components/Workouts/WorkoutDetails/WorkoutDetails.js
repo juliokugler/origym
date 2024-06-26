@@ -18,14 +18,10 @@ const WorkoutDetails = ({
 
   const getAttributes = (type) => {
     switch (type) {
-      case "Strength":
-        return ["Exercises", "Sets", "Reps", "Weight", <FaRegSquare />];
       case "Cardio":
-        return ["Modalities", "Distance", "Time", "Pace", <FaRegSquare />];
-      case "Yoga":
-        return ["Positions", "Duration", "Difficulty", <FaRegSquare />];
+        return ["Modalities", "Duration", "Distance", "Speed", <FaRegSquare />];
       default:
-        return null;
+        return ["Exercises", "Sets", "Reps", "Weight", <FaRegSquare />];
     }
   };
 
@@ -68,9 +64,7 @@ const WorkoutDetails = ({
                 id: exercise.id,
                 isFavorite: exercise.isFavorite,
                 duration: exercise.duration,
-                inclination: exercise.inclination,
                 distance: exercise.distance,
-                time: exercise.time,
                 speed: exercise.speed,
                 difficulty: exercise.difficulty,
                 type: type,

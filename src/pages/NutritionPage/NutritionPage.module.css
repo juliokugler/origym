@@ -1,104 +1,149 @@
-/*General Structure*/
+/* General Structure */
 
-.firstColumn{
+.firstColumn {
   width: 30vw;
-  }
-  
-.secondColumn{
+}
+
+.secondColumn {
   width: 33vw;
-  }
-  
-.thirdColumn{
+}
+
+.thirdColumn {
   width: 21vw;
-  }
+}
 
 .firstColumn, .secondColumn {
   margin-right: 1vw;
 }
 
-
 .title2 {
   margin: 0;
   margin-top: 2vh;
   color: var(--gray-light);
-}  
+}
 
+/* First Column */
 
-/*First Column*/
+.dailyIntakes {
+  flex: 1;
+  height: 30vh;
+  margin-bottom: 2vh;
+}
 
-  .dailyIntakes {
-    width: flex 1;
-    height: 30vh;
-    margin-bottom: 2vh;
-  }
+.titleAndMenu {
+  width: 26vw;
+  display: flex;
+  align-items: baseline;
+  margin: 0 auto;
+  justify-content: space-between;
+}
 
-  .titleAndMenu {
-    width: 26vw;
-    display: flex;
-    align-items: baseline;
-    margin: 0 auto;
-    justify-content: space-between;
-  
-  }
+.titleAndMenu u {
+  cursor: pointer;
+}
 
-  .titleAndMenu u {
-    cursor: pointer;
-    }
+.mealSuggestions {
+  flex: 1;
+  height: 49vh;
+}
 
+.titleAndDropdown {
+  width: 26vw;
+  display: flex;
+  align-items: center;
+  margin: 2vh auto;
+  justify-content: space-between;
+}
 
-  .mealSuggestions{
-    width: flex 1;
-    height: 49vh;
-    }
+.selection {
+  color: var(--text-color);
+  background-color: var(--gray-light);
+  border: 1px solid #4D4F56;
+  border-radius: 1vh;
+  padding: 0.2vh 0.2vw;
+  cursor: pointer;
+}
 
-  .titleAndDropdown {
-    width: 26vw;
-    display: flex;
-    align-items: center;
-    margin: 2vh auto;
-    justify-content: space-between;
-    }
-
-  .selection { 
-    color: var(--text-color);
-    background-color: var(--gray-light);
-    border: 1px solid #4D4F56;
-    border-radius:1vh;
-    padding: 0.2vh 0.2vw;
-    cursor:pointer;
-    }
-
-  .dropdown {
-    background-color: var(--gray-light);
-    border:none;
-    border-radius: 1vh;
-    cursor:pointer;
-    }
-
+.dropdown {
+  background-color: var(--gray-light);
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+}
 
 /* Second Column */
 
-  .mealPlan{
-    width: flex 1;
-    height: 81vh;
-    }
-
+.mealPlan {
+  flex: 1;
+  height: 81vh;
+}
 
 /* Third Column */
 
-  .waterIntake {
-    width: flex 1;
-    height: 22vh;
-    }
-  
-  .calculator {
-    border-radius: 2vh;
-    width: flex 1;
-    height: 57vh;
-    background-color: var(--gray-medium);
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c); 
-    display: flex;
-    flex-direction: column;
-    color: var(--text-color);
-    }
+.waterIntake {
+  flex: 1;
+  height: 22vh;
+}
+
+.calculator {
+  border-radius: 2vh;
+  flex: 1;
+  height: 57vh;
+  background-color: var(--gray-medium);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+/* Mobile */
+
+.mealSuggestions_mobile {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  height: 49vh;
+}
+
+.titleAndDropdown_mobile {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 2vh auto;
+  justify-content: space-between;
+}
+
+.quickActions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2vh;
+}
+
+.quickActions .card {
+  width: 28%;
+  height: 10vh;
+  background-color: var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vh;
+  cursor: pointer;
+}
+
+.quickActions .card h3 {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.quickActions .card:hover {
+  background-color: var(--gray-medium);
+}
+
+.topContainer_mobile {
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+  margin: 0 auto;
+}
 

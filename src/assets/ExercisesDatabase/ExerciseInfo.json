@@ -1,6 +1,4 @@
-[
-    {
-        "ExerciseType": "Strength",
+{
         "chest": [
             {
                 "id": "C1",
@@ -1939,42 +1937,180 @@
                 "exampleUrl": "https://example.com/leg-press-calf-machine"
             }
         ],
-        "Cardio": [
+        "indoors": [
             {
-                "id": "CR1",
-                "name": "treadmill",
-                "exampleUrl": "https://example.com/treadmill-running"
+              "id": "I1",
+              "name": "treadmillRunning",
+              "description": "Running on a treadmill.",
+              "MET": 9.5,
+              "exampleUrl": "https://example.com/treadmill-running"
             },
             {
-                "id": "CR2",
-                "name": "outdoor",
-                "exampleUrl": "https://example.com/outdoor-running"
+              "id": "I2",
+              "name": "stationaryCycling",
+              "description": "Cycling on a stationary bike.",
+              "MET": 7.5,
+              "exampleUrl": "https://example.com/stationary-cycling"
             },
             {
-                "id": "CR3",
-                "name": "outsideCycling",
-                "exampleUrl": "https://example.com/interval-training"
+              "id": "I3",
+              "name": "rowingMachine",
+              "description": "Rowing on a rowing machine.",
+              "MET": 8,
+              "exampleUrl": "https://example.com/rowing-machine"
             },
             {
-                "id": "CR3",
-                "name": "indoorCycling",
-                "exampleUrl": "https://example.com/interval-training"
+              "id": "I4",
+              "name": "ellipticalTrainer",
+              "description": "Exercising on an elliptical trainer.",
+              "MET": 5,
+              "exampleUrl": "https://example.com/elliptical-trainer"
             },
             {
-                "id": "CR3",
-                "name": "swimming",
-                "exampleUrl": "https://example.com/interval-training"
+              "id": "I5",
+              "name": "stairClimber",
+              "description": "Using a stair climber machine.",
+              "MET": 8.8,
+              "exampleUrl": "https://example.com/stair-climber"
             },
             {
-                "id": "CR3",
-                "name": "stairClimber",
-                "exampleUrl": "https://example.com/interval-training"
+              "id": "I6",
+              "name": "jumpRope",
+              "description": "Jumping rope.",
+              "MET": 12.3,
+              "exampleUrl": "https://example.com/jump-rope"
             },
             {
-                "id": "CR3",
-                "name": "ellipticals",
-                "exampleUrl": "https://example.com/interval-training"
+              "id": "I7",
+              "name": "zumba",
+              "description": "Zumba dance workout.",
+              "MET": 7.3,
+              "exampleUrl": "https://example.com/zumba"
+            },
+            {
+              "id": "I8",
+              "name": "burpees",
+              "description": "Performing burpees.",
+              "MET": 10,
+              "exampleUrl": "https://example.com/burpees"
             }
-        ]
+          ],
+          "outdoors": [
+            {
+              "id": "O1",
+              "name": "roadRunning",
+              "description": "Running on the road.",
+              "MET": 9.8,
+              "exampleUrl": "https://example.com/road-running"
+            },
+            {
+              "id": "O2",
+              "name": "trailRunning",
+              "description": "Running on a trail.",
+              "MET": 9,
+              "exampleUrl": "https://example.com/trail-running"
+            },
+            {
+              "id": "O3",
+              "name": "powerWalking",
+              "description": "Walking at a brisk pace.",
+              "MET": 3.8,
+              "exampleUrl": "https://example.com/power-walking"
+            },
+            {
+              "id": "O4",
+              "name": "dayHiking",
+              "description": "Hiking for a day.",
+              "MET": 6,
+              "exampleUrl": "https://example.com/day-hiking"
+            },
+            {
+              "id": "O5",
+              "name": "roadBiking",
+              "description": "Cycling on the road.",
+              "MET": 8,
+              "exampleUrl": "https://example.com/road-biking"
+            },
+            {
+              "id": "O6",
+              "name": "openWaterSwimming",
+              "description": "Swimming in open water.",
+              "MET": 7,
+              "exampleUrl": "https://example.com/open-water-swimming"
+            },
+            {
+              "id": "O7",
+              "name": "soccer",
+              "description": "Playing soccer.",
+              "MET": 7,
+              "exampleUrl": "https://example.com/soccer"
+            },
+            {
+              "id": "O8",
+              "name": "tennis",
+              "description": "Playing tennis.",
+              "MET": 7.3,
+              "exampleUrl": "https://example.com/tennis"
+            }
+          ],
+          "homeWorkouts": [
+    {
+      "id": "H1",
+      "name": "bodyweightCircuit",
+      "description": "Bodyweight circuit training.",
+      "MET": 8,
+      "exampleUrl": "https://example.com/bodyweight-circuit"
+    },
+    {
+      "id": "H2",
+      "name": "tabata",
+      "description": "High-intensity interval training using the Tabata protocol.",
+      "MET": 13.5,
+      "exampleUrl": "https://example.com/tabata"
+    },
+    {
+      "id": "H3",
+      "name": "jumpingJacks",
+      "description": "Performing jumping jacks.",
+      "MET": 8,
+      "exampleUrl": "https://example.com/jumping-jacks"
+    },
+    {
+      "id": "H4",
+      "name": "highKnees",
+      "description": "Performing high knees.",
+      "MET": 8,
+      "exampleUrl": "https://example.com/high-knees"
+    },
+    {
+      "id": "H5",
+      "name": "mountainClimbers",
+      "description": "Performing mountain climbers.",
+      "MET": 8,
+      "exampleUrl": "https://example.com/mountain-climbers"
+    },
+    {
+      "id": "H6",
+      "name": "streamingCardioWorkouts",
+      "description": "Follow-along streaming cardio workout.",
+      "MET": 6,
+      "exampleUrl": "https://example.com/streaming-cardio-workouts"
+    },
+    {
+      "id": "H7",
+      "name": "miniTrampoline",
+      "description": "Jumping on a mini trampoline.",
+      "MET": 5,
+      "exampleUrl": "https://example.com/mini-trampoline"
+    },
+    {
+      "id": "H8",
+      "name": "compactElliptical",
+      "description": "Using a compact elliptical trainer.",
+      "MET": 5,
+      "exampleUrl": "https://example.com/compact-elliptical"
     }
-]
+  ]
+      
+        
+    }

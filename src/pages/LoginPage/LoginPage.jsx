@@ -1,31 +1,36 @@
 import React from "react";
-
-// Styles
 import styles from "./LoginPage.module.css";
-
-// Components
 import LoginContainer from "../../components/LoginContainer/LoginContainer";
-
-// Hooks
 import useImageLoad from "../../hooks/useImageLoad";
 import backgroundImage from "../../assets/Images/background.png";
 
-const LoginPage = () => {
+const LoginPage = ({ isMobile, t }) => {
   const isImageLoaded = useImageLoad(backgroundImage);
 
   if (!isImageLoaded) {
-    return <div className="loader-container"><div className="loader-medium"/></div>;
+    return (
+      <div className="loader-container">
+        <div className="loader-medium" />
+      </div>
+    );
   }
 
+  // Determine background style based on isMobile
+  const backgroundStyle = isMobile
+  ? {
+      backgroundColor: "#000000",
+      backgroundImage: "linear-gradient(to bottom, rgba(255, 255, 255, 0), #242529)"
+    }
+  : {
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    };
+
   return (
-    <div
-      className={styles.background}
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
-    >
-      <div className={styles.container}>
-        <LoginContainer />
+    <div className={isMobile ? styles.background_mobile : styles.background} style={backgroundStyle}>
+      <div className={isMobile ? styles.container_mobile : styles.container}>
+        <LoginContainer isMobile={isMobile} t={t} />
       </div>
     </div>
   );

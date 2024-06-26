@@ -1,7 +1,13 @@
 .container {
   max-height: 35vh;
-  width: 28vw;
+  width: 29.2vw;
   overflow-y: hidden; /* Hide scrollbar by default */
+}
+
+.container_mobile {
+  width: 100%;
+  max-height: 35vh;
+  overflow: hidden;
 }
 
 /* Container styles on hover */
@@ -14,8 +20,22 @@
   width: 24vw;
   display: flex;
   height: 6vh;
-  margin: 0 0 3vh 2vw;
+  margin: 0 0 2vh 2vw;
   position: relative; /* To position quantity control absolutely */
+  background-color: var(--gray-medium);
+  padding: 1vh 1vw;
+  border-radius: var(--card-border);
+}
+
+.mealCard_mobile {
+  width: 90%;
+  display: flex;
+  height: 6vh;
+  margin: 0 0 2vh 2vw;
+  position: relative; /* To position quantity control absolutely */
+  background-color: var(--gray-medium);
+  padding: 1vh 1vw;
+  border-radius: var(--card-border);
 }
 
 .mealTitle {
@@ -26,6 +46,12 @@
   display: flex;
   flex-direction: column;
   width: 13.5vw;
+  align-items: flex-start;
+}
+.mealInfo_mobile {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
   align-items: flex-start;
 }
 
@@ -44,15 +70,25 @@
   margin-right: 1vw;
 }
 
+.mealImage_mobile {
+  display: flex;
+  align-items: center;
+  width: 5vh;
+  height: 5vh;
+  object-fit: cover;
+  border-radius: 1.5vh;
+  margin: 0 3vw 0 2vw;
+}
+
 .cardContent {
-  width: 100%;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.container p {
+.container p, .container_mobile p {
   margin: 0;
   margin-top: 0.5vh;
 }
@@ -71,10 +107,10 @@
   border-radius: 1vh;
   height: 3vh;
   width: 3.6vw;
-  margin-right: 2.5vw;
+  margin-right: 2.2vw;
   position: absolute;
-  right: 0; /* Align to the right */
-  bottom: 1vh; /* Align near the bottom */
+  right: 2vw; /* Align to the right */
+  bottom: 2.2vh; /* Align near the bottom */
   opacity: 0; /* Make invisible by default */
   transition: opacity 0.3s; /* Smooth transition */
 }

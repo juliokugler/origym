@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTimes } from "react-icons/fa";
-import styles from "./Favorites.module.css";
+import styles from "./AddFavorites.module.css";
 import ExerciseList from "../../../assets/ExercisesDatabase/ExerciseInfo.json";
 import { db } from "../../../firebase/config";
+import classNames from "classnames";
+
 import {
   getFirestore,
   doc,
@@ -13,7 +15,7 @@ import {
 import { useAuthValue } from "../../../contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 
-const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
+const AddFavorites = ({ activeGroup, onAdd, onClose, onFavoriteToggle }) => {
   const [selectedGroup, setSelectedGroup] = useState(activeGroup);
   const [selectedExercise, setSelectedExercise] = useState(null);
   const [maxWeight, setMaxWeight] = useState(0);
@@ -38,7 +40,11 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
   };
 
   const handleExerciseChange = (e) => {
-    setSelectedExercise(e.target.value);
+    setSelectedExercise(
+      ExerciseList[selectedGroup].find(
+        (exercise) => exercise.name === e.target.value
+      )
+    );
     setEditOneRepMax(false);
     setOneRepMax("");
     setReps("");
@@ -82,26 +88,23 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
 
       const isFavoriteRef = collection(
         firestore,
-        `exercises/${userUid}/isFavorite`
+        `users/${userUid}/isFavorite`
       );
       const exerciseIsFavoriteDocRef = doc(isFavoriteRef, exerciseId);
-      const exerciseIsFavoriteDocSnapshot = await getDoc(
-        exerciseIsFavoriteDocRef
-      );
 
       await setDoc(exerciseIsFavoriteDocRef, {
-        name: selectedExercise,
-        id: exerciseId,
-        reps: reps,
         group: selectedGroup,
+        name: selectedExercise.name,
+        id: exerciseId,
+        sets: selectedExercise.sets || 0,
+        reps: reps,
         oneRepMax: oneRepMax,
         maxWeight: maxWeight,
-      });
+      }
+    );
 
       // Optionally, you can call onAdd to notify parent component about the addition
-      if (onAdd) {
-        onAdd(selectedGroup);
-      }
+      onFavoriteToggle()
     } catch (error) {
       console.error("Error adding exercise to favorites:", error);
     }
@@ -109,7 +112,7 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
 
   return (
     <>
-      <div className={styles.addContainer}>
+      <div className={classNames(styles.addContainer, "card")}>
         <div className={styles.buttonContainer}>
           <h2>{t("addExercise")}</h2>
           <div className={styles.closeButton} onClick={onClose}>
@@ -118,7 +121,7 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
         </div>
         <div className={styles.exerciseOptions}>
           <div className={styles.exerciseOption}>
-            <p>Select Muscle Group:</p>
+            <p>{t("selectMuscleGroup")}:</p>
             <select
               className={styles.option}
               value={selectedGroup}
@@ -127,23 +130,23 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
               <option value={null}>Select Group</option>
               {Object.keys(ExerciseList).map((group) => (
                 <option key={group} value={group}>
-                  {group}
+                  {t(group)}
                 </option>
               ))}
             </select>
           </div>
           {selectedGroup && (
             <div className={styles.exerciseOption}>
-              <p>Select Exercise:</p>
+              <p>{t("selectExercise")}:</p>
               <select
                 className={styles.option}
-                value={selectedExercise}
+                value={selectedExercise ? selectedExercise.name : ""}
                 onChange={handleExerciseChange}
               >
-                <option value={null}>Select Exercise</option>
+                <option value={null}>{t("selectExercise")}</option>
                 {ExerciseList[selectedGroup].map((exercise) => (
-                  <option key={exercise.name} value={exercise.name}>
-                    {exercise.name}
+                  <option key={exercise.id} value={exercise.name}>
+                    {t(exercise.name)}
                   </option>
                 ))}
               </select>
@@ -153,7 +156,7 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
         {selectedGroup && selectedExercise && (
           <div className={styles.exerciseOptions}>
             <div className={styles.exerciseOption}>
-              <p>Enter Max Weight:</p>
+              <p>{t("enterMaxWeight")}:</p>
               <input
                 type="number"
                 min="0"
@@ -163,7 +166,7 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
               />
             </div>
             <div className={styles.exerciseOption}>
-              <p>Enter Max Reps:</p>
+              <p>{t("enterMaxReps")}:</p>
               <input
                 type="number"
                 min="0"
@@ -174,7 +177,7 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
             </div>
             {editOneRepMax ? (
               <div className={styles.exerciseOption}>
-                <p>Enter 1RM (One Repetition Maximum) (kgs):</p>
+                <p>{t("enter1RM")} (kgs):</p>
                 <input
                   type="number"
                   value={newOneRepMax}
@@ -186,14 +189,14 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
               <>
                 {parseFloat(oneRepMax) > 0 && (
                   <div className={styles.exerciseOption}>
-                    <p>Estimated 1RM (kgs): </p>
+                    <p>{t("estimated1RM")} (kgs): </p>
                     <input
                       type="text"
                       value={oneRepMax}
                       readOnly={!editOneRepMax}
                       onClick={handleEditOneRepMax}
                       className={styles.input}
-                    />{" "}
+                    />
                     <FaEdit
                       onClick={handleEditOneRepMax}
                       className={styles.editIcon}
@@ -206,11 +209,11 @@ const AddFavorites = ({ activeGroup, onAdd, onClose }) => {
             )}
           </div>
         )}
-      </div>
-      <div className={styles.buttonsContainer}>
-        <button onClick={handleSubmit} className={styles.button}>
-          Save Exercise
-        </button>
+        <div className={styles.buttonsContainer}>
+          <button className="button" onClick={handleSubmit}>
+            {t("save")}
+          </button>
+        </div>
       </div>
     </>
   );

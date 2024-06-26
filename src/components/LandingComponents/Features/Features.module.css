@@ -8,7 +8,7 @@
     font-size: 3em;
     margin-bottom: 20px;
     color: var(--text-color);
-    margin-bottom: 6vh;
+    margin-bottom: 8vh;
   }
 
   .features h2 span {
@@ -19,13 +19,12 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 60vw;
+    width: 70vw;
     margin: 0 auto;
   }
   
   .featureItem {
     width: 200px;
-    margin: 20px;
     text-align: center;
     background-color: var(--gray-medium);
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c);

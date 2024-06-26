@@ -4,11 +4,11 @@ import { FaEdit } from "react-icons/fa";
 import StepIndicator from "../../StepIndicator/StepIndicator";
 import DaySelector from "../../DaySelector/DaySelector";
 
-const Step3 = ({ onNext, onPrevious, ingredients, dayFromCard, mealFromCard, onCreate, t }) => {
-  const [recipeName, setRecipeName] = useState("");
+const Step3 = ({ onNext, onPrevious, ingredients, dayFromCard, mealFromCard, onCreate, t, recipePhoto, name }) => {
+  const [recipeName, setRecipeName] = useState(name || "");
   const [selectedDays, setSelectedDays] = useState([dayFromCard || "Sun"]);
   const [mealType, setMealType] = useState(mealFromCard || "Breakfast");
-  const [photo, setPhoto] = useState("https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Icons%2FFrame%20714.png?alt=media&token=2203b4ab-abd2-464d-b010-2991b72cbdea");
+  const [photo, setPhoto] = useState(recipePhoto || "https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Icons%2FFrame%20714.png?alt=media&token=2203b4ab-abd2-464d-b010-2991b72cbdea");
   const [isShowEditPhoto, setIsShowEditPhoto]= useState(false)
 
   const toggleDaySelection = (day) => {
@@ -52,7 +52,7 @@ const toggleShowEditPhoto = () => {
       <StepIndicator currentStep={3} />
       <div className={styles.nameContainer}>
         <div className={styles.imageContainer}>
-          <img src="https://firebasestorage.googleapis.com/v0/b/miniblog-9fed5.appspot.com/o/Icons%2FFrame%20714.png?alt=media&token=2203b4ab-abd2-464d-b010-2991b72cbdea"
+          <img src={photo}
  alt="Recipe" className={styles.recipeImage} />
           <FaEdit onClick={toggleShowEditPhoto} className={styles.editIcon} />
         </div>
@@ -123,7 +123,7 @@ const toggleShowEditPhoto = () => {
      
       <div className={styles.buttonContainer}>
         <button className="notSelectedButton-medium" onClick={onPrevious}>
-        {t("back")}
+        {t("goBack")}
         </button>
         <button className="button" onClick={handleNextClick}>
         {t("next")}

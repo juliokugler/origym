@@ -8,7 +8,7 @@ import UserInfoCard from './UserInfoCard';
 import ActivityInfoCard from './ActivityInfoCard';
 import PersonalInfoCard from './PersonalInfoCard';
 
-const Settings = ({ t, user, userData }) => {
+const Settings = ({ t, user, userData, isMobile }) => {
   const { setUserInfoChange } = useUserData();
   const { handleGoalChange, handleActivityLevelChange } = useFormData(user, userData);
 
@@ -29,7 +29,7 @@ const Settings = ({ t, user, userData }) => {
 console.log(userData)
 
   return (
-    <div className={classNames('container')}>
+    <div className={ !isMobile ? "container" : "container-mobile"}>
       <Header userData={userData} t={t} pageType="settings" />
       <div className="mainSection">
         <div className={styles.profileContainer}>

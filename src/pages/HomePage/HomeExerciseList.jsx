@@ -11,6 +11,7 @@ import WorkoutDetails from "../../components/Workouts/WorkoutDetails/WorkoutDeta
 import { updateDoc, doc, getFirestore, setDoc } from "firebase/firestore";
 
 const ExerciseList = ({
+  isMobile,
   exercises,
   favoriteList,
   user,
@@ -109,12 +110,7 @@ const ExerciseList = ({
         return strengthIcon;
       case "Cardio":
         return cardioIcon;
-      case "Yoga":
-        return yogaIcon;
-      case "Martial Arts":
-        return martialArtsIcon;
-      case "Group Fitness Classes":
-        return groupIcon;
+  
       default:
         return strengthIcon;
     }
@@ -125,7 +121,7 @@ const ExerciseList = ({
       {!exercises || exercises.length <= 0 ? (
         <div className={styles.noWorkoutsMessage}>
           <p>
-            <strong>{t("noWorkoutsScheduled")}</strong>
+            {t("noWorkoutsScheduled")}
           </p>
         </div>
       ) : null}
@@ -134,7 +130,7 @@ const ExerciseList = ({
         exercises.length > 0 &&
         exercises.map((workout, index) => (
           <div key={index} className={styles.buttonContainer}>
-            <button className={styles.button}>
+            <button className={isMobile? styles.button_mobile : styles.button}>
               <div className={styles.workoutInfo}>
                 <img
                   src={getIconByType(workout.type)}
@@ -142,7 +138,7 @@ const ExerciseList = ({
                   className={styles.buttonIcon}
                 />
                 <div className={styles.textInfo}>
-                  <p>{workout.name}</p>
+                  <p>{t(`${workout.name}`)}</p>
                   <p>
                     {workout.isWorkoutDone ? (
                       <div className={styles.checkedContainer}>
@@ -152,7 +148,7 @@ const ExerciseList = ({
                           }
                         >
                           <FaFire />
-                          {workout.totalCalories} calories burned
+                          {workout.totalCalories} {t("calories")}
                         </p>
                       </div>
                     ) : (
@@ -163,7 +159,7 @@ const ExerciseList = ({
                           }
                         >
                           <FaFire />
-                          {workout.totalCalories} calorie burn
+                          {workout.totalCalories} {t("calories")}
                         </p>
                       </div>
                     )}
@@ -176,11 +172,12 @@ const ExerciseList = ({
                   <u>Details</u>
                 </p>
                 {workout.isWorkoutDone ? (
+                  <div className={styles.checkedSquare}>
                   <FaCheckSquare
                     onClick={(e) => handleCheckClick(e, workout)}
-                  />
-                ) : (
-                  <FaRegSquare onClick={(e) => handleCheckClick(e, workout)} />
+                  /></div>
+                ) : ( <div className={styles.uncheckedSquare}>
+                  <FaRegSquare onClick={(e) => handleCheckClick(e, workout)} /></div>
                 )}
               </div>
             </button>

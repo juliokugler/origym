@@ -3,9 +3,6 @@ import styles from "./ExerciseList.module.css";
 import WorkoutDetails from "../WorkoutDetails/WorkoutDetails";
 import strengthIcon from "../../../assets/Icons/strength.png";
 import cardioIcon from "../../../assets/Icons/cardio.png";
-import yogaIcon from "../../../assets/Icons/yoga.png";
-import martialArtsIcon from "../../../assets/Icons/martialArts.png";
-import groupIcon from "../../../assets/Icons/group.png";
 import arrowDown from "../../../assets/Icons/CircleArrowDown.png";
 import arrowUp from "../../../assets/Icons/CircleArrowUp.png";
 import { FaFire } from "react-icons/fa";
@@ -17,12 +14,13 @@ const ExerciseList = ({
   onFavoriteToggle,
   user,
   currentLanguage,
-  t
+  t,
+  isMobile
 }) => {
   const [openWorkoutIndex, setOpenWorkoutIndex] = useState(null);
   const [doneExercises, setDoneExercises] = useState(0);
   const [newNumber, setNewNumber] = useState(null);
-
+console.log(isMobile)
   useEffect(() => {
     if (number !== null) {
       setOpenWorkoutIndex(number);
@@ -36,12 +34,7 @@ const ExerciseList = ({
         return strengthIcon;
       case "Cardio":
         return cardioIcon;
-      case "Yoga":
-        return yogaIcon;
-      case "Martial Arts":
-        return martialArtsIcon;
-      case "Group Fitness Classes":
-        return groupIcon;
+     
       default:
         return strengthIcon;
     }
@@ -56,11 +49,11 @@ const ExerciseList = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={!isMobile? styles.container : styles.container_mobile}>
       {!exercises || exercises.length === 0 ? (
         <div className={styles.noWorkoutsMessage}>
           <p>
-            <strong>{t("noWorkoutsScheduled")}</strong>
+            {t("noWorkoutsScheduled")}
           </p>
         </div>
       ) : null}
@@ -70,28 +63,35 @@ const ExerciseList = ({
           {exercises.map((workout, index) => {
             const isOpen = openWorkoutIndex === index;
             return (
+              
               <div
-                key={index}
-                className={
-                  isOpen ? styles.exerciseCardOpened : styles.exerciseCardClosed
-                }
-              >
+              key={index}
+              className={
+                isOpen && isMobile
+                  ? styles.exerciseCardOpened_mobile
+                  : isOpen && !isMobile
+                  ? styles.exerciseCardOpened
+                  : !isOpen && isMobile
+                  ? styles.exerciseCardClosed_mobile
+                  : styles.exerciseCardClosed
+              }
+            >
                 <div
                   onClick={() => toggleWorkoutContainer(index)}
-                  className={styles.button}
+                  className={!isMobile? styles.button : styles.button_mobile}
                 >
-                  <div className={styles.workoutInfo}>
-                    <div className={styles.iconAndText}>
+                  <div className={!isMobile? styles.workoutInfo : styles.workoutInfo_mobile}>
+                  <div className={!isMobile? styles.iconAndText : styles.iconAndText_mobile}>
                       <img
                         src={getIconByType(workout.type)}
                         alt="Workout Icon"
                         className={styles.buttonIcon}
                       />
                       <div className={styles.textInfo}>
-                        <p>{t(`${workout.name}`)}</p> {/* Display name in the selected language */}
-                        <p>
+                        <p >{t(`${workout.name}`)}</p>
+                        <p className={styles.calories}>
                           <FaFire />
-                          {workout.totalCalories} calorie burn
+                          {workout.totalCalories} {t("calories")}
                         </p>
                       </div>
                     </div>

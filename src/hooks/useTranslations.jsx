@@ -1,48 +1,39 @@
 import { useState, useEffect } from "react";
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import enTranslation from "../assets/Translations/en.json";
-import ptTranslation from "../assets/Translations/pt.json";
-import esTranslation from "../assets/Translations/es.json";
-import deTranslation from "../assets/Translations/de.json";
-import itTranslation from "../assets/Translations/it.json";
-import frTranslation from "../assets/Translations/fr.json";
+import i18n from "../i18n";
 
-export const useTranslations = () => {
-  const [currentLanguage, setCurrentLanguage] = useState(i18n.language || "en");
+// Utility function to get short language code
+const getShortLanguageCode = (lang) => {
+  const langMap = {
+    'pt-BR': 'pt',
+    'en-US': 'en',
+    'es-ES': 'es',
+    'de-DE': 'de',
+    'fr-FR': 'fr',
+    'it-IT': 'it'
+  };
+  return langMap[lang] || lang.split('-')[0];
+};
+
+export const useTranslations = (user) => {
+  const [currentLanguage, setCurrentLanguage] = useState(getShortLanguageCode(i18n.language || "en"));
 
   useEffect(() => {
-    i18n
-      .use(initReactI18next)
-      .use(LanguageDetector)
-      .init({
-        resources: {
-          en: { translation: enTranslation },
-          pt: { translation: ptTranslation },
-          es: { translation: esTranslation },
-          it: { translation: itTranslation },
-          de: { translation: deTranslation },
-          fr: { translation: frTranslation },
-        },
-        fallbackLng: "en",
-        interpolation: {
-          escapeValue: false,
-        },
-        detection: {
-          order: ['navigator', 'htmlTag', 'cookie', 'localStorage', 'sessionStorage', 'path', 'subdomain'],
-          caches: ['localStorage', 'cookie'],
-        },
-      });
-
-    i18n.on("languageChanged", (lng) => {
-      setCurrentLanguage(lng);
-    });
-
-    return () => {
-      i18n.off("languageChanged");
+    const handleLanguageChange = (lng) => {
+      const shortCode = getShortLanguageCode(lng);
+      console.log(`Language changed to: ${lng}, Short code: ${shortCode}`);
+      setCurrentLanguage(shortCode);
     };
-  }, []);
+
+    i18n.on("languageChanged", handleLanguageChange);
+
+    // Initial log
+    console.log(`Initial language: ${i18n.language}, Short code: ${getShortLanguageCode(i18n.language)}`);
+
+    // Clean up the language change listener on unmount
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange);
+    };
+  }, [user]);
 
   const switchLanguage = (lng) => {
     i18n.changeLanguage(lng);

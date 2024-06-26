@@ -15,18 +15,20 @@ import { useAuthValue } from "../../../contexts/AuthContext";
 //Components
 import AddFavorites from "./AddFavorites";
 
-const Favorites = ({ favoriteChange, t }) => {
+
+const Favorites = ({ t, groups, onFavoriteToggle, showAddExercise, setShowAddExercise  }) => {
   const { user } = useAuthValue();
   const [activeGroup, setActiveGroup] = useState(null);
-
+const [favoriteChange, setFavoriteChange] = useState(false);
   // Fetch favorites using the custom hook
-  const { groups, toggleGroup, showAddExercise, setShowAddExercise } =
-    useFetchFavorites(favoriteChange);
 
+
+  
   // Remove favorite using the custom hook
   const { removeFavorite } = useRemoveFavorites();
 
   const handleFavoriteToggle = (groupId, exerciseId) => {
+    
     removeFavorite(groupId, exerciseId).then(() => {});
   };
 
@@ -97,6 +99,7 @@ const Favorites = ({ favoriteChange, t }) => {
         <AddFavorites
           onClose={() => setShowAddExercise(false)}
           activeGroup={activeGroup}
+          onFavoriteToggle={onFavoriteToggle}
         />
       )}
 

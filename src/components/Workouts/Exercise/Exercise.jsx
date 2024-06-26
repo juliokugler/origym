@@ -7,7 +7,6 @@ const Exercise = ({ exercise, allCompleted, onFavoriteToggle, t }) => {
   const { name, type } = exercise;
   const [isChecked, setIsChecked] = useState(false);
   const { toggleFavorite, starColor, isFavorite } = useToggleFavorite(exercise, onFavoriteToggle);
-  const [, forceUpdate] = useState(); // Dummy state to force re-render
 
   useEffect(() => {
     setIsChecked(allCompleted);
@@ -21,14 +20,10 @@ const Exercise = ({ exercise, allCompleted, onFavoriteToggle, t }) => {
 
   const getAttributes = (type) => {
     switch (type) {
-      case "Strength":
+         case "Cardio":
+        return ["duration", "distance", "speed"];
+          default:
         return ["sets", "reps", "weight"];
-      case "Cardio":
-        return ["distance", "time", "pace"];
-      case "Yoga":
-        return ["duration", "difficulty"];
-      default:
-        return [];
     }
   };
   const attributes = getAttributes(type);
@@ -57,7 +52,7 @@ const Exercise = ({ exercise, allCompleted, onFavoriteToggle, t }) => {
             </td>
             {attributes.map((attribute, index) => (
               <td key={index} style={{ textAlign: "center", width: "5vw" }}>
-                {exercise[attribute]}
+                {t(`${exercise[attribute]}`)}
                 {attribute === "weight" && "kg"}
                 {attribute === "distance" && "km"}
                 {attribute === "duration" && "min"}

@@ -28,6 +28,7 @@ console.log(mealData)
     },
     width: "26vh", // Set the width of the chart
     height: "26vh", // Set the height of the chart
+    
   };
 
   return <Chart chartType="PieChart" data={data} options={options} />;

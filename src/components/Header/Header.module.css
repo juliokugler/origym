@@ -85,3 +85,54 @@
   justify-content: space-between;
 }
 
+.searchAndIcons_mobile {
+  display: flex;
+  align-items: center;
+  width: 40vw;
+  justify-content: space-between;
+}
+
+.container_mobile {
+  display: flex;
+  width: 100vw;
+  height: 7vh;
+  justify-content: left;
+  margin-bottom: 3vh;
+  text-align: left;
+  color: white;
+  background-color: #242529;
+  border-bottom: 1px solid #33353B;
+}
+
+.container_mobile h2 {
+  font-weight: 500;
+  font-size: 2vh;
+  
+}
+
+/* Greeting */
+.greetingContainer_mobile {
+  display: flex;
+  align-items: center;
+  width: 95vw;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.avatar_mobile {
+  width: 4vh;
+  height: 4vh;
+  margin-right: 5vw;
+  border-radius: 3vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.avatar_mobile img {
+  width: 4vh;
+  height: 4vh;
+  border-radius: 3vh;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}

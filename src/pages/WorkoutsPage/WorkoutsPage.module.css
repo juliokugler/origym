@@ -44,7 +44,7 @@
     }
 
   .exerciseBenchmarksBackground {
-    height: 49vh;
+    height: 46vh;
     width: 26vw;
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -57,4 +57,12 @@
 
   .workoutPlan {
     height: 80.5vh;
+    }
+
+    
+  .workoutPlan_mobile {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    height: 40vh;
     }

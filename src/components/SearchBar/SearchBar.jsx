@@ -5,9 +5,9 @@ import useFetchUsers from "../../hooks/useFetchUsers";
 import lupa from "../../assets/Icons/MagnifyingGlass.png";
 import classNames from "classnames"
 
-const SearchBar = ({ t, userData }) => {
+const SearchBar = ({ t, userData, userInfo, isMobile }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const currentUsername = userData.userProfile.displayNameLower;
+  const [currentUsername, setCurrentUsername] = useState(userData.userProfile.displayNameLower);
   const { users, loading, error } = useFetchUsers(searchTerm, currentUsername);
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const SearchBar = ({ t, userData }) => {
 
  
   return (
-    <div className={styles.searchBar}>
+    <div className={ !isMobile? styles.searchBar : styles.searchBar_mobile}>
       <img className={styles.searchBarImage} src={lupa} alt="magnifying glass" />
       <input
         placeholder={`${t("search")}...`}

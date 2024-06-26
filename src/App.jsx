@@ -1,24 +1,16 @@
-//React
-import React, { useState } from "react";
-import { useParams, Routes, Route, Navigate } from "react-router-dom";
-
-//Style
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
-
-//Components
 import Navbar from "./components/Navbar/Navbar";
+import MobileNavbar from "./components/MobileNavbar/MobileNavbar";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
-
-//Hooks
 import { useAuth } from "./hooks/useAuth";
 import { useTranslations } from "./hooks/useTranslations";
 import { useTranslation } from "react-i18next";
 import { useGreetingAndMeal } from "./hooks/useGreetingAndMeal";
 import { AuthProvider, useAuthValue } from "./contexts/AuthContext";
 import { UserDataProvider, useUserData } from "./contexts/UserDataContext";
-
-//Pages 
 import Health from "./pages/HealthPage/HealthPage";
 import NutritionPage from "./pages/NutritionPage/NutritionPage";
 import Home from "./pages/HomePage/HomePage";
@@ -30,35 +22,36 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Friends from "./pages/FriendsPage/FriendsPage";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Settings from "./pages/Settings/Settings";
+import useIsMobile from "./hooks/useIsMobile";
 
 function AppContent() {
   const { userData, dailyInfo, loading, setUserInfoChange } = useUserData();
-  const { switchLanguage, currentLanguage } = useTranslations();
+  const { user } = useAuthValue();
+  const { switchLanguage, currentLanguage } = useTranslations(user);
   const { t } = useTranslation();
-  const { greeting, meal, mealNumber, currentDate } = useGreetingAndMeal(currentLanguage, t);
-    const {user} = useAuthValue();
+  const { greeting, meal, mealNumber, currentDate } = useGreetingAndMeal(currentLanguage, t, switchLanguage);
+  const isMobile = useIsMobile();
 
   if (loading) {
     return <p>{t("loading")}...</p>;
   }
-  console.log("data:", userData);
 
   const handleUserInfoChange = () => {
     setUserInfoChange((prev) => !prev);
   };
-  
+
   return (
     <div className="App">
-      {!user ? <Navbar t={t} currentLanguage={currentLanguage} /> : <Sidebar />}
+      {!user ? <Navbar t={t} currentLanguage={currentLanguage} /> : isMobile ? "" : <Sidebar />}
       <div className="main-container">
         <Routes>
           <Route
             path="/"
-            element={!userData ? <Landing t={t} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
+            element={!userData ? <Landing isMobile={isMobile} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
           />
           <Route
             path="/login"
-            element={!userData ? <Login t={t} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
+            element={!userData ? <Login t={t} isMobile={isMobile} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
           />
           <Route
             path="/home"
@@ -74,6 +67,7 @@ function AppContent() {
                   dailyInfo={dailyInfo}
                   onUserInfoChange={handleUserInfoChange}
                   currentLanguage={currentLanguage}
+                  isMobile={isMobile}
                 />
               ) : (
                 <Navigate to="/login" />
@@ -82,16 +76,17 @@ function AppContent() {
           />
           <Route
             path="/workouts"
-            element={userData ? <Workouts userData={userData} dailyInfo={dailyInfo} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
+            element={userData ? <Workouts isMobile={isMobile} userData={userData} dailyInfo={dailyInfo} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
           />
           <Route
             path="/health"
-            element={userData ? <Health userData={userData} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
+            element={userData ? <Health isMobile={isMobile} userData={userData} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
           />
           <Route
             path="/nutrition"
             element={userData && user ? 
               <NutritionPage
+              isMobile={isMobile}
                 onUserInfoChange={handleUserInfoChange}
                 t={t}
                 userData={userData}
@@ -105,21 +100,21 @@ function AppContent() {
           />
           <Route
             path="/profile"
-            element={userData && user ? <ProfilePage user={user} onUserInfoChange={handleUserInfoChange} userInfo={userData} userData={userData.userProfile} dailyInfo={userData.dailyInfo} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
+            element={userData && user ? <ProfilePage isMobile={isMobile} user={user} onUserInfoChange={handleUserInfoChange} userData={userData} dailyInfo={dailyInfo} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
           />
           <Route
             path="/register"
-            element={!userData ? <RegisterPage t={t} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
+            element={!userData ? <RegisterPage isMobile={isMobile} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
           />
           <Route
             path="/friends"
-            element={userData ? <Friends user={user} userData={userData} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
+            element={userData ? <Friends isMobile={isMobile} user={user} userData={userData} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
           />
           <Route
             path="/settings"
             element={
               user ? (
-                <Settings onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userData={userData} user={user} userUid={user.uid} t={t} currentLanguage={currentLanguage} />
+                <Settings onUserInfoChange={handleUserInfoChange} isMobile={isMobile} switchLanguage={switchLanguage} userData={userData} user={user} userUid={user.uid} t={t} currentLanguage={currentLanguage} />
               ) : (
                 <Navigate to="/login" />
               )
@@ -128,13 +123,14 @@ function AppContent() {
           <Route
             path="/onboarding"
             element={
-              user ? <Onboarding onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userInfo={userData} user={user} userUid={user.uid} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />
+              user ? <Onboarding isMobile={isMobile}  onUserInfoChange={handleUserInfoChange} switchLanguage={switchLanguage} userInfo={userData} user={user} userUid={user.uid} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />
             }
           />
-          <Route path="/profile/:userId" element={<ProfilePage user={user} userData={userData} t={t} currentLanguage={currentLanguage} />} />
+          <Route path="/profile/:userId" element={<ProfilePage isMobile={isMobile} user={user} userData={userData} t={t} currentLanguage={currentLanguage} onUserInfoChange={handleUserInfoChange} />} />
         </Routes>
         <Footer t={t} />
       </div>
+      {user && isMobile && <MobileNavbar/>}
     </div>
   );
 }
@@ -143,7 +139,7 @@ function App() {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div className="loader-container"><div className="loader"/></div>;
   }
 
   return (

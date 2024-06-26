@@ -41,6 +41,11 @@
     position: relative;
   }
   
+  .searchBar_mobile {
+    position: relative;
+  }
+  
+
   .searchBarImage {
     fill: white;
     height: 2.6vh;
@@ -50,8 +55,18 @@
   }
 
   .searchBar input {
-    height: 6vh;
-    width: 16vw;
+    height: 4vh;
+    width: 4vh;
+    background-color: transparent;
+    border: 1px solid #4D4F56;
+    border-radius: 100px;
+    color: white;
+    padding-left: 3vw;
+  }
+  
+  .searchBar_mobile input {
+    height: 4vh;
+    width: 4vh;
     background-color: transparent;
     border: 1px solid #4D4F56;
     border-radius: 100px;

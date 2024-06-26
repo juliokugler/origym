@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import React, { useState } from "react";
 import styles from "./ProfilePage.module.css";
 import Header from "../../components/Header/Header";
 import MainProfile from "../../components/profileComponents/MainProfile/MainProfile";
@@ -7,125 +6,140 @@ import Achievements from "../../components/profileComponents/Achievements/Achiev
 import PersonalFeed from "../../components/profileComponents/PersonalFeed/PersonalFeed";
 import Media from "../../components/profileComponents/Media/Media";
 import { useParams } from "react-router-dom";
+import useFetchFriendData from "../../hooks/useFetchFriendData";
 
-const ProfilePage = ({ t, userInfo, dailyInfo, user, onUserInfoChange, userData }) => {
+const ProfilePage = ({ t, user, userData, onUserInfoChange, dailyInfo, isMobile }) => {
   const { userId } = useParams();
-  const [profileData, setProfileData] = useState(null);
-  const [profileDailyInfo, setProfileDailyInfo] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const { friendData, friendDailyInfo } = useFetchFriendData(userId, onUserInfoChange);
 
-  useEffect(() => {
-    const fetchProfileData = async (userId) => {
-      setLoading(true);
-      console.log("Fetching profile data for userId:", userId);
-      try {
-        const firestore = getFirestore();
+  // Determine if the profile being viewed is the user's own profile
+  const isOwnProfile = !userId || userId === user.uid;
 
-        // Fetch user profile data
-        const userProfileRef = doc(firestore, "users", userId);
-        console.log("Fetching user profile from:", userProfileRef.path);
-        const userProfileSnapshot = await getDoc(userProfileRef);
+  // Determine which profile data to use based on whether it's the own profile or a friend's profile
+  const profileData = isOwnProfile ? userData : friendData;
+  const profileDailyInfo = isOwnProfile ? dailyInfo : friendDailyInfo;
 
-        if (userProfileSnapshot.exists()) {
-          const userProfileData = userProfileSnapshot.data();
-          console.log("Fetched user profile data:", userProfileData);
-          setProfileData(userProfileData);
+  const [selectedSection, setSelectedSection] = useState("personalFeed");
 
-          // Fetch daily info data
-          const currentDate = new Date().toISOString().slice(0, 10);
-          const dailyInfoRef = doc(firestore, `users/${userId}/dailyInfo`, currentDate);
-          console.log("Fetching daily info from:", dailyInfoRef.path);
-          const dailyInfoSnapshot = await getDoc(dailyInfoRef);
-
-          if (dailyInfoSnapshot.exists()) {
-            const dailyInfoData = dailyInfoSnapshot.data();
-            console.log("Fetched daily info data:", dailyInfoData);
-            setProfileDailyInfo(dailyInfoData);
-          } else {
-            console.log("Daily info document for current date does not exist!");
-            setProfileDailyInfo(null); // Ensure to set state to null if not found
-          }
-        } else {
-          console.log("User profile document does not exist!");
-          setProfileData(null); // Ensure to set state to null if not found
-        }
-      } catch (error) {
-        console.error("Error fetching profile data:", error);
-      } finally {
-        setLoading(false);
-        console.log("Finished fetching profile data");
-      }
-    };
-
-    if (userId && userId !== user.uid) {
-      fetchProfileData(userId);
-    } else {
-      setProfileData(userInfo);
-      setProfileDailyInfo(dailyInfo);
-      console.log("Using default userInfo and dailyInfo");
-    }
-  }, [userId, user, userInfo, dailyInfo]);
-
-  if (loading) {
+  if (!profileData) {
     return <p>{t("loading")}...</p>;
   }
 
-  if (!profileData) {
-    return <p>{t("loading")}...</p>; // Or you can show a different message indicating no data
-  }
-
-  console.log("Rendering ProfilePage with userId:", userId);
-  console.log("profileData:", profileData);
-  console.log("profileDailyInfo:", profileDailyInfo);
-
   return (
-    <div className="container">
-      <Header userData={userData} t={t} pageType="profile" />
-      <div className="mainSection">
-        <div className={styles.leftSection}>
-          <div className={`card ${styles.profile}`}>
+    <div className={!isMobile ? "container" : "container-mobile"}>
+      <Header isMobile={isMobile} userData={userData} t={t} pageType="profile" />
+      {!isMobile ? (
+        <div className="mainSection">
+          <div className={styles.leftSection}>
+            <div className={`card ${styles.profile}`}>
+              <MainProfile
+                onUserInfoChange={onUserInfoChange}
+                userData={profileData}
+                dailyInfo={profileDailyInfo}
+                user={user}
+                t={t}
+                friendInfo={!isOwnProfile}
+                userId={userId}
+              />
+            </div>
+            <div className={styles.innerSection}>
+              <div className={styles.firstColumn}>
+                <div className={`card ${styles.achievements}`}>
+                  <div className={styles.titleAndIcon}>
+                    <h3 className="title">{t("achievements")}</h3>
+                  </div>
+                  <Achievements t={t} />
+                </div>
+              </div>
+              <div className={styles.secondColumn}>
+                <div className={`card ${styles.personalFeed}`}>
+                  <h3 className="title">{t("personalFeed")}</h3>
+                  <PersonalFeed
+                    photoURL={profileData.userProfile.photoURL}
+                    userId={userId || user.uid}
+                    userName={`${profileData.userProfile.firstName} ${profileData.userProfile.lastName}`}
+                    friendInfo={!isOwnProfile ? friendData : null}
+                    t={t}
+                  />
+                  <div className={styles.innerContainer}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.thirdColumn}>
+            <div className={`card ${styles.media}`}>
+              <div className={styles.titleAndDropdown}>
+                <h3 className={styles.mediaTitle}>{t("media")}</h3>
+              </div>
+              <Media t={t} />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="mainSection-mobile">
+          <div className={`card ${styles.profile_mobile}`}>
             <MainProfile
+            isMobile={isMobile}
               onUserInfoChange={onUserInfoChange}
               userData={profileData}
               dailyInfo={profileDailyInfo}
               user={user}
               t={t}
-              friendInfo={userId && userId !== user.uid ? profileData : null}
+              friendInfo={!isOwnProfile}
+              userId={userId}
             />
           </div>
-          <div className={styles.innerSection}>
-            <div className={styles.firstColumn}>
+          <div className={styles.mobileButtons}>
+            <button
+              className={selectedSection === "personalFeed" ? styles.activeButton : ""}
+              onClick={() => setSelectedSection("personalFeed")}
+            >
+              {t("Feed")}
+            </button>
+            <button
+              className={selectedSection === "media" ? styles.activeButton : ""}
+              onClick={() => setSelectedSection("media")}
+            >
+              {t("media")}
+            </button>
+            <button
+              className={selectedSection === "achievements" ? styles.activeButton : ""}
+              onClick={() => setSelectedSection("achievements")}
+            >
+              {t("achievements")}
+            </button>
+          </div>
+          <div className="mobileContent">
+            {selectedSection === "personalFeed" && (
+              <div className={`card ${styles.personalFeed_mobile}`}>
+                <h3 className="title">{t("personalFeed")}</h3>
+                <PersonalFeed
+                isMobile={isMobile}
+                  photoURL={profileData.userProfile.photoURL}
+                  userId={userId || user.uid}
+                  userName={`${profileData.userProfile.firstName} ${profileData.userProfile.lastName}`}
+                  friendInfo={!isOwnProfile ? friendData : null}
+                  t={t}
+                />
+              </div>
+            )}
+            {selectedSection === "media" && (
+              <div className={`card ${styles.media}`}>
+                <h3 className={styles.mediaTitle}>{t("media")}</h3>
+                <Media t={t} />
+              </div>
+            )}
+            {selectedSection === "achievements" && (
               <div className={`card ${styles.achievements}`}>
                 <div className={styles.titleAndIcon}>
                   <h3 className="title">{t("achievements")}</h3>
                 </div>
                 <Achievements t={t} />
               </div>
-            </div>
-            <div className={styles.secondColumn}>
-              <div className={`card ${styles.personalFeed}`}>
-                <h3 className="title">{t("personalFeed")}</h3>
-                <PersonalFeed
-                  photoURL={profileData.photoURL || profileData.photoURL}
-                  userId={userId || user.uid}
-                  userName={profileData.firstName || profileData.lastName}
-                  friendInfo={userId && userId !== user.uid ? profileData : null}
-                  t={t}
-                />
-                <div className={styles.innerContainer}></div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
-        <div className={styles.thirdColumn}>
-          <div className={`card ${styles.media}`}>
-            <div className={styles.titleAndDropdown}>
-              <h3 className={styles.mediaTitle}>{t("media")}</h3>
-            </div>
-            <Media t={t} />
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

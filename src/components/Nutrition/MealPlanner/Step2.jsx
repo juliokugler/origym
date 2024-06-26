@@ -4,7 +4,7 @@ import StepIndicator from "../../StepIndicator/StepIndicator";
 import ingredientsTranslation from "../../../assets/Ingredients/Ingredients.json";
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
-const Step2 = ({ onNext, onPrevious, mealType, t }) => {
+const Step2 = ({ onNext, onPrevious, mealType, t, selectedLanguage }) => {
   const [ingredients, setIngredients] = useState([]);
   const [ingredientInput, setIngredientInput] = useState("");
   const [quantityInput, setQuantityInput] = useState("");
@@ -21,10 +21,9 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
   const suggestionsRef = useRef(null);
   const NUTRITIONIX_API_KEY = process.env.REACT_APP_NUTRITIONIX_API_KEY;
   const NUTRITIONIX_APP_ID = process.env.REACT_APP_NUTRITIONIX_APP_ID;
-  const selectedLanguage = localStorage.getItem("i18nextLng") || "en";
   const [recipeIngredients, setRecipeIngredients] = useState([])
-
-
+const [recipePhoto, setRecipePhoto] = useState("")
+const [recipeName, setRecipeName] = useState("")
   const fetchMealSuggestions = async (searchTerm, selectedLanguage) => {
     const db = getFirestore();
     const mealCategories = ["Breakfast", "Lunch", "Dinner", "Snacks", "Supplementation", "Desserts"];
@@ -165,21 +164,20 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
     } else if (type === "meal") {
       const selectedMeal = mealSuggestions.find(meal => meal.title[selectedLanguage] === suggestion || meal.title.en === suggestion);
       if (selectedMeal) {
-        const mealIngredients = selectedMeal.ingredients.map(ingredient => ({
-          name: ingredients.pt || ingredients.en,
-    
-        }));
+        const mealIngredients = selectedMeal.ingredients[selectedLanguage];
+        const totalCalories = selectedMeal.totalCalories
+        const image = selectedMeal.image
         setIngredients([...ingredients, ...mealIngredients]);
-        const newTotalCalories = mealIngredients.reduce((total, ing) => total + ing.calories, totalCalories);
-        setTotalCalories(newTotalCalories);
         setMealSuggestions([]);
         setIngredientInput("");
+        setTotalCalories(totalCalories)
+        setRecipePhoto(image)
+        setRecipeName(selectedMeal.title[selectedLanguage])
       }
     }
   };
-
   const handleNextClick = () => {
-    onNext({ ingredients, totalCalories });
+    onNext({ ingredients, totalCalories, recipePhoto, recipeName });
   };
 
   const handleSearchChange = async (event) => {
@@ -201,7 +199,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
       {mealType === "create" ? (
         <div className={styles.labels}>
           <label className={styles.label} htmlFor="ingredientname">
-            <p>{t("ingredient")}:</p> 
+            <p>{t("ingredient")}:</p>
           </label>
           <input
             type="text"
@@ -252,7 +250,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
               <ul className={styles.ingredientList}>
                 {ingredients.map((ingredient, index) => (
                   <li key={index}>
-                    {ingredient.name} - {ingredient.quantity} {ingredient.quantityType} - {t("calories")}: {ingredient.calories}
+                     {ingredient.quantity ? `${ingredient.quantity} ${t(`${ingredient.quantityType}`)} ${t("of")} ${ingredient.name} - ${ingredient.calories} ${t("calories")}` : ingredient}
                   </li>
                 ))}
               </ul>
@@ -263,7 +261,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
           </label>
         </div>
       ) : (
-        <div>
+        <div className={styles.labels}>
           <label className={styles.label} htmlFor="searchMeal">
             <p>{t("searchMeal")}:</p>
           </label>
@@ -290,7 +288,7 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
               <ul className={styles.ingredientList}>
                 {ingredients.map((ingredient, index) => (
                   <li key={index}>
-                    {ingredient.name} - {ingredient.quantity} {ingredient.quantityType} - {t("calories")}: {ingredient.calories}
+                     {ingredient.quantity ? `${ingredient.quantity} ${t(`${ingredient.quantityType}`)} ${t("of")} ${ingredient.name} - ${ingredient.calories} ${t("calories")}` : ingredient}
                   </li>
                 ))}
               </ul>
@@ -301,10 +299,10 @@ const Step2 = ({ onNext, onPrevious, mealType, t }) => {
           </label>
         </div>
       )}
-
+  
       <div className={styles.buttonContainer}>
-        <button className="button" onClick={onPrevious}>
-          {t("previous")}
+        <button className="notSelectedButton-medium" onClick={onPrevious}>
+          {t("goBack")}
         </button>
         <button className="button" onClick={handleNextClick}>
           {t("next")}

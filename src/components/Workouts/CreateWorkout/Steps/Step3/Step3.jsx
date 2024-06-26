@@ -29,21 +29,49 @@ const Step3 = ({
 
   useEffect(() => {
     calculateTotalCalories();
-    const groups = [...new Set(selectedExercises.map(exercise => exercise.group))];
+    const groups = [...new Set(selectedExercises.map((exercise) => exercise.group))];
     setMuscleGroups(groups);
   }, [selectedExercises, exerciseAttributes]);
 
   const setDefaultValues = () => {
     const defaultExerciseAttributes = {};
     selectedExercises.forEach(({ id, name, MET, group }) => {
+      let sets = 3;
+      let reps = 10;
+      let weight = 0;
+      let duration = 30;
+      let distance = 5;
+      let speed = 10;
+  
+      if (selectedType === "Strength") {
+        sets = 3;
+        reps = 5;
+        weight = 0;
+      } else if (selectedType == "Hypertrophy") {
+        sets = 3;
+        reps = 12;
+        weight = 0;
+      } else if (selectedType === "Endurance") {
+        duration = 45;
+        distance = 10;
+        speed = 8;
+      } else if (selectedType === "Cardio") {
+        duration = 30;
+        distance = 5;
+        speed = 10;
+      }
+  
       defaultExerciseAttributes[id] = {
         exerciseName: name,
         group: group,
         id: id,
         MET: MET,
-        sets: 3,
-        reps: 10,
-        weight: 0,
+        sets: selectedType === "Strength" || selectedType === "Hypertrophy" ? sets : 0,
+        reps: selectedType === "Strength" || selectedType === "Hypertrophy" ? reps : 0,
+        weight: selectedType === "Strength" || selectedType === "Hypertrophy" ? weight : 0,
+        duration: selectedType === "Endurance" || selectedType === "Cardio" ? duration : 0,
+        distance: selectedType === "Endurance" || selectedType === "Cardio" ? distance : 0,
+        speed: selectedType === "Endurance" || selectedType === "Cardio" ? speed : 0,
         isFavorite: false,
         isDone: false,
       };
@@ -67,12 +95,18 @@ const Step3 = ({
     let totalCalories = 0;
 
     for (const key in exerciseAttributes) {
-      const { MET, sets, reps } = exerciseAttributes[key];
+      const { MET, sets, reps, duration } = exerciseAttributes[key];
 
-      const avgDurationPerRep = 0.1;
-      const caloriesPerRep = (MET * 3.5 * userWeight * avgDurationPerRep) / 200;
-      const totalCaloriesForExercise = caloriesPerRep * sets * reps;
-      totalCalories += totalCaloriesForExercise;
+      if (selectedType === "Strength" || selectedType === "Hypertrophy" || selectedType === "Endurance") {
+        const avgDurationPerRep = 0.1;
+        const caloriesPerRep = (MET * 3.5 * userWeight * avgDurationPerRep) / 200;
+        const totalCaloriesForExercise = caloriesPerRep * sets * reps;
+        totalCalories += totalCaloriesForExercise;
+      } else {
+        const caloriesPerMinute = (MET * 3.5 * userWeight) / 200;
+        const totalCaloriesForExercise = caloriesPerMinute * duration;
+        totalCalories += totalCaloriesForExercise;
+      }
     }
 
     setTotalCalories(Math.ceil(totalCalories));
@@ -89,10 +123,17 @@ const Step3 = ({
       const totalCaloriesPerExercise = {};
 
       for (const key in exercises) {
-        const { MET, sets, reps } = exercises[key];
-        const avgDurationPerRep = 0.1;
-        const caloriesPerRep = (MET * 3.5 * userWeight * avgDurationPerRep) / 200;
-        const totalCaloriesForExercise = caloriesPerRep * sets * reps;
+        const { MET, sets, reps, duration } = exercises[key];
+
+        let totalCaloriesForExercise;
+        if (selectedType === "Strength" || selectedType === "Hypertrophy" || selectedType === "Endurance") {
+          const avgDurationPerRep = 0.1;
+          const caloriesPerRep = (MET * 3.5 * userWeight * avgDurationPerRep) / 200;
+          totalCaloriesForExercise = caloriesPerRep * sets * reps;
+        } else {
+          const caloriesPerMinute = (MET * 3.5 * userWeight) / 200;
+          totalCaloriesForExercise = caloriesPerMinute * duration;
+        }
         totalCaloriesPerExercise[exercises[key].exerciseName] = Math.ceil(totalCaloriesForExercise);
       }
 
@@ -111,7 +152,7 @@ const Step3 = ({
         const exercise = exercises[key];
         workout.exercises[key] = {
           ...exercise,
-          exerciseName: selectedExercises.find(e => e.id === key).name, // Store exercise name in English
+          exerciseName: selectedExercises.find((e) => e.id === key).name,
         };
       }
 
@@ -128,45 +169,70 @@ const Step3 = ({
   };
 
   const renderInputFields = (id) => {
-    const attributes = exerciseAttributes[id];
+  const attributes = exerciseAttributes[id];
 
-    if (!attributes) return null;
+  if (!attributes) return null;
 
-    switch (selectedType) {
-      case "Strength":
-        return (
-          <div className={styles.setsRepsWeight}>
-            <input
-              className={styles.inputContainer}
-              type="number"
-              min="0"
-              value={attributes.sets}
-              onChange={(e) => handleInputChange(id, "sets", e.target.value)}
-            />
-            <input
-              className={styles.inputContainer}
-              type="number"
-              min="0"
-              value={attributes.reps}
-              onChange={(e) => handleInputChange(id, "reps", e.target.value)}
-            />
-            <input
-              className={styles.inputContainer}
-              type="number"
-              min="0"
-              value={attributes.weight}
-              onChange={(e) => handleInputChange(id, "weight", e.target.value)}
-            />
-          </div>
-        );
-      default:
-        return null;
-    }
-  };
+  if (selectedType === "Strength" || selectedType === "Hypertrophy") {
+    return (
+      <div className={styles.setsRepsWeight}>
+        <input
+          className={styles.inputContainer}
+          type="number"
+          min="0"
+          value={attributes.sets}
+          onChange={(e) => handleInputChange(id, "sets", e.target.value)}
+        />
+        <input
+          className={styles.inputContainer}
+          type="number"
+          min="0"
+          value={attributes.reps}
+          onChange={(e) => handleInputChange(id, "reps", e.target.value)}
+        />
+        <input
+          className={styles.inputContainer}
+          type="number"
+          min="0"
+          value={attributes.weight}
+          onChange={(e) => handleInputChange(id, "weight", e.target.value)}
+        />
+      </div>
+    );
+  } else if (selectedType === "Endurance" || selectedType === "Cardio") {
+    return (
+      <div className={styles.setsRepsWeight}>
+        <input
+          className={styles.inputContainer}
+          type="number"
+          min="0"
+          value={attributes.duration}
+          onChange={(e) => handleInputChange(id, "duration", e.target.value)}
+        />
+        <input
+          className={styles.inputContainer}
+          type="number"
+          min="0"
+          value={attributes.distance}
+          onChange={(e) => handleInputChange(id, "distance", e.target.value)}
+        />
+        <input
+          className={styles.inputContainer}
+          type="number"
+          min="0"
+          value={attributes.speed}
+          onChange={(e) => handleInputChange(id, "speed", e.target.value)}
+        />
+      </div>
+    );
+  }
+
+  return null;
+};
 
   return (
     <div className={styles.container}>
-      <h2>{workoutName}</h2>
+      <h2>{t(`${workoutName}`)}</h2>
       <p>Estimated Total Calories Burned: {totalCalories}</p>
 
       {muscleGroups.map((group) => (
@@ -175,7 +241,7 @@ const Step3 = ({
             <div className={styles.header}>
               <h4>{t(`${group}Exercises`)}</h4>
               <div className={styles.setsRepsWeightHeader}>
-                {selectedType === "Strength" ? (
+                {selectedType === "Strength" || selectedType === "Hypertrophy" ? (
                   <>
                     <h4>{t("sets")}</h4>
                     <h4>{t("reps")}</h4>
@@ -183,10 +249,9 @@ const Step3 = ({
                   </>
                 ) : (
                   <>
+                    <h4>{t("duration")}</h4>
                     <h4>{t("distance")}</h4>
                     <h4>{t("speed")}</h4>
-                    <h4>{t("time")}</h4>
-                    <h4>{t("inclination")}</h4>
                   </>
                 )}
               </div>

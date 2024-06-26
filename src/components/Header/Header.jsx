@@ -4,12 +4,10 @@ import { useAuthValue } from "../../contexts/AuthContext";
 import bell from "../../assets/Icons/Bell.png";
 import SearchBar from "../SearchBar/SearchBar";
 import { useNavigate } from "react-router-dom";
-const Header = ({ pageType, currentDate, timedGreeting, t, userData}) => {
+const Header = ({ pageType, currentDate, timedGreeting, t, userData, isMobile}) => {
   const { user } = useAuthValue();
   const navigate = useNavigate();
 
-
-  console.log(userData)
   let greetingContent = null;
 
   switch (pageType) {
@@ -44,7 +42,8 @@ const Header = ({ pageType, currentDate, timedGreeting, t, userData}) => {
     case "home":
       greetingContent = (
         <div className={styles.pageGreeting}>
-          <p>{currentDate}</p>
+          {!isMobile? (
+          <p>{currentDate}</p>) : ("")}
           <h2>
             {timedGreeting}, {userData.userProfile.firstName}
           </h2>
@@ -79,7 +78,8 @@ const Header = ({ pageType, currentDate, timedGreeting, t, userData}) => {
 
 
   return (
-    <div className={styles.container}>
+    <> {
+      !isMobile ? (<div className={styles.container}>
       <div className={styles.greetingContainer}>
         <div className={styles.greeting}>{greetingContent}</div>
         <div className={styles.searchAndIcons}>
@@ -96,7 +96,21 @@ const Header = ({ pageType, currentDate, timedGreeting, t, userData}) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>) : ( <div className={styles.container_mobile}>
+      <div className={styles.greetingContainer_mobile}>
+        <div className={styles.greeting}>{greetingContent}</div>
+        <div className={styles.searchAndIcons_mobile}>
+        <SearchBar isMobile={isMobile} t={t} userData={userData}/>
+          <div className={styles.avatar_mobile}>
+            <img
+              onClick={() => navigate("/profile")}
+              src={user.photoURL}
+              alt="User Avatar"
+            />
+        </div>
+        </div>
+      </div>
+    </div>) }</>
   );
 };
 

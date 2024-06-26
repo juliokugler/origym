@@ -1,11 +1,11 @@
+// React
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import styles from "./RegisterContainer.module.css";
 import { useAuthentication } from "../../hooks/useAuthentication";
-import { useTranslation } from "react-i18next";
 import { FaGoogle, FaApple, FaRegEye, FaEyeSlash } from "react-icons/fa";
 
-const RegisterContainer = () => {
+const RegisterContainer = ({ isMobile, t }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,12 +19,10 @@ const RegisterContainer = () => {
   const [error, setError] = useState("");
   const [passwordStrength, setPasswordStrength] = useState("");
   const { createUser, error: authError, loading } = useAuthentication();
-  const { t } = useTranslation();
 
   const handleEyeClick = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
-
   const handleConfirmEyeClick = () => {
     setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
   };
@@ -59,7 +57,6 @@ const RegisterContainer = () => {
     }
   }, [authError]);
 
-  // Debounced password match check
   useEffect(() => {
     const handler = setTimeout(() => {
       if (password && confirmPassword && password !== confirmPassword) {
@@ -67,14 +64,13 @@ const RegisterContainer = () => {
       } else {
         setError("");
       }
-    }, 700); // Delay in milliseconds
+    }, 700);
 
     return () => {
       clearTimeout(handler);
     };
   }, [password, confirmPassword]);
 
-  // Reset error on typing and check password strength
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
     setError("");
@@ -89,20 +85,17 @@ const RegisterContainer = () => {
   const checkPasswordStrength = (password) => {
     let strength = "";
 
-    // Length-based scoring
     const lengthScore = password.length >= 6 ? 1 : 0;
     const mediumLengthScore = password.length >= 8 ? 1 : 0;
     const goodLengthScore = password.length >= 10 ? 1 : 0;
     const veryGoodLengthScore = password.length >= 14 ? 1 : 0;
 
-    // Character types scoring
     const hasUpperCase = /[A-Z]/.test(password) ? 1 : 0;
     const hasNumber = /[0-9]/.test(password) ? 1 : 0;
     const hasSpecialChar = /[@$!%*?&#]/.test(password) ? 1 : 0;
 
     const criteriaMet = hasUpperCase + hasNumber + hasSpecialChar;
 
-    // Calculate strength based on scores
     if (password.length < 6) {
       strength = t("weak");
     } else if (lengthScore && criteriaMet === 1) {
@@ -137,30 +130,28 @@ const RegisterContainer = () => {
 
   const handleFirstNameChange = (e) => {
     let { value } = e.target;
-    // Remove any characters that are not letters (a-z, A-Z), numbers (0-9), or underscore (_)
     value = value.replace(/[^a-zA-Z]/g, "");
     setFirstName(value);
   };
 
   const handleLastNameChange = (e) => {
     let { value } = e.target;
-    // Remove any characters that are not letters (a-z, A-Z), numbers (0-9), or underscore (_)
     value = value.replace(/[^a-zA-Z]/g, "");
     setLastName(value);
   };
 
   return (
-    <div className={styles.registerContainer}>
-      <div className={styles.title}>
+    <div className={isMobile ? styles.registerContainer_mobile : styles.registerContainer}>
+      <div className={isMobile ? styles.title_mobile : styles.title}>
         <h1>{t("register")}</h1>
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className={styles.nameContainer}>
+        <div className={isMobile ? styles.nameContainer_mobile : styles.nameContainer}>
           <label>
             <p>{t("firstName")}:</p>
             <input
-              className={styles.nameInputField}
+              className={isMobile ? styles.nameInputField_mobile : styles.nameInputField}
               type="text"
               name="firstName"
               required
@@ -171,7 +162,7 @@ const RegisterContainer = () => {
           <label>
             <p>{t("lastName")}:</p>
             <input
-              className={styles.nameInputField}
+              className={isMobile ? styles.nameInputField_mobile : styles.nameInputField}
               type="text"
               name="lastName"
               required
@@ -184,7 +175,7 @@ const RegisterContainer = () => {
         <label>
           <p>{t("email")}:</p>
           <input
-            className={styles.inputField}
+            className={isMobile ? styles.inputField_mobile : styles.inputField}
             type="email"
             name="email"
             required
@@ -195,16 +186,16 @@ const RegisterContainer = () => {
 
         <label>
           <p>{t("password")}:</p>
-          <div className={styles.passwordInputGroup}>
+          <div className={isMobile ? styles.passwordInputGroup_mobile : styles.passwordInputGroup}>
             <input
-              className={styles.inputField}
+              className={isMobile ? styles.inputField_mobile : styles.inputField}
               type={isPasswordVisible ? "text" : "password"}
               name="password"
               required
               onChange={handlePasswordChange}
               value={password}
             />
-            <div className={styles.eyeButton} onClick={handleEyeClick}>
+            <div className={isMobile ? styles.eyeButton_mobile : styles.eyeButton} onClick={handleEyeClick}>
               {isPasswordVisible ? (
                 <FaEyeSlash aria-label={t("hidePassword")} />
               ) : (
@@ -213,13 +204,13 @@ const RegisterContainer = () => {
             </div>
           </div>
           {password && (
-            <div className={styles.passwordStrength}>
-              <span className={styles.strengthText}>
+            <div className={isMobile ? styles.passwordStrength_mobile : styles.passwordStrength}>
+              <span className={isMobile ? styles.strengthText_mobile : styles.strengthText}>
                 {t("passwordStrength")}: {passwordStrength}
               </span>
-              <div className={styles.progressBar}>
+              <div className={isMobile ? styles.progressBar_mobile : styles.progressBar}>
                 <div
-                  className={classNames(styles.progress, {
+                  className={classNames(isMobile ? styles.progress_mobile : styles.progress, {
                     [styles.weak]: passwordStrength === t("weak"),
                     [styles.medium]: passwordStrength === t("medium"),
                     [styles.good]: passwordStrength === t("good"),
@@ -234,16 +225,16 @@ const RegisterContainer = () => {
 
         <label>
           <p>{t("confirmPassword")}:</p>
-          <div className={styles.passwordInputGroup}>
+          <div className={isMobile ? styles.passwordInputGroup_mobile : styles.passwordInputGroup}>
             <input
-              className={styles.inputField}
+              className={isMobile ? styles.inputField_mobile : styles.inputField}
               type={isConfirmPasswordVisible ? "text" : "password"}
               name="confirmPassword"
               required
               onChange={handleConfirmPasswordChange}
               value={confirmPassword}
             />
-            <div className={styles.eyeButton} onClick={handleConfirmEyeClick}>
+            <div className={isMobile ? styles.eyeButton_mobile : styles.eyeButton} onClick={handleConfirmEyeClick}>
               {isConfirmPasswordVisible ? (
                 <FaEyeSlash aria-label={t("hidePassword")} />
               ) : (
@@ -252,34 +243,32 @@ const RegisterContainer = () => {
             </div>
           </div>
         </label>
-        <div className={styles.errorContainer}>
-          {error && <p className={styles.error}>{error}</p>}
+        <div className={isMobile ? styles.errorContainer_mobile : styles.errorContainer}>
+          {error && <p className={isMobile ? styles.error_mobile : styles.error}>{error}</p>}
         </div>
-        
-          <div className={styles.buttonContainer}>
-            {loading ? (
-         <button disabled className="inactiveButton-medium">
-         <div className="loader"></div>
-       </button>): (
-            <button className="button">
+
+        <div className={isMobile ? styles.buttonContainer_mobile : styles.buttonContainer}>
+          {loading ? (
+            <button disabled className={isMobile ? "inactiveButton-medium_mobile" : "inactiveButton-medium"}>
+              <div className="loader"></div>
+            </button>
+          ) : (
+            <button className={isMobile ? "button_mobile" : "button"}>
               <p>{t("getStarted")}!</p>
             </button>
-         )}
+          )}
         </div>
       </form>
-      
-       
-      
 
-      <p className={styles.text}>{t("or")}</p>
-      <div className="loginOptions">
-        <button className="socialMediaButton">
+      <p className={isMobile ? styles.text_mobile : styles.text}>{t("or")}</p>
+      <div className={isMobile ? "loginOptions_mobile" : "loginOptions"}>
+        <button className={isMobile ? "socialMediaButton_mobile" : "socialMediaButton"}>
           <FaGoogle size={22} />
           <p>{t("continueWithGoogle")}</p>
         </button>
-        <button className="socialMediaButton">
+        <button className={isMobile ? "socialMediaButton_mobile" : "socialMediaButton"}>
           <FaApple size={24} />
-                 <p>{t("continueWithApple")}</p>
+          <p>{t("continueWithApple")}</p>
         </button>
       </div>
     </div>

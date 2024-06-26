@@ -1,8 +1,9 @@
 .row {
 display: flex;
-justify-content: space-between;
-width: 36vw;
+justify-content: center;
+width: 100%;
 margin: 0 auto;
+text-align: center;
 }
 
 
@@ -31,10 +32,29 @@ input::placeholder{
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-bottom: 4vh;
+  margin-bottom: 3vh;
 }
 
 .buttonContainer {
   display: flex;
   justify-content: center;
+  
+}
+
+.buttonGroup {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.title {
+  margin-bottom: 3vh;
+}
+
+.title2{
+  margin-top: 0
+}
+
+.content {
+  height: 54vh;
 }

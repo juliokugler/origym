@@ -4,62 +4,114 @@ import dots from "../../../assets/Icons/DotsThreeVertical.png";
 import dotsActive from "../../../assets/Icons/DotsThreeVertical_inactive.png";
 import weight from "../../../assets/Icons/weight.png";
 import classNames from "classnames";
+import styles from "./CardsContainer.module.css";
 
-const WeightCard = ({ user, dailyInfo, userData, t, onUserInfoChange }) => {
-  const [showSlider, setShowSlider] = useState(false);
-  const [newWaterConsumed, setNewWaterConsumed] = useState(dailyInfo.waterConsumed);
+const WeightCard = ({ user, dailyInfo, userData, t, onUserInfoChange, isMobile }) => {
+  const [showInput, setShowInput] = useState(false);
+  const [newWeight, setNewWeight] = useState(userData.userProfile.currentWeight);
 
   if (!dailyInfo) {
     return <p>{t("loading")}...</p>;
   }
 
-  const handleWaterChange = (event) => {
-    setNewWaterConsumed(event.target.value);
+  console.log(userData);
+
+  const handleWeightChange = (e) => {
+    setNewWeight(e.target.value);
   };
 
-  const handleWaterSubmit = async () => {
+  const handleWeightSubmit = async () => {
     const db = getFirestore();
     const currentDate = new Date().toISOString().slice(0, 10);
-    const dailyInfoRef = doc(db, `users/${user.uid}/dailyInfo/${currentDate}`);
+    const dailyInfoRef = doc(db, `users/${user.uid}`);
 
     try {
       await updateDoc(dailyInfoRef, {
-        waterConsumed: parseFloat(newWaterConsumed),
+        currentWeight: parseFloat(newWeight),
       });
-      console.log("Water consumption updated successfully.");
+      console.log("Weight updated successfully.");
       onUserInfoChange();
-      setShowSlider(false); // Hide the slider after submitting
+      setShowInput(false);
     } catch (error) {
-      console.error("Error updating water consumption:", error);
+      console.error("Error updating weight:", error);
     }
   };
 
   return (
- 
-    <div className={classNames("card", "healthCard")}>
+    <>
+      {!isMobile ? (
+        <div className={classNames("card", "healthCard")}>
+          <img
+            className="healthIcon"
+            src={weight}
+            alt="weight scale"
+          />
+          <div className="healthInfo">
+            <h3>
+              {showInput ? "" : <h2>{newWeight}</h2>}
+            </h3>
+            {showInput && (
+              <div className={styles.weightInput}>
+                <input
+                  type="number"
+                  min="0"
+                  value={newWeight}
+                  onChange={handleWeightChange}
+                />
+                <button className="button-small" onClick={handleWeightSubmit}>{t("submit")}</button>
+              </div>
+            )}
             <img
-              className="healthIcon"
-              src={weight}
-              alt="weight scale"
+              src={showInput ? dots : dotsActive}
+              alt="dots menu"
+               className="dots"
+              onClick={() => setShowInput(!showInput)}
             />
-            <div className="healthInfo">
-              <h2>
-             {userData.userProfile.weight}
-                            </h2>
-             
-              <img
-                src={showSlider ? dots : dotsActive}
-                alt="dots menu"
-                onClick={() => setShowSlider(!showSlider)}
-              />
-              {userData.userProfile.weightGoal > 0 ? (
+            {!showInput && (
+              userData.userProfile.weightGoal > 0 ? (
                 <p>{`/${userData.userProfile.weightGoal} Kgs`}</p>
-              ) : (<p>Kgs</p>)}
-            </div>
+              ) : (<p>Kgs</p>)
+            )}
           </div>
-       
-     
-   
+        </div>
+      ) : (
+        <div className={classNames("card", "healthCard_mobile")}>
+          
+          <div className="healthInfo_mobile">
+          <img
+            className="healthIcon_mobile"
+            src={weight}
+            alt="weight scale"
+          />
+            <h3>
+              {showInput ? "" : <h2>{newWeight}</h2>}
+            </h3>
+            {showInput && (
+              <div className={styles.weightInput}>
+                <input
+                  type="number"
+                  min="0"
+                  value={newWeight}
+                  onChange={handleWeightChange}
+                />
+                <button className="button-small" onClick={handleWeightSubmit}>{t("submit")}</button>
+              </div>
+            )}
+            <img
+              src={showInput ? dots : dotsActive}
+              alt="dots menu"
+               className="dots"
+              onClick={() => setShowInput(!showInput)}
+            />
+            {!showInput && (
+              userData.userProfile.weightGoal > 0 ? (
+                <p>{`/${userData.userProfile.weightGoal} Kgs`}</p>
+              ) : (<p>Kgs</p>)
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
