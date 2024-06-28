@@ -22,20 +22,17 @@
   }
   
   .friendsCard,
-  .activityCard,
+  .feedCard,
   .recommendationsCard {
-    background-color: var(--gray-medium);
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #27282c);
-    border-radius: 2vh;
-    width: 25vw;
-    height: 50vh;
+    width: 23vw;
+    height: 80vh;
     margin-bottom: 3vh;
     display: flex;
     flex-direction: column;
     align-items: left;
   }
 
-  .activityCard {
+  .feedCard {
     width: 37vw;
     height: 80vh;
   }
@@ -47,7 +44,7 @@
   }
   
   .titleAndButton {
-    width: 25vw;
+    width: 22vw;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -90,4 +87,22 @@
   
   .recommendationsList p {
     color: #ccc;
+  }
+
+  .feedCard_mobile {
+    width: 90%;
+    display: flex;
+    margin: 0 auto 20px auto;
+  }
+
+  .recommendationsCard_mobile {
+    width: 90%;
+    display: flex;
+    margin: 0 auto 20px auto;
+  }
+
+  .friendsCard_mobile {
+    width: 90%;
+    display: flex;
+    margin: 0 auto 20px auto;
   }

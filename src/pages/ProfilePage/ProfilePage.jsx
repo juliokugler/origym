@@ -1,10 +1,17 @@
+//React
 import React, { useState } from "react";
+
+//Styles
 import styles from "./ProfilePage.module.css";
+
+//Components
 import Header from "../../components/Header/Header";
-import MainProfile from "../../components/profileComponents/MainProfile/MainProfile";
-import Achievements from "../../components/profileComponents/Achievements/Achievements";
-import PersonalFeed from "../../components/profileComponents/PersonalFeed/PersonalFeed";
-import Media from "../../components/profileComponents/Media/Media";
+import MainProfile from "../../components/Page_Profile_Components/MainProfile/MainProfile";
+import Achievements from "../../components/Page_Profile_Components/Achievements/Achievements";
+import PersonalFeed from "../../components/Page_Profile_Components/PersonalFeed/PersonalFeed";
+import Media from "../../components/Page_Profile_Components/Media/Media";
+
+//Hooks
 import { useParams } from "react-router-dom";
 import useFetchFriendData from "../../hooks/useFetchFriendData";
 
@@ -12,10 +19,8 @@ const ProfilePage = ({ t, user, userData, onUserInfoChange, dailyInfo, isMobile 
   const { userId } = useParams();
   const { friendData, friendDailyInfo } = useFetchFriendData(userId, onUserInfoChange);
 
-  // Determine if the profile being viewed is the user's own profile
   const isOwnProfile = !userId || userId === user.uid;
 
-  // Determine which profile data to use based on whether it's the own profile or a friend's profile
   const profileData = isOwnProfile ? userData : friendData;
   const profileDailyInfo = isOwnProfile ? dailyInfo : friendDailyInfo;
 

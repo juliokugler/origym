@@ -21,7 +21,7 @@ const DaySelector = ({ selectedDay, selectedDays, handleDaySelect }) => {
           }`}
           onClick={() => handleDaySelect(day)}
         >
-          {t(day)}
+         <p> {t(day)}</p>
         </button>
       ))}
     </div>

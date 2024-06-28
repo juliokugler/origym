@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+//React
+import React from 'react';
+
+//Styles
 import styles from './Settings.module.css';
+
+//Components
 import Header from '../../components/Header/Header';
-import classNames from 'classnames';
+
+//Hooks
 import useFormData from '../../hooks/useFormData';
+
+//Contexts
 import { useUserData } from '../../contexts/UserDataContext';
+
+//Components
 import UserInfoCard from './UserInfoCard';
 import ActivityInfoCard from './ActivityInfoCard';
 import PersonalInfoCard from './PersonalInfoCard';
@@ -11,8 +21,6 @@ import PersonalInfoCard from './PersonalInfoCard';
 const Settings = ({ t, user, userData, isMobile }) => {
   const { setUserInfoChange } = useUserData();
   const { handleGoalChange, handleActivityLevelChange } = useFormData(user, userData);
-
-
 
   const handleSubmit = () => {
     // Handle form submission
@@ -25,8 +33,6 @@ const Settings = ({ t, user, userData, isMobile }) => {
       </div>
     );
   }
-
-console.log(userData)
 
   return (
     <div className={ !isMobile ? "container" : "container-mobile"}>
@@ -46,7 +52,7 @@ console.log(userData)
       </div>
       <div className={styles.buttonContainer}>
         <button className="button" onClick={handleSubmit}>
-          <p>Submit Changes</p>
+          <p>{t("submitChanges")}</p>
         </button>
       </div>
     </div>

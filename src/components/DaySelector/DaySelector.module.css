@@ -44,4 +44,12 @@
   margin-top: 3vh;
     }
   
-  
+    @media (max-width: 600px) { 
+
+      .dayOfWeekContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 1vh auto 2vh auto;
+      }
+    }

@@ -1,0 +1,162 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  cursor: default;
+  align-items: center;
+  min-width: 450px;
+}
+
+.caloriesContainer {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 13vw;
+  min-width: 200px;
+}
+
+.textContainer {
+  position: absolute;
+  text-align: center;
+  left: 25%;
+}
+
+.caloriesContainer h1, .caloriesContainer p {
+  margin: 0.2vh;
+}
+
+.caloriesContainer h1 {
+  font-size: 3vh;
+}
+
+.macroPercentage {
+  display: flex;
+  width: 15vw;
+  justify-content: space-between;
+}
+
+.macroPercentage p {
+  margin-bottom: 0.8vh;
+}
+
+.percentageContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3vh;
+}
+
+.container_mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+  width: 46vw;
+  height: vh;
+  margin: 0 auto;
+}
+
+.pieChart_mobile {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-color);
+  height: 185px;
+  width: 100%;
+  border-radius: var(--card-border);
+  margin-bottom: 2vh;
+}
+
+.smallCardContainer{
+  width: 100%;
+  height: 225px;
+}
+
+.pieChart_mobile svg {
+
+  margin-top: -28px;
+}
+
+.caloriesContainer_mobile {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.textContainer_mobile {
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gray-medium);
+  bottom: 33%
+}
+
+.textContainer_mobile h1 {
+  margin: 0;
+}
+
+.textContainer_mobile p {
+  margin-top: 0.5vh;
+}
+
+.macroPercentage_mobile {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.percentageContainer_mobile {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vh;
+}
+
+.progressBar {
+  appearance: none; /* Remove default styles */
+  width: 100%;
+  height: 1.2vh;
+  border-radius: 10px;
+  background-color: #ffffff; /* Background color of the progress bar */
+  overflow: hidden;
+  margin-bottom: 1vh;
+  transition: width 0.8s ease-in-out;
+}
+
+.progressBar_mobile {
+  appearance: none; /* Remove default styles */
+  width: 90%;
+  height: 7px;
+  border-radius: 10px;
+  background-color: #ffffff; /* Background color of the progress bar */
+  overflow: hidden;
+  transition: width 0.8s ease-in-out;
+}
+
+.progressBar::-webkit-progress-bar,
+.progressBar_mobile::-webkit-progress-bar {
+  background-color: #ffffff; /* Background color of the progress bar */
+  border-radius: 10px;
+}
+
+.progressBar::-webkit-progress-value,
+.progressBar_mobile::-webkit-progress-value {
+  background-color: #343b47; /* Change the color of the progress bar */
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.progressBar::-moz-progress-bar,
+.progressBar_mobile::-moz-progress-bar {
+  background-color: #343b47;
+  border-radius: 10px;
+  transition: width 0.8s ease-in-out; /* Add transition for smooth animation */
+}
+
+.progressBar_mobile {
+  display: flex;
+  margin: 0 auto;
+  z-index: 99;
+}

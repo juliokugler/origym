@@ -25,7 +25,7 @@
   margin: 0 2vw;
 }
 
-.greeting h2 {
+.greeting h2, .greeting h3 {
   margin: 1vh 0;
 }
 
@@ -43,7 +43,6 @@
   text-align: left;
   margin-left: 1vw;
 }
-
 
 /* Notification Icon */
 .notification {
@@ -83,13 +82,15 @@
   align-items: center;
   width: 33vw;
   justify-content: space-between;
+  gap: 12px; /* Added gap between search bar and user image */
 }
 
 .searchAndIcons_mobile {
   display: flex;
   align-items: center;
-  width: 40vw;
+  width: 50vw; /* Adjusted width for more space */
   justify-content: space-between;
+  gap: 12px; /* Added gap between search bar and user image */
 }
 
 .container_mobile {
@@ -107,7 +108,6 @@
 .container_mobile h2 {
   font-weight: 500;
   font-size: 2vh;
-  
 }
 
 /* Greeting */
@@ -120,8 +120,8 @@
 }
 
 .avatar_mobile {
-  width: 4vh;
-  height: 4vh;
+  width: 40px;
+  height: 40px;
   margin-right: 5vw;
   border-radius: 3vh;
   background-position: center;
@@ -129,10 +129,81 @@
 }
 
 .avatar_mobile img {
-  width: 4vh;
-  height: 4vh;
+  width: 40px;
+  height: 40px;
   border-radius: 3vh;
   background-position: center;
   background-size: cover;
   cursor: pointer;
+}
+
+.searchAndIcons input, .searchAndIcons_mobile input {
+  height: 6vh;
+  width: 16vw;
+  background-color: transparent;
+  border: 1px solid #4D4F56;
+  border-radius: 100px;
+  color: white;
+  padding-left: 3vw;
+  outline: none; /* Removed focus color */
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  right: 5vw;
+  top: 7vh;
+  width: 40vw;
+  background-color: #242529;
+  border: 1px solid #33353B;
+  border-radius: 5px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.dropdownMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownMenu li {
+  padding: 1.5vh 2vw;
+  border-bottom: 1px solid #33353B;
+  cursor: pointer;
+}
+
+.dropdownMenu li:hover {
+  background-color: #33353B;
+}
+
+.dropdownMenu li:last-child {
+  border-bottom: none;
+}
+
+/* Improved Search Dropdown for Mobile */
+.searchAndIcons_mobile input {
+  height: 4vh;
+  width: 30vw;
+  background-color: transparent;
+  border: 1px solid #4D4F56;
+  border-radius: 50px;
+  color: white;
+  padding-left: 2vw;
+}
+
+
+
+.mobileSearchContainer {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.mobileSearchContainer input {
+  flex-grow: 1;
+}
+
+.mobileSearchContainer input.active {
+  width: 100%;
 }

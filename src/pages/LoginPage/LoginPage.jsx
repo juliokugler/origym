@@ -1,8 +1,17 @@
+//React
 import React from "react";
+
+//Styles
 import styles from "./LoginPage.module.css";
-import LoginContainer from "../../components/LoginContainer/LoginContainer";
-import useImageLoad from "../../hooks/useImageLoad";
+
+//Assets
 import backgroundImage from "../../assets/Images/background.png";
+
+//Components
+import LoginContainer from "../../components/Page_Login_Components/LoginContainer";
+
+//Hooks
+import useImageLoad from "../../hooks/useImageLoad";
 
 const LoginPage = ({ isMobile, t }) => {
   const isImageLoaded = useImageLoad(backgroundImage);

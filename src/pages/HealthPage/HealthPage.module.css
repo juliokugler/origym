@@ -49,3 +49,46 @@
     height: 80.5vh
   }
 
+  .weightTracker {
+    width: flex 1;
+    height: 39vh;
+  }
+
+  
+
+  /* Mobile */
+
+  .weightTracker_mobile {
+   display: flex;
+   width: 90%;
+   margin: 0 auto 20px auto;
+  height: 280px;
+  }
+
+  .calculator_mobile{
+   display: flex;
+   width: 90%;
+   margin: 0 auto 20px auto;
+ 
+  }
+
+  .dailySummary_mobile {
+   display: flex;
+   width: 90%;
+   margin: 0 auto 20px auto;
+  
+  }
+
+  .healthTips_mobile {
+   display: flex;
+   width: 90%;
+   margin: 0 auto 20px auto;
+ 
+  }
+
+  .weightTracker_mobile {
+   display: flex;
+   width: 90%;
+   margin: 0 auto 20px auto;
+  
+  }

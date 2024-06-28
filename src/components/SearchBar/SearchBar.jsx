@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.css";
 import useFetchUsers from "../../hooks/useFetchUsers";
 import lupa from "../../assets/Icons/MagnifyingGlass.png";
-import classNames from "classnames"
+import classNames from "classnames";
 
 const SearchBar = ({ t, userData, userInfo, isMobile }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentUsername, setCurrentUsername] = useState(userData.userProfile.displayNameLower);
+  const [isFocused, setIsFocused] = useState(false);
   const { users, loading, error } = useFetchUsers(searchTerm, currentUsername);
   const navigate = useNavigate();
+  const searchRef = useRef(null);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -19,16 +21,31 @@ const SearchBar = ({ t, userData, userInfo, isMobile }) => {
     navigate(`/profile/${uid}`);
   };
 
- 
+  const handleOutsideClick = (event) => {
+    if (searchRef.current && !searchRef.current.contains(event.target)) {
+      setSearchTerm("");
+      setIsFocused(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
-    <div className={ !isMobile? styles.searchBar : styles.searchBar_mobile}>
-      <img className={styles.searchBarImage} src={lupa} alt="magnifying glass" />
+    <div className={ !isMobile ? styles.searchBar : styles.searchBar_mobile} ref={searchRef}>
+      <img className={classNames(styles.searchBarImage, { [styles.hidden]: isMobile && (isFocused || searchTerm.length > 0) })} src={lupa} alt="magnifying glass" />
       <input
-        placeholder={`${t("search")}...`}
+        placeholder={isMobile ? "" : `${t("search")}...`}
         value={searchTerm}
         onChange={handleSearchChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
       />
-      {searchTerm.length >= 3 && (
+      {searchTerm.trim().length >= 3 && (
         <div className={classNames(styles.searchResults, styles.card)}>
           {loading && <p>{t("loading")}...</p>}
           {error && <p>Error: {error.message}</p>}

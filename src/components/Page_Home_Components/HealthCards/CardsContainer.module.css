@@ -1,0 +1,15 @@
+.row{
+    display: flex;
+    justify-content: space-between;
+    width: 55vw;
+    margin: 0 auto;
+   margin-left: 0;
+   margin-bottom: 1vh;
+  }
+
+
+
+  .cardColumn {
+    display: flex;
+    flex-direction: column;
+  }

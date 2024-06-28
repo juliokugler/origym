@@ -93,9 +93,6 @@ code {
   width: 14vw;
 }
 
-.button_mobile{
-  width: 28vw
-}
 
 .button-small {
   min-width: 6vw;
@@ -128,31 +125,14 @@ border: 1px solid var(--gray-lightest);
 
   }
 
+  input:focus, textarea:focus {
+    outline: 1px solid var(--text-color-secondary) ;
+  }
+
   input text {
     color: var(--color-text);
   }
-  
 
-  .loginOptions_mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .socialMediaButton_mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #35373D;
-    color: white;
-    border: none;
-    border-radius: 0.8vh;
-    width: 60vw;
-    padding: 0 0.8vh;
-    cursor: pointer;
-    margin: 1vh 0;
-    transition: background-color 0.3s;
-  }
-  
   .socialMediaButton:hover,
   .socialMediaButton_mobile:hover {
     background-color: #4D4F56;
@@ -189,32 +169,25 @@ border: 1px solid var(--gray-lightest);
   background-color: #e0e0e0;
   }
 
-  .notSelectedButton-medium, .notSelectedButton-small, .notSelectedGroupButton{
-    background-color: transparent;
-   border: 1px solid #ffffff;
-   color: #ffffff;
-   border-radius: var(--button-border);
+  .notSelectedButton-medium, .notSelectedButton-small, .notSelectedGroupButton, .inactiveButton-medium, .inactiveButton-small, .inactiveGroupButton{
+  background-color: transparent;
+  border-radius: var(--button-border);
   height: 3.6vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0.5vw;
+  margin: 0 0.5vw;}
+  .notSelectedButton-medium, .notSelectedButton-small, .notSelectedGroupButton{
   cursor: pointer;
+  border: 1px solid #ffffff;
+  color: #ffffff;
   }
 
 
 .inactiveButton-medium, .inactiveButton-small, .inactiveGroupButton{
-   background-color: transparent;
-  border: 1px solid #727272;
-  color: #727272;
-  border-radius: var(--button-border);
- height: 3.6vh;
- text-align: center;
- display: flex;
- justify-content: center;
- align-items: center;
- margin: 0 0.5vw;
+ border: 1px solid #727272;
+ color: #727272;
  cursor: default;
  }
 
@@ -282,6 +255,141 @@ p {
   
 }
 
+@media (max-width: 600px) { /* This targets devices with a max width of 600px, which is typical for mobile phones */
+  h1 {
+    font-size: 24px; /* Adjust the values as necessary */
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .socialMediaButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0.8vh;
+    background-color: var(--gray-light);
+    border: 1px solid var(--gray-lightest);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 12.5vw;
+    padding: 0.5vw;
+    margin: 0;
+     }
+      .socialMediaButton svg {
+        margin-right: 0.5vw;
+        padding-bottom:0.3vh;
+        font-size: 1.8vh;
+        fill: var(--primary-color);
+        }
+    
+    .socialMediaButton:hover
+     {
+    background-color: #e0e0e0;
+    }
+  
+    .notSelectedButton-medium, .notSelectedButton-small, .notSelectedGroupButton{
+      background-color: transparent;
+     border: 1px solid #ffffff;
+     color: #ffffff;
+     border-radius: var(--button-border);
+    height: 3.6vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5vw;
+    cursor: pointer;
+    }
+  
+  
+  .inactiveButton-medium, .inactiveButton-small, .inactiveGroupButton{
+     background-color: transparent;
+    border: 1px solid #727272;
+    color: #727272;
+    border-radius: var(--button-border);
+   height: 28px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 0.5vw;
+   cursor: default;
+   }
+  
+  .inactiveButton-medium, .notSelectedButton-medium, .button-medium {
+    width: 150px;
+  }
+  
+  .inactiveButton-small {
+    min-width: 120px;
+  }
+  .inactiveButton p, .button p, .inactiveButton-small p, .button-small p {
+    margin:0
+  }
+  
+.button, .button-small, .activeGroupButton, .button_mobile {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);;
+  color: var(--gray-medium);
+  border-radius: var(--button-border);
+  height: 28px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0.5vw;
+}
+
+.button {
+  width: 150px;
+}
+
+
+.button-small {
+  min-width: 120px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+ 
+}
+
+.loginOptions {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 26vw;
+  }
+  
+  .loginOptions p {
+  margin: 0;
+  }
+
+}
+
+
 :root {
   --bg-color: #242529;
   --text-color: #ffffff;
@@ -325,132 +433,6 @@ p {
 }
 
 
-/* Health Cards */
-
-.healthIcon {
-  margin-top: 2vh;
-  height: 5vh;
-}
-
-.healthIcon_mobile {
-  margin-right: 3vw;
-  width: 3.2vh;
-  margin-bottom: 0;
-}
-
-.healthCard{
-  width: 10vw;
-  height: 8.5vw;
-    text-align:center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  margin-bottom: 1vh;
-} 
-
-.healthCard_mobile{
- width: 40vw;
- height: 7.6vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-bottom: 2vh;
-} 
-
-
-.healthCard h3, .healthCard1 h3 {
-  color: #FFFFFF;
-  margin: 0;
-  color: #FFFFFF;
-  margin-bottom: 0.5vh;
-  margin-top:-0.4vh;
-} 
-  
-
-
-.healthCard p{
-  color: var(--text-color-secondary);
-  margin-top:0.5vh;
-}
-
-.healthCard_mobile p {
-  color: var(--text-color-secondary);
-  margin:0;
-  padding: 0;
-  font-size: 2vh
-}
-
-.healthInfo {
-  margin-top: 2vh ;
-  text-align: center;
- 
-}
-
-.healthInfo_mobile {
-  margin-top: 0 ;
-  text-align: center;
-  display: flex;
- align-items: center;
- 
-}
-
-.dots {
-position: absolute;
-top: 3%;
-right: 0%;
-height: 2.8vh;
-cursor: pointer;
-
-}
-
-.slider {
-display:flex;
-flex-direction: column;  }
-
-.slider input {
-  margin: 1vh auto 0.5vh auto;
-  height: 8px;
-  -webkit-appearance: none;
-  background-color: #73A9FB;
-}
-
-input[type='range']::-webkit-slider-runnable-track {
-  height: 10px;
-  -webkit-appearance: none;
-  color: #73A9FB;
-  margin-top: -5px;
-}
-
-input[type='range']::-webkit-slider-thumb {
-  width: 15px;
-  -webkit-appearance: none;
-  height: 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  background: #73A9FB;
-}
-
-.slider button {
-margin: 1.2vh auto 2vh auto;
-height: 3vh;
-width: 3vw;
-}
-
-
-.healthCard h2 {
-margin: 0;
-font-weight: 500;
-margin-bottom:1vh
-}
-
-.healthCard_mobile h2 {
-  margin: 0;
-font-weight: 500;
-font-size: 2.4vh
-}
 
 .progressBar2 {
   appearance: none; /* Remove default styles */

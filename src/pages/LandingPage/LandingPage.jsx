@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./LandingPage.module.css";
-import main from "./hero.png";
+import main from "../../components/Page_Landing_Components/Hero/hero.png";
 import partners from "../../assets/Icons/partners.png";
 import useImageLoad from "../../hooks/useImageLoad";
-import Features from "../../components/LandingComponents/Features/Features";
-import Testimonials from "../../components/LandingComponents/Testimonials/Testimonials";
-import Pricing from "../../components/LandingComponents/Pricing/Pricing";
+import Features from "../../components/Page_Landing_Components/Features/Features";
+import Testimonials from "../../components/Page_Landing_Components/Testimonials/Testimonials";
+import Pricing from "../../components/Page_Landing_Components/Pricing/Pricing";
 import { useNavigate } from "react-router-dom";
-import Hero from "./Hero";
+import Hero from "../../components/Page_Landing_Components/Hero/Hero";
 
 const LandingPage = (currentLanguage, isMobile) => {
   const isImageLoaded = useImageLoad(main);

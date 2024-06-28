@@ -19,6 +19,7 @@
 
 .thirdColumn {
   width: 30vw;
+  min-width: 220px;
 }
 
 .firstColumn, .innerSection {
@@ -80,6 +81,7 @@
   .mealSuggestions{
     width: flex 1;
     height: 49vh;
+    min-width: 220px;
   }
 
   .titleAndDropdown {
@@ -110,6 +112,7 @@
   .dailyIntakes {
     width: flex 1;
     height: 30vh;
+    min-width: 460px;
   }
 
 
@@ -155,7 +158,7 @@
   .mealSuggestions_mobile {
     display: flex;
     margin: 0 auto;
-    width: 90%;
+    width: 90vw;
     height: 49vh;
   }
 

@@ -1,16 +1,30 @@
+//React
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+
+//Styles
 import "./index.css";
-import Navbar from "./components/Navbar/Navbar";
-import MobileNavbar from "./components/MobileNavbar/MobileNavbar";
-import Footer from "./components/Footer/Footer";
-import Sidebar from "./components/Sidebar/Sidebar";
+
+//Navigation
+import Navbar from "./components/Nav_Navbar/Navbar";
+import MobileNavbar from "./components/Nav_Mobile/MobileNavbar";
+import Sidebar from "./components/Nav_Sidebar/Sidebar";
+
+//Hooks
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./hooks/useAuth";
 import { useTranslations } from "./hooks/useTranslations";
 import { useTranslation } from "react-i18next";
 import { useGreetingAndMeal } from "./hooks/useGreetingAndMeal";
+import useIsMobile from "./hooks/useIsMobile";
+
+//Contexts
 import { AuthProvider, useAuthValue } from "./contexts/AuthContext";
 import { UserDataProvider, useUserData } from "./contexts/UserDataContext";
+
+//Components
+import Footer from "./components/Footer/Footer";
+
+//Pages
 import Health from "./pages/HealthPage/HealthPage";
 import NutritionPage from "./pages/NutritionPage/NutritionPage";
 import Home from "./pages/HomePage/HomePage";
@@ -22,7 +36,6 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Friends from "./pages/FriendsPage/FriendsPage";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Settings from "./pages/Settings/Settings";
-import useIsMobile from "./hooks/useIsMobile";
 
 function AppContent() {
   const { userData, dailyInfo, loading, setUserInfoChange } = useUserData();
@@ -42,7 +55,7 @@ function AppContent() {
 
   return (
     <div className="App">
-      {!user ? <Navbar t={t} currentLanguage={currentLanguage} /> : isMobile ? "" : <Sidebar />}
+      {!user ? <Navbar t={t} currentLanguage={currentLanguage} user={user} /> : isMobile ? "" : <Sidebar />}
       <div className="main-container">
         <Routes>
           <Route
@@ -76,7 +89,7 @@ function AppContent() {
           />
           <Route
             path="/workouts"
-            element={userData ? <Workouts isMobile={isMobile} userData={userData} dailyInfo={dailyInfo} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
+            element={userData ? <Workouts user={user} isMobile={isMobile} userData={userData} dailyInfo={dailyInfo} t={t} currentLanguage={currentLanguage} /> : <Navigate to="/login" />}
           />
           <Route
             path="/health"

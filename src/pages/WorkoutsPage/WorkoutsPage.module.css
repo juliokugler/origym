@@ -63,6 +63,6 @@
   .workoutPlan_mobile {
     display: flex;
     margin: 0 auto;
-    width: 90%;
+    width: 90vw;
     height: 40vh;
     }

@@ -1,19 +1,37 @@
+//React
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+//Style
+import styles from "./Onboarding.module.css";
+import backgroundImage from "./bg.png";
+
+//Firebase
 import { updateProfile } from "firebase/auth";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { useTDEECalculation, useWaterIntakeCalculation, useProteinIntakeCalculation, useCarbsIntakeCalculation, useFatIntakeCalculation } from "../../hooks/metricCalculationHooks";
+
+//Hooks 
+import { 
+useTDEECalculation, 
+useWaterIntakeCalculation, 
+useProteinIntakeCalculation, 
+useCarbsIntakeCalculation, 
+useFatIntakeCalculation 
+} from "../../hooks/metricCalculationHooks";
 import useFormData from "../../hooks/useFormData";
+import useImageLoad from "../../hooks/useImageLoad";
+
+//Components
 import StepIndicator from "../../components/StepIndicator/StepIndicator";
 import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
-import UserInfoStep from "../../components/OnboardingComponents/UserInfoStep/UserInfoStep";
-import PhysicalInfoStep from "../../components/OnboardingComponents/PhysicalInfoStep/PhysicalInfoStep";
-import ActivityGoalStep from "../../components/OnboardingComponents/ActivityGoalStep/ActivityGoalStep";
+import UserInfoStep from "../../components/Page_Onboarding_Components/UserInfoStep/UserInfoStep";
+import PhysicalInfoStep from "../../components/Page_Onboarding_Components/PhysicalInfoStep/PhysicalInfoStep";
+import ActivityGoalStep from "../../components/Page_Onboarding_Components/ActivityGoalStep/ActivityGoalStep";
+
+//Contexts
 import { useUserData } from "../../contexts/UserDataContext";
-import styles from "./Onboarding.module.css";
-import useImageLoad from "../../hooks/useImageLoad";
-import backgroundImage from "./bg.png";
+
 
 const Onboarding = ({ switchLanguage, t, user, userUid }) => {
   const [language, setLanguage] = useState("pt");
@@ -22,13 +40,11 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
-
   const TDEE = useTDEECalculation(userData.gender, userData.age, userData.height, userData.weight, userData.weightGoal, userData.activityLevel);
   const waterIntake = useWaterIntakeCalculation(userData.gender, userData.weight, userData.activityLevel);
   const proteinIntake = useProteinIntakeCalculation(userData.gender, userData.weight);
   const carbsIntake = useCarbsIntakeCalculation(userData.activityLevel);
   const fatIntake = useFatIntakeCalculation(userData.gender, userData.weight);
-
   const isImageLoaded = useImageLoad(backgroundImage);
 
   useEffect(() => {
@@ -39,15 +55,23 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
         displayName: `${contextUserData.userProfile.firstName}${contextUserData.userProfile.lastName}`,
       }));
     }
-  }, [contextUserData]);
+  }, [contextUserData, setUserData, setUserInfoChange]);
 
   if (!contextUserData) {
     setUserInfoChange(true);
-    return <div className="loader-container"><div className="loader-medium" /></div>;
+    return (
+      <div className="loader-container">
+        <div className="loader-medium" />
+      </div>
+    );
   }
 
   if (!isImageLoaded) {
-    return <div className="loader-container"><div className="loader-medium" /></div>;
+    return (
+      <div className="loader-container">
+        <div className="loader-medium" />
+      </div>
+    );
   }
 
   const handleLanguageChange = (event) => {
@@ -93,7 +117,7 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
 
       await setDoc(doc(db, `users/${userUid}`), updatedUserData);
 
-      setUserInfoChange((prev) => !prev); // This will trigger re-fetching of user data in the context
+      setUserInfoChange((prev) => !prev); // Trigger re-fetching of user data in the context
 
       const currentDate = new Date().toISOString().split("T")[0];
       const dailyInfoRef = doc(db, `users/${userUid}/dailyInfo/`, currentDate);
@@ -143,8 +167,7 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
   };
 
   return (
-    <div className={styles.onboardingContainer} style={{
-      backgroundImage: `url(${backgroundImage})`}}>
+    <div className={styles.onboardingContainer} style={{ backgroundImage: `url(${backgroundImage})` }}>
       <LanguageSelector language={language} handleLanguageChange={handleLanguageChange} />
       {loading ? (
         <div className="loader-container">
@@ -152,9 +175,35 @@ const Onboarding = ({ switchLanguage, t, user, userUid }) => {
         </div>
       ) : (
         <>
-          {step === 1 && <UserInfoStep userUid={userUid} userData={userData} handleChange={handleChange} handleNext={handleNext} navigate={navigate} t={t} />}
-          {step === 2 && <PhysicalInfoStep userData={userData} handleChange={handleChange} handleNext={handleNext} handleBack={handleBack} t={t} />}
-          {step === 3 && <ActivityGoalStep userData={userData} handleActivityLevelChange={handleActivityLevelChange} handleGoalChange={handleGoalChange} handleSubmit={handleSubmit} handleBack={handleBack} t={t} />}
+          {step === 1 && (
+            <UserInfoStep
+              userUid={userUid}
+              userData={userData}
+              handleChange={handleChange}
+              handleNext={handleNext}
+              navigate={navigate}
+              t={t}
+            />
+          )}
+          {step === 2 && (
+            <PhysicalInfoStep
+              userData={userData}
+              handleChange={handleChange}
+              handleNext={handleNext}
+              handleBack={handleBack}
+              t={t}
+            />
+          )}
+          {step === 3 && (
+            <ActivityGoalStep
+              userData={userData}
+              handleActivityLevelChange={handleActivityLevelChange}
+              handleGoalChange={handleGoalChange}
+              handleSubmit={handleSubmit}
+              handleBack={handleBack}
+              t={t}
+            />
+          )}
           <StepIndicator currentStep={step} />
         </>
       )}

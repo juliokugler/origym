@@ -5,7 +5,7 @@ import React from "react";
 import styles from "./RegisterPage.module.css";
 
 // Components
-import RegisterContainer from "../../components/RegisterContainer/RegisterContainer";
+import RegisterContainer from "../../components/Page_Register_Container/RegisterContainer";
 
 // Hooks
 import useImageLoad from "../../hooks/useImageLoad";

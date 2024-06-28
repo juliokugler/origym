@@ -4,12 +4,12 @@ import styles from "./WorkoutsPage.module.css";
 
 // Components
 import Header from "../../components/Header/Header";
-import CreateWorkout from "../../components/Workouts/CreateWorkout/CreateWorkout";
-import OneRMCalculator from "../../components/Workouts/OneRMCalculator/OneRMCalculator";
-import Favorites from "../../components/Workouts/Favorites/Favorites";
-import WeeklyWorkoutCard from "../../components/Workouts/WeeklyWorkoutCard/WeeklyWorkoutCard";
-import HeartRateCard from "../../components/HeartRateCard/HeartRateCard";
-import RecommendedWorkouts from "../../components/Workouts/RecommendedWorkouts/RecommendedWorkouts";
+import CreateWorkout from "../../components/Page_Workouts_Components/CreateWorkout/CreateWorkout";
+import OneRMCalculator from "../../components/Page_Workouts_Components/OneRMCalculator/OneRMCalculator";
+import Favorites from "../../components/Page_Workouts_Components/Favorites/Favorites";
+import WeeklyWorkoutCard from "../../components/Page_Workouts_Components/WeeklyWorkoutCard/WeeklyWorkoutCard";
+import HeartRateCard from "../../components/Page_Workouts_Components/HeartRateCard/HeartRateCard";
+import RecommendedWorkouts from "../../components/Page_Workouts_Components/RecommendedWorkouts/RecommendedWorkouts";
 
 // Hooks
 import useFetchExercises from "../../hooks/useFetchExercises";
@@ -22,9 +22,8 @@ const Workouts = ({ user, t, userData, isMobile }) => {
   const [currentExerciseListName, setCurrentExerciseListName] = useState("");
   const [workoutChange, setWorkoutChange] = useState(false);
   const [favoriteChange, setFavoriteChange] = useState(false);
-
   const fetchedWorkouts = useFetchExercises(workoutChange);
-
+console.log(user)
   useEffect(() => {
     setWorkouts(fetchedWorkouts);
   }, [fetchedWorkouts]);
@@ -46,30 +45,29 @@ const Workouts = ({ user, t, userData, isMobile }) => {
     setSelectedDay(day);
   };
 
-  const { groups, toggleGroup, showAddExercise, setShowAddExercise } =
-    useFetchFavorites(favoriteChange);
+  const { groups, toggleGroup, showAddExercise, setShowAddExercise } = useFetchFavorites(favoriteChange);
 
   return (
-    <div className={!isMobile ? "container" : "container-mobile"}>
+    <div className={isMobile ? "container-mobile" : "container"}>
       <Header isMobile={isMobile} t={t} userData={userData} pageType="workouts" />
       {!isMobile ? (
-        <div className="mainSection">
-          <div className={styles.firstColumn}>
-            <div className={classNames("card", styles.calculator)}>
+        <main className="mainSection">
+          <section className={styles.firstColumn}>
+            <article className={classNames("card", styles.calculator)}>
               <h3 className="title">{t("oneRMCalculator")}</h3>
               <OneRMCalculator t={t} />
-            </div>
-            <div className={classNames("card", styles.recommendedWorkouts)}>
+            </article>
+            <article className={classNames("card", styles.recommendedWorkouts)}>
               <h3 className="title">{t("recommendedWorkouts")}</h3>
               <RecommendedWorkouts />
-            </div>
-          </div>
-          <div className={styles.secondColumn}>
-            <div className={classNames("mainCard", styles.heartRate)}>
+            </article>
+          </section>
+          <section className={styles.secondColumn}>
+            <article className={classNames("mainCard", styles.heartRate)}>
               <h3 className={styles.title2}>{t("heartRate")}</h3>
-              <HeartRateCard />
-            </div>
-            <div className={classNames("card", styles.exerciseBenchmarks)}>
+              <HeartRateCard user={user} t={t}/>
+            </article>
+            <article className={classNames("card", styles.exerciseBenchmarks)}>
               <div className={styles.exerciseBenchmarksBackground}>
                 <h3 className="title">{t("exerciseBenchmarks")}</h3>
                 <Favorites
@@ -83,10 +81,10 @@ const Workouts = ({ user, t, userData, isMobile }) => {
                   setShowAddExercise={setShowAddExercise}
                 />
               </div>
-            </div>
-          </div>
-          <div className={styles.thirdColumn}>
-            <div className={classNames("card", styles.workoutPlan)}>
+            </article>
+          </section>
+          <section className={styles.thirdColumn}>
+            <article className={classNames("card", styles.workoutPlan)}>
               <h3 className="title">{t("workoutPlan")}</h3>
               <WeeklyWorkoutCard
                 workouts={workouts}
@@ -95,14 +93,14 @@ const Workouts = ({ user, t, userData, isMobile }) => {
                 onFavoriteToggle={handleFavoriteToggle}
                 user={user}
                 t={t}
-                isMobile={isMobile} // Ensure isMobile is passed down
+                isMobile={isMobile}
               />
-            </div>
-          </div>
-        </div>
+            </article>
+          </section>
+        </main>
       ) : (
-        <div className="mainSection-mobile">
-          <div className={classNames("card", styles.workoutPlan_mobile)}>
+        <main className="mainSection-mobile">
+          <article className={classNames("card", styles.workoutPlanMobile)}>
             <h3 className="title">{t("workoutPlan")}</h3>
             <WeeklyWorkoutCard
               workouts={workouts}
@@ -111,10 +109,10 @@ const Workouts = ({ user, t, userData, isMobile }) => {
               onFavoriteToggle={handleFavoriteToggle}
               user={user}
               t={t}
-              isMobile={isMobile} // Ensure isMobile is passed down
+              isMobile={isMobile}
             />
-          </div>
-        </div>
+          </article>
+        </main>
       )}
       {isCreateWorkoutOpen && (
         <CreateWorkout

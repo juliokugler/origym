@@ -1,0 +1,198 @@
+.tableHeader {
+  display: flex;
+  padding: 10px 0;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.headerItem {
+  text-align: center;
+  padding:0 8px;
+}
+
+.title {
+  text-align: center;
+  margin: 0
+}
+
+.tableHeader img{
+cursor: pointer;
+}
+
+.container{
+display: flex;
+flex-direction: column;
+margin: 0 auto;
+}
+
+
+.noWorkoutsMessage {
+display: flex;
+flex-direction: column;
+  text-align: center;
+  margin-top: 2vh;
+  color: var(--text-color-secondary)
+}
+
+
+.noWorkoutsMessage p {
+margin-bottom: 3vh;
+}
+
+.button {
+padding: 1vw;
+border: none;
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 1vh;
+}
+
+
+
+.buttonIcon {
+height: 5vh;
+margin-right: 1.2vw;
+}
+
+.button p {
+margin: 0.5vh 0;
+}
+
+.workoutInfo {
+display: flex;
+align-items: center;
+justify-content: space-between;
+text-align: left;
+width: 34vw;
+}
+
+
+
+.arrowIcon {
+height: 2.8vh;
+cursor: pointer;
+}
+
+.textInfo{
+width: 65%;
+
+}
+
+.calories {
+  color: #DCDCDD;
+}
+
+.textInfo svg {
+  margin: 0;
+  margin-right: 0.3vw;
+  font-size: 1.8vh;
+  
+}
+
+.iconAndText {
+  display: flex;
+  width: 25vw;
+  cursor: pointer;
+  }
+
+
+.buttonContainer {
+width: 100%;
+}
+
+.exerciseCardClosed {
+  background-color: var(--gray-medium);
+height: 9vh;
+padding: 0;
+width: 34vw;
+border-radius: 2vh;
+margin: 1.4vh auto;
+cursor: pointer;
+
+}
+
+
+
+
+
+.exerciseCardOpened {
+background-color: var(--gray-medium);
+min-height: 16vh;
+padding: 0;
+width: 34vw;
+border-radius: 2vh;
+margin: 1.4vh auto;
+position: relative;
+
+}
+
+.container ul {
+margin: 0 auto;
+padding: 0;
+}
+
+@media (max-width: 600px) {
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  }
+
+
+
+.iconAndText {
+  display: flex;
+  width: 90%;
+  cursor: pointer;
+  }
+
+  .exerciseCardClosed {
+    background-color: var(--gray-medium);
+  height: 5.5vh;
+  padding: 1vh 0;
+  width: 100%;
+  border-radius: 2vh;
+  margin: 1vh auto;
+  cursor: pointer;  
+  }
+  
+
+  .exerciseCardOpened {
+    background-color: var(--gray-medium);
+    min-height: 16vh;
+    padding: 0;
+    width: 100%;
+    border-radius: 2vh;
+    margin: 1vh auto;
+    position: relative;
+    
+    }
+
+  .workoutInfo  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+    }
+
+    .button{
+      margin-left: 3vw;
+      width: 90%;
+    padding: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vh;
+     }
+    
+     .iconAndText img {
+      height: 5vh;
+      margin-right: 3vw;
+     }
+    
+
+}
