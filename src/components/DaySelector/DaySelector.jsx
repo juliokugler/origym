@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const DaySelector = ({ selectedDay, selectedDays, handleDaySelect }) => {
   const { t } = useTranslation();
 
-  // Determine if we are in single or multi-selection mode
+  
   const isMultiSelect = Array.isArray(selectedDays);
 
   return (

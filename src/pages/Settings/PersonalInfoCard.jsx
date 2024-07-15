@@ -1,6 +1,11 @@
+//React
 import React, {useState} from 'react'
-import classNames from 'classnames';
+
+//Styles
 import styles from "./Settings.module.css"
+
+//Dependencies
+import classNames from 'classnames';
 
 const PersonalInfoCard = ({userData, t}) => {
   const [gender, setGender] = useState(userData.userProfile.gender)

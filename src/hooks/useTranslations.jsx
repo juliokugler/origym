@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import i18n from "../i18n";
 
-// Utility function to get short language code
 const getShortLanguageCode = (lang) => {
   const langMap = {
     'pt-BR': 'pt',
@@ -26,10 +25,8 @@ export const useTranslations = (user) => {
 
     i18n.on("languageChanged", handleLanguageChange);
 
-    // Initial log
     console.log(`Initial language: ${i18n.language}, Short code: ${getShortLanguageCode(i18n.language)}`);
 
-    // Clean up the language change listener on unmount
     return () => {
       i18n.off("languageChanged", handleLanguageChange);
     };

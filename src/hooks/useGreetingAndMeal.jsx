@@ -78,17 +78,14 @@ export const useGreetingAndMeal = (currentLanguage, switchLanguage) => {
     }
 
     function capitalizeDate(dateString) {
-      // Split the date string by comma, and replace only the first comma with " • "
       const parts = dateString.split(/,\s*/);
       const capitalizedParts = parts.map(part => {
-        // If the part is "de", keep it lowercase
         if (part.toLowerCase() === "de") {
           return part.toLowerCase();
         } else {
           return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
         }
       });
-      // Join the parts back into a string with " • " between the weekday and month
       return capitalizedParts.join(" • ");
     }
 

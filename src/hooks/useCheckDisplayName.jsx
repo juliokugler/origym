@@ -3,7 +3,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const useCheckDisplayName = (displayName) => {
-  const [status, setStatus] = useState("neutral"); // "neutral", "available", "taken"
+  const [status, setStatus] = useState("neutral");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -41,7 +41,7 @@ const useCheckDisplayName = (displayName) => {
       return;
     }
 
-    setStatus("neutral"); // Revert to neutral when displayName changes
+    setStatus("neutral");
 
     const debounceTimer = setTimeout(() => {
       checkDisplayName();

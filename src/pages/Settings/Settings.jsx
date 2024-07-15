@@ -13,7 +13,7 @@ import useFormData from '../../hooks/useFormData';
 //Contexts
 import { useUserData } from '../../contexts/UserDataContext';
 
-//Components
+//Page Components
 import UserInfoCard from './UserInfoCard';
 import ActivityInfoCard from './ActivityInfoCard';
 import PersonalInfoCard from './PersonalInfoCard';
@@ -23,7 +23,6 @@ const Settings = ({ t, user, userData, isMobile }) => {
   const { handleGoalChange, handleActivityLevelChange } = useFormData(user, userData);
 
   const handleSubmit = () => {
-    // Handle form submission
   };
 
   if (!userData) {

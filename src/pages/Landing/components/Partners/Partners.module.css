@@ -1,0 +1,17 @@
+
+.partners{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 65vw;
+    margin: 0 auto;
+    margin-bottom: 4vh;
+  }
+  
+  .partners img {
+    width: 65vw;
+    height: auto;
+    margin: 1vh 0 6vh 0;
+  }
+  

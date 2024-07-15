@@ -33,7 +33,6 @@ const Sidebar = () => {
   const location = useLocation();
   const [activePage, setActivePage] = useState("");
 
-  // Function to set active page based on current location
   const setActive = () => {
     const path = location.pathname;
     if (path === "/home") {
@@ -51,7 +50,6 @@ const Sidebar = () => {
     }
   };
 
-  // Call setActive initially and on location change
   useEffect(() => {
     setActive();
   }, [location]);

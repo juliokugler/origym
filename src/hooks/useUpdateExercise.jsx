@@ -10,7 +10,7 @@ const useUpdateExercise = () => {
     userId,
     workoutId,
     exerciseId,
-    updatedAttributes // New parameter to specify exercise attributes to update
+    updatedAttributes
   ) => {
     setLoading(true);
     setError(null);
@@ -22,16 +22,13 @@ const useUpdateExercise = () => {
       if (workoutSnap.exists()) {
         const workoutData = workoutSnap.data();
 
-        // Get the existing exercise object
         const existingExercise = workoutData.exercises[exerciseId];
 
-        // Merge the updated attributes with existing attributes, skipping undefined values
         const updatedExercise = {
           ...existingExercise,
           ...updatedAttributes,
         };
 
-        // Update the exercises object in the workout document
         const updatedExercises = {
           ...workoutData.exercises,
           [exerciseId]: updatedExercise,

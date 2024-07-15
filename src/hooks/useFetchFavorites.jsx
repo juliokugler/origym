@@ -31,7 +31,7 @@ const useFetchFavorites = (favoriteChange) => {
         snapshot.forEach((doc) => {
           const exerciseData = doc.data();
           const exerciseId = doc.id;
-          const group = exerciseData.group || "Ungrouped"; // Line 31
+          const group = exerciseData.group || "Ungrouped";
           if (!groupsData[group]) {
             groupsData[group] = [];
           }

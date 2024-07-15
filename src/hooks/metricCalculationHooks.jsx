@@ -65,9 +65,9 @@ export const useWaterIntakeCalculation = (gender, weight, activityLevel) => {
   const [waterIntake, setWaterIntake] = useState("");
 
   useEffect(() => {
-    let waterIntake = 35 * weight; // ml per kg
+    let waterIntake = 35 * weight;
     if (gender === "Female") {
-      waterIntake *= 0.9; // reduce for females
+      waterIntake *= 0.9;
     }
 
     switch (activityLevel) {
@@ -99,9 +99,9 @@ export const useProteinIntakeCalculation = (gender, weight) => {
   useEffect(() => {
     let proteinIntake = 0;
     if (gender === "Male") {
-      proteinIntake = weight * 2.2; // grams per kg for men
+      proteinIntake = weight * 2.2;
     } else if (gender === "Female") {
-      proteinIntake = weight * 2; // grams per kg for women
+      proteinIntake = weight * 2;
     } else {
       proteinIntake = weight * 2.1;
     }
@@ -115,7 +115,7 @@ export const useCarbsIntakeCalculation = (activityLevel) => {
   const [carbsIntake, setCarbsIntake] = useState("");
 
   useEffect(() => {
-    let carbsIntake = 300; // default value
+    let carbsIntake = 300;
     switch (activityLevel) {
       case "Lightly Active":
         carbsIntake -= 50;
@@ -144,9 +144,9 @@ export const useFatIntakeCalculation = (gender, weight) => {
   useEffect(() => {
     let fatIntake = 0;
     if (gender === "Male") {
-      fatIntake = weight * 0.4; // grams per kg for men
+      fatIntake = weight * 0.4;
     } else if (gender === "Female") {
-      fatIntake = weight * 0.3; // grams per kg for women
+      fatIntake = weight * 0.3;
     } else {
       fatIntake = (weight * 0.4 + weight * 0.3) / 2;
     }

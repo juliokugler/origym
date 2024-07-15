@@ -1,6 +1,13 @@
+//React
 import React, {useState, useEffect} from 'react'
-import classNames from 'classnames';
+
+//Styles
 import styles from "./Settings.module.css"
+
+//Dependencies
+import classNames from 'classnames';
+
+//Icons
 import healthIcon from "../../assets/Icons/healthOption.png";
 import weightOption from "../../assets/Icons/weightOption.png";
 import muscleOption from "../../assets/Icons/muscleOption.png";

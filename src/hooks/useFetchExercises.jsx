@@ -31,8 +31,8 @@ const useFetchExercises = (workoutChange, workoutCheck) => {
           const uniqueMuscleGroups = Array.from(new Set(muscleGroups));
 
           fetchedWorkouts.push({
-            id: doc.id, // Firebase-generated ID as the ID prop
-            days: workout.days || [], // Assuming days is an array of strings
+            id: doc.id,
+            days: workout.days || [],
             name: workout.name || "",
             type: workout.type,
             isWorkoutDone: workout.isWorkoutDone,

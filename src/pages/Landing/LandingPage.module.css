@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  width: 100vw;
+  margin: 0 auto;
+  align-items: top;
+  user-select: none;
+}
+
+.container h1 {
+  margin: 0;
+  font-size: 5.5vh;
+}
+
+.container  p {
+  font-size: 2vh;
+  margin: 3vh 0
+}  
+
+.bannerText button {
+  margin-left: 0;
+}
+
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-color);
+  width: 100vw;
+  margin: 0 auto;
+  align-items: top;
+  height: 50vh;
+  align-items: center;
+  position: relative
+}
+
+
+
+.bannerText {
+  width: 38vw;
+  height: 45vh;
+}
+
+.bannerText span, .heroText span {
+  color: var(--primary-color);
+}
+
+.bannerText p, .heroText p{
+  margin-bottom: 4vh;
+
+}
+    
+.cardContainer{
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  margin: 8vh auto;
+}
+
+.card{
+  width: 20vh;
+  height: 20vh;
+  border-radius: 1.8vh;
+  background-color: #35373D; /* Base color */
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #2b2c31); 
+  color: var(--text-color);
+  text-align:center;
+} 
+
+.icon {
+  height: 8vh;
+  padding-top: 10px;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: #4D4F56;
+  font-weight: 500;
+}

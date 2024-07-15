@@ -28,7 +28,6 @@ const useFetchUsers = (searchTerm, currentUsername) => {
       const fetchedUsers = [];
       querySnapshot.forEach((doc) => {
         const userData = doc.data();
-        // Exclude the current user from search results
         if (userData.displayNameLower !== currentUsername.toLowerCase()) {
           fetchedUsers.push({ id: doc.id, uid: doc.id, ...userData });
         }

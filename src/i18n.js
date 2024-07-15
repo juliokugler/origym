@@ -1,14 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import enTranslation from "./assets/Translations/en.json";
-import ptTranslation from "./assets/Translations/pt.json";
-import esTranslation from "./assets/Translations/es.json";
-import deTranslation from "./assets/Translations/de.json";
-import itTranslation from "./assets/Translations/it.json";
-import frTranslation from "./assets/Translations/fr.json";
+import enTranslation from "./locales/en/translation.json";
+import ptTranslation from "./locales/pt/translation.json";
+import esTranslation from "./locales/es/translation.json";
+import deTranslation from "./locales/de/translation.json";
+import itTranslation from "./locales/it/translation.json";
+import frTranslation from "./locales/fr/translation.json";
 
-// Initialize i18n
 i18n
   .use(initReactI18next)
   .use(LanguageDetector)

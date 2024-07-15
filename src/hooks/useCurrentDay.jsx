@@ -18,7 +18,7 @@ const useCurrentDay = () => {
       return days[today.getDay()];
     };
 
-    setCurrentDay(getCurrentDay()); // Set the current day when the component mounts
+    setCurrentDay(getCurrentDay());
   }, []);
 
   return currentDay;

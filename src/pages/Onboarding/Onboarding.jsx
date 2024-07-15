@@ -25,9 +25,11 @@ import useImageLoad from "../../hooks/useImageLoad";
 //Components
 import StepIndicator from "../../components/StepIndicator/StepIndicator";
 import LanguageSelector from "../../components/LanguageSelector/LanguageSelector";
-import UserInfoStep from "../../components/Page_Onboarding_Components/UserInfoStep/UserInfoStep";
-import PhysicalInfoStep from "../../components/Page_Onboarding_Components/PhysicalInfoStep/PhysicalInfoStep";
-import ActivityGoalStep from "../../components/Page_Onboarding_Components/ActivityGoalStep/ActivityGoalStep";
+
+//Page Components
+import UserInfoStep from "./components/UserInfoStep/UserInfoStep";
+import PhysicalInfoStep from "./components/PhysicalInfoStep/PhysicalInfoStep";
+import ActivityGoalStep from "./components/ActivityGoalStep/ActivityGoalStep";
 
 //Contexts
 import { useUserData } from "../../contexts/UserDataContext";

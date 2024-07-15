@@ -9,7 +9,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Header = ({ pageType, currentDate, timedGreeting, t, userData, isMobile }) => {
   const { user } = useAuthValue();
   const navigate = useNavigate();
-  const location = useLocation(); // Hook to get current location
+  const location = useLocation();
   const { logout } = useAuthentication();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
@@ -35,32 +35,30 @@ const Header = ({ pageType, currentDate, timedGreeting, t, userData, isMobile })
       searchRef.current &&
       !searchRef.current.contains(event.target) &&
       profileRef.current &&
-      !profileRef.current.contains(event.target) && // Check if clicked outside the profileRef
-      !profileImageRef.current.contains(event.target) // Check if clicked outside the profile image itself
+      !profileRef.current.contains(event.target) &&
+      !profileImageRef.current.contains(event.target)
     ) {
-      setSearchActive(false); // Close search bar if clicked outside
+      setSearchActive(false);
     }
   
-    // Close profile dropdown if clicked outside
     if (
       profileRef.current &&
       !profileRef.current.contains(event.target) &&
-      !profileImageRef.current.contains(event.target) // Check if clicked outside the profile image itself
+      !profileImageRef.current.contains(event.target)
     ) {
       setDropdownOpen(false);
     }
   };
   const handleScroll = () => {
-    // Close profile dropdown on scroll
     setDropdownOpen(false);
   };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
-    window.addEventListener("scroll", handleScroll); // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
-      window.removeEventListener("scroll", handleScroll); // Remove scroll event listener on cleanup
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

@@ -4,16 +4,13 @@ import React from "react";
 //Styles
 import "./index.css";
 
-//Navigation
-import Navbar from "./components/Nav_Navbar/Navbar";
-import MobileNavbar from "./components/Nav_Mobile/MobileNavbar";
-import Sidebar from "./components/Nav_Sidebar/Sidebar";
+//Dependencies
+import { useTranslation } from "react-i18next";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 //Hooks
-import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./hooks/useAuth";
 import { useTranslations } from "./hooks/useTranslations";
-import { useTranslation } from "react-i18next";
 import { useGreetingAndMeal } from "./hooks/useGreetingAndMeal";
 import useIsMobile from "./hooks/useIsMobile";
 
@@ -23,17 +20,20 @@ import { UserDataProvider, useUserData } from "./contexts/UserDataContext";
 
 //Components
 import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Nav_Navbar/Navbar";
+import MobileNavbar from "./components/Nav_Mobile/MobileNavbar";
+import Sidebar from "./components/Nav_Sidebar/Sidebar";
 
 //Pages
-import Health from "./pages/HealthPage/HealthPage";
-import NutritionPage from "./pages/NutritionPage/NutritionPage";
-import Home from "./pages/HomePage/HomePage";
-import Landing from "./pages/LandingPage/LandingPage";
-import Login from "./pages/LoginPage/LoginPage";
-import Workouts from "./pages/WorkoutsPage/WorkoutsPage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import Friends from "./pages/FriendsPage/FriendsPage";
+import Health from "./pages/Health/HealthPage";
+import NutritionPage from "./pages/Nutrition/NutritionPage";
+import Home from "./pages/Home/HomePage";
+import Landing from "./pages/Landing/LandingPage";
+import Login from "./pages/Login/LoginPage";
+import Workouts from "./pages/Workouts/WorkoutsPage";
+import RegisterPage from "./pages/Register/RegisterPage";
+import ProfilePage from "./pages/Profile/ProfilePage";
+import Friends from "./pages/Friends/FriendsPage";
 import Onboarding from "./pages/Onboarding/Onboarding";
 import Settings from "./pages/Settings/Settings";
 
@@ -53,6 +53,8 @@ function AppContent() {
     setUserInfoChange((prev) => !prev);
   };
 
+  console.log(isMobile)
+
   return (
     <div className="App">
       {!user ? <Navbar t={t} currentLanguage={currentLanguage} user={user} /> : isMobile ? "" : <Sidebar />}
@@ -60,7 +62,7 @@ function AppContent() {
         <Routes>
           <Route
             path="/"
-            element={!userData ? <Landing isMobile={isMobile} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
+            element={!userData ? <Landing t={t} isMobile={isMobile} currentLanguage={currentLanguage} /> : <Navigate to="/home" />}
           />
           <Route
             path="/login"
